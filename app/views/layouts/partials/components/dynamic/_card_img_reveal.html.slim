@@ -1,0 +1,33 @@
+.card
+  .card-image.waves-effect.waves-block.waves-light
+    =render 'layouts/partials/components/dynamic/brand_with_cover'
+  .card-content
+    span.card-title.activator.grey-text.text-darken-4
+      =@card_obj[:name]
+      -if @card_obj[:card_desc] || @card_obj[:action_template]
+      i.mdi-navigation-more-vert.right
+    p
+      -unless @card_obj[:right_action].nil?
+        -if @card_obj[:right_action][:link]
+          a.ref_icon href="#{@card_obj[:right_action][:link]}"
+            i class="#{@card_obj[:right_action][:icon]} right"
+        -else
+          span.ref_icon.teal-text
+            i class="#{@card_obj[:right_action][:icon]} right"
+      -unless @card_obj[:right_info].nil?
+        span.right =@card_obj[:right_info]
+      a.card_link_name.truncate href="#{@card_obj[:link]}" target="_blank"
+        =@card_obj[:link_name]
+  .card-reveal
+    span.card-title.truncate.grey-text.text-darken-4
+      =@card_obj[:card_title]
+      i class="mdi-navigation-close right"
+    -if @card_obj[:card_desc]
+      p.justify =@card_obj[:card_desc]
+    -elsif @card_obj[:action_template]
+      =render @card_obj[:action_template]
+
+-#Reset the variables
+-@id=nil
+-@bg_img=nil
+-@card_obj=nil

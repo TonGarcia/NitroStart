@@ -1,0 +1,20 @@
+-if @resources.is_a?Hash
+  -@resources = [@resources]
+-elsif @resource
+  -@resources = [@resource]
+
+-@resources.each do |resource|
+  -resource[:darker] == false ? txt_intensity = '' : txt_intensity = 'text-darken-3'
+
+  .row
+    .col.l2
+      h3.center class="#{@resources_header_color} #{txt_intensity}": i class="#{resource[:i]}"
+    .col.l10.resource_explanation
+      p class="resource-header #{@resources_header_color} #{txt_intensity}": strong =resource[:header]
+      p class="slim resource-description justify #{@resource_slim_color}" =raw resource[:desc]
+
+-# Clear the variables
+-@resource=nil
+-@resources=nil
+-@resources_icon=nil
+-@resources_header_color=nil

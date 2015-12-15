@@ -1,0 +1,56 @@
+section#cd-timeline.cssanimations
+  -showing_month=0
+  -@launches.each_with_index do |launch, i|
+    -# Component vars
+    -app = launch.third[:app]
+    -company = launch.third[:company]
+    -pic = app.picture
+    -current_month = launch.created_at.strftime('%m').to_i
+
+    -# Validations
+    -if launch.depository? @current_user
+      -circle='red-circle'
+      -amount_color = 'red'
+      -amount_icon = 'mdi-content-remove-circle'
+      -sub_title = launch.favored.name
+      -launch_type = 'out-going'
+    -else # if the user is receiving (in-coming)
+      -circle='green-circle'
+      -amount_color = 'green'
+      -amount_icon = 'mdi-content-add-circle'
+      -sub_title = company.name
+      -launch_type = 'in-coming'
+
+    -visibility='is-hidden'
+    -visibility='' if launch.id == @launches.first.id
+
+
+    -if showing_month != current_month
+      -showing_month=current_month
+      .row
+        .month_ref.bold.white-text.light-blue.lighten-2
+          =l launch.created_at, format: '%B / %Y'
+
+    div class="cd-timeline-block #{launch_type}"
+      div class="cd-timeline-img #{circle} #{visibility}"
+        -if pic
+          =image_tag(pic, class: 'circle')
+        -else
+          .default_icon
+            i class="circle #{colors_name(launch.third[:app].id)} darken-2 white-text mdi-action-store"
+      div class="cd-timeline-content #{visibility}"
+        .launch-content
+          span.title =app.name
+          | &nbsp; - &nbsp;
+          span.sub-title =sub_title
+          p class="amount right #{amount_color}-text"
+            span="#{to_money launch.full_amount} "
+            i class="#{amount_icon}"
+          p.justify =launch.reason
+        span.cd-date =l launch.created_at, format: '%b. %d'
+
+#update.cd-timeline-block
+  .cd-timeline-img
+    -params[:months_ago].nil? ? months_ago = 1 : months_ago = params[:months_ago].to_i+1
+    a#update_time_line.btn-floating.btn-large.waves-effect.waves-light.light-blue.lighten-2 href="#{launches_path(months_ago: months_ago)}"
+      i.circle.white-text.fa.fa-chevron-down

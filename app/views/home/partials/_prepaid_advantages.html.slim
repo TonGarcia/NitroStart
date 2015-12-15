@@ -1,0 +1,42 @@
+/! PrePaid part
+-@part_title_icon_bg = 'teal'
+#prepaid.showcase
+  .features.row.box-header
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@caption = 'Cartão'
+    -@description = 'Não possui anuidade. Não cobramos juros. Adquirindo você já acumula cash-back (retorno em dinheiro).'
+    -@description_attachment = 'Taxa de emissão: R$ 10,00.'
+    -@attachment_color = "#{@part_title_icon_bg}-text"
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-bank'
+    -@caption = 'Sem Burocracia'
+    -@description = 'Não é necessário comprovar renda, se até R$ 5mil em recarga. Não precisa de aprovação de crédito. Só dados básicos serão requisitados.'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-line-chart'
+    -@caption = 'Sem dívidas'
+    -@description = 'Sem anuidade, sem mensalidade, sem juros e mesmo com o nome sujo Você pode ter Predoo.'
+    =render 'home/partials/components/feature'
+
+    -@out_icon = 'fa fa-credit-card'
+    -@desc_icon = 'fa fa-credit-card'
+    -@caption = 'Crie metas de gastos'
+    -@description = 'Tendo um cartão para cada finalidade (mesada, combustível, mercado...) você se controla a usar o que estipulou na meta ao creditar!'
+    -@description_attachment = 'R$ 5,00 por emissão de cartão adicional para um mesmo CPF.'
+    -@attachment_color = "#{@part_title_icon_bg}-text"
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'fa fa-plane'
+    -@caption = 'Cartão VISA TravelMoney'
+    -@description = 'Não carregue dinheiro e nem tenha susto com variação da moeda no seu cartão de crédito!'
+    -@description_attachment = 'Esta modalidade permite saque na moeda estrangeira selecionada.'
+    -@attachment_color = "#{@part_title_icon_bg}-text"
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-shopping-cart'
+    -@caption = 'Milhares de pontos de Compra'
+    -@description = 'Os cartões pré-pagos funcionam como cartões de crédito nas máquininhas e e-commerce (lojas online e física) e passará em todos lugares onde aceitar VISA e ELO. Fora suas despesas gerais de água, luz e telefone (casa e escritório).'
+    =render 'home/partials/components/feature'

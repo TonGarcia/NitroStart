@@ -1,0 +1,48 @@
+/! Predoo part
+-@part_title_icon = 'fa fa-credit-card'
+-@part_title_icon_bg = 'light-blue'
+-@part_title_main = 'Vantagens do Predoo'
+-@part_title_second = '... Chega de pontinhos que não valem nada! Com o Predoo o seu saldo acumulado é retornado em dinheiro para usar como quiser!'
+#predoo.showcase
+  .features.row.box-header
+    =render 'home/partials/components/part_title'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'fa fa-child'
+    -@caption = 'Conceda Mesada e nós concedemos os presentes'
+    -@description = 'Dando a mesada via Predoo nós damos os presentes de aniversário e natal à escolha dele em parceiros.'
+    -@description_attachment = 'Os valores dos presentes variam de acordo com os valores da mesada.'
+    -@attachment_color = 'amber-text text-darken-3'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'fa mdi-maps-local-gas-station'
+    -@caption = 'Abasteça o Cartão e nós abastecemos o seu Carro'
+    -@description = 'Quando você acumula tanques abastecidos no seu carro, através do Predoo, nós te damos um tanque cheio no valor de R$ 200,00.'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'ion-settings'
+    -@caption = 'Cartão Salário'
+    -@description = 'Seu funcionário não tem conta no banco? A pessoa está negativada? Pague o salário dele com Predoo e nós devolvemos o valor acumulado contribuindo no 13º dele.'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'mdi-action-shopping-cart'
+    -@caption = 'Cartão Mercado'
+    -@description = 'Que tal sua empregada doméstica fazer as compras do mês e você ter segurança nesse processo? O Predoo trás a segurança de onde e quanto ela gastou, acompanhando os custos do mercado.'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-credit-card'
+    -@out_icon = 'mdi-action-store'
+    -@caption = 'Cartão Parceiros'
+    -@description = 'Ganhe descontos em e-commerces & lojas físicas parceiras. Tem medo de usar cartão em compras na internet? Coloque somente o valor da compra no seu cartão e nada, além daquela compra, será passado.'
+    =render 'home/partials/components/feature'
+
+    -@desc_icon = 'fa fa-barcode'
+    -@caption = 'Boleto Bancário'
+    -@description = 'Para creditrar o pré-pago basta selecionar qual cartão, o valor e pagar o boleto. Podendo inclusive creditar no cartão de terceiros!'
+    =render 'home/partials/components/feature'
+
+    /! TODO criar um link para tela onde as pessoas postam sugestões do para que estão usando nossos cartões e quais benefícios gostariam de ganhar
+.divider

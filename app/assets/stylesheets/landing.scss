@@ -1,0 +1,260 @@
+/*
+ * Frameworks
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require prettyphoto-rails
+ *
+ * My Styles
+ *= require sign
+*/
+
+@import "ionicons";
+@import "font-awesome";
+@import "materialize_config";
+
+// Helpers classes
+.shadow {
+  text-shadow: black 0 0 10px;
+}
+
+.light-weight {
+  font-weight: 200;
+}
+
+.divider {
+  margin: 15px 0;
+}
+
+.slim {
+  font-weight: 300;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.space {
+  margin-bottom: 50px;
+}
+
+#landing {
+  .card-panel {
+    min-height: 296px;
+    max-height: 296px;
+  }
+}
+
+.icon-explanation {
+  margin-top: 10%;
+
+  h4 {
+    margin-bottom: 25px;
+  }
+
+  h5 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    text-shadow: -3px 2px 7px #000;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .store_downloads {
+    margin-top: 50px;
+  }
+}
+
+.store_downloads {
+  margin-top: 50px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.parallax {
+  .overlay {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .light-overlay {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
+img.overlay {
+  width: inherit;
+  background-color:rgba(0, 0, 0, 0.4);
+}
+
+.parallax-container {
+  height: 100vh;
+}
+.parallax-footer {
+  bottom: 0;
+  position: absolute;
+}
+
+a.call_video {
+  margin-left: 27%;
+
+  i {
+    top: 17px;
+    font-size: 7rem;
+    margin-left: 130px;
+    position: absolute;
+  }
+}
+
+@media #{$small-and-down} {
+  a.call_video {
+    margin-left: -9px !important;
+  }
+}
+
+.container > .divider {
+  margin-bottom: 80px;
+}
+
+section {
+  .icon-block {
+    i.fa,
+    i.mdi-notification-system-update,
+    i.mdi-communication-quick-contacts-mail {
+      font-size: 2.7rem;
+    }
+  }
+
+  &.partners {
+    padding: 3.75em 0;
+
+    .container {
+      .divider {
+        margin-bottom: 45px;
+      }
+    }
+
+    header {
+      font-size: 32px;
+    }
+
+    &.opacity {
+      opacity: .6;
+    }
+  }
+
+  &.features {
+    h5 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .container.steps {
+    .card {
+      .card-content {
+        padding-top: 5px;
+
+        i {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+center.action {
+  margin-bottom: 20px;
+}
+
+// LadingPage CardSettings
+p.attach {
+  font-weight: 300;
+}
+
+.features.row {
+  .card-panel {
+    max-height: 300px;
+    min-height: 300px;
+  }
+}
+
+.cielo_brand {
+  margin-top: 20px;
+}
+
+.steps {
+  .card {
+    .divider {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+img.blindado_brand {
+  width: 90px !important;
+}
+
+// Icons Part
+i.rounded-topic {
+  width: 60px;
+  height: 60px;
+  font-size: 31px;
+  line-height: 60px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.topic-icon {
+  text-align: center;
+}
+
+i.first-min-icon {
+  left: 20px;
+  position: relative;
+}
+
+i.last-min-icon {
+  top: 14px;
+  left: -14px;
+  position: relative;
+}
+
+@media #{$medium-and-down} {
+  .icon-explanation {
+    h4 {
+      margin-bottom: 5px !important;
+    }
+
+    h5 {
+      margin: 10px 0;
+    }
+
+    .store_downloads {
+      margin-top: 35px;
+    }
+  }
+
+  .parallax-container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-repeat: no-repeat;
+  }
+}

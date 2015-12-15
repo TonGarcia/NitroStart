@@ -1,0 +1,30 @@
+/! WorkFlow explanation
+-@part_title_icon = 'mdi-action-autorenew'
+-@part_title_icon_bg = 'amber'
+-@part_title_main = 'Como funciona'
+-@part_title_second = 'Em apenas 5 passos simples você pode ter o melhor do nosso produto facilitando sua vida.'
+#how_works
+  .features.row.box-header
+    =render 'home/partials/components/part_title'
+
+  .row
+    .col.s12
+      ul.tabs
+        li.tab.col.s3: a.light-blue-text.text-lighten-3 href="#search" Adquira
+        li.tab.col.s3: a.red-text.text-lighten-2 href="#find_out" Recarregue
+        li.tab.col.s3: a.amber-text.text-lighten-1 href="#schedule" Use
+        li.tab.col.s3: a.teal-text href="#rate" Receba
+
+    -@home_card = {ref_id:'search', color:{card:'light-blue lighten-3'}, header_icon:'fa fa-barcode', header_text:'Adquira', body_message:'Adquira o seu cartão pré-pago com o simples pagamento de um boleto, na comodidade da sua casa e sem nenhum tipo de burocracia. É rápido e barato. Você receberá um código de rastreio para acompanhar o trajeto do cartão até sua casa.'}
+    =render 'home/partials/components/card'
+
+    -@home_card = {ref_id:'find_out', color:{card:'red lighten-2'}, header_icon:'ion-battery-charging', header_text:'Recarregue', body_message:'Com o cartão em mãos, volte até nosso sistema e recarregue o cartão, no valor que desejar. Basta imprimir o boleto e pagar. A cada vez que você recarrega o cartão você acumula saldo e nós devolvemos este para você!!'}
+    =render 'home/partials/components/card'
+
+    -@home_card = {ref_id:'schedule', color:{card:'amber darken-2'}, header_icon:'fa fa-credit-card', header_text:'Use', body_message:'Com o cartão em mãos e carregado você pode utilizá-lo em qualquer E-commerce ou Loja física que aceite Elo ou MasterCard. Caso queira estabelecer metas de auto-controle você pode usar cada cartão para cada fim ou simplesmente usar um para tudo.'}
+    =render 'home/partials/components/card'
+
+    -@home_card = {ref_id: 'rate', color:{card:'teal darken-3'}, header_icon: 'ion-ios-pulse-strong', header_text: 'Receba', body_message: 'Mediante uso do cartão e recargas no mesmo você acumulou saldo e agora nós devolvemos de acordo com o seu uso. Caso tenha abastecido o carro, te damos um tanque cheio! Caso tenha dado mesada para seu filho damos a ele os presente.'}
+    =render 'home/partials/components/card'
+
+.divider

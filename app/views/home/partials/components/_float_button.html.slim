@@ -1,0 +1,18 @@
+-@float_opts[:main_btn_color] = 'teal' unless @float_opts[:main_btn_color]
+-@float_opts[:main_btn_icon] = 'fa fa-plus' unless @float_opts[:main_btn_icon]
+
+-@float_opts[:btns] = [] if @float_opts[:btns].nil?
+-@float_opts[:floating_class] = 'fixed-action-btn'
+-@float_opts[:floating_class] = '' if @float_opts[:disable_floating]
+
+a class="btn-floating btn-large #{@float_opts[:main_btn_color]}" href="#{@float_opts[:link]}"
+  i class="large #{@float_opts[:main_btn_icon]}"
+-unless @float_opts[:btns].empty?
+  ul
+    -@float_opts[:btns].each do |btn|
+      li
+        a class="btn-floating tooltipped #{btn[:color]}" href="#{btn[:to]}" data-delay="50" data-position="left" data-tooltip="#{btn[:txt]}"
+          i class="#{btn[:icon]} #{btn[:icon_color]}"
+
+-# reset it config variable
+-@float_opts={}

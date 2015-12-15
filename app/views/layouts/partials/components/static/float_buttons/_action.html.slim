@@ -1,0 +1,10 @@
+- @footer_link='footer-' if @footer_link
+-btn_class = "#{@footer_link}action btn-floating btn-large waves-effect waves-light #{@action_float_button_bg_color}"
+= link_to @action_float_button_link, class: btn_class do
+  i class="large #{@action_float_button_icon} #{@action_float_button_text_color}"
+
+-# Rest variables
+-@footer_link=nil
+-@action_float_button_icon=nil
+-@action_float_button_link=nil
+-@action_float_button_text_color=nil

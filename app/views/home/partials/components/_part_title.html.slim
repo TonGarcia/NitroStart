@@ -1,0 +1,11 @@
+.row
+  .col.l12.s12.topic-icon
+    i class="rounded-topic white-text #{@part_title_icon_bg} #{@part_title_icon}"
+  .row
+    .col.l12
+      h5.center= @part_title_main
+      h6.center= raw @part_title_second
+
+-# Reset the variables
+-@part_title_main=nil
+-@part_title_second=nil

@@ -1,0 +1,22 @@
+.col.s12.l4
+  .center.feature
+    -if !@desc_icon.index('logo').nil?
+      =link_to @partner_url, target: '_blank' do
+        =image_tag @desc_icon, class: 'fa feature_partner_logo'
+    -else
+      i class="#{@desc_icon} #{@desc_icon_color}"
+
+    -if !@partner_url.nil?
+      =link_to @partner_url, target: '_blank' do
+        p.promo-caption =@caption
+    -else
+      p.promo-caption =@caption
+    .light.justify
+      -if @description
+        =raw @description
+      -else
+        =render 'home/partials/components/feature_description'
+      -@description=nil
+
+-#reset the partner
+-@partner_url = nil

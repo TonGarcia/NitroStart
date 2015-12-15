@@ -1,0 +1,48 @@
+.col.s12.l4
+  .card-panel.center
+    -if @out_icon
+      .out_icon
+        i class="rounded-topic #{@part_title_icon_bg}-text first-min-icon #{@desc_icon}"
+        i class="rounded-topic #{@part_title_icon_bg}-text last-min-icon #{@out_icon}"
+    -elsif @desc_icon.is_a?Hash
+      div.un_transform: i class="rounded-topic #{@part_title_icon_bg}-text un_transform" = @desc_icon[:text]
+    -else
+      i class="rounded-topic #{@part_title_icon_bg}-text #{@desc_icon}"
+
+    -if !@partner_url.nil?
+      =link_to @partner_url, target: '_blank' do
+        p.promo-caption =@caption
+    -else
+      p.promo-caption =@caption
+    .light.justify
+      -if @descriptions
+        ul.feature
+          -@descriptions.each do |description|
+            -if description.is_a?String
+              li =raw description
+            -elsif description.is_a?Hash
+              li
+                -key=description.keys.first
+                -description[key].empty? || description[key].nil? ? append='' : append=':'
+                strong ="#{key}#{append} "
+                -if description[:link]
+                  span: a target="_blank" href="#{description[:link]}"=description[key]
+                -else
+                  span=description[key]
+              li.divider
+        -@descriptions=nil
+      -elsif @description
+        -if @description
+          p.justify=raw @description
+        -@description=nil
+
+    -if @description_attachment
+      p class="attach justify #{@attachment_color}" =@description_attachment
+
+-#reset the variables
+-@out_icon = nil
+-@desc_icon = nil
+-@caption = nil
+-@description = nil
+-@description_attachment = nil
+-@attachment_color = nil

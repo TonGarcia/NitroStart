@@ -1,0 +1,8 @@
+- @footer_link='footer-' if @footer_link
+-btn_class = "#{@footer_link}show btn-floating btn-large waves-effect waves-light blue"
+= link_to @show_float_button_link, class: btn_class do
+  i.large.mdi-action-open-in-browser.white-text
+
+-# Rest variables
+-@footer_link=nil
+-@show_float_button_link=nil

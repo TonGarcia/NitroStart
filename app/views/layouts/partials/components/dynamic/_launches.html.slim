@@ -1,0 +1,14 @@
+.row
+  =render 'commissions/components/balance_cards_overview'
+
+.custom.divider
+
+#launches_time_line.row
+  .col.l12.center.grey-text.darken-3
+    -if params[:company_id]
+      h3 ="Transação da #{@company.name}"
+    -elsif params[:app_id]
+      h3 ="Transação do #{@app.name}"
+    -else
+      h3 Comissões
+  =render 'layouts/partials/components/dynamic/launches_time_line' unless @launches.empty?

@@ -1,0 +1,24 @@
+-# Useful Variable
+-@text_visual_identity = 'teal-text'
+-@text_visual_identity1 = @text_visual_identity
+-@text_visual_identity2 = @text_visual_identity1
+-@text_visual_identity3 = 'light-blue-text'
+-@visual_identity = 'white text-black'
+
+/! NavBar
+=render 'home/partials/nav'
+
+/! Cover Image (a banner, not a slider)
+#index-banner.parallax-container
+  .section.no-pad-bot
+    .container
+      .row
+        .col.l10.offset-l1
+          h1.header.center.white-text.shadow 404
+        .row.center
+          h3.header.col.s12.white-text.shadow Página não encontrada
+          h4.header.col.s12.white-text.shadow Ooops!!! Isso não existe!
+
+  .parallax
+    .overlay
+    =image_tag('statics/404.png', id: 'cover', alt: 'Gere Receitas com Lucro Sustentável')

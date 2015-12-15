@@ -1,0 +1,8 @@
+- @footer_link='footer-' if @footer_link
+-btn_class = "#{@footer_link}edit btn-floating btn-large waves-effect waves-light light-blue lighten-1"
+= link_to @edit_float_button_link, class: btn_class do
+  i.large.mdi-editor-mode-edit
+
+-# Rest variables
+-@footer_link=nil
+-@edit_float_button_link=nil

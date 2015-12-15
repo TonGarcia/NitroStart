@@ -1,0 +1,15 @@
+# config/aws.yml
+defaults: &defaults
+  access_key_id:  # TODO access the AWS & get yours
+  secret_access_key:  # TODO access the AWS & get yours
+  region: sa-east-1
+  bucket: nitro-tst
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  bucket: predoo-production

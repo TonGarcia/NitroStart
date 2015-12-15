@@ -1,0 +1,12 @@
+-@home_card[:color] = {header_txt:'black-text'} if @home_card[:color].nil?
+-@home_card[:color][:header_txt] = 'white-text' if !@home_card[:color][:card].nil? && @home_card[:color][:header_txt].nil?
+div id="#{@home_card[:ref_id]}" class="col s12 card #{@home_card[:color][:card]}"
+  .card-content
+    h6 class="card-title center #{@home_card[:color][:header_txt]}"
+      i class="#{@home_card[:header_icon]}"
+      =@home_card[:header_text]
+
+    .divider
+
+    p class="justify #{@home_card[:color][:header_txt]}" =@home_card[:body_message]
+-@home_card=nil

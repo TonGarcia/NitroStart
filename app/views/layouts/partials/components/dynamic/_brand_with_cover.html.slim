@@ -1,0 +1,15 @@
+.app_page
+  =image_tag @bg_img, class: 'bg_app activator'
+  .opaque_bg
+
+  -pic = @card_obj[:pic]
+  -if pic
+    -@card_obj[:brand_type].nil? ? brand_type = 'app_brand' : brand_type = @card_obj[:brand_type]
+    -@card_obj[:pic] == @bg_img ? inner_img_class = 'card' : inner_img_class = 'circle'
+    =image_tag @card_obj[:pic], class: "white #{brand_type} #{inner_img_class}"
+  -else
+    .default_brand
+      center: i class="circle default_brand #{colors_name(@id)} darken-2 white-text mdi-action-store"
+
+-@id=nil
+-@bg_img=nil

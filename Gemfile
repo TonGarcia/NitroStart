@@ -149,7 +149,7 @@ gem 'jasny_bundle_fixed', '~> 1.0.1'
 gem 'font-awesome-rails', '~> 4.5'
 
 # Social Action Buttons like Share, Like, Tweet...
-gem 'social-buttons', '0.3.9'
+gem 'social-buttons', '0.3.7'
 
 # Rails google materialize (ATTENTION, MATERIAL 0.95.X NOT WORKING)
 gem 'materialize-sass', '0.97.3'

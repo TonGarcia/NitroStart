@@ -1,0 +1,147 @@
+.slim {
+  font-weight: 100;
+}
+
+nav .nav-wrapper a.brand img {
+  max-width: 135px;
+  margin: 8px 0 0 25px;
+}
+
+#benefits_resource {
+  h3 {
+    i {
+      top: -5px;
+      font-size: 2.2rem;
+      position: relative;
+    }
+  }
+}
+
+.divider.custom {
+  margin: 10px 0 30px 0;
+}
+
+#sign_card {
+  margin-top: 55px;
+
+  .card-content {
+    padding-bottom: 0;
+  }
+
+  .login-intro {
+    font-size: .9em;
+  }
+
+  #sign_form {
+    padding: 0 10px;
+
+    #sign_form_header {
+      margin-bottom: 0;
+
+      a {
+        font-size: .8em;
+        margin-top: 11px;
+      }
+
+      h6 {
+        top: 3px;
+        position: relative;
+      }
+    }
+  }
+
+  .resource_explanation {
+    .resource-header {
+      margin: 15px 0 0 0;
+    }
+
+    .resource-description {
+      font-size: .8em;
+    }
+  }
+}
+
+#sign.navbar-fixed {
+  -webkit-font-smoothing: auto;
+
+  span.brand:first-child {
+    padding-left: 75px;
+  }
+
+  span.brand {
+    font-size: 1em;
+
+    .acronym_brand {
+      margin-right: 5px;
+    }
+
+    img {
+      float: left;
+      max-width: 12%;
+      margin: 15px 10px 0 0;
+    }
+  }
+
+  span.brand:last-child {
+    font-size: .8em;
+  }
+
+  ul {
+    a {
+      font-size: .85em;
+    }
+
+    li:hover {
+      background: none;
+
+      a:hover {
+        color: #03a9f4 !important;
+      }
+    }
+  }
+
+  ul#not-mobile {
+    padding-right: 75px;
+  }
+
+  ul.nav_actions {
+    text-transform: uppercase;
+  }
+}
+
+.sign-header {
+  font-size: 1.6em;
+  font-weight: 300;
+}
+
+.remove_upper_case {
+  text-transform: none !important;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill,
+input:-webkit-autofill:hover
+input:-webkit-autofill:focus {
+  color: black;
+  background-image: none !important;
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+body {
+  .container {
+    form {
+      input:-webkit-autofill,
+      select:-webkit-autofill,
+      textarea:-webkit-autofill,
+      input:-webkit-autofill:hover
+      input:-webkit-autofill:focus {
+        color: black;
+        background-image: none !important;
+        background-color: white !important;
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+      }
+    }
+  }
+}

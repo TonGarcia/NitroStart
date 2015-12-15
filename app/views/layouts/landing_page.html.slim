@@ -1,0 +1,12 @@
+doctype html
+html#landing
+  head
+    = render 'layouts/partials/structure/landing_head'
+  body
+    #fb-root
+
+    = yield
+
+    /! Float SignButton
+    .container
+      .fixed-action-btn=render 'home/partials/sign_float_btn'

@@ -1,0 +1,24 @@
+ul.collection.card
+  -@launches.each_with_index do |launch, i|
+    li.collection-item.avatar
+      -pic = launch.third[:app].picture
+      -if pic
+        center= image_tag pic, class: 'circle grey lighten-3'
+      -else
+        center: i class="circle #{colors_name(launch.third[:app].id)} darken-2 white-text mdi-action-store"
+      span.title
+        = launch.third_name
+        -unless launch.favored_id == @current_user.id
+          = ' ~> '
+          span.grey-text
+            = launch.favored.name
+      p= launch.third_description
+      p= launch.reason
+      -if launch.sent_by?@current_user
+        a.secondary-content.red-text href='#!'
+          span.amount= to_money launch.amount
+          i.mdi-content-remove-circle
+      -elsif launch.received_by?@current_user
+        a.secondary-content.green-text href='#!'
+          span.amount= to_money launch.amount
+          i.mdi-content-add-circle

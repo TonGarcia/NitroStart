@@ -1,0 +1,8 @@
+- @footer_link='footer-' if @footer_link
+-btn_class = "#{@footer_link}cancel left btn-floating btn-large waves-effect waves-light white"
+= link_to @cancel_float_button_link, class: btn_class  do
+  i.large.mdi-navigation-close.black-text
+
+-# Rest variables
+-@footer_link=nil
+-@cancel_float_button_link=nil

@@ -1,0 +1,20 @@
+.showcase
+  .row.box-header
+    =render 'home/partials/components/part_title'
+    .row
+      -@showcase_cards.each do |card|
+        .col.s12.l4
+          .card
+            .card-image
+              =image_tag(card[:img])
+              span.card-title.shadow =card[:name]
+            .card-content
+              p.justify =card[:description]
+
+
+-# Clearing the Variables
+-@showcase_icon     = nil
+-@showcase_icon_bg  = nil
+-@showcase_title    = nil
+-@showcase_subtitle = nil
+-@showcase_cards    = []

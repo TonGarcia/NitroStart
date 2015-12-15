@@ -1,0 +1,26 @@
+footer#company_footer.blue-grey.darken-4
+  .container
+    #main_footer
+      .row
+        .col.l12.s12
+          .row
+            .col.l1.s12
+              =image_tag('brand/predoo-white.png', class:'brand', alt: slogan)
+            .actions.col.l4.s12
+              ul.contact_us.right
+                li: a.white-text Fale Conosco
+                li: a.white-text Perguntas Frequentes
+              ul.about_product
+                li: a.white-text Termos de Uso
+                li: a.white-text Política de Privacidade
+          #copyright.row
+            .col.l12.s12.white-text =app_footer_description
+            .col.l12.s12.white-text =company_footer_description
+          /!
+            .row
+              #fb_like_box.right.col.l4
+                =render 'layouts/partials/components/static/fb_like_box'
+              .col.l1=pinit_button
+              .col.l1=like_button(app_id=ENV['FACEBOOK_KEY'])
+              #gplus.col.l3: .white=google_plus_button size: 'medium'
+              .col.l2=twitter_button
