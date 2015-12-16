@@ -6,6 +6,7 @@
  *
  * My Styles
  *= require sign
+ *= require icon_styles
 */
 
 @import "ionicons";
@@ -62,12 +63,12 @@
   }
 
   .store_downloads {
-    margin-top: 50px;
+    margin-top: 145px;
   }
-}
 
-.store_downloads {
-  margin-top: 50px;
+  .sub-title {
+    margin-top: 0;
+  }
 }
 
 .uppercase {
@@ -102,7 +103,7 @@ img.overlay {
 }
 
 .parallax-container {
-  height: 100vh;
+  height: 95vh;
 }
 .parallax-footer {
   bottom: 0;
@@ -154,6 +155,10 @@ section {
 
     &.opacity {
       opacity: .6;
+    }
+
+    h5 {
+      font-size: 1.5rem;
     }
   }
 

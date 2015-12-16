@@ -3,7 +3,15 @@ html#landing
   head
     = render 'layouts/partials/structure/landing_head'
   body
-    #fb-root
+    - # Useful Variable
+    - @text_visual_identity = 'white-text'
+    - @text_visual_identity1 = @text_visual_identity
+    - @text_visual_identity2 = @text_visual_identity1
+    - @text_visual_identity3 = 'light-blue-text'
+    - @visual_identity = 'purple white-text'
+
+    /! NavBar
+    = render 'home/partials/nav'
 
     = yield
 

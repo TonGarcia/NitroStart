@@ -2,9 +2,20 @@
   font-weight: 100;
 }
 
-nav .nav-wrapper a.brand img {
-  max-width: 135px;
+nav .nav-wrapper a.brand {
   margin: 8px 0 0 25px;
+
+  img {
+    max-width: 30px;
+    margin: 0 0 -5px -2px;
+  }
+
+  span.name {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+  }
 }
 
 #benefits_resource {

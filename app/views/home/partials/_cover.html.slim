@@ -1,14 +1,15 @@
-#index-banner.parallax-container
+/! Banner Image/Header
+.parallax-container
   .section.no-pad-bot
     .container
-      .row
-        .col.l10.offset-l1
-          h3.header.center.white-text.shadow O Pré-Pago que te reembolsa!
-        .row.center
-          h5.header.col.s12.white-text.shadow Mais do que acompanhar seus gastos, receba parte deles de volta!
-          h5.header.col.s12.white-text.shadow Abasteceu o carro? Te damos um tanque cheio!
-          h5.header.col.s12.white-text.shadow Deu mesada para seu filho? Damos o presente de aniversário e/ou natal dele!
-
-  .parallax
-    .overlay
-    =image_tag('defaults/cards_cover.png', id: 'cover', alt: 'Gere Receitas com Lucro Sustentável')
+      .icon-explanation
+        .row
+          h2.white-text.center Acelera Brasil!
+        .row.sub-title
+          h5.white-text.light-weight.center.col.l12 Principais características (o que faz, o que trás de benefício)
+          h5.white-text.light-weight.center.col.l12 Principais características (o que faz, o que trás de benefício)
+        .row.store_downloads
+          a.col.l4.offset-l1.btn-large.purple.white-text href="#" StartUps
+          a.col.l4.offset-l2.btn-large.amber.darken-2.white-text href="#" Invista
+  .overlay_parallax
+    =image_tag('defaults/startupers_cover.jpg', class:'hide-on-med-and-down')
