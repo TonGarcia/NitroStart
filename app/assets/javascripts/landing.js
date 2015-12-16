@@ -11,7 +11,6 @@
 //= require prettyphoto-rails
 
 // My JS
-//= require concerns/fast_fix
 
 $(document).ready(function(){
     setup_tabs();

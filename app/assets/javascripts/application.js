@@ -11,7 +11,6 @@
 //= require admin_materialize
 
 // My JS
-//= require concerns/fast_fix
 
 $(function(){
     $('.slider').slider();
