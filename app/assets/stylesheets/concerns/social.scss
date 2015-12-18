@@ -1,0 +1,21 @@
+#fb_like_box {
+  margin-top: -175px;
+}
+
+#fb_like_btn {
+  margin: -2px 0 0 -15px;
+}
+
+#gplus {
+  margin-left: 15px;
+
+  & > .white {
+    padding-top: 1px;
+    max-height: 22px;
+    margin-left: 10px;
+  }
+}
+
+#social_actions {
+  margin-top: 45px;
+}

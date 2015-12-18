@@ -6,42 +6,21 @@
  *
  * My Styles
  *= require sign
- *= require icon_styles
+ *= require concerns/helpers
+ *= require concerns/icon_styles
+ *= require concerns/parallax
+ *= require concerns/progress
+ *= require concerns/social
 */
 
 @import "ionicons";
 @import "font-awesome";
 @import "materialize_config";
 
-// Helpers classes
-.shadow {
-  text-shadow: black 0 0 10px;
-}
-
-.light-weight {
-  font-weight: 200;
-}
-
-.divider {
-  margin: 15px 0;
-}
-
-.slim {
-  font-weight: 300;
-}
-
-.strong {
-  font-weight: bold;
-}
-
-.space {
-  margin-bottom: 50px;
-}
-
 #landing {
   .card-panel {
-    min-height: 296px;
-    max-height: 296px;
+    min-height: 310px;
+    max-height: 310px;
   }
 }
 
@@ -71,62 +50,6 @@
   }
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
-.parallax {
-  .overlay {
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:9999;
-    position:absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .light-overlay {
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:9999;
-    position:absolute;
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-}
-
-img.overlay {
-  width: inherit;
-  background-color:rgba(0, 0, 0, 0.4);
-}
-
-.parallax-container {
-  height: 95vh;
-}
-.parallax-footer {
-  bottom: 0;
-  position: absolute;
-}
-
-a.call_video {
-  margin-left: 27%;
-
-  i {
-    top: 17px;
-    font-size: 7rem;
-    margin-left: 130px;
-    position: absolute;
-  }
-}
-
-@media #{$small-and-down} {
-  a.call_video {
-    margin-left: -9px !important;
-  }
-}
-
 .container > .divider {
   margin-bottom: 80px;
 }
@@ -147,6 +70,12 @@ section {
       .divider {
         margin-bottom: 45px;
       }
+
+      .card-content {
+        .divider {
+          margin-bottom: 15px;
+        }
+      }
     }
 
     header {
@@ -159,6 +88,14 @@ section {
 
     h5 {
       font-size: 1.5rem;
+    }
+
+    .card-content {
+      h5.sub-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
     }
   }
 
@@ -181,26 +118,6 @@ section {
   }
 }
 
-center.action {
-  margin-bottom: 20px;
-}
-
-// LadingPage CardSettings
-p.attach {
-  font-weight: 300;
-}
-
-.features.row {
-  .card-panel {
-    max-height: 300px;
-    min-height: 300px;
-  }
-}
-
-.cielo_brand {
-  margin-top: 20px;
-}
-
 .steps {
   .card {
     .divider {
@@ -209,57 +126,6 @@ p.attach {
   }
 }
 
-img.blindado_brand {
-  width: 90px !important;
-}
-
-// Icons Part
-i.rounded-topic {
-  width: 60px;
-  height: 60px;
-  font-size: 31px;
-  line-height: 60px;
-  margin-bottom: 10px;
-  text-align: center;
-  border-radius: 50%;
-}
-
-.topic-icon {
-  text-align: center;
-}
-
-i.first-min-icon {
-  left: 20px;
-  position: relative;
-}
-
-i.last-min-icon {
-  top: 14px;
-  left: -14px;
-  position: relative;
-}
-
-@media #{$medium-and-down} {
-  .icon-explanation {
-    h4 {
-      margin-bottom: 5px !important;
-    }
-
-    h5 {
-      margin: 10px 0;
-    }
-
-    .store_downloads {
-      margin-top: 35px;
-    }
-  }
-
-  .parallax-container {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
-    background-repeat: no-repeat;
-  }
+.investor_profile_type {
+  padding-top: 25px;
 }

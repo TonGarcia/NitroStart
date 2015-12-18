@@ -1,0 +1,29 @@
+/! Investor Profile Options
+#investor_profile.row
+  section.partners
+    .container
+      .row
+        header
+          h4.purple-text.bold.center Descubra seu Perfil Investidor
+
+      .divider
+
+      .row
+        .col.s12.m12
+          ul.tabs
+            li.tab.col.s3: a.orange-text.text-lighten-2 href="#starter" Iniciante (Poupador)
+            li.tab.col.s3: a.orange-text.text-darken-2 href="#professional" Profissional (Anjo)
+
+          #starter.investor_profile_type
+            h5.center Investimentos Descomplicados
+            .divider
+            =render 'home/partials/non_investor_calls_cards'
+          #professional.investor_profile_type
+            h5.center Seus Investimentos em Tempo-Real
+            .divider
+            =render 'home/partials/investor_calls_cards'
+
+      .row
+        a.col.l6.offset-l3.btn.orange.white-text
+          i.left-icon.ion-flame
+          | Comece a Nitrar agora mesmo!

@@ -1,0 +1,28 @@
+// Spinner LoadPage progress
+#nprogress {
+  .bar {
+    height: 1.5px;
+    background: #fff;
+  }
+
+  .peg {
+    box-shadow: 0 0 10px #fff, 0 0 5px #fff;
+  }
+
+  .spinner-icon {
+    width: 20px;
+    height: 20px;
+    border-top-color: #fff;
+    border-left-color: #fff;
+  }
+}
+
+// Project Nitro progress bar
+.progress.semi-circle {
+  height: 10px;
+  border-radius: 5px;
+  .active {
+    content: " ";
+    height: 10px;
+  }
+}

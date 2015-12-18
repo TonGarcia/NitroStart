@@ -1,0 +1,24 @@
+@media #{$medium-and-down} {
+  .icon-explanation {
+    h4 {
+      margin-bottom: 5px !important;
+    }
+
+    h5 {
+      margin: 10px 0;
+    }
+
+    .store_downloads {
+      margin-top: 35px;
+    }
+  }
+
+  .parallax-container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(image_path("defaults/poly_landing_cover.jpg"));
+    background-repeat: no-repeat;
+  }
+}

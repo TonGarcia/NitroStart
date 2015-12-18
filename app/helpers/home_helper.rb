@@ -11,7 +11,7 @@ module HomeHelper
 
   # Must return it app slogan phrase based on user locale (default is pt-BR)
   def slogan
-    'energia que contagia!'
+    'Investimentos mais simples, rentáveis e seguros.'
   end
 
   # Return it app_name with it slogan
@@ -20,10 +20,10 @@ module HomeHelper
   end
 
   def app_footer_description
-    slogan
+    "#{app_name} - #{slogan}"
   end
 
   def company_footer_description
-    'Predoo - Copyright© & Registered® 2015 - Todos os direitos reservados.'
+    'NitroStart - Copyright© & Registered® 2015 - Todos os direitos reservados.'
   end
 end

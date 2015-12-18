@@ -1,0 +1,55 @@
+// Helpers classes
+.shadow {
+  text-shadow: black 0 0 10px;
+}
+
+.row.no-bottom-spacing {
+  margin-bottom: 0;
+}
+
+.light-weight {
+  font-weight: 200;
+}
+
+.divider {
+  margin: 15px 0;
+}
+
+.slim {
+  font-weight: 300;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.space {
+  margin-bottom: 50px;
+}
+
+.nav-wrapper {
+  padding-right: 35px;
+}
+
+.action-btn {
+  font-size: 1.5rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#main_footer {
+  & > .row {
+    margin-bottom: 0;
+  }
+
+  .brand {
+    width: 90%;
+    margin-top: 30px;
+  }
+}
+
+center.action {
+  margin-bottom: 20px;
+}

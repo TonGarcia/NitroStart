@@ -1,3 +1,11 @@
+// Global icons re-style
+i.left-icon {
+  float: none;
+  margin-right: 15px;
+}
+
+
+// Specific icons style
 i.fa.fa-heart.styled {
   color: #E33100;
   text-shadow: 0 0 5px #fff,
@@ -23,4 +31,30 @@ i.mdi-action-trending-up {
 i.ion-earth {
   color: rgba(33, 150, 243, 0.8);
   text-shadow: 1px 4px 6px #FFF,0 0 0 #000,1px 4px 6px #FFF;
+}
+
+// Rounded Icons
+i.rounded-topic {
+  width: 60px;
+  height: 60px;
+  font-size: 31px;
+  line-height: 60px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.topic-icon {
+  text-align: center;
+}
+
+i.first-min-icon {
+  left: 20px;
+  position: relative;
+}
+
+i.last-min-icon {
+  top: 14px;
+  left: -14px;
+  position: relative;
 }

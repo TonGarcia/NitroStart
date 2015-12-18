@@ -11,4 +11,8 @@ html
       .row
         #sign_card.card.row
           .card-content
-            #sign_form.row=yield
+            .row
+              =yield
+
+    /! FooterDesign
+    = render 'layouts/partials/components/static/landing_footer'
