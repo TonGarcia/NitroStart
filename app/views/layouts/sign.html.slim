@@ -8,11 +8,12 @@ html
     -@text_visual_identity = 'purple-text'
     =render 'layouts/partials/components/static/sign_nav_bar'
 
-    #sign_form.container
+    .container
       .row
         #sign_card.card.row
           .card-content
-            =yield
+            #sign_form.row
+              =yield
 
     /! FooterDesign
     = render 'layouts/partials/components/static/landing_footer'

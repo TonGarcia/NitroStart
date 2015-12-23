@@ -1,0 +1,32 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {'role' => 'form'}) do |f|
+  #sign_form_header.row
+    .col.l6.s6: h6.blue-grey-text Crie uma conta agora
+    .col.l5.offset-l1: a.right href="#{new_user_session_path}" ou acesse sua conta
+
+  .divider.custom
+
+  = devise_error_messages!
+
+  .row
+    .input-field.col.l12.s12
+      i.mdi-action-assignment-ind.prefix
+      = f.text_field :name, autofocus: true
+      = f.label :name
+    .input-field.col.l12.s12
+      i.mdi-communication-quick-contacts-mail.prefix
+      = f.email_field :email
+      = f.label :email
+    .input-field.col.l12.s12
+      i.mdi-action-lock.prefix
+      = f.password_field :password, autocomplete: 'off'
+      = f.label :password
+    .input-field.col.l12.s12
+      i.mdi-action-lock-outline.prefix
+      = f.password_field :password_confirmation, autocomplete: 'off'
+      = f.label :password_confirmation
+
+    -# Hidden input standard locale (MUST BE REFACTORED)
+    = f.hidden_field :locale, value: 'pt_BR'
+
+  .row
+    = f.submit 'Cadastrar', class: 'btn btn-success col l12 s12'

@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 20151215150716) do
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
     t.text     "value",             limit: 65535
+    t.integer  "remote_client_id",  limit: 4
     t.integer  "social_session_id", limit: 4
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
 
+  add_index "additional_infos", ["remote_client_id"], name: "index_additional_infos_on_remote_client_id", using: :btree
   add_index "additional_infos", ["social_session_id"], name: "index_additional_infos_on_social_session_id", using: :btree
 
   create_table "social_sessions", force: :cascade do |t|

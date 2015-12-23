@@ -1,0 +1,42 @@
+social_networks:
+- name:     Twitter
+  username: twitter
+  auth_gem: twitter
+  style:    light-blue lighten-3
+  login: true
+
+- name:     Facebook
+  username: facebook
+  auth_gem: facebook
+  style:    blue
+  login: true
+
+- name:     LinkedIn
+  username: linkedin
+  auth_gem: linkedin
+  style:    light-blue darken-2
+  login: true
+
+#- name:     Instagram
+#  username: instagram
+#  auth_gem: instagram
+#  style:    light-blue darken-4
+#  login: true
+
+- name:     Google+
+  username: google-plus
+  auth_gem: google_oauth2
+  style:    red
+  login: true
+
+#- name:     Pinterest
+#  username: pinterest
+#  auth_gem: pinterest
+#  style:    red
+#  login: false
+
+#- name:     Tumblr
+#  username: tumblr
+#  auth_gem: tumblr
+#  style:    light-blue darken-4
+#  login: false

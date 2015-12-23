@@ -27,7 +27,7 @@ module Concerns
       not_validate ? social_session.save(validate:false) : social_session.save
 
       # Additional infos logic
-      auth_infos = AdditionalInfo.where(social_session: social_session.id)
+      auth_infos = AdditionalInfo.where(social_session_id: social_session.id)
       extra_info.keys.each do |key|
         value = extra_info[key]
 

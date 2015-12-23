@@ -16,7 +16,7 @@ module HomeHelper
 
   # Return it app_name with it slogan
   def app_name_slogan
-    "#{app_name}, #{slogan}"
+    "#{app_name} - #{slogan}"
   end
 
   def app_footer_description

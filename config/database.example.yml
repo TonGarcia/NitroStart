@@ -50,4 +50,4 @@ production:
   <<: *default
   database: nitro_me_production
   username: nitro_me
-  password: <%= ENV['NITROME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['NITRO_START_DATABASE_PASSWORD'] %>

@@ -26,11 +26,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   # Alias for the actions call
-  alias_method :github, :all
+  alias_method :facebook, :all
   alias_method :twitter, :all
   alias_method :linkedin, :all
-  alias_method :facebook, :all
+  alias_method :github, :all
   alias_method :passthru, :all
-  alias_method :instagram, :all
   alias_method :google_oauth2, :all
+  alias_method :instagram, :all
+
+  protected
+    def login_not_required
+      true
+    end
 end

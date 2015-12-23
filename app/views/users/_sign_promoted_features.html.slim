@@ -1,26 +1,27 @@
 -@resource_slim_color = 'blue-grey-text'
 p class="slim login-intro justify #{@resource_slim_color}" NitroStart é uma plataforma de Cross-Equity-Funding, ou seja, uma ferramenta de financiamento coletivo por parte de Empresas/Pessoas visando participação nos lucros dos projetos aportados e acelerados.
 
-/! Rent$ Resource
--@resources_header_color='teal-text'
--@resource = {i:'fa fa-credit-card', header:'Pagamento em Ecossistema de Lucro Sustentável', desc:'A empresa aumenta seu lucro com maior volume de repasse. Os colaboradores consomem na plataforma. Um ciclo sustentável.'}
+/! Safe Investments
+-@resources_header_color='blue-grey-text'
+-@resource = {i:'ion-lock-combination', header:'Rendimento Seguro como a Poupança', desc:'Seu lucro garantido, pois os riscos são arcados pela NITRO START.'}
 = render 'layouts/partials/components/dynamic/sign_resources'
 
-/! Company Resource
+/! Social Motivation
+-@resources_header_color='purple-text'
+-@resource = {i: 'mdi-social-people', header: 'Ajude a Gerar Empregos', desc: 'Tire o país da Crise investindo em gerandores de empregos.'}
+= render 'layouts/partials/components/dynamic/sign_resources'
+
+/! National Motivation
 -@resources_header_color='amber-text'
--@resource = {i:'fa fa-line-chart', header:'Aumente seus lucros reduzindo custos', desc:'Traga seus fornecedores e transportadoras e reduza seus custos operacionais/transacionais & ainda ganhe acesso à Capital de Giro.'}
+-@resource = {i:'ion-arrow-graph-up-right', header:'Nosso Modelo VS Título de Dívida', desc:'Esperando Startup virar S.A. para faturar? Antecipe seus ganhos!!'}
 = render 'layouts/partials/components/dynamic/sign_resources'
 
-/! Rented Resource
--@resources_header_color='blue-text'
--@resource = {i:'fa fa-dollar', header:'Novas fontes de renda para você Autônomo ou MEI', desc:'Dezenas de Aplicativos para usar como fonte de renda, trabalhos recorrentes & Capitalizadores (seus ganhos trabalhando por você).'}
+/! Raising Access
+- @resources_header_color='teal-text'
+- @resource = {i: 'ion-cash', header: 'Acesso à Capital', desc: 'Aquele capital semente mais rápido, fácil e melhor aplicado!'}
 = render 'layouts/partials/components/dynamic/sign_resources'
 
--@resources_header_color='indigo-text'
--@resource = {i: 'mdi-social-people', header: 'Recurso Humano Elástico', desc: 'Aumente e diminua seu quadro de pessoal mediante necessidade, organize a proporção de pessoal por área de atuação e muito mais.'}
-= render 'layouts/partials/components/dynamic/sign_resources'
-
-/! Benefits Resource
--@resources_header_color='black-text'
--@resource = {i: 'fa fa-star', header: 'Benefícios incríveis', desc: 'Profissionalização em maiores níveis de escolaridade, saúde de qualidade, segurança e conforto, compras com descontos exclusivo.'}
+/!
+- @resources_header_color='light-blue-text'
+- @resource = {i: 'ion-settings', header: 'Fechamento de Gargalos', desc: 'Faltando Profissionais? Espaço? Contatos? A NITRO é pra você!'}
 = render 'layouts/partials/components/dynamic/sign_resources'
