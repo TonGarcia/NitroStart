@@ -4,6 +4,9 @@ class HomeController < ApplicationController
   def index
   end
 
+  def landing2
+  end
+
   protected
     def login_not_required
       true

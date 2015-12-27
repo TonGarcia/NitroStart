@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   match '/404', to: 'errors#file_not_found', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
+  # Global "Home"/"LandingPages"
+  get '/landing2' => 'home#landing2'
+  get '/partners' => 'home#partners'
+
   # DeviseUser sessions
   devise_for :users,
              controllers: {

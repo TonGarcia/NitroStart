@@ -1,0 +1,17 @@
+/! Regards message
+h4.sign-header.center.blue-grey-text É bom revê-lo aqui, no Ecosistema NitroStart!
+
+/! Whole content
+.row
+  /! Resources LogIn infos
+  .col.l6.s12
+    =render 'users/sign_promoted_features'
+
+  /! LogIn Form
+  .col.l5.offset-l1.s12
+    .card
+      .card-content
+        =render 'form'
+      .card-action
+        =render 'users/sign_social'
+          /center= link_to 'Esqueci minha senha', new_password_path('user')

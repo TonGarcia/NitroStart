@@ -24,6 +24,10 @@
   }
 }
 
+.row.step {
+  margin: 40px 0;
+}
+
 .icon-explanation {
   margin-top: 10%;
 
@@ -128,4 +132,10 @@ section {
 
 .investor_profile_type {
   padding-top: 25px;
+}
+
+.observations {
+  p {
+    margin: 5px 0;
+  }
 }
