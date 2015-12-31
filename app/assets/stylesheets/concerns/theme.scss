@@ -1,0 +1,51 @@
+footer#includes_js {
+  height: 0;
+  padding: 0;
+}
+
+.navbar-top {
+  padding-right: 55px;
+}
+
+ul#user-dropdown.dropdown-content {
+  li > a, li > span {
+    font-size: .9em;
+  }
+
+  li > a i {
+    top: -5px;
+    font-size: 1em;
+    margin-right: 10px;
+    position: relative;
+  }
+}
+
+.yaybar, .yaybar.yay-light {
+  .nano-content>ul {
+    li.label {
+      color: #9C27B0;
+      cursor: default;
+    }
+
+    li {
+      a:hover, a:focus, a.active {
+        color: #FFC100;
+      }
+    }
+  }
+}
+
+.content-wrap > .card-panel {
+  padding-bottom: 75px;
+}
+
+#error.alert {
+  ul {
+    margin-top: 0;
+    margin-left: 50px;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+}

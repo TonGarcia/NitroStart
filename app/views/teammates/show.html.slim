@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Role:
+  = @teammate.role
+p
+  strong Expertise:
+  = @teammate.expertise
+p
+  strong Contacts:
+  = @teammate.contacts
+p
+  strong Team:
+  = @teammate.team
+p
+  strong User:
+  = @teammate.user
+
+= link_to 'Edit', edit_teammate_path(@teammate)
+'|
+= link_to 'Back', teammates_path

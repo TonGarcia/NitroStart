@@ -1,0 +1,5 @@
+# encoding: UTF-8
+# pt-BR translations for Controllers
+pt-BR:
+  controllers:
+    dashboard: Painel de Acompanhamento

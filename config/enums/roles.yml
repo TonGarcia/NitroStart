@@ -1,0 +1,12 @@
+roles:
+- id:       1
+  name:     Admin
+
+- id:       2
+  name:     Undefined
+
+- id:       3
+  name:     Startuper
+
+- id:       4
+  name:     Investor

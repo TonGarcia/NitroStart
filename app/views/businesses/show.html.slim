@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Partnerships:
+  = @business.partnerships
+p
+  strong Growth metrics:
+  = @business.growth_metrics
+p
+  strong Costumer success stories:
+  = @business.costumer_success_stories
+p
+  strong Awards:
+  = @business.awards
+p
+  strong Patent:
+  = @business.patent
+p
+  strong Pitch:
+  = @business.pitch
+p
+  strong Startup:
+  = @business.start_up
+
+= link_to 'Edit', edit_business_path(@business)
+'|
+= link_to 'Back', businesses_path

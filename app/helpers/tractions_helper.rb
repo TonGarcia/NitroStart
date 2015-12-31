@@ -1,0 +1,2 @@
+module TractionsHelper
+end

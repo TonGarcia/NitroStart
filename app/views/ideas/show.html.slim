@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Main problem:
+  = @idea.main_problem
+p
+  strong Second problem:
+  = @idea.second_problem
+p
+  strong Current solution:
+  = @idea.current_solution
+p
+  strong Tag line pitch:
+  = @idea.tag_line_pitch
+p
+  strong High concept pitch:
+  = @idea.high_concept_pitch
+p
+  strong Pitch:
+  = @idea.pitch
+
+= link_to 'Edit', edit_idea_path(@idea)
+'|
+= link_to 'Back', ideas_path

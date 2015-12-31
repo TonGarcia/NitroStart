@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @pitch.name
+p
+  strong User:
+  = @pitch.user
+
+= link_to 'Edit', edit_pitch_path(@pitch)
+'|
+= link_to 'Back', pitches_path

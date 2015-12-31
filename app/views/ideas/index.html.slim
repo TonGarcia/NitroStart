@@ -1,0 +1,31 @@
+h1 Listing ideas
+
+table
+  thead
+    tr
+      th Main problem
+      th Second problem
+      th Current solution
+      th Tag line pitch
+      th High concept pitch
+      th Pitch
+      th
+      th
+      th
+
+  tbody
+    - @ideas.each do |idea|
+      tr
+        td = idea.main_problem
+        td = idea.second_problem
+        td = idea.current_solution
+        td = idea.tag_line_pitch
+        td = idea.high_concept_pitch
+        td = idea.pitch
+        td = link_to 'Show', idea
+        td = link_to 'Edit', edit_idea_path(idea)
+        td = link_to 'Destroy', idea, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Idea', new_idea_path

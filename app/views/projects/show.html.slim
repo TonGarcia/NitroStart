@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Stage:
+  = @project.stage
+p
+  strong Value proposition:
+  = @project.value_proposition
+p
+  strong Pitch:
+  = @project.pitch
+p
+  strong Startup:
+  = @project.start_up
+
+= link_to 'Edit', edit_project_path(@project)
+'|
+= link_to 'Back', projects_path

@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  resources :teammates
+  resources :teams
+  resources :investments
+  resources :competitors
+  resources :financials
+  resources :revenues
+  resources :projects
+  resources :markets
+  resources :tractions
+  resources :businesses
+  resources :start_ups
+  resources :ideas
+  resources :pitches
+  get 'dashboard/index'
+
   # Errors
   match '/422', to: 'errors#unprocessable', via: :all
   match '/404', to: 'errors#file_not_found', via: :all
@@ -22,7 +37,13 @@ Rails.application.routes.draw do
   # Admin Routes
   namespace :admin do
     constraints subdomain: 'admin' do
+      get '/' => 'dashboard#admin', as: :admin_dashboard
     end
+  end
+
+  # Signed User Routes
+  authenticated :user do
+    root to: 'dashboard#index', as: :authenticated_root
   end
 
   # RootRoute main LandingPage

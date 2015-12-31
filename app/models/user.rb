@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  # Relations
+  has_many :social_sessions
+
   # Custom validations
   # after_create :sign_up
   # before_validation :setup

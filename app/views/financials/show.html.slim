@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Total costumer:
+  = @financial.total_costumer
+p
+  strong Total revenue:
+  = @financial.total_revenue
+p
+  strong Total expense:
+  = @financial.total_expense
+p
+  strong Conversion price:
+  = @financial.conversion_price
+p
+  strong Market penetration:
+  = @financial.market_penetration
+p
+  strong Pitch:
+  = @financial.pitch
+p
+  strong Startup:
+  = @financial.start_up
+
+= link_to 'Edit', edit_financial_path(@financial)
+'|
+= link_to 'Back', financials_path

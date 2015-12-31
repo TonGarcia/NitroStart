@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Grow strategy:
+  = @traction.grow_strategy
+p
+  strong Growth rate:
+  = @traction.growth_rate
+p
+  strong Market meet channel:
+  = @traction.market_meet_channel
+p
+  strong Conversion rate:
+  = @traction.conversion_rate
+p
+  strong Pitch:
+  = @traction.pitch
+p
+  strong Startup:
+  = @traction.start_up
+
+= link_to 'Edit', edit_traction_path(@traction)
+'|
+= link_to 'Back', tractions_path

@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @start_up.name
+p
+  strong Brand:
+  = @start_up.brand
+p
+  strong Pitch:
+  = @start_up.pitch
+
+= link_to 'Edit', edit_start_up_path(@start_up)
+'|
+= link_to 'Back', start_ups_path

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @competitor.name
+p
+  strong Success story:
+  = @competitor.success_story
+p
+  strong Your advantage:
+  = @competitor.your_advantage
+p
+  strong Pitch:
+  = @competitor.pitch
+p
+  strong Startup:
+  = @competitor.start_up
+
+= link_to 'Edit', edit_competitor_path(@competitor)
+'|
+= link_to 'Back', competitors_path

@@ -1,0 +1,27 @@
+= form_for @idea do |f|
+  - if @idea.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@idea.errors.count, "error")} prohibited this idea from being saved:"
+      ul
+        - @idea.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :main_problem
+    = f.text_field :main_problem
+  .field
+    = f.label :second_problems
+    = f.text_field :second_problems
+  .field
+    = f.label :current_solution
+    = f.text_field :current_solution
+  .field
+    = f.label :tag_line_pitch
+    = f.text_field :tag_line_pitch
+  .field
+    = f.label :high_concept_pitch
+    = f.text_field :high_concept_pitch
+  .field
+    = f.label :pitch
+    = f.text_field :pitch
+  .actions = f.submit

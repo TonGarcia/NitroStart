@@ -1,0 +1,25 @@
+h1 Listing start_ups
+
+table
+  thead
+    tr
+      th Name
+      th Brand
+      th Pitch
+      th
+      th
+      th
+
+  tbody
+    - @start_ups.each do |start_up|
+      tr
+        td = start_up.name
+        td = start_up.brand
+        td = start_up.pitch
+        td = link_to 'Show', start_up
+        td = link_to 'Edit', edit_start_up_path(start_up)
+        td = link_to 'Destroy', start_up, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Start up', new_start_up_path

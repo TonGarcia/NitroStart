@@ -4,9 +4,9 @@ $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
 $link-color: color("amber", "darken-2") !default;
-$secondary-color: color("purple", "darken-1") !default;
-$success-color: color("green", "base") !default;
-$error-color: color("teal", "base") !default;
+$secondary-color: color("purple", "base") !default;
+$success-color: color("purple", "base") !default;
+$error-color: color("purple", "base") !default;
 @import "materialize";
 
 

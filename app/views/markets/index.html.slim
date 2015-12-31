@@ -1,0 +1,31 @@
+h1 Listing markets
+
+table
+  thead
+    tr
+      th Total costumers
+      th Total dollars
+      th Trends insight
+      th Costumer specification
+      th Pitch
+      th Startup
+      th
+      th
+      th
+
+  tbody
+    - @markets.each do |market|
+      tr
+        td = market.total_costumers
+        td = market.total_money
+        td = market.trends_insight
+        td = market.costumer_specification
+        td = market.pitch
+        td = market.start_up
+        td = link_to 'Show', market
+        td = link_to 'Edit', edit_market_path(market)
+        td = link_to 'Destroy', market, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Market', new_market_path

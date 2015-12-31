@@ -1,0 +1,18 @@
+= form_for @start_up do |f|
+  - if @start_up.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@start_up.errors.count, "error")} prohibited this start_up from being saved:"
+      ul
+        - @start_up.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :brand
+    = f.text_field :brand
+  .field
+    = f.label :pitch
+    = f.text_field :pitch
+  .actions = f.submit

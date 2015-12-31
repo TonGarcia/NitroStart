@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Price:
+  = @revenue.price
+p
+  strong Model:
+  = @revenue.model
+p
+  strong Pitch:
+  = @revenue.pitch
+
+= link_to 'Edit', edit_revenue_path(@revenue)
+'|
+= link_to 'Back', revenues_path

@@ -1,0 +1,33 @@
+h1 Listing businesses
+
+table
+  thead
+    tr
+      th Partnerships
+      th Growth metrics
+      th Costumer success stories
+      th Awards
+      th Patent
+      th Pitch
+      th Startup
+      th
+      th
+      th
+
+  tbody
+    - @businesses.each do |business|
+      tr
+        td = business.partnerships
+        td = business.growth_metrics
+        td = business.costumer_success_stories
+        td = business.awards
+        td = business.patent
+        td = business.pitch
+        td = business.start_up
+        td = link_to 'Show', business
+        td = link_to 'Edit', edit_business_path(business)
+        td = link_to 'Destroy', business, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Business', new_business_path

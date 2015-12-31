@@ -1,0 +1,30 @@
+= form_for @business do |f|
+  - if @business.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@business.errors.count, "error")} prohibited this business from being saved:"
+      ul
+        - @business.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :partnerships
+    = f.text_field :partnerships
+  .field
+    = f.label :growth_metrics
+    = f.text_field :growth_metrics
+  .field
+    = f.label :costumer_success_stories
+    = f.text_field :costumer_success_stories
+  .field
+    = f.label :awards
+    = f.check_box :awards
+  .field
+    = f.label :patent
+    = f.check_box :patent
+  .field
+    = f.label :pitch
+    = f.text_field :pitch
+  .field
+    = f.label :start_up
+    = f.text_field :start_up
+  .actions = f.submit

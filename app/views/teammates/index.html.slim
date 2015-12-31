@@ -1,0 +1,29 @@
+h1 Listing teammates
+
+table
+  thead
+    tr
+      th Role
+      th Expertise
+      th Contacts
+      th Team
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @teammates.each do |teammate|
+      tr
+        td = teammate.role
+        td = teammate.expertise
+        td = teammate.contacts
+        td = teammate.team
+        td = teammate.user
+        td = link_to 'Show', teammate
+        td = link_to 'Edit', edit_teammate_path(teammate)
+        td = link_to 'Destroy', teammate, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Teammate', new_teammate_path

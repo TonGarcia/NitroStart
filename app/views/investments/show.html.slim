@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong General terms:
+  = @investment.general_terms
+p
+  strong Raising time:
+  = @investment.raising_time
+p
+  strong Founder salaries:
+  = @investment.founder_salaries
+p
+  strong Costumer conversion:
+  = @investment.costumer_conversion
+p
+  strong Product development:
+  = @investment.product_development
+p
+  strong Equipments:
+  = @investment.equipments
+p
+  strong Pitch:
+  = @investment.pitch
+p
+  strong Startup:
+  = @investment.start_up
+
+= link_to 'Edit', edit_investment_path(@investment)
+'|
+= link_to 'Back', investments_path

@@ -1,0 +1,25 @@
+h1 Listing revenues
+
+table
+  thead
+    tr
+      th Price
+      th Model
+      th Pitch
+      th
+      th
+      th
+
+  tbody
+    - @revenues.each do |revenue|
+      tr
+        td = revenue.price
+        td = revenue.model
+        td = revenue.pitch
+        td = link_to 'Show', revenue
+        td = link_to 'Edit', edit_revenue_path(revenue)
+        td = link_to 'Destroy', revenue, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Revenue', new_revenue_path

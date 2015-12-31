@@ -8,8 +8,16 @@
  *
  * My Styles
  *= require sign
+ *= require concerns/theme
+ *= require concerns/progress
  *= require concerns/icon_styles.scss
  */
 
 @import 'ionicons';
 @import 'materialize_config';
+
+.card, .card-content, .card-panel, .content-wrap {
+  .alert {
+    padding: .1rem 1rem 1rem;
+  }
+}

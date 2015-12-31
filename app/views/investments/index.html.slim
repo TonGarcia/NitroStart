@@ -1,0 +1,35 @@
+h1 Listing investments
+
+table
+  thead
+    tr
+      th General terms
+      th Raising time
+      th Founder salaries
+      th Costumer conversion
+      th Product development
+      th Equipments
+      th Pitch
+      th Startup
+      th
+      th
+      th
+
+  tbody
+    - @investments.each do |investment|
+      tr
+        td = investment.general_terms
+        td = investment.raising_time
+        td = investment.founder_salaries
+        td = investment.costumer_conversion
+        td = investment.product_development
+        td = investment.equipments
+        td = investment.pitch
+        td = investment.start_up
+        td = link_to 'Show', investment
+        td = link_to 'Edit', edit_investment_path(investment)
+        td = link_to 'Destroy', investment, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Investment', new_investment_path

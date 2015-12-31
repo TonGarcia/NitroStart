@@ -8,7 +8,8 @@
 
 # ADMIN
 puts 'Inserting AdminUser...'.colorize(:green)
-  admin = User.create(name:'NITRO Global Admin', email:'aa@a.a', legal_id: CPF.generate, locale:'pt-BR', password:'123', password_confirmation:'123')
-  puts "\t #{admin}" if admin.errors.empty?
+  admin_role = 1
+  admin = User.create(name:'NITRO Global Admin', role: admin_role, email:'aa@a.a', legal_id: CPF.generate, locale:'pt-BR', password:'123', password_confirmation:'123')
+  if admin.errors.empty? then puts "\t #{admin}".green else puts "\t #{admin}".red end
 puts '...AdminUser inserted.'.colorize(:light_blue)
 # /ADMIN

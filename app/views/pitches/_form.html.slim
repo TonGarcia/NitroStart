@@ -1,0 +1,15 @@
+= form_for @pitch do |f|
+  - if @pitch.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@pitch.errors.count, "error")} prohibited this pitch from being saved:"
+      ul
+        - @pitch.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions = f.submit

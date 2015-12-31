@@ -6,10 +6,7 @@ html
     #fb-root
 
     /! NavBar
-    -if params[:action] == 'landing2'
-      =render 'home/partials/custom_nav'
-    -else
-      =render 'home/partials/nav'
+    =render 'home/partials/nav'
 
     /! Content
     = yield

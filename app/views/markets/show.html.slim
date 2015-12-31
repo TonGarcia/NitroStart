@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Total costumers:
+  = @market.total_costumers
+p
+  strong Total dollars:
+  = @market.total_money
+p
+  strong Trends insight:
+  = @market.trends_insight
+p
+  strong Costumer specification:
+  = @market.costumer_specification
+p
+  strong Pitch:
+  = @market.pitch
+p
+  strong Startup:
+  = @market.start_up
+
+= link_to 'Edit', edit_market_path(@market)
+'|
+= link_to 'Back', markets_path

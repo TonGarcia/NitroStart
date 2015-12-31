@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Pitch:
+  = @team.pitch
+p
+  strong Startup:
+  = @team.start_up
+
+= link_to 'Edit', edit_team_path(@team)
+'|
+= link_to 'Back', teams_path

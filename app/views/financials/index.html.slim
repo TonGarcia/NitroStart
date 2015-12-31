@@ -1,0 +1,33 @@
+h1 Listing financials
+
+table
+  thead
+    tr
+      th Total costumer
+      th Total revenue
+      th Total expense
+      th Conversion price
+      th Market penetration
+      th Pitch
+      th Startup
+      th
+      th
+      th
+
+  tbody
+    - @financials.each do |financial|
+      tr
+        td = financial.total_costumer
+        td = financial.total_revenue
+        td = financial.total_expense
+        td = financial.conversion_price
+        td = financial.market_penetration
+        td = financial.pitch
+        td = financial.start_up
+        td = link_to 'Show', financial
+        td = link_to 'Edit', edit_financial_path(financial)
+        td = link_to 'Destroy', financial, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Financial', new_financial_path

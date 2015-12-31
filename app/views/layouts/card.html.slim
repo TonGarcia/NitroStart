@@ -1,0 +1,17 @@
+doctype html
+html
+  head = render 'layouts/partials/structure/app_head'
+  body
+    /! Nav Components
+    =render 'layouts/con_theme/components/nav_bar'
+    =render 'layouts/con_theme/components/nav_aside'
+
+    /! Action body
+    section.content-wrap
+      =render 'layouts/con_theme/components/page_title'
+      =render 'layouts/partials/components/static/flash_alert'
+      .card-panel
+        =yield
+
+    /! FooterDesign
+    = render 'layouts/partials/components/static/app_footer'

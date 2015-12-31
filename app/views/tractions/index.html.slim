@@ -1,0 +1,31 @@
+h1 Listing tractions
+
+table
+  thead
+    tr
+      th Grow strategy
+      th Growth rate
+      th Market meet channel
+      th Conversion rate
+      th Pitch
+      th Startup
+      th
+      th
+      th
+
+  tbody
+    - @tractions.each do |traction|
+      tr
+        td = traction.grow_strategy
+        td = traction.growth_rate
+        td = traction.market_meet_channel
+        td = traction.conversion_rate
+        td = traction.pitch
+        td = traction.start_up
+        td = link_to 'Show', traction
+        td = link_to 'Edit', edit_traction_path(traction)
+        td = link_to 'Destroy', traction, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Traction', new_traction_path

@@ -1,0 +1,24 @@
+= form_for @teammate do |f|
+  - if @teammate.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@teammate.errors.count, "error")} prohibited this teammate from being saved:"
+      ul
+        - @teammate.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :role
+    = f.text_field :role
+  .field
+    = f.label :expertise
+    = f.text_field :expertise
+  .field
+    = f.label :contacts
+    = f.check_box :contacts
+  .field
+    = f.label :team
+    = f.text_field :team
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions = f.submit

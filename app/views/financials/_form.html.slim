@@ -1,0 +1,30 @@
+= form_for @financial do |f|
+  - if @financial.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@financial.errors.count, "error")} prohibited this financial from being saved:"
+      ul
+        - @financial.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :total_costumer
+    = f.number_field :total_costumer
+  .field
+    = f.label :total_revenue
+    = f.number_field :total_revenue
+  .field
+    = f.label :total_expense
+    = f.number_field :total_expense
+  .field
+    = f.label :conversion_price
+    = f.number_field :conversion_price
+  .field
+    = f.label :market_penetration
+    = f.number_field :market_penetration
+  .field
+    = f.label :pitch
+    = f.text_field :pitch
+  .field
+    = f.label :start_up
+    = f.text_field :start_up
+  .actions = f.submit
