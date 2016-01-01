@@ -1,2 +1,21 @@
-h1 Dashboard#index
-p Find me in app/views/dashboard/index.html.slim
+ul.tabs
+  li.tab.col.s3: a.orange-text.text-lighten-2 href="#pitches" Pitches
+  li.tab.col.s3: a.orange-text.text-darken-2 href="#start_ups" Startups
+  li.tab.col.s3: a.orange-text.text-darken-2 href="#investments" Investimentos
+
+
+#pitches.investor_profile_type
+  h5.center.purple-text Relatório de Desempenho de seus Pitches
+  .divider
+  =render 'dashboard/components/pitches_tracking_cards'
+#start_ups.investor_profile_type
+  h5.center.purple-text Relatório de Desempenho de suas Startups
+  .divider
+  -if !params[:start_up_id] # TODO remove it negative
+    = render 'dashboard/components/start_ups_tracking_cards'
+  -else
+    / TODO select StartUp (on Select update screen)
+#investments.investor_profile_type
+  h5.center.purple-text Relatório de Desempenho de seus Investimentos
+  .divider
+  = render 'dashboard/components/investments_tracking_cards'

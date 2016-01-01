@@ -9,6 +9,8 @@
  * My Styles
  *= require sign
  *= require concerns/theme
+ *= require concerns/helpers
+ *= require concerns/fast_fix
  *= require concerns/progress
  *= require concerns/icon_styles.scss
  */

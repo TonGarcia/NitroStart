@@ -1,6 +1,6 @@
-class CreateTractions < ActiveRecord::Migration
+class CreateTraction < ActiveRecord::Migration
   def change
-    create_table :tractions do |t|
+    create_table :traction do |t|
       # Base attributes
       t.string :growth_rate, limit: 45, null: true
       t.string :grow_strategy, limit: 140, null: true

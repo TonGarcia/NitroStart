@@ -4,3 +4,11 @@ pt-BR:
   actions:
     dashboard:
       index: Visão Geral de Rendimentos e Desempenho
+      start_ups: Desempenho Startups
+      investments: Relatório Investimentos
+    pitches:
+      index: Pitches (Projetos)
+    start_ups:
+      index: Startups (Empresas)
+    showroom:
+      index: Vitrine de Startups

@@ -1,0 +1,8 @@
+# encoding: UTF-8
+# pt-BR translations for Controllers Actions
+pt-BR:
+  actions:
+    dashboard:
+      index: Visão Geral de Rendimentos e Desempenho
+    pitch:
+      index: Propostas de Projeto

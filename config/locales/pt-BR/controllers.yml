@@ -2,4 +2,7 @@
 # pt-BR translations for Controllers
 pt-BR:
   controllers:
+    pitches: Pitches
+    showroom: Vitrine
+    start_ups: Startups
     dashboard: Painel de Acompanhamento

@@ -5,7 +5,7 @@
   -group[:actions].each do |action|
     li
       -action[:action_controller] == action_controller ? additional_class = 'active' : additional_class = nil
-      a class="yay-sub-toggle waves-effect waves-light-blue #{additional_class}" href="#{action[:link]}"
+      a class="yay-sub-toggle waves-effect waves-amber #{additional_class}" href="#{action[:link]}"
         i class="#{action[:icon]}"
         -if action[:del]
           del=action[:name]

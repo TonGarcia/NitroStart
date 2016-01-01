@@ -11,11 +11,11 @@ ul
     ul#user-dropdown.dropdown-content
       -profile_actions.each do |profile_action|
         li
-          a href="#{profile_action[:link]}"
+          a.amber-text.text-darken-3 href="#{profile_action[:link]}"
             i class="#{profile_action[:icon]}"
             =profile_action[:name]
       li.divider
       li
-        a href="#{destroy_user_session_path}"
+        a.amber-text.text-darken-3 href="#{destroy_user_session_path}"
           i.fa.fa-sign-out
           | Logout

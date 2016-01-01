@@ -1,19 +1,4 @@
 Rails.application.routes.draw do
-  resources :teammates
-  resources :teams
-  resources :investments
-  resources :competitors
-  resources :financials
-  resources :revenues
-  resources :projects
-  resources :markets
-  resources :tractions
-  resources :businesses
-  resources :start_ups
-  resources :ideas
-  resources :pitches
-  get 'dashboard/index'
-
   # Errors
   match '/422', to: 'errors#unprocessable', via: :all
   match '/404', to: 'errors#file_not_found', via: :all
@@ -33,6 +18,31 @@ Rails.application.routes.draw do
              }
 
   # Global Resources
+  resources :ideas
+  resources :teams
+  resources :pitches
+  resources :markets
+  resources :traction
+  resources :revenues
+  resources :projects
+  resources :financial
+  resources :start_ups
+  resources :teammates
+  resources :businesses
+  resources :investments
+  resources :competitors
+
+  # Custom URLs (non-resources)
+  scope 'showroom' do
+    get '' => 'showroom#index', as: :showroom_index
+  end
+
+  scope 'dashboard' do
+    get '' => 'dashboard#index', as: :dashboard_index
+    get 'start_ups' => 'dashboard#start_ups', as: :dashboard_start_ups
+    get 'investments' => 'dashboard#investments', as: :dashboard_investments
+  end
+
 
   # Admin Routes
   namespace :admin do

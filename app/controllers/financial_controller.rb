@@ -1,28 +1,28 @@
-class FinancialsController < ApplicationController
+class FinancialController < ApplicationController
   before_action :set_financial, only: [:show, :edit, :update, :destroy]
 
-  # GET /financials
-  # GET /financials.json
+  # GET /financial
+  # GET /financial.json
   def index
-    @financials = Financial.all
+    @financial = Financial.all
   end
 
-  # GET /financials/1
-  # GET /financials/1.json
+  # GET /financial/1
+  # GET /financial/1.json
   def show
   end
 
-  # GET /financials/new
+  # GET /financial/new
   def new
     @financial = Financial.new
   end
 
-  # GET /financials/1/edit
+  # GET /financial/1/edit
   def edit
   end
 
-  # POST /financials
-  # POST /financials.json
+  # POST /financial
+  # POST /financial.json
   def create
     @financial = Financial.new(financial_params)
 
@@ -37,8 +37,8 @@ class FinancialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /financials/1
-  # PATCH/PUT /financials/1.json
+  # PATCH/PUT /financial/1
+  # PATCH/PUT /financial/1.json
   def update
     respond_to do |format|
       if @financial.update(financial_params)
@@ -51,12 +51,12 @@ class FinancialsController < ApplicationController
     end
   end
 
-  # DELETE /financials/1
-  # DELETE /financials/1.json
+  # DELETE /financial/1
+  # DELETE /financial/1.json
   def destroy
     @financial.destroy
     respond_to do |format|
-      format.html { redirect_to financials_url, notice: 'Financial was successfully destroyed.' }
+      format.html { redirect_to financial_url, notice: 'Financial was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -29,7 +29,7 @@ ul#user-dropdown.dropdown-content {
 
     li {
       a:hover, a:focus, a.active {
-        color: #FFC100;
+        color: #ff8f00;
       }
     }
   }
@@ -48,4 +48,9 @@ ul#user-dropdown.dropdown-content {
       list-style-type: disc;
     }
   }
+}
+
+.yaybar .nano-content>ul li>.sp-cancel,
+.yaybar .nano-content>ul li>a {
+  padding: 5px;
 }

@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "competitors", ["pitch_id"], name: "index_competitors_on_pitch_id", using: :btree
   add_index "competitors", ["start_up_id"], name: "index_competitors_on_start_up_id", using: :btree
 
-  create_table "financials", force: :cascade do |t|
+  create_table "financial", force: :cascade do |t|
     t.integer  "total_costumer",     limit: 4,                          default: 0,   null: false
     t.decimal  "total_revenue",                precision: 12, scale: 2, default: 0.0, null: false
     t.decimal  "total_expense",                precision: 10, scale: 2, default: 0.0, null: false
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20151231174758) do
     t.datetime "updated_at",                                                          null: false
   end
 
-  add_index "financials", ["pitch_id"], name: "index_financials_on_pitch_id", using: :btree
-  add_index "financials", ["start_up_id"], name: "index_financials_on_start_up_id", using: :btree
+  add_index "financial", ["pitch_id"], name: "index_financial_on_pitch_id", using: :btree
+  add_index "financial", ["start_up_id"], name: "index_financial_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
     t.string   "main_problem",       limit: 55,  null: false
@@ -205,7 +205,7 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "teams", ["pitch_id"], name: "index_teams_on_pitch_id", using: :btree
   add_index "teams", ["start_up_id"], name: "index_teams_on_start_up_id", using: :btree
 
-  create_table "tractions", force: :cascade do |t|
+  create_table "traction", force: :cascade do |t|
     t.string   "growth_rate",         limit: 45
     t.string   "grow_strategy",       limit: 140
     t.string   "conversion_rate",     limit: 45
@@ -216,8 +216,8 @@ ActiveRecord::Schema.define(version: 20151231174758) do
     t.datetime "updated_at",                      null: false
   end
 
-  add_index "tractions", ["pitch_id"], name: "index_tractions_on_pitch_id", using: :btree
-  add_index "tractions", ["start_up_id"], name: "index_tractions_on_start_up_id", using: :btree
+  add_index "traction", ["pitch_id"], name: "index_traction_on_pitch_id", using: :btree
+  add_index "traction", ["start_up_id"], name: "index_traction_on_start_up_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 50,               null: false
@@ -263,8 +263,8 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_foreign_key "businesses", "start_ups"
   add_foreign_key "competitors", "pitches"
   add_foreign_key "competitors", "start_ups"
-  add_foreign_key "financials", "pitches"
-  add_foreign_key "financials", "start_ups"
+  add_foreign_key "financial", "pitches"
+  add_foreign_key "financial", "start_ups"
   add_foreign_key "ideas", "pitches"
   add_foreign_key "ideas", "start_ups"
   add_foreign_key "investments", "pitches"
@@ -282,6 +282,6 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_foreign_key "teammates", "users"
   add_foreign_key "teams", "pitches"
   add_foreign_key "teams", "start_ups"
-  add_foreign_key "tractions", "pitches"
-  add_foreign_key "tractions", "start_ups"
+  add_foreign_key "traction", "pitches"
+  add_foreign_key "traction", "start_ups"
 end

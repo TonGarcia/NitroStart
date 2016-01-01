@@ -1,28 +1,28 @@
-class TractionsController < ApplicationController
+class TractionController < ApplicationController
   before_action :set_traction, only: [:show, :edit, :update, :destroy]
 
-  # GET /tractions
-  # GET /tractions.json
+  # GET /traction
+  # GET /traction.json
   def index
-    @tractions = Traction.all
+    @traction = Traction.all
   end
 
-  # GET /tractions/1
-  # GET /tractions/1.json
+  # GET /traction/1
+  # GET /traction/1.json
   def show
   end
 
-  # GET /tractions/new
+  # GET /traction/new
   def new
     @traction = Traction.new
   end
 
-  # GET /tractions/1/edit
+  # GET /traction/1/edit
   def edit
   end
 
-  # POST /tractions
-  # POST /tractions.json
+  # POST /traction
+  # POST /traction.json
   def create
     @traction = Traction.new(traction_params)
 
@@ -37,8 +37,8 @@ class TractionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tractions/1
-  # PATCH/PUT /tractions/1.json
+  # PATCH/PUT /traction/1
+  # PATCH/PUT /traction/1.json
   def update
     respond_to do |format|
       if @traction.update(traction_params)
@@ -51,12 +51,12 @@ class TractionsController < ApplicationController
     end
   end
 
-  # DELETE /tractions/1
-  # DELETE /tractions/1.json
+  # DELETE /traction/1
+  # DELETE /traction/1.json
   def destroy
     @traction.destroy
     respond_to do |format|
-      format.html { redirect_to tractions_url, notice: 'Traction was successfully destroyed.' }
+      format.html { redirect_to traction_url, notice: 'Traction was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

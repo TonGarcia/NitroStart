@@ -9,7 +9,7 @@ aside.yaybar.yay-shrink.yay-hide-to-small.yay-gestures.yay-light
       ul.white
         -if @current_user.admin?
           -@grouped_actions = admin_actions
-          =render 'layouts/con_theme/components/nav_list'
+        -else
+          -@grouped_actions = aside_grouped_actions
 
-        -@grouped_actions = aside_grouped_actions
         =render 'layouts/con_theme/components/nav_list'

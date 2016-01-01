@@ -1,0 +1,28 @@
+.stats-card>i[class*=ion-] {
+  bottom: -3.2rem;
+}
+
+.orders-card {
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .row .col {
+    padding: 0 !important;
+  }
+}
+
+.card+.card {
+  margin-top: 0;
+}
+
+.content-wrap {
+  .card {
+    margin: 0;
+  }
+}
+
+.collection .collection-item.avatar a.secondary-content,
+.collection .collection-item.avatar i.secondary-content {
+  top: 9px;
+}

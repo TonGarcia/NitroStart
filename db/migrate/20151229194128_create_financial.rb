@@ -1,6 +1,6 @@
-class CreateFinancials < ActiveRecord::Migration
+class CreateFinancial < ActiveRecord::Migration
   def change
-    create_table :financials do |t|
+    create_table :financial do |t|
       # Base attributes
       t.integer :total_costumer, null: false, default: 0
       t.decimal :total_revenue, precision: 12, scale: 2, default: 0, null: false

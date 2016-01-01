@@ -27,10 +27,6 @@
   margin-bottom: 50px;
 }
 
-.nav-wrapper {
-  padding-right: 35px;
-}
-
 .action-btn {
   font-size: 1.5rem;
 }
@@ -50,6 +46,34 @@
   }
 }
 
+footer.white {
+  #main_footer {
+    .brand {
+      width: 110%;
+    }
+  }
+}
+
 center.action {
   margin-bottom: 20px;
+}
+
+.investor_profile_type {
+  padding-top: 40px;
+}
+
+.divider.slim {
+  margin: 10px 0;
+}
+
+.clear-spacing {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+a.btn.btn-small,
+button.btn.btn-small {
+  height: 25.2px;
+  line-height: 25px;
+  font-size: .8rem;
 }
