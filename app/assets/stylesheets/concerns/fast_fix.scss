@@ -26,3 +26,30 @@
 .collection .collection-item.avatar i.secondary-content {
   top: 9px;
 }
+
+.yaybar i.ion-flame {
+  top: -3px;
+  left: 5px;
+  font-size: 1.3em;
+  position: relative;
+}
+
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 2px;
+  background-color: #FFCDD2;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+
+  strong {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+}
+
+.card, .card-content, .card-panel, .content-wrap {
+  .alert {
+    padding: 1rem;
+  }
+}

@@ -10,11 +10,11 @@ class CreateIdeas < ActiveRecord::Migration
       # How does it fixed today?
       t.string :current_solution, limit: 140, null: true
 
-      # One sell phrase (4 costumers)
-      t.string :tag_line_pitch, limit: 140, null: true
+      # One sell phrase (for costumers)
+      t.string :tag_line_pitch, limit: 20, null: true
 
-      # One explanation phrase (4 investors)
-      t.string :high_concept_pitch, limit: 140, null: true
+      # One explanation phrase (for investors)
+      t.string :high_concept_pitch, limit: 20, null: false
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

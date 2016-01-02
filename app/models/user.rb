@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Relations
+  has_many :pitches
   has_many :social_sessions
 
   # Custom validations

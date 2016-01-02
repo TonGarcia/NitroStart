@@ -3,7 +3,7 @@
 pt-BR:
   activerecord:
     models:
-      additional_info: Informação Adicional
+      pitch: Pitch (Projeto)
       api_request: Requisição à API
       app: Aplicativo
       authorization: Aplicativo Autorizado
@@ -35,12 +35,10 @@ pt-BR:
         password: Senha
         password_confirmation: Confirmar senha
 
-  # SoldItem -----------------------------------------------------
-      sold_item:
-        remote_id: Identificador no sistema do cliente
-        nome: Nome
-        service: Derviço
-        description: Descrição
+  # Pitch -----------------------------------------------------
+      pitch:
+        name: Nome do Projeto
+        user: Responsável
 
   # SocialSession -----------------------------------------------------
       social_session:

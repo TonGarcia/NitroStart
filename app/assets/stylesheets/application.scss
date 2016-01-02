@@ -8,6 +8,7 @@
  *
  * My Styles
  *= require sign
+ *= require pitches
  *= require concerns/theme
  *= require concerns/helpers
  *= require concerns/fast_fix
@@ -17,9 +18,3 @@
 
 @import 'ionicons';
 @import 'materialize_config';
-
-.card, .card-content, .card-panel, .content-wrap {
-  .alert {
-    padding: .1rem 1rem 1rem;
-  }
-}

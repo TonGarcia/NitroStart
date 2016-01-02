@@ -2,19 +2,23 @@
   font-weight: 100;
 }
 
-nav .nav-wrapper a.brand {
-  margin: 8px 0 0 25px;
+nav .nav-wrapper {
+  padding-right: 30px;
 
-  img {
-    max-width: 30px;
-    margin: 0 0 -5px -2px;
-  }
+  a.brand {
+    margin: 8px 0 0 25px;
 
-  span.name {
-    font-size: 2rem;
-    font-weight: bold;
-    font-style: italic;
-    text-transform: uppercase;
+    img {
+      max-width: 30px;
+      margin: 0 0 -5px -2px;
+    }
+
+    span.name {
+      font-size: 2rem;
+      font-weight: bold;
+      font-style: italic;
+      text-transform: uppercase;
+    }
   }
 }
 

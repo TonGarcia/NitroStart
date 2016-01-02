@@ -18,6 +18,10 @@ Rails.application.routes.draw do
              }
 
   # Global Resources
+  resources :pitches do
+
+  end
+
   resources :ideas
   resources :teams
   resources :pitches

@@ -8,7 +8,10 @@ pt-BR:
       investments: Relatório Investimentos
     pitches:
       index: Pitches (Projetos)
+      new: Novo Pitch (Projeto)
+      create: Novo Pitch (Projeto)
     start_ups:
       index: Startups (Empresas)
+      invested: Nitradas (Investimentos)
     showroom:
       index: Vitrine de Startups

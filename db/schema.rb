@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "markets", ["start_up_id"], name: "index_markets_on_start_up_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "name",       limit: 75
+    t.string   "name",       limit: 75, null: false
     t.integer  "user_id",    limit: 4,  null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
