@@ -1,7 +1,7 @@
 module HomeHelper
   # Must return it product name
   def product_name
-    'Predoo'
+    'NITRO START'
   end
 
   # Must return it app name based on user locale (default is pt-BR)

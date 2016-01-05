@@ -1,29 +1,26 @@
 -if notice || @notice
   .alert.green.lighten-5.green-text.text-darken-2
     -if notice
-      p=raw(notice)
+      =raw(notice)
     -else
-      p
-        =@notice[:msg]
-        a.white-text href="#{@notice[:link]}" =@notice[:link_name]
+      =@notice[:msg]
+      a.white-text href="#{@notice[:link]}" =@notice[:link_name]
 -if alert || @alert
   .alert.alert-dismissible.orange.lighten-5.orange-text.text-darken-2
     -if alert
-      p=raw(alert)
+      =raw(alert)
     -else
-      p
-        =@alert[:msg]
-        a.white-text.underline href="#{@alert[:link]}" =@alert[:link_name]
+      =@alert[:msg]
+      a.white-text.underline href="#{@alert[:link]}" =@alert[:link_name]
 -if flash[:error] || @error
   .alert.alert-dismissible
     -if flash[:error]
-      p=raw(flash[:error])
+      =raw(flash[:error])
     -elsif error
-      p=raw(error)
+      =raw(error)
     -elsif @error
-      p
-        =@error[:msg]
-        a.white-text.underline href="#{@error[:link]}" =@error[:link_name]
+      =@error[:msg]
+      a.white-text.underline href="#{@error[:link]}" =@error[:link_name]
 
 
 -@alert=nil

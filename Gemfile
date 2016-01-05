@@ -54,6 +54,9 @@ gem 'nprogress-rails', '~> 0.1.6.7'
 # Session manager
 gem 'devise', '~> 3.5.3'
 
+# Devise Async  SideKiq Tasks
+gem 'devise-async', '~> 0.10.1'
+gem 'sidekiq', '~> 4.0', '>= 4.0.1'
 
 # Nice Photo & Video Light-box
 gem 'prettyphoto-rails', '~> 0.2.1'

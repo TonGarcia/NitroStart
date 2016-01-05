@@ -5,10 +5,9 @@ class User < ActiveRecord::Base
   include Profile
   include Security
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  # Devise Methods
+  devise :database_authenticatable, :registerable, :confirmable, :timeoutable,
+         :lockable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Relations
   has_many :pitches
