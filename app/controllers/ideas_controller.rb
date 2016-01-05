@@ -1,10 +1,12 @@
 class IdeasController < ApplicationController
+  before_action :set_nested
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   # GET /ideas
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    redirect_to new_pitch_idea_path(params[:pitch_id]) if @ideas.empty?
   end
 
   # GET /ideas/1
@@ -67,8 +69,13 @@ class IdeasController < ApplicationController
       @idea = Idea.find(params[:id])
     end
 
+    # Setup it dependence (objects)
+    def set_nested
+      @pitch = Pitch.find(params[:pitch_id]) if params[:pitch_id]
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :pitch_id)
+      params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :how_validate)
     end
 end

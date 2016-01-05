@@ -1,0 +1,110 @@
+/! NITRO Receipt Explanation
+#nitro_receipt.row
+  section.partners
+    .container
+      .row
+        header
+          h4.purple-text.bold.center Fórmula NITRO
+
+      .divider
+
+      .row.step
+        = image_tag 'defaults/how_works_flow.png', class: 'col l12 s12'
+
+      .row
+        .col.s12.m3
+          h2.center.black-text
+            = '1. '
+            i.ion-ios-briefcase
+          h5.center  Investimento
+          p.light.justify Independente de Escolher a Startup ou usar o Fundo a NITRO gerencia o investimento
+        .col.s12.m3.offset-m1
+          h2.center.teal-text
+            = '2. '
+            i.fa.fa-exchange
+          h5.center  Receba
+          p.light.justify A NITRO paga os seus rendimentos e o resgate, garantindo a sua SEGURANÇA
+        .col.s12.m4.offset-m1
+          h2.center
+            span.purple-text= '3. '
+            i.amber-text.fa.fa-rocket
+          h5.center  Aceleração
+          p.light.justify Primeira aceleradora a contribuir no desenvolvimento do produto! Assim aumentamos as garantias do retorno.
+
+      .row.receipt_calc
+        h5.purple-text.center Fórmula NITRO vs Investimentos Tradicionais
+
+      /! NITRO vs Common Investments
+      .row
+        .col.s12.m12
+          .card-panel.expandable
+            h6.purple-text.center Fórmula NITRO vs Invest. Tradicionais
+
+            .divider
+
+            table.table
+              thead
+                tr
+                  th.center Item a se Considerar
+                  th.center NITRO
+                  th.center Poupança
+                  th.center Aluguel
+              tbody
+                tr.blue-grey.lighten-5
+                  td Tempo mín. p/ resgate
+                  td.center 6 meses
+                  td.center -
+                  td.center Tempo de Venda
+                tr.light-blue.lighten-5
+                  td Invest. Mín. Inicial
+                  td.center R$ 50,00
+                  td.center -
+                  td.center R$ 150.000,00
+                tr.light-green.lighten-5
+                  td Rentabil. Básica
+                  td.center 1,5% do Invest.
+                  td.center 0,5% a 0,7%
+                  td.center 0,8% do Imóvel
+                tr.teal.lighten-5
+                  td Rentabil. Variável
+                  td.center Parte no Lucro, proporcional ao invest.
+                  td.center 0%
+                  td.center 0%
+
+      /! Profit Calc
+      .row
+        .col.s12.m12
+          .card-panel.expandable
+            h6.purple-text.center Cálculo de Rendimentos
+
+            .divider
+
+            table.table
+              thead
+                tr
+                  th.center Valor do Investimento
+                  th.center Poupança
+                  th.center Aluguel
+                  th.center Startup NITRO
+                  th.center Fundo NITRO
+              tbody
+                tr.light-green.lighten-5
+                  td.center R$ 50,00
+                  td.center R$ 0,35
+                  td.center -
+                  td.center R$ 1,17
+                  td.center R$ 2,92
+                tr.teal.lighten-5
+                  td.center R$ 150.000,00
+                  td.center R$ 900,00
+                  td.center R$ 1.200,00
+                  td.center R$ 2.250,00 + 1.700,00
+                  td.center R$ 2.250,00 + 5.833,34
+
+            .alert.alert-dismissible.orange.lighten-4.orange-text.text-darken-2
+              strong ATENÇÃO!
+              | &nbsp; Somente na NITRO START você pode ter 100% de lucro em 1 ano e 6 meses com segurança!
+
+            p.slim_margin.justify.red-text * Considerando Lucro de R$ 50mil a investimento de R$ 300mil por Startup NITRO.
+            p.slim_margin.justify.red-text * Considerando Lucro de R$ 350mil a investimento de R$ 450mil no Fundo NITRO.
+            p.justify.red-text * NITRO: juros (1,5%) + participação (dividendo de 5% do lucro proporcional ao investimento).

@@ -50,3 +50,21 @@ ul#user-dropdown.dropdown-content {
 .yaybar .nano-content>ul li>a {
   padding: 5px;
 }
+
+.content-wrap {
+  & > .alert {
+    padding-top: .1rem;
+  }
+
+  .card-panel {
+    .row .col {
+      .card {
+        margin-bottom: 32px;
+      }
+    }
+
+    & > .divider {
+      margin-bottom: 35px;
+    }
+  }
+}

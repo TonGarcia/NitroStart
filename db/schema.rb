@@ -72,8 +72,9 @@ ActiveRecord::Schema.define(version: 20151231174758) do
     t.string   "main_problem",       limit: 55,  null: false
     t.string   "second_problems",    limit: 255
     t.string   "current_solution",   limit: 140
-    t.string   "tag_line_pitch",     limit: 140
-    t.string   "high_concept_pitch", limit: 140
+    t.string   "tag_line_pitch",     limit: 20
+    t.string   "high_concept_pitch", limit: 20
+    t.string   "how_validate",       limit: 140
     t.integer  "pitch_id",           limit: 4
     t.integer  "start_up_id",        limit: 4
     t.datetime "created_at",                     null: false
@@ -115,7 +116,7 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "markets", ["start_up_id"], name: "index_markets_on_start_up_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "name",       limit: 75, null: false
+    t.string   "name",       limit: 30, null: false
     t.integer  "user_id",    limit: 4,  null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false

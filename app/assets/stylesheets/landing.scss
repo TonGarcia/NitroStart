@@ -21,6 +21,10 @@
   .card-panel {
     min-height: 310px;
     max-height: 310px;
+
+    &.expandable {
+      max-height: none;
+    }
   }
 }
 
@@ -138,4 +142,28 @@ section {
   p {
     margin: 5px 0;
   }
+}
+
+.receipt_calc {
+  margin-top: 100px;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+p.slim_margin {
+  margin-bottom: -15px;
+}
+
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 2px;
+  background-color: #FFCDD2;
+  color: #E53935;
+}
+
+strong {
+  font-weight: bold;
 }

@@ -17,7 +17,7 @@ table
     - @ideas.each do |idea|
       tr
         td = idea.main_problem
-        td = idea.second_problem
+        td = idea.second_problems
         td = idea.current_solution
         td = idea.tag_line_pitch
         td = idea.high_concept_pitch
@@ -28,4 +28,4 @@ table
 
 br
 
-= link_to 'New Idea', new_idea_path
+= link_to 'New Idea', new_pitch_idea_path(params[:pitch_id])

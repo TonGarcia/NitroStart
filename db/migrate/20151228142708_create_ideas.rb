@@ -14,7 +14,10 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :tag_line_pitch, limit: 20, null: true
 
       # One explanation phrase (for investors)
-      t.string :high_concept_pitch, limit: 20, null: false
+      t.string :high_concept_pitch, limit: 20, null: true
+
+      # One explanation phrase (for investors)
+      t.string :how_validate, limit: 140, null: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

@@ -1,4 +1,4 @@
-class TractionController < ApplicationController
+class TractionsController < ApplicationController
   before_action :set_traction, only: [:show, :edit, :update, :destroy]
 
   # GET /traction

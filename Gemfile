@@ -162,7 +162,7 @@ gem 'socials', '~> 1.0.1'
 
 # AdminTheme
 gem 'ionicons-rails', '~> 2.0.0'
-gem 'admin_materialize', '~> 0.1.2', git:'https://github.com/TonGarcia/admin_theme.git'
+gem 'admin_materialize', '~> 0.1.3', git:'https://github.com/TonGarcia/admin_theme.git'
 
 =begin
  ######################    Production GEMs    #################################

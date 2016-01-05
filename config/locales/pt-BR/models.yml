@@ -3,23 +3,9 @@
 pt-BR:
   activerecord:
     models:
-      pitch: Pitch (Projeto)
-      api_request: Requisição à API
-      app: Aplicativo
-      authorization: Aplicativo Autorizado
-      bank: Banco
-      bank_account: Conta Bancária
-      bank_transaction: Transação Bancária
-      billet: Boleto
-      card: Cartão
-      commission: Comissão
-      company: Compania
-      human_resource: Recurso Humano
-      log_request: Log de Requisição
-      purchase: Compra
-      social_session: Sessão Social
-      sold_item: Item Vendido
       user: Usuário
+      pitch: Pitch (Projeto)
+      idea: Explicação da Ideia do Projeto
 
     attributes:
 
@@ -40,114 +26,10 @@ pt-BR:
         name: Nome do Projeto
         user: Responsável
 
-  # SocialSession -----------------------------------------------------
-      social_session:
-        uid: Identificador na rede social
-        name: Nome
-        username: Apelido/username
-        email: E-mail
-        picture: Foto
-        provider: Rede social
-
-  # Purchase -----------------------------------------------------
-      purchase:
-        amount: Valor
-        currency_iso: Moeda
-        payment_method: Meio de pagamento
-        recurrence_period: Período de recorrência
-        installments: Prestações
-        remote_uid: Identificador do comprador no aplicativo cliente
-        redirect_link: Link de redirecionamento
-        costumer_email: E-mail do comprador
-
-  # LogRequest -----------------------------------------------------
-      log_request:
-        status: Estado
-        response: Resposta
-
-  # HumanResource -----------------------------------------------------
-      human_resource:
-        owner: Dono
-        main_company: Compania principal
-        legal_id: CPF
-
-  # Company -----------------------------------------------------
-      company:
-        name: Nome
-        legal_id: CNPJ
-        available: Habilitada
-        checked_at: Habilitada desde
-        home_page_url: Link da página principal
-
-  # Commission -----------------------------------------------------
-      commission:
-        amount: valor
-        percentage: porcentagem no valor da compra
-        favored_id: favorecido
-        depository_id: depositário
-
-  # Card -----------------------------------------------------
-      card:
-        brand: bandeira
-        credit: crédito
-        cvv: cvv
-        truncated: número
-
-  # Billet -----------------------------------------------------
-      billet:
-        deadline: vencimento
-        code: código
-        payer_name: sacado
-        payer_email: sacado e-mail
-        user_id: favorecido
-        bank_account_id: conta bancária do favorecido
-
-  # BankTransaction -----------------------------------------------------
-      bank_transaction:
-        amount: valor
-        active: ativa
-        brand: bandeira
-        currency_iso: moeda
-        remote_tid: ID da transação na Cielo
-        status_code: código do estado
-        status_message: mensagem do estado
-        tax_paid: imposto pago
-        next_transaction_at: próxima transação recorrente
-        recurrence_period: período de recorrência
-
-  # Bank -----------------------------------------------------
-      bank:
-        code: código
-        name: nome
-        country: país de origem
-        username: nome popular (apelido)
-
-  # BankAccount -----------------------------------------------------
-      bank_account:
-        name: nome
-        branch: agência
-        account: conta
-        owner: proprietário
-
-  # Authorization -----------------------------------------------------
-      authorization:
-        scope: escopo
-        access_token: token de acesso
-
-  # App -----------------------------------------------------
-      app:
-        name: nome
-        balance: saldo
-        production: produção
-        domain: domínio
-        site_url: link
-        redirect_url: link de redirecionamento
-        description: descrição
-        secret_key: chave secreta
-
-  # APIRequest -----------------------------------------------------
-      api_request:
-        controller: Controller
-        action: Action
-        params: Params
-        ip: IP
+  # Idea -----------------------------------------------------
+      idea:
+        main_problem: Principal Problema a ser Solucionado
+        second_problems: Problemas Secundários a serem Solucionado
+        current_solution: Como este Problema é Solucionado Hoje?
+        tag_line_pitch: Tag Line Pitch (veja mais sobre em nosso Blog)
+        high_concept_pitch: High Concept Pitch (veja mais sobre em nosso Blog)

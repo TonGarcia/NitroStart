@@ -19,22 +19,35 @@ Rails.application.routes.draw do
 
   # Global Resources
   resources :pitches do
-
+    # Nested Objects
+    resources :ideas
+    resources :businesses
+    resources :projects
+    resources :markets
+    resources :tractions
+    resources :revenues
+    resources :financial
+    resources :competitors
+    resources :teams
+    resources :investments
   end
 
-  resources :ideas
-  resources :teams
-  resources :pitches
-  resources :markets
-  resources :traction
-  resources :revenues
-  resources :projects
-  resources :financial
-  resources :start_ups
+  # StartUp - Nested Objects
+  resources :start_ups do
+    resources :ideas
+    resources :businesses
+    resources :projects
+    resources :markets
+    resources :tractions
+    resources :revenues
+    resources :financial
+    resources :competitors
+    resources :teams
+    resources :investments
+  end
+
+  # Non-Nested objects
   resources :teammates
-  resources :businesses
-  resources :investments
-  resources :competitors
 
   # Custom URLs (non-resources)
   scope 'showroom' do

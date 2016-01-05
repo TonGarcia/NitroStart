@@ -1,4 +1,4 @@
-= form_for @idea do |f|
+= form_for [@pitch, @idea], html: {'role'=>'form'} do |f|
   - if @idea.errors.any?
     #error_explanation
       h2 = "#{pluralize(@idea.errors.count, "error")} prohibited this idea from being saved:"
@@ -6,22 +6,38 @@
         - @idea.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :main_problem
-    = f.text_field :main_problem
-  .field
-    = f.label :second_problems
-    = f.text_field :second_problems
-  .field
-    = f.label :current_solution
-    = f.text_field :current_solution
-  .field
-    = f.label :tag_line_pitch
-    = f.text_field :tag_line_pitch
-  .field
-    = f.label :high_concept_pitch
-    = f.text_field :high_concept_pitch
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .actions = f.submit
+  .row
+    .input-field.col.l12.s12
+      i.ion-alert-circled.prefix
+      = f.text_field :main_problem, autofocus: true
+      = f.label :main_problem
+
+    .input-field.col.l12.s12
+      i.ion-alert.prefix
+      = f.text_field :second_problems
+      = f.label :second_problems
+
+    .input-field.col.l12.s12
+      i.ion-flag.prefix
+      = f.text_field :current_solution
+      = f.label :current_solution
+
+
+    .input-field.col.l12.s12
+      i.mdi-action-assignment-ind.prefix
+      = f.text_field :tag_line_pitch
+      = f.label :tag_line_pitch
+
+
+    .input-field.col.l12.s12
+      i.mdi-action-assignment-ind.prefix
+      = f.text_field :high_concept_pitch
+      = f.label :high_concept_pitch
+
+    .input-field.col.l12.s12
+      i.mdi-action-assignment-ind.prefix
+      = f.text_area :how_validate
+      = f.label :how_validate
+
+  -@footer_link=true
+  =render 'layouts/partials/components/static/float_buttons/save'
