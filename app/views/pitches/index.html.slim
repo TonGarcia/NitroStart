@@ -1,4 +1,3 @@
-/! TODO acrescentar o contador de apoiadores? onde e como?
 .col.l12.center.purple-text
   h5 Seus Pitches (Projetos)
 
@@ -11,74 +10,15 @@
 
 .row
   -@pitches.each do |pitch|
+    -@pitch = pitch
     .col.l6.s12
       .card.pitch_card
         .title
-          h5.purple-text =pitch.name
+          a href="#{pitch_path(pitch.id)}": h5.purple-text =pitch.name
           span.right.nitro_quote.orange-text.text-darken-1 Quota NITRO: 100%
         .content
-          /! Idea Content
-          a.card-panel.stats-card.white-text href="#{pitch_ideas_path(pitch.id)}"
-            -filled = '0%'
-            .progress.amber.lighten-4.background
-              .amber.lighten-2 style="width: #{filled}"
-            i.fa.fa-lightbulb-o
-            span.count =filled
-            .name Ideia / Hipóteses
-          /! Business Content
-          a.card-panel.stats-card.white-text href="#{pitch_businesses_path(pitch.id)}"
-            .progress.blue-grey.lighten-3.background
-              .blue-grey style="width: #{filled}"
-            i.ion-ios-briefcase
-            span.count =filled
-            .name Modelagem Negócio
-          /! MVP & Project
-          a.card-panel.stats-card.white-text  href="#{pitch_projects_path(pitch.id)}"
-            .progress.purple.lighten-3.background
-              .purple.lighten-2 style="width: #{filled}"
-            i.ion-settings
-            span.count =filled
-            .name Construção Projeto
-          /! Market knowledge
-          a.card-panel.stats-card.white-text  href="#{pitch_markets_path(pitch.id)}"
-            .progress.light-blue.lighten-4.background
-              .light-blue.lighten-2 style="width: #{filled}"
-            i.ion-ios-pie
-            span.count =filled
-            .name Conhecimento Mercado
-          /! Traction
-          a.card-panel.stats-card.white-text  href="#{pitch_tractions_path(pitch.id)}"
-            .progress.indigo.lighten-4.background
-              .indigo.lighten-2 style="width: #{filled}"
-            i.ion-ios-pulse
-            span.count =filled
-            .name Capacidade de Tração
-          /! Revenue
-          a.card-panel.stats-card.white-text href=""
-            .progress.green.lighten-4.background
-              .green.lighten-2 style="width: #{filled}"
-            i.ion-arrow-swap
-            span.count =filled
-            .name Fluxo de Caixa
-          /! Financial
-          a.card-panel.stats-card.white-text href=""
-            .progress.teal.lighten-4.background
-              .teal.lighten-2 style="width: #{filled}"
-            i.mdi-action-trending-up
-            span.count =filled
-            .name Resultados Financeiro
-          /! Competitors
-          a.card-panel.stats-card.white-text href=""
-            .progress.red.lighten-4.background
-              .red.lighten-2 style="width: #{filled}"
-            i.ion-ios-pricetags
-            span.count =filled
-            .name Concorrentes
-          /! Team
-          a.card-panel.stats-card.cyan.white-text href=""
-            i.ion-ios-people
-            span.count 1
-            .name Time de Empreendedores
+          - widgets.each do |widget|
+            = render "pitches/partials/widgets/#{widget}"
 
 -@float_opts={link: new_pitch_path}
 .fixed-action-btn=render 'home/partials/components/float_button'

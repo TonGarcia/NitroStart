@@ -4,6 +4,7 @@ class CreateRevenues < ActiveRecord::Migration
       # Base attributes
       t.decimal :price, precision: 5, scale: 2, default: 0, null: false
       t.integer :model, null: false # From Enum YML
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: false

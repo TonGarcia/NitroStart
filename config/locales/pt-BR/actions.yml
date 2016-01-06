@@ -7,8 +7,9 @@ pt-BR:
       start_ups: Desempenho Startups
       investments: Relatório Investimentos
     pitches:
-      index: Pitches (Projetos)
       new: Novo Pitch (Projeto)
+      show: Detalhamento do Pitch (Projeto)
+      index: Pitches (Projetos)
       create: Novo Pitch (Projeto)
     start_ups:
       index: Startups (Empresas)

@@ -1,0 +1,7 @@
+/! Business Content
+a.card-panel.stats-card.white-text href="#{pitch_businesses_path(@pitch.id)}"
+  .progress.blue-grey.lighten-3.background
+    .blue-grey style="width: #{@pitch.active(:businesses).amount_filled}"
+  i.ion-ios-briefcase
+  span.count =@pitch.amount_filled
+  .name Modelagem Negócio

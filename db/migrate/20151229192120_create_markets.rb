@@ -7,6 +7,7 @@ class CreateMarkets < ActiveRecord::Migration
       t.integer :total_costumers, null: false, default: 0
       t.string :trends_insight, limit: 140, null: true
       t.string :costumer_specification, limit: 140, null: false
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

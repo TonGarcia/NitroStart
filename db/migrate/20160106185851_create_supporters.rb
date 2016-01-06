@@ -1,10 +1,9 @@
-class CreateProjects < ActiveRecord::Migration
+class CreateSupporters < ActiveRecord::Migration
   def change
-    create_table :projects do |t|
+    create_table :supporters do |t|
       # Base Attrs
-      t.integer :stage, null: false
-      t.string :value_proposition, limit: 140, null: true
-      t.boolean :active, null: false, default: true
+      # It default 1 means costumer, but it can be programmer, designers...
+      t.integer :role, null: false, default: 1
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

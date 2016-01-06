@@ -8,6 +8,7 @@ class CreateInvestments < ActiveRecord::Migration
       t.decimal :costumer_conversion, precision: 5, scale: 2, default: 0, null: false
       t.decimal :product_development, precision: 7, scale: 2, default: 0, null: false
       t.decimal :equipments, precision: 5, scale: 2, default: 0, null: false
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

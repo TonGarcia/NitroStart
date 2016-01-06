@@ -1,12 +1,11 @@
-p#notice = notice
+h4.center.orange-text.text-darken-1 ="Pitch: #{@pitch.name}"
 
-p
-  strong Name:
-  = @pitch.name
-p
-  strong User:
-  = @pitch.user
+.divider
 
-= link_to 'Edit', edit_pitch_path(@pitch)
-'|
-= link_to 'Back', pitches_path
+.row
+  -widgets.each do |widget|
+    .col.l4.s12
+      =render "pitches/partials/widgets/#{widget}"
+
+-@float_opts={link: edit_pitch_path(@pitch.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

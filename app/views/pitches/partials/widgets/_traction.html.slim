@@ -1,0 +1,7 @@
+/! Traction
+a.card-panel.stats-card.white-text href="#{pitch_tractions_path(@pitch.id)}"
+  .progress.indigo.lighten-4.background
+    .indigo.lighten-2 style="width: #{@pitch.active(:tractions).amount_filled}"
+  i.ion-ios-pulse
+  span.count =@pitch.amount_filled
+  .name Capacidade de Tração

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231174758) do
+ActiveRecord::Schema.define(version: 20160106185851) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151231174758) do
     t.string   "costumer_success_stories", limit: 255
     t.boolean  "awards",                               default: false, null: false
     t.boolean  "patent",                               default: false, null: false
+    t.boolean  "active",                               default: true,  null: false
     t.integer  "pitch_id",                 limit: 4
     t.integer  "start_up_id",              limit: 4
     t.datetime "created_at",                                           null: false
@@ -41,75 +42,80 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "businesses", ["start_up_id"], name: "index_businesses_on_start_up_id", using: :btree
 
   create_table "competitors", force: :cascade do |t|
-    t.string   "name",           limit: 55,  null: false
+    t.string   "name",           limit: 55,                 null: false
     t.string   "success_story",  limit: 140
-    t.string   "your_advantage", limit: 255, null: false
+    t.string   "your_advantage", limit: 255,                null: false
+    t.boolean  "active",                     default: true, null: false
     t.integer  "pitch_id",       limit: 4
     t.integer  "start_up_id",    limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   add_index "competitors", ["pitch_id"], name: "index_competitors_on_pitch_id", using: :btree
   add_index "competitors", ["start_up_id"], name: "index_competitors_on_start_up_id", using: :btree
 
   create_table "financial", force: :cascade do |t|
-    t.integer  "total_costumer",     limit: 4,                          default: 0,   null: false
-    t.decimal  "total_revenue",                precision: 12, scale: 2, default: 0.0, null: false
-    t.decimal  "total_expense",                precision: 10, scale: 2, default: 0.0, null: false
-    t.decimal  "conversion_price",             precision: 2,  scale: 2, default: 0.0, null: false
-    t.integer  "market_penetration", limit: 4,                          default: 0,   null: false
+    t.integer  "total_costumer",     limit: 4,                          default: 0,    null: false
+    t.decimal  "total_revenue",                precision: 12, scale: 2, default: 0.0,  null: false
+    t.decimal  "total_expense",                precision: 10, scale: 2, default: 0.0,  null: false
+    t.decimal  "conversion_price",             precision: 2,  scale: 2, default: 0.0,  null: false
+    t.integer  "market_penetration", limit: 4,                          default: 0,    null: false
+    t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",           limit: 4
     t.integer  "start_up_id",        limit: 4
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
   end
 
   add_index "financial", ["pitch_id"], name: "index_financial_on_pitch_id", using: :btree
   add_index "financial", ["start_up_id"], name: "index_financial_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
-    t.string   "main_problem",       limit: 55,  null: false
+    t.string   "main_problem",       limit: 55,                 null: false
     t.string   "second_problems",    limit: 255
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 20
     t.string   "high_concept_pitch", limit: 20
     t.string   "how_validate",       limit: 140
+    t.boolean  "active",                         default: true, null: false
     t.integer  "pitch_id",           limit: 4
     t.integer  "start_up_id",        limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   add_index "ideas", ["pitch_id"], name: "index_ideas_on_pitch_id", using: :btree
   add_index "ideas", ["start_up_id"], name: "index_ideas_on_start_up_id", using: :btree
 
   create_table "investments", force: :cascade do |t|
-    t.integer  "general_terms",       limit: 4,                                       null: false
+    t.integer  "general_terms",       limit: 4,                                        null: false
     t.integer  "raising_time",        limit: 4
-    t.decimal  "founder_salaries",              precision: 5, scale: 2, default: 0.0, null: false
-    t.decimal  "costumer_conversion",           precision: 5, scale: 2, default: 0.0, null: false
-    t.decimal  "product_development",           precision: 7, scale: 2, default: 0.0, null: false
-    t.decimal  "equipments",                    precision: 5, scale: 2, default: 0.0, null: false
+    t.decimal  "founder_salaries",              precision: 5, scale: 2, default: 0.0,  null: false
+    t.decimal  "costumer_conversion",           precision: 5, scale: 2, default: 0.0,  null: false
+    t.decimal  "product_development",           precision: 7, scale: 2, default: 0.0,  null: false
+    t.decimal  "equipments",                    precision: 5, scale: 2, default: 0.0,  null: false
+    t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",            limit: 4
     t.integer  "start_up_id",         limit: 4
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
   end
 
   add_index "investments", ["pitch_id"], name: "index_investments_on_pitch_id", using: :btree
   add_index "investments", ["start_up_id"], name: "index_investments_on_start_up_id", using: :btree
 
   create_table "markets", force: :cascade do |t|
-    t.integer  "currency_iso",           limit: 4,   default: 986, null: false
-    t.integer  "total_money",            limit: 4,   default: 0,   null: false
-    t.integer  "total_costumers",        limit: 4,   default: 0,   null: false
+    t.integer  "currency_iso",           limit: 4,   default: 986,  null: false
+    t.integer  "total_money",            limit: 4,   default: 0,    null: false
+    t.integer  "total_costumers",        limit: 4,   default: 0,    null: false
     t.string   "trends_insight",         limit: 140
-    t.string   "costumer_specification", limit: 140,               null: false
+    t.string   "costumer_specification", limit: 140,                null: false
+    t.boolean  "active",                             default: true, null: false
     t.integer  "pitch_id",               limit: 4
     t.integer  "start_up_id",            limit: 4
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   add_index "markets", ["pitch_id"], name: "index_markets_on_pitch_id", using: :btree
@@ -125,28 +131,30 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "stage",                  limit: 4,   null: false
+    t.integer  "stage",                  limit: 4,                  null: false
     t.datetime "work_flow_updated_at"
     t.integer  "work_flow_file_size",    limit: 4
     t.string   "work_flow_content_type", limit: 255
     t.string   "work_flow_file_name",    limit: 255
     t.string   "value_proposition",      limit: 140
+    t.boolean  "active",                             default: true, null: false
     t.integer  "pitch_id",               limit: 4
     t.integer  "start_up_id",            limit: 4
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree
   add_index "projects", ["start_up_id"], name: "index_projects_on_start_up_id", using: :btree
 
   create_table "revenues", force: :cascade do |t|
-    t.decimal  "price",                 precision: 5, scale: 2, default: 0.0, null: false
-    t.integer  "model",       limit: 4,                                       null: false
-    t.integer  "pitch_id",    limit: 4,                                       null: false
-    t.integer  "start_up_id", limit: 4,                                       null: false
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.decimal  "price",                 precision: 5, scale: 2, default: 0.0,  null: false
+    t.integer  "model",       limit: 4,                                        null: false
+    t.boolean  "active",                                        default: true, null: false
+    t.integer  "pitch_id",    limit: 4,                                        null: false
+    t.integer  "start_up_id", limit: 4,                                        null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
   end
 
   add_index "revenues", ["pitch_id"], name: "index_revenues_on_pitch_id", using: :btree
@@ -183,6 +191,17 @@ ActiveRecord::Schema.define(version: 20151231174758) do
 
   add_index "start_ups", ["pitch_id"], name: "index_start_ups_on_pitch_id", using: :btree
 
+  create_table "supporters", force: :cascade do |t|
+    t.integer  "role",        limit: 4, default: 1, null: false
+    t.integer  "pitch_id",    limit: 4
+    t.integer  "start_up_id", limit: 4
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "supporters", ["pitch_id"], name: "index_supporters_on_pitch_id", using: :btree
+  add_index "supporters", ["start_up_id"], name: "index_supporters_on_start_up_id", using: :btree
+
   create_table "teammates", force: :cascade do |t|
     t.string   "role",       limit: 255
     t.string   "expertise",  limit: 255
@@ -206,19 +225,20 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_index "teams", ["pitch_id"], name: "index_teams_on_pitch_id", using: :btree
   add_index "teams", ["start_up_id"], name: "index_teams_on_start_up_id", using: :btree
 
-  create_table "traction", force: :cascade do |t|
+  create_table "tractions", force: :cascade do |t|
     t.string   "growth_rate",         limit: 45
     t.string   "grow_strategy",       limit: 140
     t.string   "conversion_rate",     limit: 45
-    t.string   "market_meet_channel", limit: 140, null: false
-    t.integer  "pitch_id",            limit: 4,   null: false
-    t.integer  "start_up_id",         limit: 4,   null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "market_meet_channel", limit: 140,                null: false
+    t.boolean  "active",                          default: true, null: false
+    t.integer  "pitch_id",            limit: 4,                  null: false
+    t.integer  "start_up_id",         limit: 4,                  null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
-  add_index "traction", ["pitch_id"], name: "index_traction_on_pitch_id", using: :btree
-  add_index "traction", ["start_up_id"], name: "index_traction_on_start_up_id", using: :btree
+  add_index "tractions", ["pitch_id"], name: "index_tractions_on_pitch_id", using: :btree
+  add_index "tractions", ["start_up_id"], name: "index_tractions_on_start_up_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 50,               null: false
@@ -279,10 +299,12 @@ ActiveRecord::Schema.define(version: 20151231174758) do
   add_foreign_key "revenues", "start_ups"
   add_foreign_key "social_sessions", "users"
   add_foreign_key "start_ups", "pitches"
+  add_foreign_key "supporters", "pitches"
+  add_foreign_key "supporters", "start_ups"
   add_foreign_key "teammates", "teams"
   add_foreign_key "teammates", "users"
   add_foreign_key "teams", "pitches"
   add_foreign_key "teams", "start_ups"
-  add_foreign_key "traction", "pitches"
-  add_foreign_key "traction", "start_ups"
+  add_foreign_key "tractions", "pitches"
+  add_foreign_key "tractions", "start_ups"
 end

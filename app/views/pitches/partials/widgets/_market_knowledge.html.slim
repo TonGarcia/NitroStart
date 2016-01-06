@@ -1,0 +1,7 @@
+/! Market knowledge
+a.card-panel.stats-card.white-text href="#{pitch_markets_path(@pitch.id)}"
+  .progress.light-blue.lighten-4.background
+    .light-blue.lighten-2 style="width: #{@pitch.active(:markets).amount_filled}"
+  i.ion-ios-pie
+  span.count =@pitch.amount_filled
+  .name Conhecimento Mercado

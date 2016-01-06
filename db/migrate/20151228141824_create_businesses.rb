@@ -9,6 +9,7 @@ class CreateBusinesses < ActiveRecord::Migration
       # Boolean attrs
       t.boolean :awards, null: false, default: false
       t.boolean :patent, null: false, default: false
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

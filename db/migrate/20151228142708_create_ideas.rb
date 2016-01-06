@@ -18,6 +18,7 @@ class CreateIdeas < ActiveRecord::Migration
 
       # One explanation phrase (for investors)
       t.string :how_validate, limit: 140, null: true
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: true

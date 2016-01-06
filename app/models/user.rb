@@ -20,7 +20,11 @@ class User < ActiveRecord::Base
 
   # Rails validations
   validates :locale, length: { is: 5 }, presence: true, on: [:create, :update]
+  validates :legal_id, length: { is: 11 }, presence: true, if: :legal_id, on: [:create, :update]
   validates :name, length: { minimum: 8, maximum: 45 }, presence: true, on: [:create, :update]
+
+  # Validates uniqueness
+  validates_uniqueness_of :legal_id, if: :legal_id
 
   # Logic Attr (not persisted)
   attr_accessor :password_rechecked

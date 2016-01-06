@@ -1,11 +1,12 @@
 class CreateTraction < ActiveRecord::Migration
   def change
-    create_table :traction do |t|
+    create_table :tractions do |t|
       # Base attributes
       t.string :growth_rate, limit: 45, null: true
       t.string :grow_strategy, limit: 140, null: true
       t.string :conversion_rate, limit: 45, null: true
       t.string :market_meet_channel, limit: 140, null: false
+      t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
       t.belongs_to :pitch, index: true, foreign_key: true, null: false
