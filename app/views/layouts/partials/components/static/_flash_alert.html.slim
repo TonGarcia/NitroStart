@@ -1,19 +1,19 @@
 -if notice || @notice
-  .alert.green.lighten-5.green-text.text-darken-2
+  .row.alert.green.lighten-5.green-text.text-darken-2
     -if notice
       =raw(notice)
     -else
       =@notice[:msg]
       a.white-text href="#{@notice[:link]}" =@notice[:link_name]
 -if alert || @alert
-  .alert.alert-dismissible.orange.lighten-5.orange-text.text-darken-2
+  .row.alert.alert-dismissible.orange.lighten-5.orange-text.text-darken-2
     -if alert
       =raw(alert)
     -else
       =@alert[:msg]
       a.white-text.underline href="#{@alert[:link]}" =@alert[:link_name]
 -if flash[:error] || @error
-  .alert.alert-dismissible
+  .row.alert.alert-dismissible
     -if flash[:error]
       =raw(flash[:error])
     -elsif error

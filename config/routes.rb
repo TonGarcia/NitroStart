@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Global "Home"/"LandingPages"
   get '/landing2' => 'home#landing2'
   get '/partners' => 'home#partners'
+  get '/startupers' => 'home#startupers'
 
   # DeviseUser sessions
   devise_for :users,

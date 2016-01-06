@@ -10,7 +10,8 @@
   .row
     .input-field.col.l12.s12
       i.mdi-communication-quick-contacts-mail.prefix
-      = f.email_field :email, autofocus: true
+      -params[:email].nil? ? email_value =  '' : email_value = params[:email]
+      = f.email_field :email, value: email_value, autofocus: true
       = f.label :email
     .input-field.col.l12.s12
       i.mdi-action-lock.prefix

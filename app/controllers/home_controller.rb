@@ -7,6 +7,9 @@ class HomeController < ApplicationController
   def partners
   end
 
+  def startupers
+  end
+
   def landing2
   end
 
