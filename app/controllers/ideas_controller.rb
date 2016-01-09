@@ -1,6 +1,9 @@
 class IdeasController < ApplicationController
   # Controllers Concerns
   include HistoricalControllers
+  add_breadcrumb I18n.t('actions.ideas.index'), :pitch_ideas_path
+  add_breadcrumb I18n.t('actions.ideas.show'), :pitch_idea_path, only: %w(show)
+  add_breadcrumb I18n.t('actions.ideas.new'), :new_pitch_idea_path, only: %w(new)
 
   #  Event Triggers
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
@@ -46,7 +49,7 @@ class IdeasController < ApplicationController
   def update
     respond_to do |format|
       if @idea.update(idea_params)
-        format.html { redirect_to @idea, notice: 'Hipótese atualizada com Sucesso.' }
+        format.html { redirect_to [@pitch, @idea], notice: 'Hipótese atualizada com Sucesso.' }
         format.json { render :show, status: :ok, location: @idea }
       else
         format.html { render :edit }
@@ -60,7 +63,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea.destroy
     respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Hipótese deletada com Sucesso.' }
+      format.html { redirect_to @pitch, notice: 'Hipótese deletada com Sucesso.' }
       format.json { head :no_content }
     end
   end

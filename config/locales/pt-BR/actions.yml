@@ -2,6 +2,11 @@
 # pt-BR translations for Controllers Actions
 pt-BR:
   actions:
+    default:
+      new: Novo
+      show: Detalhamento
+      index: Listagem
+      create: Novo
     dashboard:
       index: Visão Geral de Rendimentos e Desempenho
       start_ups: Desempenho Startups
@@ -17,6 +22,7 @@ pt-BR:
     showroom:
       index: Vitrine de Startups
     ideas:
-      new: Explique sua Ideia
+      new: Explique sua Hipótese
       show: Detalhamento da Hipótese
-      index: Ideias
+      index: Listagem de Hipóteses
+      create: Explique sua Ideia

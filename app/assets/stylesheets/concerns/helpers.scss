@@ -77,3 +77,11 @@ button.btn.btn-small {
   line-height: 25px;
   font-size: .8rem;
 }
+
+ul.style_warning_list {
+  padding-left: 25px;
+
+  li {
+    list-style-type: disc;
+  }
+}

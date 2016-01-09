@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   respond_to :html, :json
   protect_from_forgery with: :exception
   before_action :setup_user, unless: :login_not_required
-  before_filter :setup_breadcrumbs, unless: :login_not_required
   before_action :configure_permitted_parameters, if: :devise_controller?
+  add_breadcrumb '<i class="fa fa-home"></i> Início'.html_safe, '/'
 
   # 404 Rendered
   def not_found
@@ -30,7 +30,6 @@ class ApplicationController < ActionController::Base
     # Create the breadcrumbs
     def setup_breadcrumbs
       add_breadcrumb '<i class="fa fa-home"></i> Início'.html_safe, '/'
-
       add_breadcrumb I18n.t("actions.#{params[:controller]}.#{params[:action]}"), request.fullpath, only: :"#{params[:action]}"
     end
 

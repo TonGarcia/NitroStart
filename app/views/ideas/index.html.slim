@@ -1,14 +1,16 @@
-h1 Listing ideas
+h4.center.purple-text Hipóteses já Levantadas
 
-table
+.divider
+
+table.table.table-stripped
   thead
     tr
-      th Main problem
-      th Second problem
-      th Current solution
-      th Tag line pitch
-      th High concept pitch
-      th Pitch
+      th Principal Problema
+      th Problemas Secundários
+      th Como Solucionam Hoje
+      th Tag Line
+      th High Concept
+      th Proposta de Projeto
       th
       th
       th
@@ -21,10 +23,10 @@ table
         td = idea.current_solution
         td = idea.tag_line_pitch
         td = idea.high_concept_pitch
-        td = idea.pitch
-        td = link_to 'Show', idea
-        td = link_to 'Edit', edit_idea_path(idea)
-        td = link_to 'Destroy', idea, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = idea.pitch.name
+        td =link_to 'Show', [idea.pitch, idea]
+        td =link_to 'Edit', edit_pitch_idea_path(idea.pitch, idea)
+        td =link_to 'Destroy', [idea.pitch, idea], data: {confirm: 'Are you sure?'}, method: :delete
 
 br
 

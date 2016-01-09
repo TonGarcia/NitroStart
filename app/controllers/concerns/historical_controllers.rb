@@ -4,6 +4,7 @@ module HistoricalControllers
 
   included do
     before_action :set_nested
+    before_action :previous_controller
     before_action :check_if_has_list, only: :index
   end
 
@@ -29,5 +30,14 @@ module HistoricalControllers
 
     # Check if necessary to redirect
     redirect_to redir_path if objs.empty?
+  end
+
+  # Return it previous controller
+  def previous_controller
+    if params[:pitch_id]
+      add_breadcrumb I18n.t('actions.pitch.index'), pitches_path
+    elsif params[:start_up_id]
+      add_breadcrumb I18n.t('actions.start_up.index'), pitches_path
+    end
   end
 end

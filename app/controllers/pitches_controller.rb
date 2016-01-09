@@ -1,4 +1,5 @@
 class PitchesController < ApplicationController
+  add_breadcrumb I18n.t('actions.pitch.index'), :pitches_path
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
   # GET /pitches
