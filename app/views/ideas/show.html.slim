@@ -1,3 +1,10 @@
+h4.center.purple-text Detalhamento da Hipótese
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong= link_to @pitch.name, pitch_path(@pitch)
+
+.divider
+
 .row
   .col.l6
     .card
@@ -7,8 +14,8 @@
         -I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
           -attrs = [:main_problem, :second_problems, :current_solution]
           -attrs.each_with_index do |attr, i|
-            - @shower_comp = {icon: ENUM[:locale_icon][:idea][attr], attr: i18n.t(attr), value: @idea[attr]}
-            -@shower_comp[:no_divider] = true if attrs.length-1 == i
+            -@shower_comp = {icon: ENUM[:locale_icon][:idea][attr], attr: i18n.t(attr), value: @idea[attr], slim_divider: true}
+            -@shower_comp[:slim_divider] = false if attrs.length-1 == i
             = render 'layouts/partials/components/dynamic/shower_attr'
 
   .col.l6

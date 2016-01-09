@@ -1,8 +1,9 @@
-h1 Editing idea
+h4.center.purple-text Edição da Hipótese
 
-== render 'form'
+.divider
 
-= link_to 'Show', @idea
-'|
-= link_to 'Back', ideas_path
+= render 'form'
 
+-@footer_link=true
+-@back_float_button_link = pitch_ideas_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

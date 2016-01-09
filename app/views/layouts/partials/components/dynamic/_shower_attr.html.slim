@@ -4,7 +4,9 @@ h6 class="#{text_color}"
   ="#{@shower_comp[:attr]}:"
 =@shower_comp[:value]
 
--unless @shower_comp[:no_divider]
+-if @shower_comp[:slim_divider]
+  .divider.slim
+-elsif !@shower_comp[:no_divider]
   .divider
 
 -@shower_comp = nil

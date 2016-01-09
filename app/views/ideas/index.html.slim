@@ -1,33 +1,30 @@
 h4.center.purple-text Hipóteses já Levantadas
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
 .divider
 
-table.table.table-stripped
-  thead
-    tr
-      th Principal Problema
-      th Problemas Secundários
-      th Como Solucionam Hoje
-      th Tag Line
-      th High Concept
-      th Proposta de Projeto
-      th
-      th
-      th
+.row
+  - @ideas.each do |idea|
+    .col.l6
+      .card-panel
+        - I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
+          - attrs = [:main_problem, :tag_line_pitch, :high_concept_pitch]
+          - attrs.each_with_index do |attr, i|
+            - @shower_comp = {icon: ENUM[:locale_icon][:idea][attr], attr: i18n.t(attr), value: idea[attr], slim_divider: true}
+            -@shower_comp[:no_divider] = true if attrs.length-1 == i
+            = render 'layouts/partials/components/dynamic/shower_attr'
+        .row
+          .col.l4
+            a.col.l12.btn.btn-small href="#{pitch_idea_path(@pitch, idea)}"
+              i.ion-eye
+          .col.l4
+            a.col.l12.btn.btn-small.amber.darken-1 href="#{edit_pitch_idea_path(@pitch, idea)}"
+              i.mdi-editor-mode-edit
+          .col.l4
+            =link_to [@pitch, idea], class: 'col l12 btn btn-small red', data: {:confirm => 'Are you sure?'}, method: :delete do
+              i.mdi-action-delete
 
-  tbody
-    - @ideas.each do |idea|
-      tr
-        td = idea.main_problem
-        td = idea.second_problems
-        td = idea.current_solution
-        td = idea.tag_line_pitch
-        td = idea.high_concept_pitch
-        td = idea.pitch.name
-        td =link_to 'Show', [idea.pitch, idea]
-        td =link_to 'Edit', edit_pitch_idea_path(idea.pitch, idea)
-        td =link_to 'Destroy', [idea.pitch, idea], data: {confirm: 'Are you sure?'}, method: :delete
-
-br
-
-= link_to 'New Idea', new_pitch_idea_path(params[:pitch_id])
+-@float_opts={link: new_pitch_idea_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'
