@@ -4,9 +4,10 @@ class Idea < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
+  belongs_to :start_up
 
   # Rails validations
-  validates :main_problem, length: { minimum: 2, maximum: 55 }, if: :main_problem
+  validates :main_problem, length: { minimum: 2, maximum: 55 }
 
   # Association validations
   validates_presence_of :pitch

@@ -3,12 +3,9 @@ class CreateBusinesses < ActiveRecord::Migration
     create_table :businesses do |t|
       # Base Attrs
       t.string :partnerships, limit: 140, null: true
-      t.string :growth_metrics, limit: 255, null: false
+      t.string :revenue_model, limit: 255, null: false
+      t.string :value_proposition, limit: 140, null: true
       t.string :costumer_success_stories, limit: 255, null: true
-
-      # Boolean attrs
-      t.boolean :awards, null: false, default: false
-      t.boolean :patent, null: false, default: false
       t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)

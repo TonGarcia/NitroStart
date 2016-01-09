@@ -21,18 +21,19 @@
       i.ion-shuffle.prefix
       = f.text_field :current_solution
       = f.label :current_solution
-
+      .footer-info.purple-text Por ex.: Antes do Google o problema de pesquisas era Solucionado indo à Bibliotecas
 
     .input-field.col.l12.s12
       i.ion-chatbox-working.prefix
       = f.text_field :tag_line_pitch
       = f.label :tag_line_pitch
-
+      .footer-info.purple-text =render 'ideas/partials/blog_tag_line_link'
 
     .input-field.col.l12.s12
       i.ion-briefcase.prefix
       = f.text_field :high_concept_pitch
       = f.label :high_concept_pitch
+      .footer-info.purple-text =render 'ideas/partials/blog_high_concept_link'
 
     .input-field.col.l12.s12
       i.ion-flag.prefix

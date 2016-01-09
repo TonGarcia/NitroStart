@@ -98,5 +98,10 @@ module Helpers
     def self.transference_category
       Helpers::Enum.find(:commission_categories, :name, :transference)[:index]
     end
+
+    # Return it LocaleIcon based on model name passed as param
+    def self.locale_icon(model)
+      ENUM[:locale_icon][model]
+    end
   end
 end

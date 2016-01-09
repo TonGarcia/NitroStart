@@ -29,7 +29,7 @@ class PitchesController < ApplicationController
 
     respond_to do |format|
       if @pitch.save
-        format.html { redirect_to @pitch, notice: 'Pitch criado com sucesso! Agora nós dê mais informações sobre seu Projeto!' }
+        format.html { redirect_to @pitch, notice: 'Pitch criado com sucesso! Agora nos dê mais informações sobre seu Projeto!' }
         format.json { render :show, status: :created, location: @pitch }
       else
         format.html { render :new }

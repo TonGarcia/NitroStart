@@ -1,12 +1,9 @@
 -@shower_comp = {} if @shower_comp.nil?
-h6 class="#{text_color}"
-  i class="left-icon slim #{@shower_comp[:icon]}"
-  ="#{@shower_comp[:attr]}:"
-=@shower_comp[:value]
 
--if @shower_comp[:slim_divider]
-  .divider.slim
--elsif !@shower_comp[:no_divider]
-  .divider
+.row
+  h6 class="#{text_color}"
+    i class="left-icon slim #{@shower_comp[:icon]}"
+    ="#{@shower_comp[:attr]}:"
+  =@shower_comp[:value]
 
 -@shower_comp = nil

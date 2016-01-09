@@ -27,15 +27,14 @@ ActiveRecord::Schema.define(version: 20160106185851) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "partnerships",             limit: 140
-    t.string   "growth_metrics",           limit: 255,                 null: false
+    t.string   "revenue_model",            limit: 255,                null: false
+    t.string   "value_proposition",        limit: 140
     t.string   "costumer_success_stories", limit: 255
-    t.boolean  "awards",                               default: false, null: false
-    t.boolean  "patent",                               default: false, null: false
-    t.boolean  "active",                               default: true,  null: false
+    t.boolean  "active",                               default: true, null: false
     t.integer  "pitch_id",                 limit: 4
     t.integer  "start_up_id",              limit: 4
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
   end
 
   add_index "businesses", ["pitch_id"], name: "index_businesses_on_pitch_id", using: :btree
@@ -131,17 +130,18 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "stage",                  limit: 4,                  null: false
+    t.integer  "stage",                  limit: 4,                   null: false
     t.datetime "work_flow_updated_at"
     t.integer  "work_flow_file_size",    limit: 4
     t.string   "work_flow_content_type", limit: 255
     t.string   "work_flow_file_name",    limit: 255
-    t.string   "value_proposition",      limit: 140
-    t.boolean  "active",                             default: true, null: false
+    t.boolean  "awards",                             default: false, null: false
+    t.boolean  "patent",                             default: false, null: false
+    t.boolean  "active",                             default: true,  null: false
     t.integer  "pitch_id",               limit: 4
     t.integer  "start_up_id",            limit: 4
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree

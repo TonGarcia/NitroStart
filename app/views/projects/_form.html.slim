@@ -18,4 +18,15 @@
   .field
     = f.label :start_up
     = f.text_field :start_up
+
+    .input-field.col.l12.s12
+      i.prefix.ion-flag
+      = f.check_box :patent, class: 'filled-in'
+      = f.label :patent, class: 'check_label'
+
+    .input-field.col.l12.s12
+      i.prefix.ion-trophy
+      = f.check_box :awards, class: 'filled-in'
+      = f.label :awards, class: 'check_label'
+
   .actions = f.submit

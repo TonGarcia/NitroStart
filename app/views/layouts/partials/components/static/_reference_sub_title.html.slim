@@ -1,0 +1,8 @@
+-if @pitch
+  h6.center.purple-text
+    | Proposta de Projeto (Pitch): &nbsp;
+    strong=link_to @pitch.name, pitch_path(@pitch)
+-elsif @start_up
+  h6.center.purple-text
+   | StartUp Acelerada (Empresa): &nbsp;
+   strong=link_to @start_up.name, pitch_path(@start_up)

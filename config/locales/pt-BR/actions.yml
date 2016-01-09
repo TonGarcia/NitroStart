@@ -26,3 +26,8 @@ pt-BR:
       show: Detalhamento da Hipótese
       index: Listagem de Hipóteses
       create: Explique sua Ideia
+    businesses:
+      new: Explique sua Hipótese
+      show: Detalhamento da Hipótese
+      index: Listagem de Modelos de Negócio
+      create: Explique sua Ideia

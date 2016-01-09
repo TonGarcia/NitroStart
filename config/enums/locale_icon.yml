@@ -7,3 +7,8 @@ locale_icon:
     tag_line_pitch: ion-chatbox-working
     high_concept_pitch: ion-briefcase
     how_validate: ion-flag
+  business:
+    partnerships: ion-loop
+    value_proposition: fa fa-gift
+    revenue_model: mdi-action-trending-up
+    costumer_success_stories: ion-thumbsup

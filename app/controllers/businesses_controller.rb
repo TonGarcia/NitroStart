@@ -1,6 +1,7 @@
 class BusinessesController < ApplicationController
   # Controllers Concerns
   include HistoricalControllers
+  add_breadcrumb I18n.t('actions.businesses.index'), :pitch_businesses_path, only: %w(edit)
 
   #  Event Triggers
   before_action :set_business, only: [:show, :edit, :update, :destroy]
@@ -32,7 +33,7 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to @business, notice: 'Business was successfully created.' }
+        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio salvo com sucesso.' }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new }
@@ -46,7 +47,7 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to @business, notice: 'Business was successfully updated.' }
+        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit }
@@ -73,6 +74,6 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:partnerships, :growth_metrics, :costumer_success_stories, :awards, :patent, :pitch_id, :start_up_id)
+      params.require(:business).permit(:partnerships, :revenue_model, :costumer_success_stories, :value_proposition).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

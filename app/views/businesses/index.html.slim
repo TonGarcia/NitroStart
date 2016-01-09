@@ -1,33 +1,16 @@
-h1 Listing businesses
+h4.center.purple-text Modelagem de Negócio já Levantadas
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
-table
-  thead
-    tr
-      th Partnerships
-      th Growth metrics
-      th Costumer success stories
-      th Awards
-      th Patent
-      th Pitch
-      th Startup
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @businesses.each do |business|
-      tr
-        td = business.partnerships
-        td = business.growth_metrics
-        td = business.costumer_success_stories
-        td = business.awards
-        td = business.patent
-        td = business.pitch
-        td = business.start_up
-        td = link_to 'Show', business
-        td = link_to 'Edit', edit_business_path(business)
-        td = link_to 'Destroy', business, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  - @businesses.each do |business|
+    -@ref = 'business_index'
+    -@nested_obj = @pitch
+    -@current_obj = business
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-br
-
-= link_to 'New Business', new_business_path
+    -@float_opts={link: new_pitch_business_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

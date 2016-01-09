@@ -1,8 +1,8 @@
-h1 Editing business
+h4.center.purple-text Edição do Modelo de Negócio
+=render  'layouts/partials/components/static/reference_sub_title'
 
 == render 'form'
 
-= link_to 'Show', @business
-'|
-= link_to 'Back', businesses_path
-
+-@footer_link=true
+-@back_float_button_link = pitch_businesses_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

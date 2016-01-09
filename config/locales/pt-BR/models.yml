@@ -28,9 +28,24 @@ pt-BR:
 
   # Idea -----------------------------------------------------
       idea:
-        main_problem: Problema Principal a ser Solucionado
+        main_problem: Principal Problema a ser Solucionado
         second_problems: Problemas Secundários a serem Solucionado
         current_solution: Como este Problema é Solucionado Hoje
         tag_line_pitch: Tag Line Pitch - Venda pro Consumidor
         high_concept_pitch: High Concept Pitch - Venda pro Investidor
         how_validate: Como a Hipótese foi Validada
+
+  # Business -----------------------------------------------------
+      business:
+        partnerships: Potenciais Parceiros
+        revenue_model: Modelos de Receita
+        value_proposition: Proposta de Valor
+        costumer_success_stories: Feedback positivo de Consumidores
+
+  # Project -----------------------------------------------------
+      projects:
+        partnerships: Potenciais Parceiros
+        revenue_model: Modelo de Receita
+        costumer_success_stories: Feedback positivo de Consumidores
+        awards: Recebeu Prêmio?
+        patent: Possui Patente?

@@ -1,0 +1,29 @@
+-nested_class_name = @nested_obj.class.name.downcase
+-current_class_name = @current_obj.class.name.downcase
+
+.col.l6
+  .card-panel
+    -current_model = params[:controller].singularize
+    - I18n.with_options(scope: "activerecord.attributes.#{current_model}") do |i18n|
+      - send("#{@ref}_attrs").each_with_index do |attr, i|
+        - @shower_comp = {icon: locale_icon(current_model.to_sym)[attr], attr: i18n.t(attr), value: @current_obj[attr], slim_divider: true}
+
+        .row
+          h6 class="#{text_color}"
+            i class="left-icon slim #{@shower_comp[:icon]}"
+            = "#{@shower_comp[:attr]}:"
+          = @shower_comp[:value]
+
+    .row
+      .col.l4
+        a.col.l12.btn href="#{send("#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
+          i.ion-eye
+      .col.l4
+        a.col.l12.btn.amber.darken-2 href="#{send("edit_#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
+          i.mdi-editor-mode-edit
+      .col.l4
+        =link_to [@nested_obj, @current_obj], class: 'col l12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+          i.mdi-action-delete
+
+-@shower_comp=nil
+-@current_obj=nil

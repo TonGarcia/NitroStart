@@ -1,30 +1,31 @@
-= form_for @business do |f|
+= form_for [@pitch, @business] do |f|
   - if @business.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@business.errors.count, "error")} prohibited this business from being saved:"
-      ul
-        - @business.errors.full_messages.each do |message|
-          li = message
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(@idea.errors.count, "erro")} impediu a Hipótese de ser registrada:"
+      ul.style_warning_list
+        - @idea.errors.full_messages.each do |message|
+          li =message
 
-  .field
-    = f.label :partnerships
-    = f.text_field :partnerships
-  .field
-    = f.label :growth_metrics
-    = f.text_field :growth_metrics
-  .field
-    = f.label :costumer_success_stories
-    = f.text_field :costumer_success_stories
-  .field
-    = f.label :awards
-    = f.check_box :awards
-  .field
-    = f.label :patent
-    = f.check_box :patent
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
-  .actions = f.submit
+  .row
+    .input-field.col.l12.s12
+      i.prefix.ion-loop
+      = f.text_field :partnerships, autofocus: true
+      = f.label :partnerships
+
+    .input-field.col.l12.s12
+      i.prefix.fa.fa-gift
+      = f.text_field :value_proposition
+      = f.label :value_proposition
+
+    .input-field.col.l12.s12
+      i.prefix.mdi-action-trending-up
+      = f.text_area :revenue_model, class: 'materialize-textarea'
+      = f.label :revenue_model
+
+    .input-field.col.l12.s12
+      i.prefix.ion-thumbsup
+      = f.text_area :costumer_success_stories, class: 'materialize-textarea'
+      = f.label :costumer_success_stories
+
+  - @footer_link=true
+  = render 'layouts/partials/components/static/float_buttons/save'

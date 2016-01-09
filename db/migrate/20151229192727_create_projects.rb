@@ -3,7 +3,10 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       # Base Attrs
       t.integer :stage, null: false
-      t.string :value_proposition, limit: 140, null: true
+
+      # Boolean attrs
+      t.boolean :awards, null: false, default: false
+      t.boolean :patent, null: false, default: false
       t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)
