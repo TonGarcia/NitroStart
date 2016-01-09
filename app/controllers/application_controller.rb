@@ -27,12 +27,6 @@ class ApplicationController < ActionController::Base
       current_user.nil? ? authenticate_user! : @current_user = current_user
     end
 
-    # Create the breadcrumbs
-    def setup_breadcrumbs
-      add_breadcrumb '<i class="fa fa-home"></i> Início'.html_safe, '/'
-      add_breadcrumb I18n.t("actions.#{params[:controller]}.#{params[:action]}"), request.fullpath, only: :"#{params[:action]}"
-    end
-
     # Every controller which doesn't need session, like API, must change it
     def login_not_required
       false
