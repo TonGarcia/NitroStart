@@ -1,11 +1,11 @@
 = form_for [@pitch, @idea], html: {'role'=>'form'} do |f|
-  - if @idea.errors.any?
+  - current_obj = @idea
+  - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(@idea.errors.count, "erro")} impediu a Hipótese de ser registrada:"
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu a Hipótese de ser registrada:"
       ul.style_warning_list
-        - @idea.errors.full_messages.each do |message|
-          li =message
-
+        - current_obj.errors.full_messages.each do |message|
+          li = message
   .row
     .input-field.col.l12.s12
       i.ion-alert-circled.prefix

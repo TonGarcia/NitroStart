@@ -12,3 +12,7 @@ locale_icon:
     value_proposition: fa fa-gift
     revenue_model: mdi-action-trending-up
     costumer_success_stories: ion-thumbsup
+  project:
+    stage: ion-connection-bars
+    patent: ion-flag
+    awards: ion-trophy

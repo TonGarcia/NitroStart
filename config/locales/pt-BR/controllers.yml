@@ -4,6 +4,7 @@ pt-BR:
   controllers:
     ideas: Hipóteses
     pitches: Pitches
+    projects: Projetos
     showroom: Vitrine
     start_ups: Startups
     dashboard: Painel de Acompanhamento

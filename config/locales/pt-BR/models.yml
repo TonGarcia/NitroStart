@@ -43,9 +43,7 @@ pt-BR:
         costumer_success_stories: Feedback positivo de Consumidores
 
   # Project -----------------------------------------------------
-      projects:
-        partnerships: Potenciais Parceiros
-        revenue_model: Modelo de Receita
-        costumer_success_stories: Feedback positivo de Consumidores
+      project:
+        stage: Estágio de Maturidade
         awards: Recebeu Prêmio?
         patent: Possui Patente?

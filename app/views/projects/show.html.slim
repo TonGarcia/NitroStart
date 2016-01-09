@@ -1,18 +1,27 @@
-p#notice = notice
+h4.center.purple-text Detalhamento do Estágio do Projeto
+=render  'layouts/partials/components/static/reference_sub_title'
 
-p
-  strong Stage:
-  = @project.stage
-p
-  strong Value proposition:
-  = @project.value_proposition
-p
-  strong Pitch:
-  = @project.pitch
-p
-  strong Startup:
-  = @project.start_up
+.divider
 
-= link_to 'Edit', edit_project_path(@project)
-'|
-= link_to 'Back', projects_path
+.row
+  - I18n.with_options(scope: 'activerecord.attributes.project') do |i18n|
+    .col.l3.offset-l1
+      h6.purple-text
+        i class="left-icon slim #{locale_icon(:project)[:stage]}"
+        =i18n.t(:stage)
+      =@project.view_stage
+
+    .col.l3.offset-l1
+      h6.purple-text
+        i class="left-icon slim #{locale_icon(:project)[:awards]}"
+        =i18n.t(:awards)
+      =to_view @project.awards
+
+    .col.l3.offset-l1
+      h6.purple-text
+        i class="left-icon slim #{locale_icon(:project)[:patent]}"
+        =i18n.t(:patent)
+      =to_view @project.patent
+
+-@float_opts={link: edit_pitch_project_path(@pitch.id, @project.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn =render 'home/partials/components/float_button'

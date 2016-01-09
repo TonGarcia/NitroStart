@@ -1,8 +1,8 @@
-h1 Editing project
+h4.center.purple-text Edição do Modelo de Negócio
+= render 'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+= render 'form'
 
-= link_to 'Show', @project
-'|
-= link_to 'Back', projects_path
-
+-@footer_link=true
+-@back_float_button_link = pitch_projects_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

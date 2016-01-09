@@ -1,27 +1,33 @@
-h1 Listing projects
+h4.center.purple-text Estágios do Projeto
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
-table
-  thead
-    tr
-      th Stage
-      th Value proposition
-      th Pitch
-      th Startup
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @projects.each do |project|
+.row
+  table.table-stripped
+    thead
       tr
-        td = project.stage
-        td = project.value_proposition
-        td = project.pitch
-        td = project.start_up
-        td = link_to 'Show', project
-        td = link_to 'Edit', edit_project_path(project)
-        td = link_to 'Destroy', project, data: {:confirm => 'Are you sure?'}, :method => :delete
+        -project_index_attrs.each do |attr|
+          - I18n.with_options(scope: 'activerecord.attributes.project') do |i18n|
+            th =i18n.t(attr)
+        th
+        th
+        th
+    tbody
+      - @projects.each do |project|
+        tr
+          td =project.view_stage
+          td =to_view project.awards
+          td =to_view project.patent
+          td =link_to [@pitch, project], class: 'btn purple' do
+            i.ion-eye
+          td =link_to edit_pitch_project_path(@pitch, project), class: 'btn amber darken-2' do
+            i.mdi-editor-mode-edit
+          td =link_to [@pitch, project], class: 'col l12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+            i.mdi-action-delete
 
-br
 
-= link_to 'New Project', new_project_path
+-@float_opts={link: new_pitch_project_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

@@ -13,4 +13,10 @@ module ApplicationHelper
   def locale_icon(model)
     ENUM[:locale_icon][model]
   end
+
+  # Show as readable
+  def to_view(value)
+    return 'Sim' if value == true
+    return 'Não' if value == false
+  end
 end

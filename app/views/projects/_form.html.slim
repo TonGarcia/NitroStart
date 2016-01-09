@@ -1,32 +1,25 @@
-= form_for @project do |f|
-  - if @project.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
-      ul
-        - @project.errors.full_messages.each do |message|
+= form_for [@pitch, @project] do |f|
+  - current_obj = @project
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Projeto de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :stage
-    = f.number_field :stage
-  .field
-    = f.label :value_proposition
-    = f.text_field :value_proposition
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
+  .row
+    .input-field.col.l4.s12
+      =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
 
-    .input-field.col.l12.s12
-      i.prefix.ion-flag
-      = f.check_box :patent, class: 'filled-in'
-      = f.label :patent, class: 'check_label'
-
-    .input-field.col.l12.s12
+    .input-field.col.l3.offset-l1.s6
       i.prefix.ion-trophy
       = f.check_box :awards, class: 'filled-in'
       = f.label :awards, class: 'check_label'
 
-  .actions = f.submit
+    .input-field.col.l3.offset-l1.s6
+      i.prefix.ion-flag
+      = f.check_box :patent, class: 'filled-in'
+      = f.label :patent, class: 'check_label'
+
+  - @footer_link=true
+  = render 'layouts/partials/components/static/float_buttons/save'

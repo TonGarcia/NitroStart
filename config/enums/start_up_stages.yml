@@ -1,0 +1,21 @@
+start_up_stages:
+- id:       0
+  name:     Somente Idéia
+
+- id:       1
+  name:     Modelo Validado
+
+- id:       2
+  name:     Protótipo (MVP)
+
+- id:       3
+  name:     Pré-Operacional
+
+- id:       4
+  name:     Operacional
+
+- id:       5
+  name:     Ganhando Escala Nacional
+
+- id:       6
+  name:     Ganhando Escala Internacional

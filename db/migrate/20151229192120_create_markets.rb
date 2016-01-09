@@ -2,6 +2,7 @@ class CreateMarkets < ActiveRecord::Migration
   def change
     create_table :markets do |t|
       # Base Attrs
+      t.string :segment, limit: 75, null: false, default: 986
       t.integer :currency_iso, null: false, default: 986
       t.integer :total_money, null: false
       t.integer :total_costumers, null: false

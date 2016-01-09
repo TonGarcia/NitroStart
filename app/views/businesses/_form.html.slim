@@ -1,9 +1,10 @@
 = form_for [@pitch, @business] do |f|
-  - if @business.errors.any?
+  -current_obj = @business
+  - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(@idea.errors.count, "erro")} impediu a Hipótese de ser registrada:"
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Modelo de Negócio de ser registrada:"
       ul.style_warning_list
-        - @idea.errors.full_messages.each do |message|
+        - current_obj.errors.full_messages.each do |message|
           li =message
 
   .row
