@@ -11,7 +11,7 @@ class Pitch < ActiveRecord::Base
   has_many :markets
   has_many :revenues
   has_many :projects
-  has_many :financial
+  has_many :financials
   has_many :tractions
   has_many :supporters
   has_many :businesses

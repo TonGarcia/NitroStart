@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects

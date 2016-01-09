@@ -1,4 +1,8 @@
 class BusinessesController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_business, only: [:show, :edit, :update, :destroy]
 
   # GET /businesses

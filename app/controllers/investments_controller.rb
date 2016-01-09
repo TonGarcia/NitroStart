@@ -1,4 +1,8 @@
 class InvestmentsController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_investment, only: [:show, :edit, :update, :destroy]
 
   # GET /investments

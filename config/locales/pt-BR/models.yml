@@ -28,8 +28,9 @@ pt-BR:
 
   # Idea -----------------------------------------------------
       idea:
-        main_problem: Principal Problema a ser Solucionado
+        main_problem: Problema Principal a ser Solucionado
         second_problems: Problemas Secundários a serem Solucionado
-        current_solution: Como este Problema é Solucionado Hoje?
-        tag_line_pitch: Tag Line Pitch (veja mais sobre em nosso Blog)
-        high_concept_pitch: High Concept Pitch (veja mais sobre em nosso Blog)
+        current_solution: Como este Problema é Solucionado Hoje
+        tag_line_pitch: Tag Line Pitch - Venda pro Consumidor
+        high_concept_pitch: High Concept Pitch - Venda pro Investidor
+        how_validate: Como a Hipótese foi Validada

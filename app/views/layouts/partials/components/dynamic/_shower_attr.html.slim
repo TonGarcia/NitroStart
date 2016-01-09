@@ -1,0 +1,10 @@
+-@shower_comp = {} if @shower_comp.nil?
+h6 class="#{text_color}"
+  i class="left-icon slim #{@shower_comp[:icon]}"
+  ="#{@shower_comp[:attr]}:"
+=@shower_comp[:value]
+
+-unless @shower_comp[:no_divider]
+  .divider
+
+-@shower_comp = nil

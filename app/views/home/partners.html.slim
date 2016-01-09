@@ -4,17 +4,18 @@
     .container
       .icon-explanation
         .row
-          h2.white-text.center Mais uma Fonte de Receita
+          h2.white-text.center Nova Fonte de Receita
         .row.sub-title
           h5.white-text.light-weight.center.col.l12 Você lembra de como foi difícil conseguir o primeiro investimento?
           h5.white-text.light-weight.center.col.l12 Seus resultados já são bons, mas quer aumentá-los com fontes alternativas de ganhos?
-          h5.white-text.light-weight.center.col.l12 Traga sua carteira de Clientes/Colaboradores para NITREM e nós te remuneraremos!
+          h5.white-text.light-weight.center.col.l12 Traga sua carteira de Clientes/Colaboradores para NITRAREM e nós te remuneraremos!
         .row.store_downloads
-          a.col.l6.offset-l3.action-btn.btn-large.white-text href="#"
+          a.col.l6.offset-l3.s12.action-btn.btn-large.white-text href="#{new_user_session_path}"
             i.left-icon.mdi-action-assignment-ind
             | parceiro nitro start
-  .overlay_parallax
-    =image_tag('defaults/startupers_cover.jpg', class:'hide-on-med-and-down')
+  .parallax
+    .overlay
+    =image_tag('defaults/partners_cover.png')
 
 /! How the membership work
 #how_works.row
@@ -49,6 +50,40 @@
             h5.center  Fature Junto
             p.light.justify Você receberá 2% do total investido (nitrada) feito pela pessoa indicada por você (vinda pelo seu Link).
 
+/! Earn Calc
+#earn_calc.row
+  section.partners
+    .container
+      .row
+        .header
+          h4.purple-text.bold.center Calcule seus possíveis Rendimentos
+
+      .divider
+
+      .row
+        .card-panel.expandable
+          form#partners_earn_calc
+            .row
+              .input-field.col.l12.s12
+                i.prefix.ion-ios-people
+                input#range_rate name="visitors" type="text"
+                label for="range_rate" Quantidade Total do seu Alcance de Visitantes/Usuários/Seguidores...
+            .row
+              .input-field.col.l12.s12
+                i.prefix.ion-ios-pie
+                input#conversion_rate name="visitors" type="text"
+                label for="conversion_rate" Taxa de Conversão Estimada em (por exemplo: 20%)
+            .row.teal-text
+              .input-field.col.l12.s12
+                i.prefix.ion-cash
+                input#estimate_investment name="visitors" type="text" disabled="disabled" value="R$ 6.000,00"
+                label for="estimate_investment" Valor Estimado de Investimento em 1 ano por pessoa
+            .row.amber-text.text-darken-2
+              .input-field.col.l6.offset-l3.s12
+                h6
+                  | Valor a Receber (por mês):
+                  span.teal-text#earning
+
 /! Improve Campaigns
 #improve_campaigns.row
   section.partners
@@ -72,30 +107,8 @@
             i.ion-ios-people
           h5.center  Gere Empregos
           p.light.justify Cada Stratup gera, em média, entre 3 a 30 empregos, dependendo do estágio.
-        .col.s12.m3.offset-m1
+        .col.s12.m4.offset-m1
           h2.center.purple-text
             i.fa.fa-exchange
           h5.center  Movimente a Economia
-          p.light.justify Tire aquele dinheiro Parado da Poupança e NITRE o país!
-
-
-      .divider
-
-      .row
-        h5.orange-text.text-darken-1.bold.center Como gerar Engajamento nas Campanhas
-
-        .col.s12.m3
-          h2.center.red-text.text-darken-1
-            i.ion-arrow-graph-down-right
-          h5.center  Tire-nos da Crise
-          p.light.justify A crise só será vencida se os sintomas forem tratados.
-        .col.s12.m3.offset-m1
-          h2.center.orange-text.text-darken-1
-            i.ion-ios-people
-          h5.center  Gere Empregos
-          p.light.justify Cada Stratup gera, em média, entre 3 a 30 empregos, dependendo do estágio.
-        .col.s12.m3.offset-m1
-          h2.center.purple-text
-            i.fa.fa-exchange
-          h5.center  Movimente a Economia
-          p.light.justify Tire aquele dinheiro Parado da Poupança e NITRE o país!
+          p.light.justify Tire aquele dinheiro Parado da Poupança e NITRE o país! Faça o Seu Dinheiro trabalhar por VOCÊ! Dinheiro trabalhador.

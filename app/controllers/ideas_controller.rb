@@ -1,12 +1,14 @@
 class IdeasController < ApplicationController
-  before_action :set_nested
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   # GET /ideas
   # GET /ideas.json
   def index
     @ideas = Idea.all
-    redirect_to new_pitch_idea_path(params[:pitch_id]) if @ideas.empty?
   end
 
   # GET /ideas/1
@@ -30,7 +32,7 @@ class IdeasController < ApplicationController
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        format.html { redirect_to [@pitch, @idea], notice: 'Hipótese criada com Sucesso!' }
         format.json { render :show, status: :created, location: @idea }
       else
         format.html { render :new }
@@ -44,7 +46,7 @@ class IdeasController < ApplicationController
   def update
     respond_to do |format|
       if @idea.update(idea_params)
-        format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
+        format.html { redirect_to @idea, notice: 'Hipótese atualizada com Sucesso.' }
         format.json { render :show, status: :ok, location: @idea }
       else
         format.html { render :edit }
@@ -58,7 +60,7 @@ class IdeasController < ApplicationController
   def destroy
     @idea.destroy
     respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
+      format.html { redirect_to ideas_url, notice: 'Hipótese deletada com Sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -69,13 +71,8 @@ class IdeasController < ApplicationController
       @idea = Idea.find(params[:id])
     end
 
-    # Setup it dependence (objects)
-    def set_nested
-      @pitch = Pitch.find(params[:pitch_id]) if params[:pitch_id]
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :how_validate)
+      params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :how_validate).merge!(pitch_id: params[:pitch_id])
     end
 end

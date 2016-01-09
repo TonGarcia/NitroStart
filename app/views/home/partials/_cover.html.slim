@@ -8,13 +8,13 @@
         .row.sub-title
           h5.white-text.light-weight.center.col.l12 O melhor investimento para você e para o Brasil
           h5.white-text.light-weight.center.col.l12 Acompanhe em Tempo-Real seu Investimento e o Desempenho das Startups
-          h5.white-text.light-weight.center.col.l12 Somos a 1ª a unir Técnologia e Transparência entre Investidores e Startups
+          h5.white-text.light-weight.center.col.l12.hide-on-small-only Somos a 1ª a unir Técnologia e Transparência entre Investidores e Startups
         .row.store_downloads
-          a.col.l4.offset-l1.action-btn.btn-large.purple.white-text href="#"
+          a.col.l4.offset-l1.s6.action-btn.btn-large.purple.white-text href="#{new_user_session_path}"
             i.left-icon.fa.fa-rocket
             | Startups
-          a.col.l4.offset-l2.action-btn.btn-large.amber.darken-2.white-text href="#"
+          a.col.l4.offset-l2.s6.action-btn.btn-large.amber.darken-2.white-text href="#{new_user_session_path}"
             i.left-icon.ion-flame
             | Nitrar
-  .overlay_parallax
-    =image_tag('defaults/startupers_cover.jpg', class:'hide-on-med-and-down')
+  .parallax
+    =image_tag('defaults/startupers_cover.jpg')

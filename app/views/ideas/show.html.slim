@@ -1,24 +1,42 @@
-p#notice = notice
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Levantamentos do Problema
+      .content
+        -I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
+          -attrs = [:main_problem, :second_problems, :current_solution]
+          -attrs.each_with_index do |attr, i|
+            - @shower_comp = {icon: ENUM[:locale_icon][:idea][attr], attr: i18n.t(attr), value: @idea[attr]}
+            -@shower_comp[:no_divider] = true if attrs.length-1 == i
+            = render 'layouts/partials/components/dynamic/shower_attr'
 
-p
-  strong Main problem:
-  = @idea.main_problem
-p
-  strong Second problem:
-  = @idea.second_problem
-p
-  strong Current solution:
-  = @idea.current_solution
-p
-  strong Tag line pitch:
-  = @idea.tag_line_pitch
-p
-  strong High concept pitch:
-  = @idea.high_concept_pitch
-p
-  strong Pitch:
-  = @idea.pitch
+  .col.l6
+    .card
+      .title
+        h5.center Levantamentos da Hipótese
+      .content
+        -I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
+          -attrs = [:tag_line_pitch, :high_concept_pitch, :how_validate]
+          -attrs.each_with_index do |attr, i|
+            - @shower_comp = {icon: ENUM[:locale_icon][:idea][attr], attr: i18n.t(attr), value: @idea[attr]}
+            -@shower_comp[:no_divider] = true if attrs.length-1 == i
+            = render 'layouts/partials/components/dynamic/shower_attr'
 
-= link_to 'Edit', edit_idea_path(@idea)
-'|
-= link_to 'Back', ideas_path
+.row
+  .col.l8.offset-l2
+    .card-panel
+      h5.center Dúvidas? Acesse nosso blog!
+      .divider
+
+      .col.l6
+        a href="#" target="_blank" class="#{external_link_color}"
+          i.left-icon.slim.fa.fa-external-link
+          | Artigo sobre Tag Line Pitch
+      .col.l6
+        a href="#" target="_blank" class="#{external_link_color}"
+          i.left-icon.slim.fa.fa-external-link
+          | Artigo sobre High Concept Pitch
+
+-@float_opts={link: edit_pitch_idea_path(@pitch.id, @idea.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

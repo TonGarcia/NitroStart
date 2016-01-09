@@ -55,12 +55,12 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "competitors", ["pitch_id"], name: "index_competitors_on_pitch_id", using: :btree
   add_index "competitors", ["start_up_id"], name: "index_competitors_on_start_up_id", using: :btree
 
-  create_table "financial", force: :cascade do |t|
-    t.integer  "total_costumer",     limit: 4,                          default: 0,    null: false
-    t.decimal  "total_revenue",                precision: 12, scale: 2, default: 0.0,  null: false
-    t.decimal  "total_expense",                precision: 10, scale: 2, default: 0.0,  null: false
-    t.decimal  "conversion_price",             precision: 2,  scale: 2, default: 0.0,  null: false
-    t.integer  "market_penetration", limit: 4,                          default: 0,    null: false
+  create_table "financials", force: :cascade do |t|
+    t.integer  "total_costumer",     limit: 4,                                         null: false
+    t.decimal  "total_revenue",                precision: 12, scale: 2,                null: false
+    t.decimal  "total_expense",                precision: 10, scale: 2,                null: false
+    t.decimal  "conversion_price",             precision: 2,  scale: 2,                null: false
+    t.integer  "market_penetration", limit: 4,                                         null: false
     t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",           limit: 4
     t.integer  "start_up_id",        limit: 4
@@ -68,15 +68,15 @@ ActiveRecord::Schema.define(version: 20160106185851) do
     t.datetime "updated_at",                                                           null: false
   end
 
-  add_index "financial", ["pitch_id"], name: "index_financial_on_pitch_id", using: :btree
-  add_index "financial", ["start_up_id"], name: "index_financial_on_start_up_id", using: :btree
+  add_index "financials", ["pitch_id"], name: "index_financials_on_pitch_id", using: :btree
+  add_index "financials", ["start_up_id"], name: "index_financials_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
     t.string   "main_problem",       limit: 55,                 null: false
     t.string   "second_problems",    limit: 255
     t.string   "current_solution",   limit: 140
-    t.string   "tag_line_pitch",     limit: 20
-    t.string   "high_concept_pitch", limit: 20
+    t.string   "tag_line_pitch",     limit: 30
+    t.string   "high_concept_pitch", limit: 30
     t.string   "how_validate",       limit: 140
     t.boolean  "active",                         default: true, null: false
     t.integer  "pitch_id",           limit: 4
@@ -107,8 +107,8 @@ ActiveRecord::Schema.define(version: 20160106185851) do
 
   create_table "markets", force: :cascade do |t|
     t.integer  "currency_iso",           limit: 4,   default: 986,  null: false
-    t.integer  "total_money",            limit: 4,   default: 0,    null: false
-    t.integer  "total_costumers",        limit: 4,   default: 0,    null: false
+    t.integer  "total_money",            limit: 4,                  null: false
+    t.integer  "total_costumers",        limit: 4,                  null: false
     t.string   "trends_insight",         limit: 140
     t.string   "costumer_specification", limit: 140,                null: false
     t.boolean  "active",                             default: true, null: false
@@ -284,8 +284,8 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_foreign_key "businesses", "start_ups"
   add_foreign_key "competitors", "pitches"
   add_foreign_key "competitors", "start_ups"
-  add_foreign_key "financial", "pitches"
-  add_foreign_key "financial", "start_ups"
+  add_foreign_key "financials", "pitches"
+  add_foreign_key "financials", "start_ups"
   add_foreign_key "ideas", "pitches"
   add_foreign_key "ideas", "start_ups"
   add_foreign_key "investments", "pitches"

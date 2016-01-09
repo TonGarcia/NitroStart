@@ -1,4 +1,8 @@
 class RevenuesController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_revenue, only: [:show, :edit, :update, :destroy]
 
   # GET /revenues

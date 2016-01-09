@@ -42,8 +42,8 @@ pt-BR:
       updated: 'Sua conta foi atualizada com sucesso.'
     sessions:
       signed_in: 'Bem-Vindo à NITRO START! É bom revê-lo por aqui, junto conosco.'
-      signed_out: 'Saiu com sucesso.'
-      already_signed_out: 'Agora você está Deslogado. Não nos abandone! Esperamos que volte logo.'
+      signed_out: 'Deslogado com sucesso. Volte sempre e até logo.'
+      already_signed_out: 'Agora você está Deslogado. Esperamos que volte logo. Um abraço!'
     unlocks:
       send_instructions: 'Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta.'
       send_paranoid_instructions: 'Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos.'

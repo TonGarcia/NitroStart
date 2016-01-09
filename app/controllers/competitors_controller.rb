@@ -1,4 +1,8 @@
 class CompetitorsController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_competitor, only: [:show, :edit, :update, :destroy]
 
   # GET /competitors

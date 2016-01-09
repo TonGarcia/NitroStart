@@ -11,14 +11,16 @@
 //= require prettyphoto-rails
 
 // My JS
+//= require partners
 // require concerns/fast_fix
+//= require concerns/accounting
 
 $(document).ready(function(){
     setup_tabs();
     fix_error_field();
 
+    $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
-    if( $(window).width() >= 800 && $(window).height() >= 500 ) $('.overlay_parallax').parallax();
 
     $("a[rel^='prettyPhoto']").prettyPhoto({
         show_title: false,

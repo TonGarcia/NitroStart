@@ -2,6 +2,7 @@
 # pt-BR translations for Controllers
 pt-BR:
   controllers:
+    ideas: Hipóteses
     pitches: Pitches
     showroom: Vitrine
     start_ups: Startups

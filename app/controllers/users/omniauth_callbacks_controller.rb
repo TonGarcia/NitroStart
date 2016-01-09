@@ -6,7 +6,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     session['user_id'] = user.id if user.id
 
     if user.persisted?
-      flash[:notice] = 'You are now connected, enjoy!'
       sign_in_and_redirect(user)
     else
       if session['user_id']

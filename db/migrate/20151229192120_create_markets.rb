@@ -3,8 +3,8 @@ class CreateMarkets < ActiveRecord::Migration
     create_table :markets do |t|
       # Base Attrs
       t.integer :currency_iso, null: false, default: 986
-      t.integer :total_money, null: false, default: 0
-      t.integer :total_costumers, null: false, default: 0
+      t.integer :total_money, null: false
+      t.integer :total_costumers, null: false
       t.string :trends_insight, limit: 140, null: true
       t.string :costumer_specification, limit: 140, null: false
       t.boolean :active, null: false, default: true

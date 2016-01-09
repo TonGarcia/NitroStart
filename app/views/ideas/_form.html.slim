@@ -18,25 +18,25 @@
       = f.label :second_problems
 
     .input-field.col.l12.s12
-      i.ion-flag.prefix
+      i.ion-shuffle.prefix
       = f.text_field :current_solution
       = f.label :current_solution
 
 
     .input-field.col.l12.s12
-      i.mdi-action-assignment-ind.prefix
+      i.ion-chatbox-working.prefix
       = f.text_field :tag_line_pitch
       = f.label :tag_line_pitch
 
 
     .input-field.col.l12.s12
-      i.mdi-action-assignment-ind.prefix
+      i.ion-briefcase.prefix
       = f.text_field :high_concept_pitch
       = f.label :high_concept_pitch
 
     .input-field.col.l12.s12
-      i.mdi-action-assignment-ind.prefix
-      = f.text_area :how_validate
+      i.ion-flag.prefix
+      = f.text_area :how_validate, class: 'materialize-textarea'
       = f.label :how_validate
 
   -@footer_link=true

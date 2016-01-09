@@ -1,0 +1,9 @@
+# Define Locale Icons (translate word or expressions in default icon)
+locale_icon:
+  idea:
+    main_problem: ion-alert-circled
+    second_problems: ion-alert
+    current_solution: ion-shuffle
+    tag_line_pitch: ion-chatbox-working
+    high_concept_pitch: ion-briefcase
+    how_validate: ion-flag

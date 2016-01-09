@@ -50,7 +50,7 @@
   }
 
   .store_downloads {
-    margin-top: 145px;
+    margin-top: 140px;
   }
 
   .sub-title {
@@ -172,4 +172,16 @@ p.slim_margin {
 
 strong {
   font-weight: bold;
+}
+
+span#earning {
+  margin-left: 15px;
+}
+
+@media only screen and (max-width : 992px) {
+  .icon-explanation {
+    .row.store_downloads {
+      margin-top: -10% !important;
+    }
+  }
 }

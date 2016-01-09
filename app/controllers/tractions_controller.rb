@@ -1,4 +1,8 @@
 class TractionsController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_traction, only: [:show, :edit, :update, :destroy]
 
   # GET /traction
