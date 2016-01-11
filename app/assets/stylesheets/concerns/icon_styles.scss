@@ -37,6 +37,19 @@ i.ion-earth.styled {
   text-shadow: 1px 4px 6px #FFF,0 0 0 #000,1px 4px 6px #FFF;
 }
 
+i.ion-upload,
+i.ion-android-upload {
+  color: #2DAEBF;
+  text-shadow:  0 1px 0 #0092b3,
+                0 2px 0 #0087a6,
+                0 3px 0 #008099,
+                0 4px 0 #00758c,
+                0 5px 0 #555,
+                0 6px 0 #006a80,
+                0 0 0 #006073,
+                0 8px 7px #005566;
+}
+
 // Rounded Icons
 i.rounded-topic {
   width: 60px;

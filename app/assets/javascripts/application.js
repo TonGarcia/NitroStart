@@ -9,9 +9,11 @@
 //= require nprogress-turbolinks
 //= require materialize-sprockets
 //= require admin_materialize
+//= require jquery.mask.min
 
 // My JS
-// require concerns/fast_fix
+//= require concerns/fast_fix
+//= require_tree
 
 $(function(){
     $('.slider').slider();

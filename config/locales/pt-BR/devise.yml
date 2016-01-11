@@ -13,7 +13,7 @@ pt-BR:
       invalid_token: 'O token de autenticação não é válido.'
       locked: 'Sua conta está bloqueada.'
       not_found_in_database: 'E-mail ou senha inválidos.'
-      timeout: 'Sua sessão expirou, por favor, efetue login novamente para continuar.'
+      timeout: 'Sua sessão expirou. Por favor, efetue login novamente para continuar.'
       unauthenticated: 'Para continuar, efetue login ou registre-se.'
       unconfirmed: 'Antes de continuar, acesse seu e-mail e confirme sua conta.'
     mailer:

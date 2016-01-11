@@ -2,6 +2,11 @@
 module WidgetTracker
   extend ActiveSupport::Concern
 
+  # Dynamic validate belongs_to validation
+  included do
+    validate :at_least_one_association
+  end
+
   # Return the attributes percent filled
   def amount_filled
     # SetUp vars
@@ -13,24 +18,21 @@ module WidgetTracker
 
     # Check filled attrs
     attr_keys.each do |attr_key|
+      filled_attrs = filled_attrs+1 if attrs[attr_key] == false
+      next if attrs[attr_key].is_a?(Numeric) && attrs[attr_key] <= 0
       attrs[attr_key].blank? ? next : filled_attrs = filled_attrs+1
     end
 
     "#{filled_attrs*full_percent/attrs_amount}%"
   end
 
-  # Return the single active for Tracking
-  # TODO when active is enable
-  # self.send(associations).where(active:true).take
-  def active(association)
-    association_str = association.to_s
-    associations = association_str.pluralize
-    associated = self.send(associations).last
-    associated.nil? ? association_str.humanize.singularize.constantize.new : associated
-  end
-
   # Return only the useful attrs, removing logical attributes
   def attrs_that_matters
-    self.attributes.except('id', 'currency_iso',  'active', 'pitch_id', 'start_up_id', 'created_at', 'updated_at')
+    self.attributes.except('id', 'awards', 'patent', 'currency_iso',  'active', 'pitch_id', 'start_up_id', 'created_at', 'updated_at')
+  end
+
+  # Prevent to persist it without at least 1 ref
+  def at_least_one_association
+    raise ActiveRecord::Rollback if self.pitch_id.nil? && self.start_up_id.nil?
   end
 end

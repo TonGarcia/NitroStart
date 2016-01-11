@@ -33,7 +33,7 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio salvo com sucesso.' }
+        format.html { redirect_to [@nested_obj, @business], notice: 'Modelo de Negócio salvo com sucesso.' }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
+        format.html { redirect_to [@nested_obj, @business], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit }

@@ -1,2 +1,2 @@
-# NitroStart
-Crowd Lending Equity Funding
+# NITRO START
+Cross Equity Funding

@@ -1,31 +1,16 @@
-h1 Listing tractions
+h4.center.purple-text Modelagens de Negócio já Levantadas
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
-table
-  thead
-    tr
-      th Grow strategy
-      th Growth rate
-      th Market meet channel
-      th Conversion rate
-      th Pitch
-      th Startup
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @tractions.each do |traction|
-      tr
-        td = traction.grow_strategy
-        td = traction.growth_rate
-        td = traction.market_meet_channel
-        td = traction.conversion_rate
-        td = traction.pitch
-        td = traction.start_up
-        td = link_to 'Show', traction
-        td = link_to 'Edit', edit_traction_path(traction)
-        td = link_to 'Destroy', traction, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  - @tractions.each do |traction|
+    -@ref = 'traction_index'
+    -@nested_obj = @pitch
+    -@current_obj = traction
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-br
-
-= link_to 'New Traction', new_traction_path
+-@float_opts={link: new_pitch_traction_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

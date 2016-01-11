@@ -1,5 +1,7 @@
 # Define Locale Icons (translate word or expressions in default icon)
 locale_icon:
+  pitch:
+    name: mdi-action-assignment-ind
   idea:
     main_problem: ion-alert-circled
     second_problems: ion-alert
@@ -16,3 +18,19 @@ locale_icon:
     stage: ion-connection-bars
     patent: ion-flag
     awards: ion-trophy
+  market:
+    segment: ion-navigate
+    currency_iso: mdi-editor-attach-money
+    total_money: ion-arrow-swap
+    formatted_total_money: ion-arrow-swap
+    total_costumers: ion-ios-people
+    formatted_total_costumers: ion-ios-people
+    trends_insight: ion-ios-lightbulb-outline
+    costumer_specification: ion-ios-paper-outline
+  traction:
+    grow_strategy: ion-android-locate
+    conversion_cust: ion-cash
+    formatted_conversion_cust: ion-cash
+    daily_growth_rate: fa fa-line-chart
+    formatted_daily_growth_rate: fa fa-line-chart
+    costumer_channels: ion-speakerphone

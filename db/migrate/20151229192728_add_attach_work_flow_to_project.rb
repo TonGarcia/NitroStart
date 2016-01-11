@@ -1,11 +1,11 @@
 class AddAttachWorkFlowToProject < ActiveRecord::Migration
   def self.up
     change_table :projects do |t|
-      t.attachment :work_flow, after: :stage
+      t.attachment :avatar, after: :stage
     end
   end
 
   def self.down
-    remove_attachment :projects, :work_flow
+    remove_attachment :projects, :avatar
   end
 end

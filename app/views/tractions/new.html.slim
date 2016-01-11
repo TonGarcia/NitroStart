@@ -1,5 +1,12 @@
-h1 New traction
+.row
+  h5.purple-text.center Conte-nos sobre suas métricas de Tração
+  = render 'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Back', tractions_path
+= render 'form'
+
+- @footer_link=true
+- @back_float_button_link = pitch_path(@pitch) unless @traction
+- @back_float_button_link = pitch_traction_path(@pitch, @traction) if @traction && params[:id]
+=render 'layouts/partials/components/static/float_buttons/back'

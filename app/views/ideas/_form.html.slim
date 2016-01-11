@@ -1,4 +1,4 @@
-= form_for [@pitch, @idea], html: {'role'=>'form'} do |f|
+= form_for [@nested_obj, @idea], html: {'role'=>'form'} do |f|
   - current_obj = @idea
   - if current_obj.errors.any?
     .alert.alert-border-left
@@ -8,35 +8,35 @@
           li = message
   .row
     .input-field.col.l12.s12
-      i.ion-alert-circled.prefix
+      i class="prefix #{t_current_class_icons[:main_problem]}"
       = f.text_field :main_problem, autofocus: true
       = f.label :main_problem
 
     .input-field.col.l12.s12
-      i.ion-alert.prefix
+      i class="prefix #{t_current_class_icons[:second_problems]}"
       = f.text_field :second_problems
       = f.label :second_problems
 
     .input-field.col.l12.s12
-      i.ion-shuffle.prefix
+      i class="prefix #{t_current_class_icons[:current_solution]}"
       = f.text_field :current_solution
       = f.label :current_solution
       .footer-info.purple-text Por ex.: Antes do Google o problema de pesquisas era Solucionado indo à Bibliotecas
 
     .input-field.col.l12.s12
-      i.ion-chatbox-working.prefix
+      i class="prefix #{t_current_class_icons[:tag_line_pitch]}"
       = f.text_field :tag_line_pitch
       = f.label :tag_line_pitch
       .footer-info.purple-text =render 'ideas/partials/blog_tag_line_link'
 
     .input-field.col.l12.s12
-      i.ion-briefcase.prefix
+      i class="prefix #{t_current_class_icons[:high_concept_pitch]}"
       = f.text_field :high_concept_pitch
       = f.label :high_concept_pitch
       .footer-info.purple-text =render 'ideas/partials/blog_high_concept_link'
 
     .input-field.col.l12.s12
-      i.ion-flag.prefix
+      i class="prefix #{t_current_class_icons[:how_validate]}"
       = f.text_area :how_validate, class: 'materialize-textarea'
       = f.label :how_validate
 

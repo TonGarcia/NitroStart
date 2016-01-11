@@ -1,4 +1,4 @@
-class FinancialController < ApplicationController
+class FinancialsController < ApplicationController
   # Controllers Concerns
   include HistoricalControllers
 

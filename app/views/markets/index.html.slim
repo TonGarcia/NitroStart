@@ -1,31 +1,16 @@
-h1 Listing markets
+h4.center.purple-text Levantamentos do Mercado de Atuação
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
-table
-  thead
-    tr
-      th Total costumers
-      th Total dollars
-      th Trends insight
-      th Costumer specification
-      th Pitch
-      th Startup
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @markets.each do |market|
-      tr
-        td = market.total_costumers
-        td = market.total_money
-        td = market.trends_insight
-        td = market.costumer_specification
-        td = market.pitch
-        td = market.start_up
-        td = link_to 'Show', market
-        td = link_to 'Edit', edit_market_path(market)
-        td = link_to 'Destroy', market, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  - @markets.each do |market|
+    -@ref = 'market_index'
+    -@nested_obj = @pitch
+    -@current_obj = market
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-br
-
-= link_to 'New Market', new_market_path
+-@float_opts={link: new_pitch_market_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

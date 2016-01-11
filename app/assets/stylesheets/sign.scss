@@ -135,17 +135,6 @@ nav .nav-wrapper {
   text-transform: none !important;
 }
 
-input:-webkit-autofill,
-select:-webkit-autofill,
-textarea:-webkit-autofill,
-input:-webkit-autofill:hover
-input:-webkit-autofill:focus {
-  color: black;
-  background-image: none !important;
-  background-color: white !important;
-  -webkit-box-shadow: 0 0 0 1000px white inset;
-}
-
 body {
   .container {
     form {
@@ -161,6 +150,17 @@ body {
       }
     }
   }
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill,
+input:-webkit-autofill:hover
+input:-webkit-autofill:focus {
+  color: black;
+  background-image: none !important;
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
 
 #sign_card {

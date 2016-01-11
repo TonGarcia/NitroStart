@@ -8,7 +8,4 @@ class Business < ActiveRecord::Base
 
   # Rails validations
   validates :revenue_model, length: { minimum: 2, maximum: 255 }
-
-  # Association validations
-  validates_presence_of :pitch
 end

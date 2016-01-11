@@ -1,4 +1,4 @@
-= form_for [@pitch, @business] do |f|
+= form_for [@nested_obj, @business] do |f|
   -current_obj = @business
   - if current_obj.errors.any?
     .alert.alert-border-left
@@ -9,22 +9,22 @@
 
   .row
     .input-field.col.l12.s12
-      i.prefix.ion-loop
+      i class="prefix #{t_current_class_icons[:partnerships]}"
       = f.text_field :partnerships, autofocus: true
       = f.label :partnerships
 
     .input-field.col.l12.s12
-      i.prefix.fa.fa-gift
+      i class="prefix #{t_current_class_icons[:value_proposition]}"
       = f.text_field :value_proposition
       = f.label :value_proposition
 
     .input-field.col.l12.s12
-      i.prefix.mdi-action-trending-up
+      i class="prefix #{t_current_class_icons[:revenue_model]}"
       = f.text_area :revenue_model, class: 'materialize-textarea'
       = f.label :revenue_model
 
     .input-field.col.l12.s12
-      i.prefix.ion-thumbsup
+      i class="prefix #{t_current_class_icons[:costumer_success_stories]}"
       = f.text_area :costumer_success_stories, class: 'materialize-textarea'
       = f.label :costumer_success_stories
 

@@ -12,7 +12,7 @@
 
 // My JS
 //= require partners
-// require concerns/fast_fix
+//= require concerns/fast_fix
 //= require concerns/accounting
 
 $(document).ready(function(){

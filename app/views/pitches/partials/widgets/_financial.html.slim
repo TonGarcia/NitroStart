@@ -1,6 +1,6 @@
 /! Financial
 -amount_filled = @pitch.active(:financials).amount_filled
-a.card-panel.stats-card.white-text href=""
+a.card-panel.stats-card.white-text href="#{pitch_financials_path(@pitch.id)}"
   .progress.teal.lighten-4.background
     .teal.lighten-2 style="width: #{amount_filled}"
   i.mdi-action-trending-up

@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to [@pitch, @project], notice: 'Project was successfully created.' }
+        format.html { redirect_to [@nested_obj, @project], notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to [@pitch, @project], notice: 'O Projeto foi atualizado com sucesso.' }
+        format.html { redirect_to [@nested_obj, @project], notice: 'O Projeto foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to [@pitch, @project], notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:stage, :patent, :awards).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      params.require(:project).permit(:stage, :patent, :awards, :work_flow).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

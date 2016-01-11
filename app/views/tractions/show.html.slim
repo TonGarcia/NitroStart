@@ -1,24 +1,30 @@
-p#notice = notice
+h4.center.purple-text Detalhamento da Tração de Crescimento
+=render  'layouts/partials/components/static/reference_sub_title'
 
-p
-  strong Grow strategy:
-  = @traction.grow_strategy
-p
-  strong Growth rate:
-  = @traction.growth_rate
-p
-  strong Market meet channel:
-  = @traction.market_meet_channel
-p
-  strong Conversion rate:
-  = @traction.conversion_rate
-p
-  strong Pitch:
-  = @traction.pitch
-p
-  strong Startup:
-  = @traction.start_up
+.divider
 
-= link_to 'Edit', edit_traction_path(@traction)
-'|
-= link_to 'Back', tractions_path
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Estratégia de ganho de Escala
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @traction
+        -@shower_attrs = 'traction_strategy_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+
+  .col.l6
+    .card
+      .title
+        h5.center Resultados da Estratégia
+      .content
+        - @nested_obj = @pitch
+        - @current_obj = @traction
+        - @shower_attrs = 'traction_results_attrs'
+        = render 'layouts/partials/components/dynamic/shower_attr'
+
+
+-@float_opts={link: edit_pitch_traction_path(@pitch, @traction), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

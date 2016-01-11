@@ -2,12 +2,12 @@ class CreateMarkets < ActiveRecord::Migration
   def change
     create_table :markets do |t|
       # Base Attrs
-      t.string :segment, limit: 75, null: false, default: 986
+      t.string :segment, limit: 75, null: false
       t.integer :currency_iso, null: false, default: 986
-      t.integer :total_money, null: false
-      t.integer :total_costumers, null: false
+      t.integer :total_money, limit: 8, null: true
+      t.integer :total_costumers, limit: 8, null: true
       t.string :trends_insight, limit: 140, null: true
-      t.string :costumer_specification, limit: 140, null: false
+      t.string :costumer_specification, limit: 140, null: true
       t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)

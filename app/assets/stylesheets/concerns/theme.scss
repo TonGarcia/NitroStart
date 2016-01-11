@@ -3,6 +3,12 @@ footer#includes_js {
   padding: 0;
 }
 
+.spacing_rows {
+  .row {
+    margin: 65px 0;
+  }
+}
+
 ul#user-dropdown.dropdown-content {
   li > a, li > span {
     font-size: .9em;

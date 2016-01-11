@@ -9,22 +9,20 @@ h4.center.purple-text Detalhamento da Hipótese
       .title
         h5.center Levantamentos do Problema
       .content
-        -I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
-          -attrs = [:main_problem, :second_problems, :current_solution]
-          -attrs.each_with_index do |attr, i|
-            -@shower_comp = {icon: locale_icon(:idea)[attr], attr: i18n.t(attr), value: @idea[attr]}
-            = render 'layouts/partials/components/dynamic/shower_attr'
+        -@nested_obj = @pitch
+        -@current_obj = @idea
+        -@shower_attrs = 'idea_problem_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
 
   .col.l6
     .card
       .title
         h5.center Levantamentos da Hipótese
       .content
-        -I18n.with_options(scope: 'activerecord.attributes.idea') do |i18n|
-          -attrs = [:tag_line_pitch, :high_concept_pitch, :how_validate]
-          -attrs.each_with_index do |attr, i|
-            - @shower_comp = {icon: locale_icon(:idea)[attr], attr: i18n.t(attr), value: @idea[attr]}
-            = render 'layouts/partials/components/dynamic/shower_attr'
+        -@nested_obj = @pitch
+        -@current_obj = @idea
+        -@shower_attrs = 'idea_hypothesis_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
 
 .row
   .col.l8.offset-l2

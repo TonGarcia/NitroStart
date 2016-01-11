@@ -1,24 +1,30 @@
-p#notice = notice
+h4.center.purple-text Detalhamento do Mercado de Atuação
+=render  'layouts/partials/components/static/reference_sub_title'
 
-p
-  strong Total costumers:
-  = @market.total_costumers
-p
-  strong Total dollars:
-  = @market.total_money
-p
-  strong Trends insight:
-  = @market.trends_insight
-p
-  strong Costumer specification:
-  = @market.costumer_specification
-p
-  strong Pitch:
-  = @market.pitch
-p
-  strong Startup:
-  = @market.start_up
+.divider
 
-= link_to 'Edit', edit_market_path(@market)
-'|
-= link_to 'Back', markets_path
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Entendimento do Mercado
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @market
+        -@shower_attrs = 'market_segment_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+
+  .col.l6
+    .card
+      .title
+        h5.center Tamanho do Mercado
+      .content
+        - @nested_obj = @pitch
+        - @current_obj = @market
+        - @shower_attrs = 'market_range_attrs'
+        = render 'layouts/partials/components/dynamic/shower_attr'
+
+
+-@float_opts={link: edit_pitch_market_path(@pitch, @market), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

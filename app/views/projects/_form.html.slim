@@ -1,4 +1,4 @@
-= form_for [@pitch, @project] do |f|
+= form_for [@nested_obj, @project] do |f|
   - current_obj = @project
   - if current_obj.errors.any?
     .alert.alert-border-left
@@ -7,19 +7,47 @@
         - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .row
-    .input-field.col.l4.s12
-      =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
 
-    .input-field.col.l3.offset-l1.s6
-      i.prefix.ion-trophy
-      = f.check_box :awards, class: 'filled-in'
-      = f.label :awards, class: 'check_label'
+  .spacing_rows
+    .row
+      .col.l4
+        -@project.avatar_file_name ? brand = @project.avatar.url(:original) : brand = 'defaults/how_works_flow.png'
+        =image_tag brand, class: 'col l12', id: 'work_flow'
+      .col.l7
+        .upload-avatar.file-field.input-field
+          input class="file-path validate" type="text"
+          .btn
+            span File
+            = f.file_field :work_flow, onchange: 'show_brand(this, "#work_flow")'
 
-    .input-field.col.l3.offset-l1.s6
-      i.prefix.ion-flag
-      = f.check_box :patent, class: 'filled-in'
-      = f.label :patent, class: 'check_label'
 
-  - @footer_link=true
-  = render 'layouts/partials/components/static/float_buttons/save'
+    .row
+      .input-field.col.l4.s12
+        =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
+
+      .input-field.col.l3.offset-l1.s6
+        i class="prefix #{t_current_class_icons[:awards]}"
+        = f.check_box :awards, class: 'filled-in'
+        = f.label :awards, class: 'check_label'
+
+      .input-field.col.l3.offset-l1.s6
+        i class="prefix #{t_current_class_icons[:patent]}"
+        = f.check_box :patent, class: 'filled-in'
+        = f.label :patent, class: 'check_label'
+
+    - @footer_link=true
+    = render 'layouts/partials/components/static/float_buttons/save'
+
+
+javascript:
+  // show the Ad dynamic after it "upload_intent"
+  function show_brand(input, img_ref) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $(img_ref)
+                .attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }

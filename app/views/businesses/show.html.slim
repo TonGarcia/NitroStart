@@ -9,22 +9,20 @@ h4.center.purple-text Detalhamento do Modelo de Negócios
       .title
         h5.center Modelo Proposto
       .content
-        -I18n.with_options(scope: 'activerecord.attributes.business') do |i18n|
-          -attrs = [:partnerships, :revenue_model]
-          -attrs.each_with_index do |attr, i|
-            - @shower_comp = {icon: locale_icon(:business)[attr], attr: i18n.t(attr), value: @business[attr]}
-            = render 'layouts/partials/components/dynamic/shower_attr'
+        -@nested_obj = @pitch
+        -@current_obj = @business
+        -@shower_attrs = 'business_model_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
 
   .col.l6
     .card
       .title
         h5.center Resultados do Modelo
       .content
-        -I18n.with_options(scope: 'activerecord.attributes.business') do |i18n|
-          -attrs = [:value_proposition, :costumer_success_stories]
-          -attrs.each_with_index do |attr, i|
-            - @shower_comp = {icon: locale_icon(:business)[attr], attr: i18n.t(attr), value: @business[attr]}
-            = render 'layouts/partials/components/dynamic/shower_attr'
+        -@nested_obj = @pitch
+        -@current_obj = @business
+        -@shower_attrs = 'business_result_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
 
 -@float_opts={link: edit_pitch_business_path(@pitch.id, @business.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

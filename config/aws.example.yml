@@ -12,4 +12,4 @@ test:
   <<: *defaults
 
 production:
-  bucket: predoo-production
+  bucket: nitro-production

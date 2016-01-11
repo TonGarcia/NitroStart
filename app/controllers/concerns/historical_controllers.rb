@@ -12,6 +12,7 @@ module HistoricalControllers
   def set_nested
     @pitch = Pitch.find(params[:pitch_id]) if params[:pitch_id]
     @start_up = StartUp.find(params[:start_up_id]) if params[:start_up_id]
+    @nested_obj = @pitch || @start_up
   end
 
   # If there is no list it redirects to new

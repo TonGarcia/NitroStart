@@ -1,9 +1,16 @@
 -@shower_comp = {} if @shower_comp.nil?
+-current_model = params[:controller].singularize
 
-.row
-  h6 class="#{text_color}"
-    i class="left-icon slim #{@shower_comp[:icon]}"
-    ="#{@shower_comp[:attr]}"
-  =@shower_comp[:value]
+-I18n.with_options(scope: "activerecord.attributes.#{current_model}") do |i18n|
+  -attrs = send(@shower_attrs)
+  -attrs.each_with_index do |attr, i|
+    -@shower_comp = {icon: t_current_class_icons[attr], attr: i18n.t(attr), value: @current_obj.send(attr)}
+
+    .row.attr_shower
+      h6 class="#{text_color}"
+        i class="left-icon slim #{@shower_comp[:icon]}"
+        ="#{@shower_comp[:attr]}"
+      =@shower_comp[:value]
 
 -@shower_comp = nil
+-@shower_attrs = nil

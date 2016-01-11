@@ -1,30 +1,38 @@
-= form_for @market do |f|
-  - if @market.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@market.errors.count, "error")} prohibited this market from being saved:"
-      ul
-        - @market.errors.full_messages.each do |message|
+= form_for [@nested_obj, @market] do |f|
+  - current_obj = @market
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Modelo de Negócio de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :currency_iso
-    = f.text_field :currency_iso
-  .field
-    = f.label :total_costumers
-    = f.text_field :total_costumers
-  .field
-    = f.label :total_money
-    = f.number_field :total_money
-  .field
-    = f.label :trends_insight
-    = f.text_field :trends_insight
-  .field
-    = f.label :costumer_specification
-    = f.text_field :costumer_specification
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
-  .actions = f.submit
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:segment]}"
+      = f.text_field :segment
+      = f.label :segment
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:trends_insight]}"
+      = f.text_field :trends_insight
+      = f.label :trends_insight
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:costumer_specification]}"
+      = f.text_field :costumer_specification
+      = f.label :costumer_specification
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_costumers]}"
+      = f.text_field :total_costumers, class: 'formatted_int'
+      = f.label :total_costumers
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_money]}"
+      = f.text_field :total_money, class: 'currency'
+      = f.label :total_money
+
+
+  - @footer_link=true
+  = render 'layouts/partials/components/static/float_buttons/save'

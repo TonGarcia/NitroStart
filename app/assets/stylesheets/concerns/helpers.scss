@@ -72,7 +72,7 @@ center.action {
 }
 
 .footer-info {
-  margin: -10px 0 0 45px;
+  margin: -10px 0 10px 45px;
 }
 
 a.btn.btn-small,
@@ -87,5 +87,30 @@ ul.style_warning_list {
 
   li {
     list-style-type: disc;
+  }
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill,
+input:-webkit-autofill:hover
+input:-webkit-autofill:focus {
+  color: black;
+  background-image: none !important;
+  background-color: white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+h5.icon {
+  i {
+    font-size: 4rem;
+  }
+}
+
+.attr_shower {
+  [class*=ion-ios],
+  [class*=ion-],
+  .ion-arrow-swap {
+    font-size: 1.2rem;
   }
 }

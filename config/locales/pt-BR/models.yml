@@ -47,3 +47,23 @@ pt-BR:
         stage: Estágio de Maturidade
         awards: Recebeu Prêmio?
         patent: Possui Patente?
+
+  # Market -----------------------------------------------------
+      market:
+        segment: Segmento
+        currency_iso: Moeda
+        total_money: Total de Dinheiro Movimentado
+        formatted_total_money: Total de Dinheiro Movimentado
+        total_costumers: Total de Consumidores
+        formatted_total_costumers: Total de Consumidores
+        trends_insight: Tendências e Inovações
+        costumer_specification: Especificação dos Consumidores
+
+  # Traction -----------------------------------------------------
+      traction:
+        grow_strategy: Estratégia de Crescimento
+        conversion_cust: Custo de Conversão
+        formatted_conversion_cust: Custo de Conversão
+        daily_growth_rate: Taxa de Crescimento Diário
+        formatted_daily_growth_rate: Taxa de Crescimento Diário
+        costumer_channels: Canais com os Clientes

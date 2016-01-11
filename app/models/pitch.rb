@@ -1,6 +1,6 @@
 class Pitch < ActiveRecord::Base
   # Concerns Dependencies
-  include WidgetTracker
+  include HistoricalTrackable
 
   # Relations
   belongs_to :user

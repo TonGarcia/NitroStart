@@ -1,27 +1,33 @@
-= form_for @traction do |f|
-  - if @traction.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@traction.errors.count, "error")} prohibited this traction from being saved:"
-      ul
-        - @traction.errors.full_messages.each do |message|
+= form_for [@pitch, @traction] do |f|
+  - current_obj = @traction
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu a Tração de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :grow_strategy
-    = f.text_field :grow_strategy
-  .field
-    = f.label :growth_rate
-    = f.text_field :growth_rate
-  .field
-    = f.label :market_meet_channel
-    = f.text_field :market_meet_channel
-  .field
-    = f.label :conversion_rate
-    = f.text_field :conversion_rate
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
-  .actions = f.submit
+
+  .row
+    .input-field.col.l12.s12
+      i.prefix.ion-android-locate
+      = f.text_field :grow_strategy, autofocus: true
+      = f.label :grow_strategy
+
+    .input-field.col.l12.s12
+      i.prefix.ion-cash
+      = f.text_field :conversion_cust, class: 'currency'
+      = f.label :conversion_cust
+
+    .input-field.col.l12.s12
+      i.prefix.fa.fa-line-chart
+      = f.text_field :daily_growth_rate, class: 'formatted_int'
+      = f.label :daily_growth_rate
+
+    .input-field.col.l12.s12
+      i.prefix.ion-speakerphone
+      = f.text_field :costumer_channels
+      = f.label :costumer_channels
+
+  - @footer_link=true
+  = render 'layouts/partials/components/static/float_buttons/save'

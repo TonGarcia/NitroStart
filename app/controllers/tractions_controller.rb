@@ -8,7 +8,7 @@ class TractionsController < ApplicationController
   # GET /traction
   # GET /traction.json
   def index
-    @traction = Traction.all
+    @tractions = Traction.all
   end
 
   # GET /traction/1
@@ -32,7 +32,7 @@ class TractionsController < ApplicationController
 
     respond_to do |format|
       if @traction.save
-        format.html { redirect_to @traction, notice: 'Traction was successfully created.' }
+        format.html { redirect_to [@pitch, @traction], notice: 'Traction was successfully created.' }
         format.json { render :show, status: :created, location: @traction }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TractionsController < ApplicationController
   def update
     respond_to do |format|
       if @traction.update(traction_params)
-        format.html { redirect_to @traction, notice: 'Traction was successfully updated.' }
+        format.html { redirect_to [@pitch, @traction], notice: 'Traction was successfully updated.' }
         format.json { render :show, status: :ok, location: @traction }
       else
         format.html { render :edit }
@@ -73,6 +73,10 @@ class TractionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def traction_params
-      params.require(:traction).permit(:grow_strategy, :growth_rate, :market_meet_channel, :conversion_rate, :pitch_id, :start_up_id)
+      base_params = params.require(:traction).permit(:grow_strategy, :conversion_cust, :daily_growth_rate, :costumer_channels)
+      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params[:conversion_cust] = base_params[:conversion_cust].sub(',', '.').to_f
+      base_params[:daily_growth_rate] = base_params[:daily_growth_rate].sub('.', '').to_f
+      base_params
     end
 end

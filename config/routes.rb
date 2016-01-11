@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :markets
     resources :tractions
     resources :revenues
-    resources :financial
+    resources :financials
     resources :competitors
     resources :teams
     resources :investments
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     resources :markets
     resources :tractions
     resources :revenues
-    resources :financial
+    resources :financials
     resources :competitors
     resources :teams
     resources :investments
