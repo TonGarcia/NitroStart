@@ -46,7 +46,7 @@ class FinancialsController < ApplicationController
   def update
     respond_to do |format|
       if @financial.update(financial_params)
-        format.html { redirect_to @financial, notice: 'Financial was successfully updated.' }
+        format.html { redirect_to [@pitch, @financial], notice: 'Financial was successfully updated.' }
         format.json { render :show, status: :ok, location: @financial }
       else
         format.html { render :edit }

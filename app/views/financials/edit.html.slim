@@ -1,8 +1,10 @@
-h1 Editing financial
+h4.center.purple-text Edição do Financeiro
+=render  'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Show', @financial
-'|
-= link_to 'Back', financials_path
+=render 'form'
 
+-@footer_link=true
+-@back_float_button_link = pitch_financials_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

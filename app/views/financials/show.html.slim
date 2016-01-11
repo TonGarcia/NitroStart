@@ -1,0 +1,29 @@
+h4.center.purple-text Detalhamento do Financeiro
+=render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
+
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Levantamento do Market Share
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @financial
+        -@shower_attrs = 'financial_market_share_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+  .col.l6
+    .card
+      .title
+        h5.center Levantamento Monetário
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @financial
+        -@shower_attrs = 'financial_currencies_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+
+-@float_opts={link: edit_pitch_financial_path(@pitch.id, @financial.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

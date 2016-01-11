@@ -1,6 +1,6 @@
 class String
   def currency_to_non_formatted_int
-    self.remove('.').remove(',00')
+    self.remove('.').sub(',', '.')
   end
 
   def to_non_formatted_int
