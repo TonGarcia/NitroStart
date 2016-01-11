@@ -67,3 +67,11 @@ pt-BR:
         daily_growth_rate: Taxa de Crescimento Diário
         formatted_daily_growth_rate: Taxa de Crescimento Diário
         costumer_channels: Canais com os Clientes
+
+  # Financial -----------------------------------------------------
+      financial:
+        total_revenue: Faturamento Mensal Total
+        total_expense: Custo Mensal Total
+        total_user: Total de Usuários (não pagantes)
+        total_costumer: Total de Consumidores (pagantes, já consumiram algo)
+        market_penetration: Taxa de Penetração de Mercado (em porcentagem)

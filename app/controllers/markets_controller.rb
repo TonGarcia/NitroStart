@@ -75,8 +75,11 @@ class MarketsController < ApplicationController
     def market_params
       permitted_params = params.require(:market).permit(:segment, :total_costumers, :total_money, :trends_insight, :costumer_specification)
       permitted_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
-      permitted_params[:total_money] = permitted_params[:total_money].remove('.').remove(',00')
-      permitted_params[:total_costumers] = permitted_params[:total_costumers].remove('.')
+
+      # String to int
+      permitted_params[:total_money] = permitted_params[:total_money].currency_to_non_formatted_int if permitted_params[:total_money]
+      permitted_params[:total_costumers] = permitted_params[:total_costumers].to_non_formatted_int if permitted_params[:total_costumers]
+
       permitted_params
     end
 end

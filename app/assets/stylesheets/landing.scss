@@ -181,7 +181,11 @@ span#earning {
 @media only screen and (max-width : 992px) {
   .icon-explanation {
     .row.store_downloads {
-      margin-top: -10% !important;
+      margin-top: 45px !important;
     }
   }
+}
+
+input#estimate_investment {
+  color: inherit;
 }

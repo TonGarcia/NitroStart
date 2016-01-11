@@ -34,3 +34,9 @@ locale_icon:
     daily_growth_rate: fa fa-line-chart
     formatted_daily_growth_rate: fa fa-line-chart
     costumer_channels: ion-speakerphone
+  financial:
+    total_user: ion-ios-people
+    total_costumer: ion-android-contacts
+    total_revenue: fa fa-sign-in
+    total_expense: fa fa-sign-out
+    market_penetration: ion-pie-graph

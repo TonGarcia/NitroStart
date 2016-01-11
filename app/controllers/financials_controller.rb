@@ -32,7 +32,7 @@ class FinancialsController < ApplicationController
 
     respond_to do |format|
       if @financial.save
-        format.html { redirect_to @financial, notice: 'Financial was successfully created.' }
+        format.html { redirect_to [@pitch, @financial], notice: 'Financial was successfully created.' }
         format.json { render :show, status: :created, location: @financial }
       else
         format.html { render :new }
@@ -73,6 +73,17 @@ class FinancialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def financial_params
-      params.require(:financial).permit(:total_costumer, :total_revenue, :total_expense, :conversion_price, :market_penetration, :pitch_id, :start_up_id)
+      base_params = params.require(:financial).permit(:total_user, :total_costumer, :total_revenue, :total_expense)
+      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+
+      # un-format int
+      base_params[:total_user] = base_params[:total_user].to_non_formatted_int if base_params[:total_user]
+      base_params[:total_costumer] = base_params[:total_costumer].to_non_formatted_int if base_params[:total_costumer]
+
+      # un-format currency
+      base_params[:revenue] = base_params[:revenue].currency_to_non_formatted_int if base_params[:revenue]
+      base_params[:total_expense] = base_params[:total_expense].currency_to_non_formatted_int if base_params[:total_expense]
+
+      base_params
     end
 end

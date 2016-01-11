@@ -1,30 +1,38 @@
-= form_for @financial do |f|
-  - if @financial.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@financial.errors.count, "error")} prohibited this financial from being saved:"
-      ul
-        - @financial.errors.full_messages.each do |message|
+= form_for [@pitch, @financial] do |f|
+  - current_obj = @financial
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Desempenho Financeiro de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :total_costumer
-    = f.number_field :total_costumer
-  .field
-    = f.label :total_revenue
-    = f.number_field :total_revenue
-  .field
-    = f.label :total_expense
-    = f.number_field :total_expense
-  .field
-    = f.label :conversion_price
-    = f.number_field :conversion_price
-  .field
-    = f.label :market_penetration
-    = f.number_field :market_penetration
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
-  .actions = f.submit
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_user]}"
+      = f.text_field :total_user, class: 'formatted_int', autofocus: true
+      = f.label :total_user
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_costumer]}"
+      = f.text_field :total_costumer, class: 'formatted_int'
+      = f.label :total_costumer
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_revenue]}"
+      = f.text_field :total_revenue, class: 'currency'
+      = f.label :total_revenue
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_expense]}"
+      = f.text_field :total_expense, class: 'currency'
+      = f.label :total_expense
+
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:market_penetration]}"
+      = f.text_field :market_penetration
+      = f.label :market_penetration
+
+  -@footer_link=true
+  =render 'layouts/partials/components/static/float_buttons/save'

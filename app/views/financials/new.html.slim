@@ -1,5 +1,12 @@
-h1 New financial
+.row
+  h5.purple-text.center Conte-nos sobre seu Financeiro
+  =render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
 
 == render 'form'
 
-= link_to 'Back', financials_path
+-@footer_link=true
+-@back_float_button_link = pitch_path(@pitch) unless @financial
+-@back_float_button_link = pitch_financial_path(@pitch, @financial) if @financial && params[:id]
+=render 'layouts/partials/components/static/float_buttons/back'
