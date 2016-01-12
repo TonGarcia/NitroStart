@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   belongs_to :start_up
 
   # Rails validations
-  validates :stage, inclusion: { in: 0..10 }, numericality: true, presence: true
+  validates :stage, inclusion: { in: 0..10 }, presence: true
 
   #  View Stage Attribute
   def view_stage

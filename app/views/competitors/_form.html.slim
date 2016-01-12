@@ -1,24 +1,48 @@
-= form_for @competitor do |f|
-  - if @competitor.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@competitor.errors.count, "error")} prohibited this competitor from being saved:"
-      ul
-        - @competitor.errors.full_messages.each do |message|
+= form_for [@pitch, @competitor] do |f|
+  - current_obj = @competitor
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Concorrente de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :success_story
-    = f.text_field :success_story
-  .field
-    = f.label :your_advantage
-    = f.text_field :your_advantage
-  .field
-    = f.label :pitch
-    = f.text_field :pitch
-  .field
-    = f.label :start_up
-    = f.text_field :start_up
-  .actions = f.submit
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:name]}"
+      = f.text_field :name
+      = f.label :name
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:price]}"
+      = f.text_field :price, class: 'currency'
+      = f.label :price
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:revenue]}"
+      = f.text_field :revenue, class: 'currency'
+      = f.label :revenue
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:total_costumer]}"
+      = f.text_field :total_costumer, class: 'formatted_int'
+      = f.label :total_costumer
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:success_stories]}"
+      = f.text_area :success_stories, class: 'materialize-textarea'
+      = f.label :success_stories
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:bad_stories]}"
+      = f.text_area :bad_stories, class: 'materialize-textarea'
+      = f.label :bad_stories
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:your_advantage]}"
+      = f.text_area :your_advantage, class: 'materialize-textarea'
+      = f.label :your_advantage
+
+
+  -@footer_link=true
+  =render 'layouts/partials/components/static/float_buttons/save'

@@ -32,7 +32,7 @@ class CompetitorsController < ApplicationController
 
     respond_to do |format|
       if @competitor.save
-        format.html { redirect_to @competitor, notice: 'Competitor was successfully created.' }
+        format.html { redirect_to [@pitch, @competitor], notice: 'Competitor was successfully created.' }
         format.json { render :show, status: :created, location: @competitor }
       else
         format.html { render :new }
@@ -73,6 +73,6 @@ class CompetitorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def competitor_params
-      params.require(:competitor).permit(:name, :success_story, :your_advantage, :pitch_id, :start_up_id)
+      params.require(:competitor).permit(:name, :price, :revenue, :total_costumer, :success_story, :your_advantage).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

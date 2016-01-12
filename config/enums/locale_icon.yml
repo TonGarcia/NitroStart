@@ -40,3 +40,11 @@ locale_icon:
     total_revenue: fa fa-sign-in
     total_expense: fa fa-sign-out
     market_penetration: ion-pie-graph
+  competitor:
+    name: mdi-action-account-circle
+    price: ion-ios-pricetag
+    revenue: ion-cash
+    total_costumer: ion-ios-people
+    bad_stories: ion-sad
+    success_stories: ion-android-contacts
+    your_advantage: ion-android-star

@@ -75,3 +75,13 @@ pt-BR:
         total_user: Total de Usuários (não pagantes)
         total_costumer: Total de Consumidores (pagantes)
         market_penetration: Taxa de Penetração de Mercado (em porcentagem)
+
+  # Competitor -----------------------------------------------------
+      competitor:
+        name: Nome do Concorrente
+        price: Preço ou Tarifa do Produto/Serviço similar
+        revenue: Faturamento Médio Mensal
+        total_costumer: Total de Consumidores
+        bad_stories: Casos de Consumidores INSATISFEITOS
+        success_stories: Casos de Consumidores SATISFEITOS
+        your_advantage: Suas Vantagens Competitivas sobre este Concorrente

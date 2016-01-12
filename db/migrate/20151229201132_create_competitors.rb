@@ -3,8 +3,12 @@ class CreateCompetitors < ActiveRecord::Migration
     create_table :competitors do |t|
       # Base attributes
       t.string :name, limit: 55, null: false
-      t.string :success_story, limit: 140, null: true
-      t.string :your_advantage, limit: 255, null: false
+      t.decimal :price, precision: 5, scale: 2, null: true
+      t.decimal :revenue, precision: 12, scale: 2, null: true
+      t.integer :total_costumer, null: true
+      t.string :success_stories, limit: 140, null: true
+      t.string :bad_stories, limit: 140, null: true
+      t.string :your_advantage, limit: 255, null: true
       t.boolean :active, null: false, default: true
 
       # Associations (it relation can be both, but never none)

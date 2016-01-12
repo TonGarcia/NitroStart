@@ -1,21 +1,34 @@
-p#notice = notice
+h4.center.purple-text Detalhamento da Hipótese
+=render  'layouts/partials/components/static/reference_sub_title'
 
-p
-  strong Name:
-  = @competitor.name
-p
-  strong Success story:
-  = @competitor.success_story
-p
-  strong Your advantage:
-  = @competitor.your_advantage
-p
-  strong Pitch:
-  = @competitor.pitch
-p
-  strong Startup:
-  = @competitor.start_up
 
-= link_to 'Edit', edit_competitor_path(@competitor)
-'|
-= link_to 'Back', competitors_path
+.divider
+
+h5.center.purple-text
+  | Nome do Concorrente: &nbsp;
+  span.amber-text.text-darken-2=@competitor.name
+
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Resultados do Concorrente
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @competitor
+        -@shower_attrs = 'competitor_their_results'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+  .col.l6
+    .card
+      .title
+        h5.center Suas Proposições
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @competitor
+        -@shower_attrs = 'competitor_your_propositions'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+
+-@float_opts={link: edit_pitch_competitor_path(@pitch.id, @competitor.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

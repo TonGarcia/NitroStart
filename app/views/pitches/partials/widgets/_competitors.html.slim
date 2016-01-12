@@ -1,6 +1,6 @@
 /! Competitors
 -amount_filled = @pitch.active(:competitors).amount_filled
-a.card-panel.stats-card.white-text href=""
+a.card-panel.stats-card.white-text href="#{pitch_competitors_path(@pitch.id)}"
   .progress.red.lighten-4.background
     .red.lighten-2 style="width: #{amount_filled}"
   i.ion-ios-pricetags

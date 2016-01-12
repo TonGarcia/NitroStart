@@ -1,29 +1,17 @@
-h1 Listing competitors
+h4.center.purple-text Lista de Potenciais Concorrentes
+h6.center.purple-text
+  | Proposta de Projeto (Pitch): &nbsp;
+  strong=link_to @pitch.name, pitch_path(@pitch)
 
-table
-  thead
-    tr
-      th Name
-      th Success story
-      th Your advantage
-      th Pitch
-      th Startup
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @competitors.each do |competitor|
-      tr
-        td = competitor.name
-        td = competitor.success_story
-        td = competitor.your_advantage
-        td = competitor.pitch
-        td = competitor.start_up
-        td = link_to 'Show', competitor
-        td = link_to 'Edit', edit_competitor_path(competitor)
-        td = link_to 'Destroy', competitor, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  - @nested_obj = @pitch
+  - @ref_attrs = competitors_index_attrs
 
-br
+  - @businesses.each do |business|
+    -@current_obj = business
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-= link_to 'New Competitor', new_competitor_path
+    -@float_opts={link: new_pitch_business_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

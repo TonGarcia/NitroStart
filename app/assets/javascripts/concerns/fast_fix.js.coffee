@@ -1,3 +1,8 @@
+# Fix waves effect
+$(document).on 'ready page:change', ->
+  Waves.displayEffect()
+  $('select').material_select()
+
 ## Fix FacebookJS components
 #$ ->
 #  loadFacebookSDK()
@@ -39,14 +44,6 @@
 #    status : true
 #    cookie : true
 #    xfbml  : true
-#
-#
-#
-## Fix waves effect
-#$(document).on 'ready page:change', ->
-#  Waves.displayEffect()
-#  $('select').material_select()
-#
 #
 #
 ## Fix TwitterJS components

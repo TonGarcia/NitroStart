@@ -41,14 +41,18 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "businesses", ["start_up_id"], name: "index_businesses_on_start_up_id", using: :btree
 
   create_table "competitors", force: :cascade do |t|
-    t.string   "name",           limit: 55,                 null: false
-    t.string   "success_story",  limit: 140
-    t.string   "your_advantage", limit: 255,                null: false
-    t.boolean  "active",                     default: true, null: false
-    t.integer  "pitch_id",       limit: 4
-    t.integer  "start_up_id",    limit: 4
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.string   "name",            limit: 55,                                          null: false
+    t.decimal  "price",                       precision: 5,  scale: 2
+    t.decimal  "revenue",                     precision: 12, scale: 2
+    t.integer  "total_costumer",  limit: 4
+    t.string   "success_stories", limit: 140
+    t.string   "bad_stories",     limit: 140
+    t.string   "your_advantage",  limit: 255
+    t.boolean  "active",                                               default: true, null: false
+    t.integer  "pitch_id",        limit: 4
+    t.integer  "start_up_id",     limit: 4
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
   end
 
   add_index "competitors", ["pitch_id"], name: "index_competitors_on_pitch_id", using: :btree
@@ -149,7 +153,7 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "projects", ["start_up_id"], name: "index_projects_on_start_up_id", using: :btree
 
   create_table "revenues", force: :cascade do |t|
-    t.decimal  "price",                 precision: 5, scale: 2, default: 0.0,  null: false
+    t.decimal  "price",                 precision: 5, scale: 2,                null: false
     t.integer  "model",       limit: 4,                                        null: false
     t.boolean  "active",                                        default: true, null: false
     t.integer  "pitch_id",    limit: 4,                                        null: false

@@ -1,5 +1,12 @@
-h1 New competitor
+.row
+  h5.purple-text.center Adicione Concorrentes à sua lista de Concorrentes
+  =render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
 
 == render 'form'
 
-= link_to 'Back', competitors_path
+-@footer_link=true
+-@back_float_button_link = pitch_path(@pitch) unless @competitor
+-@back_float_button_link = pitch_idea_path(@pitch, @competitor) if @competitor && params[:id]
+=render 'layouts/partials/components/static/float_buttons/back'
