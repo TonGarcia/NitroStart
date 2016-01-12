@@ -79,7 +79,7 @@ pt-BR:
   # Competitor -----------------------------------------------------
       competitor:
         name: Nome do Concorrente
-        price: Preço ou Tarifa do Produto/Serviço similar
+        price: Preço Praticado
         revenue: Faturamento Médio Mensal
         total_costumer: Total de Consumidores
         bad_stories: Casos de Consumidores INSATISFEITOS

@@ -32,7 +32,7 @@ class TractionsController < ApplicationController
 
     respond_to do |format|
       if @traction.save
-        format.html { redirect_to [@pitch, @traction], notice: 'Traction was successfully created.' }
+        format.html { redirect_to [@nested_obj, @traction], notice: 'Traction was successfully created.' }
         format.json { render :show, status: :created, location: @traction }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TractionsController < ApplicationController
   def update
     respond_to do |format|
       if @traction.update(traction_params)
-        format.html { redirect_to [@pitch, @traction], notice: 'Traction was successfully updated.' }
+        format.html { redirect_to [@nested_obj, @traction], notice: 'Traction was successfully updated.' }
         format.json { render :show, status: :ok, location: @traction }
       else
         format.html { render :edit }

@@ -14,12 +14,24 @@ h5.center.purple-text
       .title
         h5.center Resultados do Concorrente
       .content
-        -@nested_obj = @pitch
-        -@current_obj = @competitor
-        -@shower_attrs = 'competitor_their_results'
-        =render 'layouts/partials/components/dynamic/shower_attr'
+        - @nested_obj = @pitch
+        - @current_obj = @competitor
+        - @shower_attrs = 'competitor_their_results'
+        = render 'layouts/partials/components/dynamic/shower_attr'
+
 
   .col.l6
+    .card
+      .title
+        h5.center Relato dos Consumidores
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @competitor
+        -@shower_attrs = 'competitor_feedback_results'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+.row
+  .col.l12
     .card
       .title
         h5.center Suas Proposições

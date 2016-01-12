@@ -32,7 +32,7 @@ class FinancialsController < ApplicationController
 
     respond_to do |format|
       if @financial.save
-        format.html { redirect_to [@pitch, @financial], notice: 'Financial was successfully created.' }
+        format.html { redirect_to [@nested_obj, @financial], notice: 'Financial was successfully created.' }
         format.json { render :show, status: :created, location: @financial }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class FinancialsController < ApplicationController
   def update
     respond_to do |format|
       if @financial.update(financial_params)
-        format.html { redirect_to [@pitch, @financial], notice: 'Financial was successfully updated.' }
+        format.html { redirect_to [@nested_obj, @financial], notice: 'Financial was successfully updated.' }
         format.json { render :show, status: :ok, location: @financial }
       else
         format.html { render :edit }

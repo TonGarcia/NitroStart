@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to [@pitch, @project], notice: 'Project was successfully destroyed.' }
+      format.html { redirect_to [@nested_obj, @project], notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

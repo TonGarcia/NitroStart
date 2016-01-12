@@ -1,8 +1,10 @@
-h1 Editing competitor
+h4.center.purple-text Edição do Competidor
+=render  'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Show', @competitor
-'|
-= link_to 'Back', competitors_path
+=render 'form'
 
+-@footer_link=true
+-@back_float_button_link = pitch_competitors_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

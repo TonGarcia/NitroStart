@@ -7,10 +7,10 @@ h6.center.purple-text
 
 .row
   - @nested_obj = @pitch
-  - @ref_attrs = competitors_index_attrs
+  - @ref_attrs = competitor_index_attrs
 
-  - @businesses.each do |business|
-    -@current_obj = business
+  - @competitors.each do |competitor|
+    -@current_obj = competitor
     =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
     -@float_opts={link: new_pitch_business_path(@pitch)}

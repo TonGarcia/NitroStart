@@ -21,11 +21,11 @@ h6.center.purple-text
           td =project.view_stage
           td =to_view project.awards
           td =to_view project.patent
-          td =link_to [@pitch, project], class: 'btn purple' do
+          td =link_to [@nested_obj, project], class: 'btn purple' do
             i.ion-eye
           td =link_to edit_pitch_project_path(@pitch, project), class: 'btn amber darken-2' do
             i.mdi-editor-mode-edit
-          td =link_to [@pitch, project], class: 'col l12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+          td =link_to [@nested_obj, project], class: 'col l12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
             i.mdi-action-delete
 
 
