@@ -73,5 +73,5 @@ pt-BR:
         total_revenue: Faturamento Mensal Total
         total_expense: Custo Mensal Total
         total_user: Total de Usuários (não pagantes)
-        total_costumer: Total de Consumidores (pagantes, já consumiram algo)
+        total_costumer: Total de Consumidores (pagantes)
         market_penetration: Taxa de Penetração de Mercado (em porcentagem)

@@ -4,9 +4,10 @@ h4.center.purple-text Hipóteses já Levantadas
 .divider
 
 .row
+  -@nested_obj = @pitch
+  -@ref_attrs = idea_index_attrs
+
   - @ideas.each do |idea|
-    -@ref = 'idea_index'
-    -@nested_obj = @pitch
     -@current_obj = idea
     =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 

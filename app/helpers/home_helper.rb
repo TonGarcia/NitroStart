@@ -6,7 +6,7 @@ module HomeHelper
 
   # Must return it app name based on user locale (default is pt-BR)
   def app_name
-    'NitroStart'
+    'NITRO START'
   end
 
   # Must return it app slogan phrase based on user locale (default is pt-BR)

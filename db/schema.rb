@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20160106185851) do
 
   create_table "financials", force: :cascade do |t|
     t.integer  "total_user",         limit: 4,                                         null: false
-    t.integer  "total_costumer",     limit: 4,                                         null: false
-    t.decimal  "total_revenue",                precision: 12, scale: 2,                null: false
-    t.decimal  "total_expense",                precision: 10, scale: 2,                null: false
-    t.integer  "market_penetration", limit: 4,                                         null: false
+    t.integer  "total_costumer",     limit: 4
+    t.decimal  "total_revenue",                precision: 12, scale: 2
+    t.decimal  "total_expense",                precision: 10, scale: 2
+    t.integer  "market_penetration", limit: 4
     t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",           limit: 4
     t.integer  "start_up_id",        limit: 4

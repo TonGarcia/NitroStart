@@ -6,9 +6,10 @@ h6.center.purple-text
 .divider
 
 .row
+  - @nested_obj = @pitch
+  - @ref_attrs = business_index_attrs
+
   - @businesses.each do |business|
-    -@ref = 'business_index'
-    -@nested_obj = @pitch
     -@current_obj = business
     =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 

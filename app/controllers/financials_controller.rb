@@ -8,7 +8,7 @@ class FinancialsController < ApplicationController
   # GET /financial
   # GET /financial.json
   def index
-    @financial = Financial.all
+    @financials = Financial.all
   end
 
   # GET /financial/1
