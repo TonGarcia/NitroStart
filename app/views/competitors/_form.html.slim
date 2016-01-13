@@ -14,19 +14,21 @@
       = f.label :name
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:price]}"
-      = f.text_field :price, class: 'currency'
-      = f.label :price
+      -current_attr = :price
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@competitor[current_attr], precision: 2)
+      = f.label current_attr
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:revenue]}"
-      = f.text_field :revenue, class: 'currency'
-      = f.label :revenue
+      - current_attr = :total_revenue
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@competitor[current_attr], precision: 2)
+      = f.label current_attr
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_costumer]}"
-      = f.text_field :total_costumer, class: 'formatted_int'
-      = f.label :total_costumer
+      i class="prefix #{t_current_class_icons[:total_costumers]}"
+      = f.text_field :total_costumers, class: 'formatted_int'
+      = f.label :total_costumers
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:success_stories]}"

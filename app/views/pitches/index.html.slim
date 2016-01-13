@@ -15,7 +15,7 @@
       .card.pitch_card
         .title
           a href="#{pitch_path(pitch.id)}": h5.purple-text =pitch.name
-          span.right.nitro_quote.orange-text.text-darken-1 Quota NITRO: 100%
+          span.right.nitro_quote.orange-text.text-darken-1 ="Quota NITRO: #{@pitch.requested_equity(formatted=true)}%"
         .content
           - widgets.each do |widget|
             = render "pitches/partials/widgets/#{widget}"

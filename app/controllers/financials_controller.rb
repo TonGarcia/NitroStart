@@ -73,15 +73,15 @@ class FinancialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def financial_params
-      base_params = params.require(:financial).permit(:total_user, :total_costumer, :total_revenue, :total_expense)
+      base_params = params.require(:financial).permit(:total_users, :total_costumers, :total_revenue, :total_expense, :market_penetration)
       base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
 
       # un-format int
-      base_params[:total_user] = base_params[:total_user].to_non_formatted_int if base_params[:total_user]
-      base_params[:total_costumer] = base_params[:total_costumer].to_non_formatted_int if base_params[:total_costumer]
+      base_params[:total_users] = base_params[:total_users].to_non_formatted_int if base_params[:total_users]
+      base_params[:total_costumers] = base_params[:total_costumers].to_non_formatted_int if base_params[:total_costumers]
 
       # un-format currency
-      base_params[:revenue] = base_params[:revenue].currency_to_non_formatted_int if base_params[:revenue]
+      base_params[:total_revenue] = base_params[:total_revenue].currency_to_non_formatted_int if base_params[:total_revenue]
       base_params[:total_expense] = base_params[:total_expense].currency_to_non_formatted_int if base_params[:total_expense]
 
       base_params

@@ -4,7 +4,7 @@ module CompetitorsHelper
   end
 
   def competitor_their_results
-    [:price, :total_costumer, :revenue]
+    [:formatted_price, :formatted_total_costumers, :formatted_total_revenue]
   end
 
   def competitor_feedback_results

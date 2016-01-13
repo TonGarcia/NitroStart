@@ -71,17 +71,25 @@ pt-BR:
   # Financial -----------------------------------------------------
       financial:
         total_revenue: Faturamento Mensal Total
+        formatted_total_revenue: Faturamento Mensal Total
         total_expense: Custo Mensal Total
-        total_user: Total de Usuários (não pagantes)
-        total_costumer: Total de Consumidores (pagantes)
+        formatted_total_expense: Custo Mensal Total
+        total_users: Total de Usuários (não pagantes)
+        formatted_total_users: Total de Usuários (não pagantes)
+        total_costumers: Total de Consumidores (pagantes)
+        formatted_total_costumers: Total de Consumidores (pagantes)
         market_penetration: Taxa de Penetração de Mercado (em porcentagem)
+        formatted_market_penetration: Taxa de Penetração de Mercado (em porcentagem)
 
   # Competitor -----------------------------------------------------
       competitor:
         name: Nome do Concorrente
         price: Preço Praticado
-        revenue: Faturamento Médio Mensal
-        total_costumer: Total de Consumidores
-        bad_stories: Casos de Consumidores INSATISFEITOS
-        success_stories: Casos de Consumidores SATISFEITOS
+        formatted_price: Preço Praticado
+        total_revenue: Faturamento Médio Mensal
+        formatted_total_revenue: Faturamento Médio Mensal
+        total_costumers: Total de Consumidores
+        formatted_total_costumers: Total de Consumidores
+        bad_stories: Pontos de INSATISFEITOS dos Consumidores
+        success_stories: Pontos de SATISFAÇÃO dos Consumidores
         your_advantage: Suas Vantagens Competitivas sobre este Concorrente

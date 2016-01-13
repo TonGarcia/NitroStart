@@ -9,24 +9,26 @@
 
   .row
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_user]}"
-      = f.text_field :total_user, class: 'formatted_int'
-      = f.label :total_user
+      i class="prefix #{t_current_class_icons[:total_users]}"
+      = f.text_field :total_users, class: 'formatted_int'
+      = f.label :total_users
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_costumer]}"
-      = f.text_field :total_costumer, class: 'formatted_int'
-      = f.label :total_costumer
+      i class="prefix #{t_current_class_icons[:total_costumers]}"
+      = f.text_field :total_costumers, class: 'formatted_int'
+      = f.label :total_costumers
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_revenue]}"
-      = f.text_field :total_revenue, class: 'currency'
-      = f.label :total_revenue
+      -current_attr = :total_revenue
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@financial[current_attr], precision: 2)
+      = f.label current_attr
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_expense]}"
-      = f.text_field :total_expense, class: 'currency'
-      = f.label :total_expense
+      -current_attr = :total_expense
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@financial[current_attr], precision: 2)
+      = f.label current_attr
 
 
     .input-field.col.l12.s12

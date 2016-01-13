@@ -15,9 +15,10 @@
       = f.label :grow_strategy
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:conversion_cust]}"
-      = f.text_field :conversion_cust, class: 'currency'
-      = f.label :conversion_cust
+      -current_attr = :conversion_cust
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@traction[current_attr], precision: 2)
+      = f.label current_attr
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:daily_growth_rate]}"

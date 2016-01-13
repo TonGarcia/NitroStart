@@ -8,7 +8,7 @@ module WidgetTracker
   end
 
   # Return the attributes percent filled
-  def amount_filled
+  def amount_filled(type=nil)
     # SetUp vars
     filled_attrs = 0
     full_percent = 100
@@ -23,6 +23,7 @@ module WidgetTracker
       attrs[attr_key].blank? ? next : filled_attrs = filled_attrs+1
     end
 
+    return filled_attrs if type == :filled_amount
     "#{filled_attrs*full_percent/attrs_amount}%"
   end
 

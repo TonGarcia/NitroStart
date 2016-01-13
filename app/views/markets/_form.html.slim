@@ -29,9 +29,10 @@
       = f.label :total_costumers
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:total_money]}"
-      = f.text_field :total_money, class: 'currency'
-      = f.label :total_money
+      -current_attr = :total_money
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@market[current_attr], precision: 2)
+      = f.label current_attr
 
 
   - @footer_link=true

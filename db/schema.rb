@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   create_table "competitors", force: :cascade do |t|
     t.string   "name",            limit: 55,                                          null: false
     t.decimal  "price",                       precision: 5,  scale: 2
-    t.decimal  "revenue",                     precision: 12, scale: 2
-    t.integer  "total_costumer",  limit: 4
+    t.decimal  "total_revenue",               precision: 12, scale: 2
+    t.integer  "total_costumers", limit: 4
     t.string   "success_stories", limit: 140
     t.string   "bad_stories",     limit: 140
     t.string   "your_advantage",  limit: 255
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "competitors", ["start_up_id"], name: "index_competitors_on_start_up_id", using: :btree
 
   create_table "financials", force: :cascade do |t|
-    t.integer  "total_user",         limit: 4,                                         null: false
-    t.integer  "total_costumer",     limit: 4
+    t.integer  "total_users",        limit: 4,                                         null: false
+    t.integer  "total_costumers",    limit: 4
     t.decimal  "total_revenue",                precision: 12, scale: 2
     t.decimal  "total_expense",                precision: 10, scale: 2
     t.integer  "market_penetration", limit: 4
@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "social_sessions", ["user_id"], name: "index_social_sessions_on_user_id", using: :btree
 
   create_table "start_ups", force: :cascade do |t|
+    t.integer  "nitro_equity",       limit: 4,   null: false
     t.string   "name",               limit: 45,  null: false
     t.datetime "brand_updated_at"
     t.integer  "brand_file_size",    limit: 4

@@ -35,16 +35,24 @@ locale_icon:
     formatted_daily_growth_rate: fa fa-line-chart
     costumer_channels: ion-speakerphone
   financial:
-    total_user: ion-ios-people
-    total_costumer: ion-android-contacts
+    total_users: ion-ios-people
+    formatted_total_users: ion-ios-people
+    total_costumers: ion-android-contacts
+    formatted_total_costumers: ion-android-contacts
     total_revenue: fa fa-sign-in
+    formatted_total_revenue: fa fa-sign-in
     total_expense: fa fa-sign-out
+    formatted_total_expense: fa fa-sign-out
     market_penetration: ion-pie-graph
+    formatted_market_penetration: ion-pie-graph
   competitor:
     name: mdi-action-account-circle
     price: ion-ios-pricetag
-    revenue: ion-cash
-    total_costumer: ion-ios-people
+    formatted_price: ion-ios-pricetag
+    total_revenue: ion-cash
+    formatted_total_revenue: ion-cash
+    total_costumers: ion-ios-people
+    formatted_total_costumers: ion-ios-people
     bad_stories: ion-sad
     success_stories: ion-android-contacts
     your_advantage: ion-android-star

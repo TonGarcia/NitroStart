@@ -1,7 +1,7 @@
 h4.center.orange-text.text-darken-1 ="Pitch: #{@pitch.name}"
 h6.center.purple-text
   | Quota de Participação NITRO: &nbsp;
-  strong=link_to '100%', pitches_path
+  strong=link_to @pitch.requested_equity(formatted=true), pitches_path
 
 
 .divider

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "financials/new", type: :view do
   before(:each) do
     assign(:financial, Financial.new(
-      :total_costumer => 1,
+      :total_costumers => 1,
       :total_revenue => 1,
       :total_expense => 1,
       :conversion_price => 1,
@@ -18,7 +18,7 @@ RSpec.describe "financials/new", type: :view do
 
     assert_select "form[action=?][method=?]", financials_path, "post" do
 
-      assert_select "input#financial_total_costumer[name=?]", "financial[total_costumer]"
+      assert_select "input#financial_total_costumers[name=?]", "financial[total_costumers]"
 
       assert_select "input#financial_total_revenue[name=?]", "financial[total_revenue]"
 

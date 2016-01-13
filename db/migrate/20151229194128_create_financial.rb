@@ -2,8 +2,8 @@ class CreateFinancial < ActiveRecord::Migration
   def change
     create_table :financials do |t|
       # Base attributes
-      t.integer :total_user, null: false
-      t.integer :total_costumer, null: true
+      t.integer :total_users, null: false
+      t.integer :total_costumers, null: true
       t.decimal :total_revenue, precision: 12, scale: 2, null: true
       t.decimal :total_expense, precision: 10, scale: 2, null: true
       t.integer :market_penetration, null: true

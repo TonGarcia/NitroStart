@@ -1,5 +1,6 @@
 class Competitor < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include WidgetTracker
 
   # Relations

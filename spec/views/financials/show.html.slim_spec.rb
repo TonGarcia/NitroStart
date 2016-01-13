@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "financials/show", type: :view do
   before(:each) do
     @financial = assign(:financial, Financial.create!(
-      :total_costumer => 1,
+      :total_costumers => 1,
       :total_revenue => 2,
       :total_expense => 3,
       :conversion_price => 4,

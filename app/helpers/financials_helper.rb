@@ -1,13 +1,13 @@
 module FinancialsHelper
   def financial_index_attrs
-    [:total_user, :total_revenue, :total_expense]
+    [:formatted_total_users, :formatted_total_revenue, :formatted_total_expense]
   end
 
   def financial_currencies_attrs
-    [:total_revenue, :total_expense]
+    [:formatted_total_revenue, :formatted_total_expense]
   end
 
   def financial_market_share_attrs
-    [:total_user, :total_costumer, :market_penetration]
+    [:formatted_total_users, :formatted_total_costumers, :formatted_market_penetration]
   end
 end

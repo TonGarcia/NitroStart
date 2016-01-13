@@ -73,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:stage, :patent, :awards, :work_flow).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      params.require(:project).permit(:stage, :patent, :awards, :avatar).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

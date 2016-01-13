@@ -428,7 +428,7 @@ DEPENDENCIES
   linkedin (~> 1.0.0)
   mail (~> 2.6.3)
   materialize-sass (= 0.97.3)
-  mysql2 (>= 0.3.13, < 0.5)
+  mysql2 (~> 0.4.2)
   newrelic_rpm (~> 3.14.1.311)
   nprogress-rails (~> 0.1.6.7)
   omniauth (~> 1.2.2)
@@ -465,4 +465,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
