@@ -152,19 +152,6 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree
   add_index "projects", ["start_up_id"], name: "index_projects_on_start_up_id", using: :btree
 
-  create_table "revenues", force: :cascade do |t|
-    t.decimal  "price",                 precision: 5, scale: 2,                null: false
-    t.integer  "model",       limit: 4,                                        null: false
-    t.boolean  "active",                                        default: true, null: false
-    t.integer  "pitch_id",    limit: 4,                                        null: false
-    t.integer  "start_up_id", limit: 4,                                        null: false
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
-  end
-
-  add_index "revenues", ["pitch_id"], name: "index_revenues_on_pitch_id", using: :btree
-  add_index "revenues", ["start_up_id"], name: "index_revenues_on_start_up_id", using: :btree
-
   create_table "social_sessions", force: :cascade do |t|
     t.string   "uid",            limit: 65,  null: false
     t.string   "name",           limit: 60,  null: false
@@ -301,8 +288,6 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_foreign_key "pitches", "users"
   add_foreign_key "projects", "pitches"
   add_foreign_key "projects", "start_ups"
-  add_foreign_key "revenues", "pitches"
-  add_foreign_key "revenues", "start_ups"
   add_foreign_key "social_sessions", "users"
   add_foreign_key "start_ups", "pitches"
   add_foreign_key "supporters", "pitches"

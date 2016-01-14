@@ -68,7 +68,7 @@ gem 'colorize', '~> 0.7.7'
 
 # GEMs for UPLOAD files
 gem 'aws-sdk', '< 2.0'
-gem 'paperclip', '~> 4.3.2'
+gem 'paperclip', '~> 4.3.0'
 
 # Faster & easier HTML
 gem 'slim-rails', '~> 3.0.1'

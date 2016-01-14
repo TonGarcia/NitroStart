@@ -1,22 +1,29 @@
 # 0 is not an Index
 start_up_stages:
 - id:       1
+  sym:      idea
   name:     Somente Idéia
 
 - id:       2
+  sym:      validated
   name:     Modelo Validado
 
 - id:       3
+  sym:      mvp
   name:     Protótipo (MVP)
 
 - id:       4
+  sym:      pre_operational
   name:     Pré-Operacional
 
 - id:       5
+  sym:      operational
   name:     Operacional
 
 - id:       6
+  sym:      scaling
   name:     Ganhando Escala Nacional
 
 - id:       7
+  sym:      international_scaling
   name:     Ganhando Escala Internacional
