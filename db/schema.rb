@@ -99,13 +99,11 @@ ActiveRecord::Schema.define(version: 20160106185851) do
     t.decimal  "product_development",           precision: 7, scale: 2, default: 0.0,  null: false
     t.decimal  "equipments",                    precision: 5, scale: 2, default: 0.0,  null: false
     t.boolean  "active",                                                default: true, null: false
-    t.integer  "pitch_id",            limit: 4
     t.integer  "start_up_id",         limit: 4
     t.datetime "created_at",                                                           null: false
     t.datetime "updated_at",                                                           null: false
   end
 
-  add_index "investments", ["pitch_id"], name: "index_investments_on_pitch_id", using: :btree
   add_index "investments", ["start_up_id"], name: "index_investments_on_start_up_id", using: :btree
 
   create_table "markets", force: :cascade do |t|
@@ -281,7 +279,6 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_foreign_key "financials", "start_ups"
   add_foreign_key "ideas", "pitches"
   add_foreign_key "ideas", "start_ups"
-  add_foreign_key "investments", "pitches"
   add_foreign_key "investments", "start_ups"
   add_foreign_key "markets", "pitches"
   add_foreign_key "markets", "start_ups"

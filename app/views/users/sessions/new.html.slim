@@ -17,4 +17,8 @@ h4.sign-header.center.blue-grey-text É bom revê-lo aqui, no Ecosistema NitroSt
 
         .row.top-fat
           h6.center
-            = link_to 'Esqueci Minha Senha', new_password_path(resource_name)
+            = link_to 'Esqueci Minha Senha', new_password_path(resource_name), class: 'txt_un_transform'
+
+        .row.top-fat
+          h6.center
+            = link_to 'Não recebi o E-mail de confirmação', new_confirmation_path(resource_name), class: 'txt_un_transform'
