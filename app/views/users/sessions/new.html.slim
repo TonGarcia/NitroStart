@@ -14,4 +14,7 @@ h4.sign-header.center.blue-grey-text É bom revê-lo aqui, no Ecosistema NitroSt
         =render 'form'
       .card-action
         =render 'users/sign_social'
-          /center= link_to 'Esqueci minha senha', new_password_path('user')
+
+        .row.top-fat
+          h6.center
+            = link_to 'Esqueci Minha Senha', new_password_path(resource_name)

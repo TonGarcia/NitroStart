@@ -1,0 +1,17 @@
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  #sign_form_header.row
+    .col.l6.s6: h6.blue-grey-text Recupere a Senha
+    .col.l5.offset-l1: a.right href="#{new_user_registration_path}" ou crie sua conta
+
+  .divider.custom
+
+  = devise_error_messages!
+
+  .row
+    .input-field.col.l12.s12
+      i.mdi-communication-quick-contacts-mail.prefix
+      = f.email_field :email
+      = f.label :email
+
+  .row
+    = f.submit 'resetar senha', class: 'btn col l12 s12'
