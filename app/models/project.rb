@@ -16,7 +16,10 @@ class Project < ActiveRecord::Base
   end
 
   def stage_sym
-    index_dif = 1
-    ENUM[:start_up_stages][self.stage-index_dif][:sym].to_sym
+    # Stages are IDs, so it starts on 1 not on 0, like arrays
+    stages_extra_index = 1
+    only_idea_stage_index = 1
+    return only_idea_stage_index if self.stage.nil?
+    ENUM[:start_up_stages][self.stage-stages_extra_index][:sym].to_sym
   end
 end

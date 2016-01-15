@@ -51,6 +51,7 @@ class Pitch < ActiveRecord::Base
     end
 
     # Stage addition percent
+    stage_additional = 0
     case self.active(:project).stage_sym
       when :idea
         stage_additional = 20
