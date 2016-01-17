@@ -24,7 +24,11 @@ pt-BR:
   # Pitch -----------------------------------------------------
       pitch:
         name: Nome do Projeto
-        user: Responsável
+        cover: Banner
+        cover_file_size: Peso do Banner
+        avatar: Logo
+        cover_file_size: Peso da Logo
+        user: Criador
 
   # Idea -----------------------------------------------------
       idea:

@@ -7,10 +7,10 @@ module Avatar
     has_attached_file :avatar,
                       storage: :s3,
                       s3_credentials: "#{Rails.root}/config/aws.yml",
-                      path: "#{self.to_s.downcase.pluralize}/:attachment/:id/:style/#{self.to_s.downcase}_work_flow",
+                      path: "#{self.to_s.downcase.pluralize}/:attachment/:id/:style/#{self.to_s.downcase}",
                       url: ':s3_domain_url',
                       styles: { original: '300x300>', thumb: '75x75>' },
-                      default_url: 'defaults/how_works_flow.png', if: :avatar?
+                      default_url: 'brand/fb_page_white_space.png', if: :avatar?
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/, if: :avatar?
     validates_attachment_size :avatar, less_than: 200.kilobyte, if: :avatar?
   end

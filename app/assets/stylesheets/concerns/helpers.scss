@@ -15,6 +15,53 @@
   text-transform: none !important;
 }
 
+.banner {
+  max-height: 300px;
+}
+
+.invisible {
+  width: 0;
+  height: 0;
+}
+
+.warning_label {
+  margin-top: 90px;
+}
+
+.semi-circle {
+  border-radius: 25%;
+}
+
+.set-pitch_cover {
+  img {
+    max-height: 116px;
+  }
+
+  p {
+    margin-top: -10px;
+  }
+}
+
+.set-cover {
+  margin-top: -10px;
+}
+
+.set-pitch_brand {
+  img {
+    top: 20px;
+    left: 25px;
+    position: relative;
+  }
+}
+
+h1.set-video {
+  i {
+    top: -30px;
+    font-size: 8rem;
+    position: relative;
+  }
+}
+
 .light-weight {
   font-weight: 200;
 }

@@ -70,6 +70,6 @@ class PitchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pitch_params
-      params.require(:pitch).permit(:name).merge!(user_id: @current_user.id)
+      params.require(:pitch).permit(:name, :avatar, :cover, :video_link).merge!(user_id: @current_user.id)
     end
 end

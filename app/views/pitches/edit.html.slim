@@ -1,8 +1,9 @@
-h1 Editing pitch
+h4.center.purple-text Edição do Pitch
 
-== render 'form'
+.divider
 
-= link_to 'Show', @pitch
-'|
-= link_to 'Back', pitches_path
+=render 'form'
 
+-@footer_link=true
+-@back_float_button_link = pitch_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

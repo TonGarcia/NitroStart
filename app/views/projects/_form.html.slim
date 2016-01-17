@@ -27,7 +27,7 @@
 
       .input-field.col.l3.offset-l1.s6
         i class="prefix #{t_current_class_icons[:awards]}"
-        = f.check_box :awards, class: 'filled-in'w
+        = f.check_box :awards, class: 'filled-in'
         = f.label :awards, class: 'check_label'
 
       .input-field.col.l3.offset-l1.s6
@@ -37,17 +37,3 @@
 
     - @footer_link=true
     = render 'layouts/partials/components/static/float_buttons/save'
-
-
-javascript:
-  // show the Ad dynamic after it "upload_intent"
-  function show_brand(input, img_ref) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function (e) {
-        $(img_ref)
-                .attr('src', e.target.result);
-      };
-      reader.readAsDataURL(input.files[0]);
-    }
-  }

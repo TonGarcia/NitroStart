@@ -44,6 +44,15 @@ module Concerns::ActionsHelper
     }
   end
 
+  # List Tools
+  def tools_actions
+    {
+        label: 'Ferramentas Exclusivas',
+        actions: [
+        ]
+    }
+  end
+
   # Return the profile_actions array
   def profile_actions
     [
@@ -58,7 +67,8 @@ module Concerns::ActionsHelper
     [
       start_up_actions,
       investor_actions,
-      partners_actions
+      partners_actions,
+      tools_actions
     ]
   end
 end

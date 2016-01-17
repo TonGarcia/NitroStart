@@ -2,6 +2,7 @@
 locale_icon:
   pitch:
     name: mdi-action-assignment-ind
+    video_link: ion-social-youtube
   idea:
     main_problem: ion-alert-circled
     second_problems: ion-alert

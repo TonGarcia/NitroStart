@@ -1,15 +1,27 @@
-h4.center.orange-text.text-darken-1 ="Pitch: #{@pitch.name}"
-h6.center.purple-text
-  | Quota de Participação NITRO: &nbsp;
-  strong=link_to @pitch.requested_equity(formatted=true), pitches_path
+.row
+  = image_tag(@pitch.cover.url, class: 'col l2 banner')
+
+  .col.l8
+    h4.center.orange-text.text-darken-1
+      ="Pitch: #{@pitch.name}"
+    h6.center.purple-text
+      | Quota de Participação NITRO: &nbsp;
+      strong=link_to @pitch.requested_equity(formatted=true), pitches_path
+
+  = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 semi-circle')
 
 
 .divider
+
+/.row
+/  =image_tag(@pitch.cover.url, class: 'col l12 banner')
 
 .row
   -widgets.each do |widget|
     .col.l4.s12
       =render "pitches/partials/widgets/#{widget}"
+
+/ TODO add card showing Supporters feedbacks & metrics
 
 -@float_opts={link: edit_pitch_path(@pitch.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106185851) do
+ActiveRecord::Schema.define(version: 20160116204025) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20160106185851) do
 
   create_table "competitors", force: :cascade do |t|
     t.string   "name",            limit: 55,                                          null: false
-    t.decimal  "price",                       precision: 5,  scale: 2
-    t.decimal  "total_revenue",               precision: 12, scale: 2
+    t.decimal  "price",                       precision: 8,  scale: 2
+    t.decimal  "total_revenue",               precision: 15, scale: 2
     t.integer  "total_costumers", limit: 4
     t.string   "success_stories", limit: 140
     t.string   "bad_stories",     limit: 140
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   create_table "investments", force: :cascade do |t|
     t.integer  "general_terms",       limit: 4,                                        null: false
     t.integer  "raising_time",        limit: 4
-    t.decimal  "founder_salaries",              precision: 5, scale: 2, default: 0.0,  null: false
+    t.decimal  "founder_salaries",              precision: 7, scale: 2, default: 0.0,  null: false
     t.decimal  "costumer_conversion",           precision: 5, scale: 2, default: 0.0,  null: false
     t.decimal  "product_development",           precision: 7, scale: 2, default: 0.0,  null: false
     t.decimal  "equipments",                    precision: 5, scale: 2, default: 0.0,  null: false
@@ -124,10 +124,19 @@ ActiveRecord::Schema.define(version: 20160106185851) do
   add_index "markets", ["start_up_id"], name: "index_markets_on_start_up_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "name",       limit: 30, null: false
-    t.integer  "user_id",    limit: 4,  null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "name",                limit: 55,  null: false
+    t.datetime "cover_updated_at"
+    t.integer  "cover_file_size",     limit: 4
+    t.string   "cover_content_type",  limit: 255
+    t.string   "cover_file_name",     limit: 255
+    t.datetime "avatar_updated_at"
+    t.integer  "avatar_file_size",    limit: 4
+    t.string   "avatar_content_type", limit: 255
+    t.string   "avatar_file_name",    limit: 255
+    t.string   "video_link",          limit: 255
+    t.integer  "user_id",             limit: 4,   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
