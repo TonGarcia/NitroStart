@@ -6,7 +6,5 @@
 
 = render 'form'
 
-- @footer_link=true
-- @back_float_button_link = pitch_market_path(@pitch) unless @market
-- @back_float_button_link = pitch_market_path(@pitch, @market) if @market && params[:id]
+- @back_float_button_link = gen_back_link(@market)
 =render 'layouts/partials/components/static/float_buttons/back'

@@ -1,8 +1,8 @@
-- @footer_link='footer-' if @footer_link
+- @footer_link='footer-' unless @not_footer_link
 -btn_class = "#{@footer_link}back left btn-floating btn-large waves-effect waves-light white"
 = link_to @back_float_button_link, class: btn_class do
   i.large.mdi-hardware-keyboard-backspace.black-text
 
 -# Rest variables
--@footer_link=nil
+-@not_footer_link=nil
 -@back_float_button_link=nil
