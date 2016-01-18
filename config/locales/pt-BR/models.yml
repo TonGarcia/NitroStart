@@ -66,11 +66,13 @@ pt-BR:
   # Traction -----------------------------------------------------
       traction:
         grow_strategy: Estratégia de Crescimento
+        lead_cust: Custo de Lead
         conversion_cust: Custo de Conversão
         formatted_conversion_cust: Custo de Conversão
         daily_growth_rate: Taxa de Crescimento Diário
         formatted_daily_growth_rate: Taxa de Crescimento Diário
         costumer_channels: Canais com os Clientes
+        amount_month_lead: Fluxo de Leads Diário
 
   # Financial -----------------------------------------------------
       financial:

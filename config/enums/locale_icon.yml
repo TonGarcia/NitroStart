@@ -30,11 +30,13 @@ locale_icon:
     costumer_specification: ion-ios-paper-outline
   traction:
     grow_strategy: ion-android-locate
-    conversion_cust: ion-cash
+    lead_cust: ion-ios-people
+    conversion_cust: ion-android-contact
     formatted_conversion_cust: ion-cash
     daily_growth_rate: fa fa-line-chart
     formatted_daily_growth_rate: fa fa-line-chart
     costumer_channels: ion-speakerphone
+    amount_month_lead: ion-stats-bars
   financial:
     total_users: ion-ios-people
     formatted_total_users: ion-ios-people

@@ -15,10 +15,21 @@
       = f.label :grow_strategy
 
     .input-field.col.l12.s12
+      - current_attr = :lead_cust
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@traction[current_attr], precision: 2)
+      = f.label current_attr
+
+    .input-field.col.l12.s12
       -current_attr = :conversion_cust
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@traction[current_attr], precision: 2)
       = f.label current_attr
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:amount_month_lead]}"
+      = f.text_field :amount_month_lead, class: 'formatted_int'
+      = f.label :amount_month_lead
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:daily_growth_rate]}"

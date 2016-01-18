@@ -37,11 +37,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Thin is better for localhost
+gem 'thin', '~> 1.6', group: :development
+
 # Puma is a faster server
 gem 'puma', '>= 2.15.3', group: :production
 
-# Thin is better for localhost
-gem 'thin', '~> 1.6', group: :development
+# Use rubinius as Ruby VM Engine
+# TODO uncomment when rubinius get updated on brew ruby '2.2.10', engine: 'rbx', engine_version: '3.9', group: :production
 
 =begin
  ######################    AdditionalGEMs    #################################

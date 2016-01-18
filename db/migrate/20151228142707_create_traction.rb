@@ -3,7 +3,9 @@ class CreateTraction < ActiveRecord::Migration
     create_table :tractions do |t|
       # Base attributes
       t.string :grow_strategy, limit: 140, null: false
+      t.decimal :lead_cust, precision: 5, scale: 2, null: true
       t.decimal :conversion_cust, precision: 5, scale: 2, null: true
+      t.integer :amount_month_lead, null: true
       t.integer :daily_growth_rate, null: true
       t.string :costumer_channels, limit: 140, null: false
 

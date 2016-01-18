@@ -227,7 +227,9 @@ ActiveRecord::Schema.define(version: 20160116204025) do
 
   create_table "tractions", force: :cascade do |t|
     t.string   "grow_strategy",     limit: 140,                                        null: false
+    t.decimal  "lead_cust",                     precision: 5, scale: 2
     t.decimal  "conversion_cust",               precision: 5, scale: 2
+    t.integer  "amount_month_lead", limit: 4
     t.integer  "daily_growth_rate", limit: 4
     t.string   "costumer_channels", limit: 140,                                        null: false
     t.boolean  "active",                                                default: true, null: false
