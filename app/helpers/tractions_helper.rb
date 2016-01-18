@@ -7,6 +7,10 @@ module TractionsHelper
     [:grow_strategy, :costumer_channels]
   end
 
+  def traction_range_attrs
+    [:formatted_lead_cust, :formatted_daily_lead]
+  end
+
   def traction_results_attrs
     [:formatted_conversion_cust, :formatted_daily_growth_rate]
   end

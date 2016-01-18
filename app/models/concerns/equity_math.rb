@@ -40,9 +40,9 @@ module EquityMath
     stage_additional = 0
     case stage_obj.stage_sym
       when :idea
-        stage_additional = 60
-      when :validated
         stage_additional = 35
+      when :validated
+        stage_additional = 30
       when :mvp
         stage_additional = 15
       when :pre_operational
@@ -61,7 +61,15 @@ module EquityMath
 
     # Calc it final equity requested
     equity = base_equity + additional_equity + stage_additional + bootstrapping_additional
-    equity = 100 if equity > 100
+
+    # Prevent Equity to be greater than 100 & filling not decrease percent
+    if equity >= 100
+      if equity == 100 || amount_filled_attrs_percent >= 10
+        equity = 97
+      else
+        equity = 100
+      end
+    end
 
     formatted ? equity.to_s.to_percent_formatter : equity
   end

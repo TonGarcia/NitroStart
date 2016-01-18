@@ -4,7 +4,7 @@ module FinancialsHelper
   end
 
   def financial_currencies_attrs
-    [:formatted_total_revenue, :formatted_total_expense]
+    [:formatted_bootstrapped, :formatted_total_revenue, :formatted_total_expense]
   end
 
   def financial_market_share_attrs

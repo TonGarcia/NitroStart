@@ -57,9 +57,7 @@ pt-BR:
         segment: Segmento
         currency_iso: Moeda
         total_money: Total de Dinheiro Movimentado
-        formatted_total_money: Total de Dinheiro Movimentado
         total_costumers: Total de Consumidores
-        formatted_total_costumers: Total de Consumidores
         trends_insight: Tendências e Inovações
         costumer_specification: Especificação dos Consumidores
 
@@ -68,35 +66,26 @@ pt-BR:
         grow_strategy: Estratégia de Crescimento
         lead_cust: Custo de Lead
         conversion_cust: Custo de Conversão
-        formatted_conversion_cust: Custo de Conversão
         daily_growth_rate: Taxa de Crescimento Diário
-        formatted_daily_growth_rate: Taxa de Crescimento Diário
         costumer_channels: Canais com os Clientes
         amount_daily_lead: Fluxo de Leads Diário
 
   # Financial -----------------------------------------------------
       financial:
+        bootstrapped: Total Investido de Bootstrap
         total_revenue: Faturamento Mensal Total
-        formatted_total_revenue: Faturamento Mensal Total
         total_expense: Custo Mensal Total
-        formatted_total_expense: Custo Mensal Total
         total_bootstrapped: Total Investido de Bootstrapping
         total_users: Total de Usuários (não pagantes)
-        formatted_total_users: Total de Usuários (não pagantes)
         total_costumers: Total de Consumidores (pagantes)
-        formatted_total_costumers: Total de Consumidores (pagantes)
         market_penetration: Taxa de Penetração de Mercado (em porcentagem)
-        formatted_market_penetration: Taxa de Penetração de Mercado (em porcentagem)
 
   # Competitor -----------------------------------------------------
       competitor:
         name: Nome do Concorrente
         price: Preço Praticado
-        formatted_price: Preço Praticado
         total_revenue: Faturamento Médio Mensal
-        formatted_total_revenue: Faturamento Médio Mensal
         total_costumers: Total de Consumidores
-        formatted_total_costumers: Total de Consumidores
         bad_stories: Pontos de INSATISFEITOS dos Consumidores
         success_stories: Pontos de SATISFAÇÃO dos Consumidores
         your_advantage: Suas Vantagens Competitivas sobre este Concorrente

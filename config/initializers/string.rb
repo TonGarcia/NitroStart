@@ -18,4 +18,8 @@ class String
   def to_non_formatted_int
     self.remove('.')
   end
+
+  def remove_formatter
+    self.sub('formatted_', '')
+  end
 end

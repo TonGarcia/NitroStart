@@ -14,6 +14,15 @@ h4.center.purple-text Detalhamento da Tração de Crescimento
         -@shower_attrs = 'traction_strategy_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'
 
+  .col.l6
+    .card
+      .title
+        h5.center Alcance da Estratégia
+      .content
+        - @nested_obj = @pitch
+        - @current_obj = @traction
+        - @shower_attrs = 'traction_range_attrs'
+        = render 'layouts/partials/components/dynamic/shower_attr'
 
   .col.l6
     .card

@@ -2,7 +2,7 @@ class CreateIdeas < ActiveRecord::Migration
   def change
     create_table :ideas do |t|
       # Main Problem it solve
-      t.string :main_problem, limit: 55, null: false
+      t.string :main_problem, limit: 75, null: false
 
       # Secondary problems solved
       t.string :second_problems, limit: 255, null: true
