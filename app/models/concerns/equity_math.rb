@@ -14,8 +14,13 @@ module EquityMath
     associations = [:idea, :market, :project, :financial, :traction, :supporter, :business, :competitor]
 
     associations.each do |association|
+      # Set association & additional equity objs
+      model_association = self.active(association)
+      stage_obj = model_association if model_association.is_a?Project
+      financial_obj = model_association if model_association.is_a?Financial
+
       # add Total Attrs
-      amount_attrs = amount_attrs + self.active(association).attrs_that_matters.length
+      amount_attrs = amount_attrs + model_association.attrs_that_matters.length
       # add Filled Attrs
       amount_filled_attrs = amount_filled_attrs + self.active(association).amount_filled(:filled_amount)
     end
@@ -31,8 +36,9 @@ module EquityMath
     end
 
     # Stage addition percent
+    stage_obj = self.active(:project) unless stage_obj
     stage_additional = 0
-    case self.active(:project).stage_sym
+    case stage_obj.stage_sym
       when :idea
         stage_additional = 60
       when :validated
@@ -49,8 +55,12 @@ module EquityMath
         stage_additional = 0
     end
 
+    # Get bootstrapping
+    financial_obj = self.active(:financial) unless financial_obj
+    !financial_obj.bootstrapped.nil? && financial_obj.bootstrapped.nil? > 0 ? bootstrapping_additional = 0 : bootstrapping_additional = 10
+
     # Calc it final equity requested
-    equity = base_equity + additional_equity + stage_additional
+    equity = base_equity + additional_equity + stage_additional + bootstrapping_additional
     equity = 100 if equity > 100
 
     formatted ? equity.to_s.to_percent_formatter : equity

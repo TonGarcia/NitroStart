@@ -73,10 +73,17 @@ class TractionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def traction_params
-      base_params = params.require(:traction).permit(:grow_strategy, :conversion_cust, :daily_growth_rate, :costumer_channels)
+      base_params = params.require(:traction).permit(:grow_strategy, :lead_cust, :conversion_cust, :daily_growth_rate, :amount_daily_lead, :costumer_channels)
       base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+
+      # Decimal converting
+      base_params[:lead_cust] = base_params[:lead_cust].sub(',', '.').to_f
       base_params[:conversion_cust] = base_params[:conversion_cust].sub(',', '.').to_f
+
+      # Int converting
       base_params[:daily_growth_rate] = base_params[:daily_growth_rate].sub('.', '').to_f
+      base_params[:amount_daily_lead] = base_params[:amount_daily_lead].sub('.', '').to_f
+
       base_params
     end
 end

@@ -36,7 +36,7 @@ locale_icon:
     daily_growth_rate: fa fa-line-chart
     formatted_daily_growth_rate: fa fa-line-chart
     costumer_channels: ion-speakerphone
-    amount_month_lead: ion-stats-bars
+    amount_daily_lead: ion-stats-bars
   financial:
     total_users: ion-ios-people
     formatted_total_users: ion-ios-people
@@ -46,6 +46,7 @@ locale_icon:
     formatted_total_revenue: fa fa-sign-in
     total_expense: fa fa-sign-out
     formatted_total_expense: fa fa-sign-out
+    bootstrapped:
     market_penetration: ion-pie-graph
     formatted_market_penetration: ion-pie-graph
   competitor:

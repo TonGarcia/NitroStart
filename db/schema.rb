@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160116204025) do
     t.integer  "total_costumers",    limit: 4
     t.decimal  "total_revenue",                precision: 12, scale: 2
     t.decimal  "total_expense",                precision: 10, scale: 2
+    t.decimal  "bootstrapped",                 precision: 10, scale: 2,                null: false
     t.integer  "market_penetration", limit: 4
     t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",           limit: 4
@@ -229,7 +230,7 @@ ActiveRecord::Schema.define(version: 20160116204025) do
     t.string   "grow_strategy",     limit: 140,                                        null: false
     t.decimal  "lead_cust",                     precision: 5, scale: 2
     t.decimal  "conversion_cust",               precision: 5, scale: 2
-    t.integer  "amount_month_lead", limit: 4
+    t.integer  "amount_daily_lead", limit: 4
     t.integer  "daily_growth_rate", limit: 4
     t.string   "costumer_channels", limit: 140,                                        null: false
     t.boolean  "active",                                                default: true, null: false

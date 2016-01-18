@@ -72,7 +72,7 @@ pt-BR:
         daily_growth_rate: Taxa de Crescimento Diário
         formatted_daily_growth_rate: Taxa de Crescimento Diário
         costumer_channels: Canais com os Clientes
-        amount_month_lead: Fluxo de Leads Diário
+        amount_daily_lead: Fluxo de Leads Diário
 
   # Financial -----------------------------------------------------
       financial:
@@ -80,6 +80,7 @@ pt-BR:
         formatted_total_revenue: Faturamento Mensal Total
         total_expense: Custo Mensal Total
         formatted_total_expense: Custo Mensal Total
+        total_bootstrapped: Total Investido de Bootstrapping
         total_users: Total de Usuários (não pagantes)
         formatted_total_users: Total de Usuários (não pagantes)
         total_costumers: Total de Consumidores (pagantes)
