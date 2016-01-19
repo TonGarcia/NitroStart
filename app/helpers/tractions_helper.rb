@@ -8,7 +8,7 @@ module TractionsHelper
   end
 
   def traction_range_attrs
-    [:formatted_lead_cust, :formatted_daily_lead]
+    [:formatted_lead_cust, :formatted_amount_daily_lead]
   end
 
   def traction_results_attrs

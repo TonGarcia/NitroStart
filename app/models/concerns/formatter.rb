@@ -12,7 +12,7 @@ module Formatter
     self.total_costumers.to_s.to_int_formatter
   end
 
-  def formatted_daily_lead
+  def formatted_amount_daily_lead
     self.amount_daily_lead.to_s.to_int_formatter
   end
 

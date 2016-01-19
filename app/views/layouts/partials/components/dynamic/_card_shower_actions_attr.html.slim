@@ -6,7 +6,8 @@
     -current_model = params[:controller].singularize
     - I18n.with_options(scope: "activerecord.attributes.#{current_model}") do |i18n|
       - @ref_attrs.each_with_index do |attr, i|
-        - @shower_comp = {icon: t_current_class_icons[attr], attr: i18n.t(attr), value: @current_obj.send(attr), slim_divider: true}
+        - non_formatter_attr = attr.to_s.remove_formatter.to_sym
+        - @shower_comp = {icon: t_current_class_icons[non_formatter_attr], attr: i18n.t(non_formatter_attr), value: @current_obj.send(attr), slim_divider: true}
 
         .row.attr_shower
           h6 class="#{text_color}"

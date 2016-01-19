@@ -44,7 +44,7 @@ module EquityMath
       when :validated
         stage_additional = 30
       when :mvp
-        stage_additional = 15
+        stage_additional = 10
       when :pre_operational
         stage_additional = 5
       when :operational
@@ -57,10 +57,13 @@ module EquityMath
 
     # Get bootstrapping
     financial_obj = self.active(:financial) unless financial_obj
-    !financial_obj.bootstrapped.nil? && financial_obj.bootstrapped.nil? > 0 ? bootstrapping_additional = 0 : bootstrapping_additional = 10
+    !financial_obj.bootstrapped.nil? && financial_obj.bootstrapped > 0 ? bootstrapping_additional = 0 : bootstrapping_additional = 10
+
+    # No Costumer, only lead, set additional
+    (financial_obj.nil? || financial_obj.total_costumers.nil? || financial_obj.total_costumers == 0) ? no_costumer_additional = 20 : no_costumer_additional = 0
 
     # Calc it final equity requested
-    equity = base_equity + additional_equity + stage_additional + bootstrapping_additional
+    equity = base_equity + additional_equity + stage_additional + bootstrapping_additional + no_costumer_additional
 
     # Prevent Equity to be greater than 100 & filling not decrease percent
     if equity >= 100

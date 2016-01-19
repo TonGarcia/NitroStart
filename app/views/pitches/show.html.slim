@@ -1,3 +1,6 @@
+-requested_equity = @pitch.requested_equity
+-formatted_requested_equity = "#{number_with_precision(requested_equity, precision: 2, delimiter: ',')}%"
+
 .row
   = image_tag(@pitch.cover.url, class: 'col l2 banner')
 
@@ -6,15 +9,17 @@
       ="Pitch: #{@pitch.name}"
     h6.center.purple-text
       | Quota de Participação NITRO: &nbsp;
-      strong=link_to @pitch.requested_equity(formatted=true), pitches_path
+      strong=link_to formatted_requested_equity, pitches_path
 
   = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 semi-circle')
 
 
 .divider
 
-/.row
-/  =image_tag(@pitch.cover.url, class: 'col l12 banner')
+-half_percent = 50
+-if requested_equity >= half_percent
+  .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
+    | Apesar de ficarmos com mais de 50%, o Poder de decisão é SEU! Mas conte sempre conosco nas decisões.
 
 .row
   -widgets.each do |widget|
