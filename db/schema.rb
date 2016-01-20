@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160116204025) do
   add_index "financials", ["start_up_id"], name: "index_financials_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
-    t.string   "main_problem",       limit: 55,                 null: false
+    t.string   "main_problem",       limit: 75,                 null: false
     t.string   "second_problems",    limit: 255
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 75
