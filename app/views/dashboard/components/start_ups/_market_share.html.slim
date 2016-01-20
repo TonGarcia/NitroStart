@@ -4,27 +4,4 @@
       h5 Market Share
     /a.minimize href="#": i.mdi-navigation-expand-less
     .content
-      / TODO add Flot Chart Lib to AdminMaterialize
-      #marketShare style="height: 209px; width: 280px; margin-left: -20px"
-
-javascript:
-  google.load("visualization", "1", {packages: ["corechart"]});
-  google.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Task', 'Hours per Day'],
-      ['Work', 11],
-      ['Eat', 2],
-      ['Commute', 2],
-      ['Watch TV', 2],
-      ['Sleep', 7]
-    ]);
-
-    var options = {
-      //title: 'My Daily Activities',
-      pieHole: 0.4
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('marketShare'));
-    chart.draw(data, options);
-  }
+      =pie_chart Pitch.group(:name).count
