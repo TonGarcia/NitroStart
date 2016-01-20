@@ -5,6 +5,8 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :partnerships, limit: 140, null: true
       t.string :revenue_model, limit: 255, null: false
       t.string :value_proposition, limit: 140, null: true
+      t.string :advantages, limit: 255, null: false
+      t.string :disadvantages, limit: 255, null: false
       t.string :costumer_success_stories, limit: 255, null: true
       t.boolean :active, null: false, default: true
 

@@ -1,0 +1,34 @@
+= form_for [@pitch, @provider] do |f|
+  - current_obj = @provider
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Fornecedor de ser registrado:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
+          li = message
+
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:name]}"
+      = f.text_field :name
+      = f.label :name
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:segment]}"
+      = f.text_field :segment
+      = f.label :segment
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:provides]}"
+      = f.text_area :provides, class: 'materialize-textarea'
+      = f.label :provides
+
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:counterpart]}"
+      = f.text_area :counterpart, class: 'materialize-textarea'
+      = f.label :counterpart
+
+
+  -@footer_link=true
+  =render 'layouts/partials/components/static/float_buttons/save'

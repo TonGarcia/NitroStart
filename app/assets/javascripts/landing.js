@@ -27,7 +27,7 @@ $(document).ready(function(){
         allow_resize: true
     });
 
-    $('.nav-wrapper a[href*=#]').on('click', function(event){
+    $('.nav-wrapper a[href*="#"]').on('click', function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     });

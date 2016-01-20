@@ -1,18 +1,6 @@
 module PitchesHelper
   def widgets
-    small_widgets+med_widgets+big_widgets
-  end
-
-  def small_widgets
-    %w(hypothesis business project_build market_knowledge traction financial)
-  end
-
-  def med_widgets
-    %w(competitors team)
-  end
-
-  def big_widgets
-    %w(campaign)
+    %w(hypothesis business project_build market_knowledge traction financial competitors provider campaign team)
   end
 
   def requested_equity

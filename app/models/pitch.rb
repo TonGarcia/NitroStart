@@ -13,8 +13,9 @@ class Pitch < ActiveRecord::Base
   has_many :teams
   has_many :markets
   has_many :projects
-  has_many :financials
+  has_many :providers
   has_many :tractions
+  has_many :financials
   has_many :supporters
   has_many :businesses
   has_many :competitors

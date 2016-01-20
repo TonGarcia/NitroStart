@@ -24,5 +24,15 @@ h4.center.purple-text Detalhamento do Modelo de Negócios
         -@shower_attrs = 'business_result_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'
 
+  .col.l12
+    .card
+      .title
+        h5.center Comparativos com a Concorrência
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @business
+        -@shower_attrs = 'business_balance_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
 -@float_opts={link: edit_pitch_business_path(@pitch.id, @business.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

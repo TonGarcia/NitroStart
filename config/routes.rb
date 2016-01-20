@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :financials
     resources :competitors
     resources :teams
+    resources :providers
     resources :investments
   end
 
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
     resources :financials
     resources :competitors
     resources :teams
+    resources :providers
     resources :investments
   end
 

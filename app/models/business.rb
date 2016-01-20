@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include WidgetTracker
 
   # Relations

@@ -44,6 +44,8 @@ pt-BR:
         partnerships: Potenciais Parceiros
         revenue_model: Modelos de Receita
         value_proposition: Proposta de Valor
+        advantages: Vantagens sobre a Concorrência
+        disadvantages: Desvantagens sobre a Concorrência
         costumer_success_stories: Feedback positivo de Consumidores
 
   # Project -----------------------------------------------------
@@ -66,7 +68,7 @@ pt-BR:
         grow_strategy: Estratégia de Crescimento
         lead_cust: Custo de Lead
         conversion_cust: Custo de Conversão
-        daily_growth_rate: Taxa de Crescimento Diário
+        daily_growth_rate: Taxa de Crescimento da Conversão Diária
         costumer_channels: Canais com os Clientes
         amount_daily_lead: Fluxo de Leads Diário
 
@@ -79,6 +81,13 @@ pt-BR:
         total_users: Total de Usuários (não pagantes)
         total_costumers: Total de Consumidores (pagantes)
         market_penetration: Taxa de Penetração de Mercado (em porcentagem)
+
+  # Provider -----------------------------------------------------
+      provider:
+        name: Nome do Parceiro/Fornecedor
+        segment: Segmento de Atuação
+        provides: Serviço ou Produto Concedido/Fornecido
+        counterpart: Contrapartidas Cobradas
 
   # Competitor -----------------------------------------------------
       competitor:

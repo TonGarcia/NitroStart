@@ -1,0 +1,8 @@
+/! Provider Content
+-amount_filled = @pitch.active(:providers).amount_filled
+a.card-panel.stats-card.white-text href="#{pitch_providers_path(@pitch.id)}"
+  .progress.deep-purple.lighten-4.background
+    .deep-purple.lighten-2 style="width: #{amount_filled}"
+  i.fa.fa-truck
+  span.count =amount_filled
+  .name Fornecedores / Parceiros

@@ -54,4 +54,16 @@ module Formatter
   def formatted_market_penetration
     self.market_penetration.to_s.to_percent_formatter
   end
+
+  def formatted_your_advantage
+    self.your_advantage.gsub(/\n/, '<br/>')
+  end
+
+  def formatted_advantages
+    self.advantages.gsub(/\n/, '<br/>')
+  end
+
+  def formatted_disadvantages
+    self.disadvantages.gsub(/\n/, '<br/>')
+  end
 end

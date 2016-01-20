@@ -14,7 +14,9 @@ locale_icon:
     partnerships: ion-loop
     value_proposition: fa fa-gift
     revenue_model: mdi-action-trending-up
-    costumer_success_stories: ion-thumbsup
+    advantages: ion-thumbsup
+    disadvantages: ion-thumbsdown
+    costumer_success_stories: ion-chatbox-working
   project:
     stage: ion-connection-bars
     patent: ion-flag
@@ -40,6 +42,11 @@ locale_icon:
     total_expense: fa fa-sign-out
     bootstrapped: ion-cash
     market_penetration: ion-pie-graph
+  provider:
+    name: mdi-action-account-circle
+    segment: ion-navigate
+    provides: fa fa-truck
+    counterpart: ion-shuffle
   competitor:
     name: mdi-action-account-circle
     price: ion-ios-pricetag

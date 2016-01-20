@@ -12,6 +12,6 @@ module CompetitorsHelper
   end
 
   def competitor_your_propositions
-    [:your_advantage]
+    [:formatted_your_advantage]
   end
 end

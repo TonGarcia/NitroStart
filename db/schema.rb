@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116204025) do
+ActiveRecord::Schema.define(version: 20160120190913) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20160116204025) do
     t.string   "partnerships",             limit: 140
     t.string   "revenue_model",            limit: 255,                null: false
     t.string   "value_proposition",        limit: 140
+    t.string   "advantages",               limit: 255,                null: false
+    t.string   "disadvantages",            limit: 255,                null: false
     t.string   "costumer_success_stories", limit: 255
     t.boolean  "active",                               default: true, null: false
     t.integer  "pitch_id",                 limit: 4
@@ -159,6 +161,20 @@ ActiveRecord::Schema.define(version: 20160116204025) do
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree
   add_index "projects", ["start_up_id"], name: "index_projects_on_start_up_id", using: :btree
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "name",        limit: 75,  null: false
+    t.string   "segment",     limit: 75,  null: false
+    t.string   "provides",    limit: 255, null: false
+    t.string   "counterpart", limit: 255
+    t.integer  "pitch_id",    limit: 4
+    t.integer  "start_up_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "providers", ["pitch_id"], name: "index_providers_on_pitch_id", using: :btree
+  add_index "providers", ["start_up_id"], name: "index_providers_on_start_up_id", using: :btree
 
   create_table "social_sessions", force: :cascade do |t|
     t.string   "uid",            limit: 65,  null: false
@@ -297,6 +313,8 @@ ActiveRecord::Schema.define(version: 20160116204025) do
   add_foreign_key "pitches", "users"
   add_foreign_key "projects", "pitches"
   add_foreign_key "projects", "start_ups"
+  add_foreign_key "providers", "pitches"
+  add_foreign_key "providers", "start_ups"
   add_foreign_key "social_sessions", "users"
   add_foreign_key "start_ups", "pitches"
   add_foreign_key "supporters", "pitches"

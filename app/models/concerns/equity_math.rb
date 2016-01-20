@@ -11,7 +11,7 @@ module EquityMath
     full_percent = 100
     amount_filled_attrs = 0
     variable_equity = full_percent - base_equity
-    associations = [:idea, :market, :project, :financial, :traction, :supporter, :business, :competitor]
+    associations = [:idea, :market, :project, :financial, :traction, :supporter, :business, :provider, :competitor]
 
     associations.each do |association|
       # Set association & additional equity objs
@@ -38,7 +38,12 @@ module EquityMath
     # Stage addition percent
     stage_obj = self.active(:project) unless stage_obj
     stage_additional = 0
-    case stage_obj.stage_sym
+    stage = stage_obj.stage_sym
+
+    # If have a Patent, it can be a MVP
+    stage = :mvp if stage_obj.patent?
+
+    case stage
       when :idea
         stage_additional = 35
       when :validated

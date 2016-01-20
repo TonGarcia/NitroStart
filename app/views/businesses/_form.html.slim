@@ -24,6 +24,16 @@
       = f.label :revenue_model
 
     .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:advantages]}"
+      = f.text_area :advantages, class: 'materialize-textarea'
+      = f.label :advantages
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:disadvantages]}"
+      = f.text_area :disadvantages, class: 'materialize-textarea'
+      = f.label :disadvantages
+
+    .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:costumer_success_stories]}"
       = f.text_area :costumer_success_stories, class: 'materialize-textarea'
       = f.label :costumer_success_stories

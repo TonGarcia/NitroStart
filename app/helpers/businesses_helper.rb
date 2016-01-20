@@ -3,6 +3,10 @@ module BusinessesHelper
     [:partnerships, :revenue_model, :value_proposition]
   end
 
+  def business_balance_attrs
+    [:formatted_advantages, :formatted_disadvantages]
+  end
+
   def business_model_attrs
     [:partnerships, :revenue_model]
   end
