@@ -8,4 +8,14 @@
       margin: 10px 0;
     }
   }
+
+  .content-wrap {
+    margin-left: 0;
+  }
+
+  .yaybar.yay-shrink~.content-wrap,
+  .yaybar.yay-shrink~.load-spinner,
+  .yaybar.yay-shrink~footer {
+    margin-left: 0;
+  }
 }

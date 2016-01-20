@@ -1,0 +1,6 @@
+/! Market knowledge
+-amount_filled = @pitch.active(:markets).amount_filled
+a.circle.card-panel.stats-card.white-text href="#{pitch_markets_path(@pitch.id)}"
+  .progress.light-blue.lighten-4.background
+    .light-blue.lighten-2 style="width: #{amount_filled}"
+  i.ion-ios-pie

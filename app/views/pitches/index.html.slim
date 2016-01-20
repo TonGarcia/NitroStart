@@ -18,16 +18,9 @@
           span.right.nitro_quote.orange-text.text-darken-1 ="Quota NITRO: #{formatted_requested_equity}"
         .content
           .row
-            - small_widgets.each do |widget|
-              .col.l4
-                =render "pitches/partials/widgets/#{widget}"
-            - med_widgets.each do |widget|
-              .col.l6
-                =render "pitches/partials/widgets/#{widget}"
-            - big_widgets.each do |widget|
-              .col.l12
-                =render "pitches/partials/widgets/#{widget}"
-
+            - widgets.each do |widget|
+              .col.l4.m3.s6
+                =render "pitches/partials/circle_widgets/#{widget}"
 
 
 -@float_opts={link: new_pitch_path}

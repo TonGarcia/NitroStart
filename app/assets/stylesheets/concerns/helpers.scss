@@ -7,6 +7,30 @@
   margin-bottom: 0;
 }
 
+.circle {
+  border-radius: 50% !important;
+}
+
+.card-panel.stats-card.circle {
+  min-height: 90px;
+  max-height: 90px;
+
+  & > i {
+    font-size: 6rem;
+    position: absolute;
+
+    &.fa {
+      left: 30%;
+      bottom: -4%;
+    }
+
+    &[class*=ion-] {
+      left: 20%;
+      bottom: -25%;
+    }
+  }
+}
+
 .row.top-fat {
   margin-top: 25px;
 }
