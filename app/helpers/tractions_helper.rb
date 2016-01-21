@@ -1,4 +1,8 @@
 module TractionsHelper
+  def traction_all_attrs
+    traction_strategy_attrs+traction_range_attrs+traction_results_attrs
+  end
+
   def traction_index_attrs
     traction_strategy_attrs+traction_results_attrs
   end

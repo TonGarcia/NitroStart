@@ -2,9 +2,11 @@
 # pt-BR translations for Controllers
 pt-BR:
   controllers:
-    ideas: Hipóteses
+    ideas: Ideia & Hipóteses
     pitches: Pitches (Propostas de Projeto)
-    projects: Projetos
+    projects: Projeto
+    supporters: Apoiadores
+    providers: Parceiros e Fornecedores
     showroom: Vitrine
     start_ups: Startups
     competitors: Concorrentes

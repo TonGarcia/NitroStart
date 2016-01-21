@@ -1,0 +1,25 @@
+h1 Listing campaigns
+
+table
+  thead
+    tr
+      th Link
+      th Visible attrs
+      th Body
+      th
+      th
+      th
+
+  tbody
+    - @campaigns.each do |campaign|
+      tr
+        td = campaign.link
+        td = campaign.visible_attrs
+        td = campaign.body
+        td = link_to 'Show', campaign
+        td = link_to 'Edit', edit_campaign_path(campaign)
+        td = link_to 'Destroy', campaign, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Campaign', new_campaign_path

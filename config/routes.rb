@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :campaigns
   # Errors
   match '/422', to: 'errors#unprocessable', via: :all
   match '/404', to: 'errors#file_not_found', via: :all
@@ -33,6 +34,11 @@ Rails.application.routes.draw do
     resources :teams
     resources :providers
     resources :investments
+    resources :supporters
+
+    scope 'campaign' do
+      get '' => 'pitches#campaign', as: :campaign
+    end
   end
 
   # StartUp - Nested Objects
@@ -50,14 +56,20 @@ Rails.application.routes.draw do
     resources :investments
   end
 
+  # Pitch supporters caption routes
+  # resources :campaign do
+  #
+  # end
+
   # Non-Nested objects
   resources :teammates
 
-  # Custom URLs (non-resources)
+  # StartUps raising routes
   scope 'showroom' do
     get '' => 'showroom#index', as: :showroom_index
   end
 
+  # Dashboard Tracking URLs
   scope 'dashboard' do
     get '' => 'dashboard#index', as: :dashboard_index
     get 'start_ups' => 'dashboard#start_ups', as: :dashboard_start_ups

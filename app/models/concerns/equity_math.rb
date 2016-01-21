@@ -11,7 +11,6 @@ module EquityMath
     full_percent = 100
     amount_filled_attrs = 0
     variable_equity = full_percent - base_equity
-    associations = [:idea, :market, :project, :financial, :traction, :supporter, :business, :provider, :competitor]
 
     associations.each do |association|
       # Set association & additional equity objs
@@ -80,5 +79,9 @@ module EquityMath
     end
 
     formatted ? equity.to_s.to_percent_formatter : equity
+  end
+
+  def associations
+    [:idea, :market, :project, :financial, :traction, :supporter, :business, :provider, :competitor]
   end
 end

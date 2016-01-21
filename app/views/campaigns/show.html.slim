@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Link:
+  = @campaign.link
+p
+  strong Visible attrs:
+  = @campaign.visible_attrs
+p
+  strong Body:
+  = @campaign.body
+
+= link_to 'Edit', edit_campaign_path(@campaign)
+'|
+= link_to 'Back', campaigns_path

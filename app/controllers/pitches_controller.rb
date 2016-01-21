@@ -2,6 +2,11 @@ class PitchesController < ApplicationController
   add_breadcrumb I18n.t('actions.pitch.index'), :pitches_path
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
+  # GET /pitches/1/campaign
+  def campaign
+    @pitch = Pitch.find(params[:pitch_id])
+  end
+
   # GET /pitches
   # GET /pitches.json
   def index

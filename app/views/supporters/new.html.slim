@@ -1,0 +1,10 @@
+.row
+  h5.purple-text.center Adicione novo Parceiro/Fornecedor
+  =render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
+
+= render 'form'
+
+- @back_float_button_link = gen_back_link(@provider)
+=render 'layouts/partials/components/static/float_buttons/back'

@@ -1,4 +1,8 @@
 module IdeasHelper
+  def idea_all_attrs
+    idea_problem_attrs+idea_hypothesis_attrs
+  end
+
   def idea_index_attrs
     [:main_problem, :tag_line_pitch, :high_concept_pitch]
   end

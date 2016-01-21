@@ -11,8 +11,8 @@ module ApplicationHelper
 
   # Return it icons list based on controller
   def t_current_class_icons
-    return @class_icons if @class_icons
-    current_class = params[:controller].singularize.to_sym
+    return @class_icons if @class_icons && @current_model.nil?
+    @current_model.nil? ? current_class = params[:controller].singularize.to_sym : current_class = @current_model.to_sym
     @class_icons = locale_icon(current_class)
   end
 

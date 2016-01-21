@@ -1,0 +1,15 @@
+h4.center.purple-text Listagem de Parceiros e/ou Fornecedores
+=render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
+
+.row
+  -@nested_obj = @pitch
+  -@ref_attrs = provider_index_attrs
+
+  - @providers.each do |provider|
+    -@current_obj = provider
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
+
+-@float_opts={link: new_pitch_provider_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

@@ -1,0 +1,29 @@
+h4.center.purple-text Detalhamento do Parceiro/Fornecedor
+=render  'layouts/partials/components/static/reference_sub_title'
+
+.divider
+
+.row
+  .col.l6
+    .card
+      .title
+        h5.center Informações do Parceiro
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @provider
+        -@shower_attrs = 'provider_info_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+  .col.l6
+    .card
+      .title
+        h5.center Expectativas na Parceria
+      .content
+        -@nested_obj = @pitch
+        -@current_obj = @provider
+        -@shower_attrs = 'provider_relation_attrs'
+        =render 'layouts/partials/components/dynamic/shower_attr'
+
+
+-@float_opts={link: edit_pitch_provider_path(@pitch.id, @provider.id), main_btn_icon: 'ion-edit'}
+.fixed-action-btn=render 'home/partials/components/float_button'

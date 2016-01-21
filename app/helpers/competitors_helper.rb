@@ -1,4 +1,8 @@
 module CompetitorsHelper
+  def competitor_all_attrs
+    competitor_their_results+competitor_feedback_results+competitor_your_propositions
+  end
+
   def competitor_index_attrs
     [:name]+competitor_their_results+competitor_feedback_results+competitor_your_propositions
   end
