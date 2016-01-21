@@ -74,6 +74,7 @@ class BusinessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
-      params.require(:business).permit(:partnerships, :value_proposition, :revenue_model, :advantages, :disadvantages, :costumer_success_stories).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params = params.require(:business).permit(:partnerships, :value_proposition, :main_product_price, :revenue_model, :advantages, :disadvantages, :costumer_success_stories)
+      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

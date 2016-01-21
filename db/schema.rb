@@ -27,28 +27,33 @@ ActiveRecord::Schema.define(version: 20160121001306) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "partnerships",             limit: 140
-    t.string   "revenue_model",            limit: 255,                null: false
+    t.string   "revenue_model",            limit: 255,                                        null: false
     t.string   "value_proposition",        limit: 140
-    t.string   "advantages",               limit: 255,                null: false
-    t.string   "disadvantages",            limit: 255,                null: false
+    t.string   "advantages",               limit: 255,                                        null: false
+    t.string   "disadvantages",            limit: 255,                                        null: false
     t.string   "costumer_success_stories", limit: 255
-    t.boolean  "active",                               default: true, null: false
+    t.decimal  "main_product_price",                   precision: 7, scale: 2, default: 0.0,  null: false
+    t.boolean  "active",                                                       default: true, null: false
     t.integer  "pitch_id",                 limit: 4
     t.integer  "start_up_id",              limit: 4
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
+    t.datetime "created_at",                                                                  null: false
+    t.datetime "updated_at",                                                                  null: false
   end
 
   add_index "businesses", ["pitch_id"], name: "index_businesses_on_pitch_id", using: :btree
   add_index "businesses", ["start_up_id"], name: "index_businesses_on_start_up_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
-    t.string   "link",          limit: 255
-    t.text     "visible_attrs", limit: 65535
+    t.string   "link",          limit: 55,                null: false
+    t.integer  "active_type",   limit: 4,     default: 1, null: false
     t.text     "body",          limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.text     "visible_attrs", limit: 65535
+    t.integer  "pitch_id",      limit: 4
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
+
+  add_index "campaigns", ["pitch_id"], name: "index_campaigns_on_pitch_id", using: :btree
 
   create_table "competitors", force: :cascade do |t|
     t.string   "name",            limit: 55,                                          null: false
@@ -313,6 +318,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
 
   add_foreign_key "businesses", "pitches"
   add_foreign_key "businesses", "start_ups"
+  add_foreign_key "campaigns", "pitches"
   add_foreign_key "competitors", "pitches"
   add_foreign_key "competitors", "start_ups"
   add_foreign_key "financials", "pitches"

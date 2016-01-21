@@ -1,4 +1,8 @@
 class CampaignsController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   # GET /campaigns

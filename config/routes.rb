@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :campaigns
   # Errors
   match '/422', to: 'errors#unprocessable', via: :all
   match '/404', to: 'errors#file_not_found', via: :all
@@ -35,10 +34,7 @@ Rails.application.routes.draw do
     resources :providers
     resources :investments
     resources :supporters
-
-    scope 'campaign' do
-      get '' => 'pitches#campaign', as: :campaign
-    end
+    resources :campaigns
   end
 
   # StartUp - Nested Objects

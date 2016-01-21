@@ -32,7 +32,7 @@ module Helpers
       elements.each_with_index do |element, i|
         value = value.to_s if value.is_a?Symbol
         if element[key] == value
-          element[:index] = i
+          element[:index] = i if element[:id].nil?
           return element
         end
       end

@@ -10,7 +10,7 @@ start_up_stages:
 
 - id:       3
   sym:      mvp
-  name:     Protótipo (MVP)
+  name:     Protótipo - MVP
 
 - id:       4
   sym:      pre_operational

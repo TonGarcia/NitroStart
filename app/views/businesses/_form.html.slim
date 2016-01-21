@@ -6,22 +6,34 @@
       ul.style_warning_list
         - current_obj.errors.full_messages.each do |message|
           li =message
+  .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
+    | Recomendamos que Crie um novo Modelo de Negócio, como este, para cada tipo de item a ser vendido
 
   .row
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:partnerships]}"
       = f.text_field :partnerships
       = f.label :partnerships
+      .footer-info.purple-text Por ex.: Parceiros da NITRO START: Bancos de Investimento, SEBRAE
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:value_proposition]}"
       = f.text_field :value_proposition
       = f.label :value_proposition
+      .footer-info.purple-text Por ex.: Parceiros da NITRO START: Tire ideias do Papel / Aprenda a Empreender Empreendendo
+
+    .input-field.col.l12.s12
+      -current_attr = :main_product_price
+      i class="prefix #{t_current_class_icons[current_attr]}"
+      = f.text_field current_attr, class: 'currency', value: number_with_precision(@business[current_attr], precision: 2)
+      = f.label current_attr
+      .footer-info.purple-text Preço a ser cobrado por esta Proposta de Valor
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:revenue_model]}"
       = f.text_area :revenue_model, class: 'materialize-textarea'
       = f.label :revenue_model
+      .footer-info.purple-text =render 'businesses/partials/blog_revenue_model'
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:advantages]}"
@@ -32,11 +44,14 @@
       i class="prefix #{t_current_class_icons[:disadvantages]}"
       = f.text_area :disadvantages, class: 'materialize-textarea'
       = f.label :disadvantages
+      .footer-info.purple-text Seja sincero, nada é 100%. Exemplo: Comprar no e-commerce é mais comodo, porém tem o tempo de entrega
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:costumer_success_stories]}"
       = f.text_area :costumer_success_stories, class: 'materialize-textarea'
       = f.label :costumer_success_stories
+      .footer-info.purple-text Mostre sua ideia e como pensa em cobrar e anote aqui o que as pessoas dizem
+
 
   - @footer_link=true
   = render 'layouts/partials/components/static/float_buttons/save'

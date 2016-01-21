@@ -16,6 +16,7 @@ locale_icon:
     revenue_model: mdi-action-trending-up
     advantages: ion-thumbsup
     disadvantages: ion-thumbsdown
+    main_product_price: ion-cash
     costumer_success_stories: ion-chatbox-working
   project:
     stage: ion-connection-bars

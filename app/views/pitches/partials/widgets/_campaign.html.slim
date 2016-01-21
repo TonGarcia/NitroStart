@@ -1,7 +1,7 @@
 /! Supporters
 -amount_supporters = @pitch.supporters.count
 -amount_filled = "#{amount_supporters}%" # minimal 100 supporters, so any supporter mean 1%
-a.card-panel.stats-card.white-text href="#{pitch_campaign_path(@pitch)}"
+a.card-panel.stats-card.white-text href="#{pitch_campaigns_path(@pitch)}"
   .progress.brown.lighten-4.background
     .brown.lighten-2 style="width: #{amount_filled}"
   i.mdi-action-thumb-up

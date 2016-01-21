@@ -40,7 +40,8 @@ module EquityMath
     stage = stage_obj.stage_sym
 
     # If have a Patent, it can be a MVP
-    stage = :mvp if stage_obj.patent?
+    mvp_id = Helpers::Enum.find(:start_up_stages, :sym, 'mvp')[:id]
+    stage = :mvp if stage_obj.patent? && stage_obj.stage < mvp_id
 
     case stage
       when :idea
