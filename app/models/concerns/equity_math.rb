@@ -83,6 +83,6 @@ module EquityMath
   end
 
   def associations
-    [:idea, :market, :project, :financial, :traction, :supporter, :business, :provider, :competitor]
+    [:idea, :market, :project, :financial, :traction, :supporter, :business, :provider, :campaign, :competitor]
   end
 end

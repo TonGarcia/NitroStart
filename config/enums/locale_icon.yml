@@ -56,3 +56,5 @@ locale_icon:
     bad_stories: ion-sad
     success_stories: ion-android-contacts
     your_advantage: ion-android-star
+  campaign:
+    link: ion-link

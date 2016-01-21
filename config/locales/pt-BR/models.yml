@@ -99,3 +99,9 @@ pt-BR:
         bad_stories: Pontos de INSATISFEITOS dos Consumidores
         success_stories: Pontos de SATISFAÇÃO dos Consumidores
         your_advantage: Suas Vantagens Competitivas sobre este Concorrente
+
+  # Campaign -----------------------------------------------------
+      campaign:
+        link: Link do projeto up.nitrostart.com.br/
+        body: Corpo escrito Livremente
+        visible_attrs: Gerar a partir do Canvas

@@ -1,5 +1,11 @@
-h1 New campaign
+.row
+  h5.purple-text.center Agora vamos tentar levantar Apoiadores
+  h6.center.purple-text São potenciais Clientes e potenciais Investidores para o seu Produto/Serviço
+  =render  'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Back', campaigns_path
+= render 'form'
+
+- @back_float_button_link = gen_back_link(@campaign)
+=render 'layouts/partials/components/static/float_buttons/back'

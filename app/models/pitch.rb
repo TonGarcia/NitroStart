@@ -19,9 +19,7 @@ class Pitch < ActiveRecord::Base
   has_many :supporters
   has_many :businesses
   has_many :competitors
-
-  # The one-one association
-  has_one :campaign
+  has_many :campaigns
 
   # Rails validations
   validates :name, length: { minimum: 2, maximum: 55 }

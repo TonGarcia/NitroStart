@@ -1,4 +1,4 @@
-= form_for [@pitch, @provider] do |f|
+= form_for [@nested_obj, @provider] do |f|
   - current_obj = @provider
   - if current_obj.errors.any?
     .alert.alert-border-left

@@ -73,6 +73,6 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:link, :visible_attrs, :body)
+      params.require(:campaign).permit(:link, :visible_attrs, :body).merge!(pitch_id: params[:pitch_id])
     end
 end
