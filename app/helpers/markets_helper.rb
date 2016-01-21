@@ -8,7 +8,7 @@ module MarketsHelper
   end
 
   def market_segment_attrs
-    [:segment, :trends_insight, :costumer_specification]
+    [:segment, :trends_insight, :formatted_costumer_specification]
   end
 
   def market_range_attrs

@@ -17,17 +17,22 @@
       i class="prefix #{t_current_class_icons[:segment]}"
       = f.text_field :segment
       = f.label :segment
+      .footer-info.purple-text =render 'markets/partials/blog_segment'
+
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:provides]}"
       = f.text_area :provides, class: 'materialize-textarea'
       = f.label :provides
+      .footer-info.purple-text Liste tudo que ele lhe fornecerá  de Ensumos (servidor, pneu, petroleo, papel, leds...)
 
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:counterpart]}"
       = f.text_area :counterpart, class: 'materialize-textarea'
       = f.label :counterpart
+      .footer-info.purple-text O que ou quanto ele cobra. Porcentagem? Quantia Fixa? Com que período?
+
 
 
   -@footer_link=true

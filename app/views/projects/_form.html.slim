@@ -24,6 +24,8 @@
     .row
       .input-field.col.l4.s12
         =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
+        .footer-info.purple-text =render 'projects/partials/blog_stages'
+
 
       .input-field.col.l3.offset-l1.s6
         i class="prefix #{t_current_class_icons[:awards]}"

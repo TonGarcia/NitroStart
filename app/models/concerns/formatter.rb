@@ -66,4 +66,16 @@ module Formatter
   def formatted_disadvantages
     self.disadvantages.gsub(/\n/, '<br/>')
   end
+
+  def formatted_counterpart
+    self.counterpart.gsub(/\n/, '<br/>')
+  end
+
+  def formatted_provides
+    self.provides.gsub(/\n/, '<br/>')
+  end
+
+  def formatted_costumer_specification
+    self.costumer_specification.gsub(/\n/, '<br/>')
+  end
 end

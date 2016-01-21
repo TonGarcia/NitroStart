@@ -1,5 +1,6 @@
 class Provider < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include WidgetTracker
 
   # Relations

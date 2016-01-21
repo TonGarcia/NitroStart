@@ -7,6 +7,11 @@
         - current_obj.errors.full_messages.each do |message|
           li = message
 
+
+  .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
+    | Recomendamos que Crie um novo registro de Concorrente, como este, para cada um que tiver
+
+
   .row
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:name]}"
@@ -18,27 +23,36 @@
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@competitor[current_attr], precision: 2)
       = f.label current_attr
+      .footer-info.purple-text Quanto o concorrente cobra pelo produto/serviço similar ao seu?
 
     .input-field.col.l12.s12
       - current_attr = :total_revenue
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@competitor[current_attr], precision: 2)
       = f.label current_attr
+      .footer-info.purple-text Geralmente empresas de capital aberto (S.A.) divulgam quanto faturam
+
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:total_costumers]}"
       = f.text_field :total_costumers, class: 'formatted_int'
       = f.label :total_costumers
+      .footer-info.purple-text Geralmente empresas de capital aberto (S.A.) divulgam quanto venderam
+
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:success_stories]}"
       = f.text_area :success_stories, class: 'materialize-textarea'
       = f.label :success_stories
+      .footer-info.purple-text Pesquise o que dizem nas Redes Sociais
+
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:bad_stories]}"
       = f.text_area :bad_stories, class: 'materialize-textarea'
       = f.label :bad_stories
+      .footer-info.purple-text Pesquise o que dizem nas Redes Sociais e no Reclame Aqui
+
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:your_advantage]}"

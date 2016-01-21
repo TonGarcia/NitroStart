@@ -4,7 +4,7 @@ module ProvidersHelper
   end
 
   def provider_index_attrs
-    [:name, :provides]
+    [:name, :formatted_provides]
   end
 
   def provider_info_attrs
@@ -12,6 +12,6 @@ module ProvidersHelper
   end
 
   def provider_relation_attrs
-    [:provides, :counterpart]
+    [:formatted_provides, :formatted_counterpart]
   end
 end
