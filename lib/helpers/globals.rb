@@ -23,17 +23,17 @@ module Helpers
       recurrent_period = ENUM[:recurrence_periods][:monthly]
       resp = purchase.charge(transaction_params(recurrent_period), clients=[], :store)
 
-      if resp[:error]
-        puts resp[:error]
+      if resp[:errors]
+        puts resp[:errors]
         return Purchase.new
       end
 
-      # SetUp error message
+      # SetUp errors message
       bank_transaction = purchase.bank_transactions.last
       msg = purchase.errors if purchase.id.nil?
       msg = bank_transaction.errors if bank_transaction.id.nil?
 
-      msg ? {error: msg} : purchase
+      msg ? {errors: msg} : purchase
     end
 
     # Help internal methods

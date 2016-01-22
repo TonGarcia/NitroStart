@@ -10,9 +10,15 @@ module HistoricalControllers
 
   # Setup it dependence (objects)
   def set_nested
-    @pitch = Pitch.find(params[:pitch_id]) if params[:pitch_id]
-    @start_up = StartUp.find(params[:start_up_id]) if params[:start_up_id]
-    @nested_obj = @pitch || @start_up
+    # Setup variables
+    @pitch = @current_user.pitches.where(id: params[:pitch_id]).take if params[:pitch_id]
+    @start_up = @current_user.start_ups.where(id: params[:start_up_id]).take if params[:start_up_id]
+
+    # Raise 403
+    redirect_to(forbidden_path) if @pitch.nil? && @start_up.nil?
+
+    # Return it
+    @nested_obj = @start_up || @pitch
   end
 
   # If there is no list it redirects to new

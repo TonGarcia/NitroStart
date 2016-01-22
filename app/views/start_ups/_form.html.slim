@@ -1,7 +1,7 @@
 = form_for @start_up do |f|
   - if @start_up.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@start_up.errors.count, "error")} prohibited this start_up from being saved:"
+      h2 = "#{pluralize(@start_up.errors.count, "errors")} prohibited this start_up from being saved:"
       ul
         - @start_up.errors.full_messages.each do |message|
           li = message

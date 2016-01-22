@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  # Errors
-  match '/422', to: 'errors#unprocessable', via: :all
-  match '/404', to: 'errors#file_not_found', via: :all
-  match '/500', to: 'errors#internal_server_error', via: :all
+  # Errors Routes
+  match '/403', to: 'errors#forbidden', via: :all, as: :forbidden
+  match '/404', to: 'errors#file_not_found', via: :all, as: :file_not_found
+  match '/422', to: 'errors#unprocessable', via: :all, as: :unprocessable
+  match '/500', to: 'errors#internal_server_error', via: :all, as: :internal_server_error
 
   # Global "Home"/"LandingPages"
-  get '/landing2' => 'home#landing2'
-  get '/partners' => 'home#partners'
-  get '/startupers' => 'home#startupers'
+  get '/landing2' => 'home#landing2', as: :investors
+  get '/partners' => 'home#partners', as: :partners
+  get '/startupers' => 'home#startupers', as: :startupers
 
   # DeviseUser sessions
   devise_for :users,

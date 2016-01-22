@@ -10,7 +10,7 @@ class PitchesController < ApplicationController
   # GET /pitches
   # GET /pitches.json
   def index
-    @pitches = Pitch.all
+    @pitches = @current_user.pitches
   end
 
   # GET /pitches/1
@@ -70,7 +70,8 @@ class PitchesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pitch
-      @pitch = Pitch.find(params[:id])
+      @pitch = @current_user.pitches.where(id: params[:pitch_id]).take
+      render status: 403 if @pitch.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

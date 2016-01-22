@@ -1,7 +1,7 @@
 = form_for @teammate do |f|
   - if @teammate.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@teammate.errors.count, "error")} prohibited this teammate from being saved:"
+      h2 = "#{pluralize(@teammate.errors.count, "errors")} prohibited this teammate from being saved:"
       ul
         - @teammate.errors.full_messages.each do |message|
           li = message

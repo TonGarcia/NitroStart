@@ -27,6 +27,10 @@ img.overlay {
 
 .parallax-container {
   height: 95vh !important;
+
+  &.expanded {
+    height: 100vh !important;
+  }
 }
 
 .parallax-footer {

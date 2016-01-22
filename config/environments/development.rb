@@ -9,8 +9,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  # Show full errors reports and disable caching.
+  config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
@@ -23,7 +23,7 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-  # Raise an error on page load if there are pending migrations.
+  # Raise an errors on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
@@ -35,11 +35,11 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  # Adds additional error checking when serving assets at runtime.
+  # Adds additional errors checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
+  # Raises helpful errors messages.
   config.assets.raise_runtime_errors = true
 
-  # Raises error for missing translations
+  # Raises errors for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

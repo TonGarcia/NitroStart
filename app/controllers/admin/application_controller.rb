@@ -11,7 +11,7 @@ class Admin::ApplicationController < ApplicationController
   before_action :role_required
 
   def access_denied
-    flash[:error] = t('the_role.access_denied')
+    flash[:errors] = t('the_role.access_denied')
     redirect_to root_url
   end
 end

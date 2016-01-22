@@ -12,10 +12,10 @@
     -else
       =@alert[:msg]
       a.white-text.underline href="#{@alert[:link]}" =@alert[:link_name]
--if flash[:error] || @error
+-if flash[:errors] || @error
   .row.alert.alert-dismissible
-    -if flash[:error]
-      =raw(flash[:error])
+    -if flash[:errors]
+      =raw(flash[:errors])
     -elsif error
       =raw(error)
     -elsif @error
