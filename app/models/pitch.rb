@@ -21,6 +21,9 @@ class Pitch < ActiveRecord::Base
   has_many :competitors
   has_many :campaigns
 
+  # The One Association
+  has_one :start_up
+
   # Rails validations
   validates :name, length: { minimum: 2, maximum: 55 }
 

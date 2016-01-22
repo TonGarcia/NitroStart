@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   # Relations
   has_many :pitches
   has_many :social_sessions
+  has_many :start_ups, through: :pitches
 
   # Custom validations
   # after_create :sign_up

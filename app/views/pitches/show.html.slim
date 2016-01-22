@@ -7,6 +7,9 @@
     h6.center.purple-text
       | Quota de Participação NITRO: &nbsp;
       strong=link_to formatted_requested_equity, pitches_path
+    a.col.l12.center href="#{forbes_pitch_deck}" target="_blank" class="#{external_link_color}"
+      i.left-icon.slim.fa.fa-external-link
+      | Este fluxo foi baseado no Pitch Deck da Forbes
 
   = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 semi-circle')
 

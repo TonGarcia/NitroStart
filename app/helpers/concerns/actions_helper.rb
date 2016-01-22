@@ -11,16 +11,19 @@ module Concerns::ActionsHelper
 
   # List StartupActions
   def start_up_actions
-    {
+    start_up_section = {
       label: 'Startup',
       actions: [
         # {name:'Baú de Ideias', icon:'mdi-action-assignment', link: pitches_path, action_controller:'pitches'},
         # {name:'Trending Problemas', icon:'ion-speakerphone', link: start_ups_path, action_controller:'start_ups'},
-        {name:t('actions.pitches.index'), icon:'mdi-action-assignment', link: pitches_path, action_controller:'pitches'},
-        {name:t('actions.start_ups.index'), icon:'mdi-action-assignment-turned-in', link: start_ups_path, action_controller:'start_ups'},
         # {name:t('actions.dashboard.start_ups'), icon:'ion-speedometer', link: dashboard_start_ups_path, action_controller:'dashboard'},
+        {name:t('actions.pitches.index'), icon:'mdi-action-assignment', link: pitches_path, action_controller:'pitches'},
       ]
     }
+
+    start_up_ref = {name:t('actions.start_ups.index'), icon:'mdi-action-assignment-turned-in', link: start_ups_path, action_controller:'start_ups'}
+    start_up_section[:actions] << start_up_ref unless @current_user.start_ups.empty?
+     start_up_section
   end
 
   # List LegalPersonActions

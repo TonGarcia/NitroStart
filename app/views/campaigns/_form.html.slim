@@ -34,8 +34,8 @@
     .row
       .col.s12.m12
         ul.tabs
-          li.tab.col.s3: a href="#attrs_filling" =f.label :visible_attrs, class: 'purple-text'
-          li.tab.col.s3: a href="#hand_free_filling" =f.label :body, class: 'purple-text'
+          li.tab.col.s3: a href="#attrs_filling" onclick="trigger_click('#campaign_active_type_canvas')" =f.label :visible_attrs, class: 'purple-text'
+          li.tab.col.s3: a href="#hand_free_filling" onclick="trigger_click('#campaign_active_type_body')" =f.label :body, class: 'purple-text'
 
 
 

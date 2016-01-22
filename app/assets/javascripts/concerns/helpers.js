@@ -14,3 +14,8 @@ function show_brand(input, img_ref) {
 function trigger_invisible(target) {
     $(target).trigger('click');
 }
+
+// Onclick it element fire click on another
+function trigger_click(target) {
+    $(target).trigger('click');
+}
