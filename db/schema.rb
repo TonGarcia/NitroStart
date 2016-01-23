@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
     t.integer  "total_money",            limit: 8
     t.integer  "total_costumers",        limit: 8
     t.string   "trends_insight",         limit: 140
-    t.string   "costumer_specification", limit: 140
+    t.string   "costumer_specification", limit: 255
     t.boolean  "active",                             default: true, null: false
     t.integer  "pitch_id",               limit: 4
     t.integer  "start_up_id",            limit: 4
@@ -208,12 +208,12 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_index "social_sessions", ["user_id"], name: "index_social_sessions_on_user_id", using: :btree
 
   create_table "start_ups", force: :cascade do |t|
-    t.integer  "nitro_equity",       limit: 4,   null: false
     t.string   "name",               limit: 45,  null: false
     t.datetime "brand_updated_at"
     t.integer  "brand_file_size",    limit: 4
     t.string   "brand_content_type", limit: 255
     t.string   "brand_file_name",    limit: 255
+    t.integer  "equity_requested",   limit: 4,   null: false
     t.integer  "pitch_id",           limit: 4,   null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -237,27 +237,19 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_index "supporters", ["start_up_id"], name: "index_supporters_on_start_up_id", using: :btree
 
   create_table "teammates", force: :cascade do |t|
-    t.string   "role",       limit: 255
-    t.string   "expertise",  limit: 255
+    t.string   "role",        limit: 255
+    t.string   "expertise",   limit: 255
     t.boolean  "contacts"
-    t.integer  "team_id",    limit: 4
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  add_index "teammates", ["team_id"], name: "index_teammates_on_team_id", using: :btree
-  add_index "teammates", ["user_id"], name: "index_teammates_on_user_id", using: :btree
-
-  create_table "teams", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4,   null: false
     t.integer  "pitch_id",    limit: 4
     t.integer  "start_up_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
-  add_index "teams", ["pitch_id"], name: "index_teams_on_pitch_id", using: :btree
-  add_index "teams", ["start_up_id"], name: "index_teams_on_start_up_id", using: :btree
+  add_index "teammates", ["pitch_id"], name: "index_teammates_on_pitch_id", using: :btree
+  add_index "teammates", ["start_up_id"], name: "index_teammates_on_start_up_id", using: :btree
+  add_index "teammates", ["user_id"], name: "index_teammates_on_user_id", using: :btree
 
   create_table "tractions", force: :cascade do |t|
     t.string   "grow_strategy",     limit: 140,                                        null: false
@@ -337,10 +329,9 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_foreign_key "start_ups", "pitches"
   add_foreign_key "supporters", "pitches"
   add_foreign_key "supporters", "start_ups"
-  add_foreign_key "teammates", "teams"
+  add_foreign_key "teammates", "pitches"
+  add_foreign_key "teammates", "start_ups"
   add_foreign_key "teammates", "users"
-  add_foreign_key "teams", "pitches"
-  add_foreign_key "teams", "start_ups"
   add_foreign_key "tractions", "pitches"
   add_foreign_key "tractions", "start_ups"
 end

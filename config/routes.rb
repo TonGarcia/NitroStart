@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   # Global Resources
   resources :pitches do
     # Nested Objects
+    resource :team
     resources :ideas
     resources :businesses
     resources :projects
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
     resources :revenues
     resources :financials
     resources :competitors
-    resources :teams
+    resources :teammates
     resources :providers
     resources :investments
     resources :supporters
@@ -48,8 +49,7 @@ Rails.application.routes.draw do
     resources :revenues
     resources :financials
     resources :competitors
-    resources :teams
-    resources :providers
+      resources :providers
     resources :investments
   end
 

@@ -8,7 +8,7 @@ class ProvidersController < ApplicationController
   # GET /providers
   # GET /providers.json
   def index
-    @providers = Provider.all
+    @providers = @nested_obj.providers
   end
 
   # GET /providers/1

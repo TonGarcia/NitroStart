@@ -8,7 +8,7 @@ class TractionsController < ApplicationController
   # GET /traction
   # GET /traction.json
   def index
-    @tractions = Traction.all
+    @tractions = @nested_obj.tractions
   end
 
   # GET /traction/1
@@ -32,7 +32,7 @@ class TractionsController < ApplicationController
 
     respond_to do |format|
       if @traction.save
-        format.html { redirect_to [@nested_obj, @traction], notice: 'Traction was successfully created.' }
+        format.html { redirect_to [@nested_obj, @traction], notice: 'Tração criada com sucesso.' }
         format.json { render :show, status: :created, location: @traction }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TractionsController < ApplicationController
   def update
     respond_to do |format|
       if @traction.update(traction_params)
-        format.html { redirect_to [@nested_obj, @traction], notice: 'Traction was successfully updated.' }
+        format.html { redirect_to [@nested_obj, @traction], notice: 'Tração atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @traction }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class TractionsController < ApplicationController
   def destroy
     @traction.destroy
     respond_to do |format|
-      format.html { redirect_to traction_url, notice: 'Traction was successfully destroyed.' }
+      format.html { redirect_to traction_url, notice: 'Tração deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

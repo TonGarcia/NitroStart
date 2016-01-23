@@ -1,29 +1,15 @@
-h1 Listing teammates
+h4.center.purple-text Pessoas Adicionadas ao Time
+=render  'layouts/partials/components/static/reference_sub_title'
 
-table
-  thead
-    tr
-      th Role
-      th Expertise
-      th Contacts
-      th Team
-      th User
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @teammates.each do |teammate|
-      tr
-        td = teammate.role
-        td = teammate.expertise
-        td = teammate.contacts
-        td = teammate.team
-        td = teammate.user
-        td = link_to 'Show', teammate
-        td = link_to 'Edit', edit_teammate_path(teammate)
-        td = link_to 'Destroy', teammate, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  -@nested_obj = @nested_obj
+  -@ref_attrs = idea_index_attrs
 
-br
+  - @teammates.each do |teammate|
+    -@current_obj = teammate
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-= link_to 'New Teammate', new_teammate_path
+-@float_opts={link: new_pitch_teammate_path(@nested_obj)}
+.fixed-action-btn=render 'home/partials/components/float_button'

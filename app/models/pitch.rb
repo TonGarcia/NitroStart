@@ -10,7 +10,6 @@ class Pitch < ActiveRecord::Base
 
   # The many associations mean the many possibilities
   has_many :ideas
-  has_many :teams
   has_many :markets
   has_many :projects
   has_many :providers
@@ -20,6 +19,7 @@ class Pitch < ActiveRecord::Base
   has_many :businesses
   has_many :competitors
   has_many :campaigns
+  has_many :teammates
 
   # The One Association
   has_one :start_up

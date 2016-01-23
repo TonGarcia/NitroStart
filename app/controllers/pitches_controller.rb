@@ -70,8 +70,8 @@ class PitchesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pitch
-      @pitch = @current_user.pitches.where(id: params[:pitch_id]).take
-      render status: 403 if @pitch.nil?
+      @pitch = @current_user.pitches.where(id: params[:id]).take
+      redirect_to forbidden_path if @pitch.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

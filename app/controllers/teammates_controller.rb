@@ -1,4 +1,8 @@
 class TeammatesController < ApplicationController
+  # Controllers Concerns
+  include HistoricalControllers
+
+  #  Event Triggers
   before_action :set_teammate, only: [:show, :edit, :update, :destroy]
 
   # GET /teammates
@@ -70,5 +74,10 @@ class TeammatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def teammate_params
       params.require(:teammate).permit(:role, :expertise, :contacts, :team_id, :user_id)
+    end
+
+    # Setup it dependence (objects)
+    def set_nested
+
     end
 end
