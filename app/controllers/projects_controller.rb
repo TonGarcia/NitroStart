@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = @nested_obj.pitches
+    @projects = @nested_obj.projects
   end
 
   # GET /projects/1

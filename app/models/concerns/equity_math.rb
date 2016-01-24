@@ -73,7 +73,7 @@ module EquityMath
     # Prevent Equity to be greater than 100 & filling not decrease percent
     if equity >= 100
       if equity == 100 || amount_filled_attrs_percent >= 10
-        equity = 98.5
+        equity = 100 - (amount_filled_attrs_percent/10.0)
       else
         equity = 100
       end
