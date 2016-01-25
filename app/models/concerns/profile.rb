@@ -24,6 +24,6 @@ module Profile
     # search for it picture on it social sessions
     self.social_sessions.each  {|social_session| return social_session.picture if social_session.picture}
     # return default picture
-    'defaults/profile.jpg'
+    ApplicationController.helpers.path_to_asset('defaults/profile.jpg')
   end
 end

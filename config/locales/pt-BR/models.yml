@@ -105,3 +105,10 @@ pt-BR:
         link: Link do projeto up.nitrostart.com.br/
         body: Corpo escrito Livremente
         visible_attrs: Gerar a partir do Canvas
+
+  # Teammate -----------------------------------------------------
+      teammate:
+        role: Papel Desempenhado
+        user: Nome do Usuário
+        expertise: Experiência Profisisonal e/ou de Formação
+        contacts: Possui Contatos (QI - Quem Indica)?

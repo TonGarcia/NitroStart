@@ -1,24 +1,57 @@
-= form_for @teammate do |f|
-  - if @teammate.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@teammate.errors.count, "errors")} prohibited this teammate from being saved:"
-      ul
-        - @teammate.errors.full_messages.each do |message|
+= form_for [@nested_obj, @teammate] do |f|
+  - current_obj = @teammate
+  - if current_obj.errors.any?
+    .alert.alert-border-left
+      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu a Hipótese de ser registrada:"
+      ul.style_warning_list
+        - current_obj.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :role
-    = f.text_field :role
-  .field
-    = f.label :expertise
-    = f.text_field :expertise
-  .field
-    = f.label :contacts
-    = f.check_box :contacts
-  .field
-    = f.label :team
-    = f.text_field :team
-  .field
-    = f.label :user
-    = f.text_field :user
-  .actions = f.submit
+
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:user]}"
+      = f.text_field :user, onkeyup: 'search_people(this)'
+      = f.label :user
+
+
+  #people_list.row.invisible
+    ul.padding.collection.col.l12.s12
+      li#example_person.collection-item.avatar.col.l6
+        -u = User.first
+        =image_tag(u.picture, class: 'circle')
+        span.title =u.name
+        p
+          a.selector onclick="select_person(this)"
+            i.left-icon.ion-checkmark-circled
+            | Selecionar Empreendedor
+
+  #alert_row.row.invisible
+    .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
+      | Pessoa não encontrada. Os participantes de seu time precisam ser usuário NITRO. &nbsp;
+      a href="#" Convide aqui os outros Integrantes.
+
+  .row
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:role]}"
+      = f.text_field :role
+      = f.label :role
+      .footer-info.purple-text =render 'teammates/partials/blog_role'
+
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:expertise]}"
+      = f.text_area :expertise, class: 'materialize-textarea'
+      = f.label :expertise
+
+
+  .spacing_rows
+    .row
+      .input-field.col.offset-l3.l6.s12
+        i class="prefix #{t_current_class_icons[:contacts]}"
+        = f.check_box :contacts, class: 'filled-in'
+        = f.label :contacts
+
+
+  -@footer_link=true
+  =render 'layouts/partials/components/static/float_buttons/save'

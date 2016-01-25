@@ -32,11 +32,11 @@ Rails.application.routes.draw do
     resources :revenues
     resources :financials
     resources :competitors
-    resources :teammates
     resources :providers
     resources :investments
     resources :supporters
     resources :campaigns
+    resources :teammates
   end
 
   # StartUp - Nested Objects
@@ -53,6 +53,10 @@ Rails.application.routes.draw do
     resources :investments
   end
 
+
+  # Non-Scope Actions
+  get 'people/search(/:partial_name)' => 'people#search', as: :people_search
+
   # Pitch supporters caption routes
   # resources :campaign do
   #
@@ -60,6 +64,7 @@ Rails.application.routes.draw do
 
   # Non-Nested objects
   resources :teammates
+  resources :people, except: [:delete, :update]
 
   # StartUps raising routes
   scope 'showroom' do

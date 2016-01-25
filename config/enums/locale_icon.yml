@@ -58,3 +58,8 @@ locale_icon:
     your_advantage: ion-android-star
   campaign:
     link: ion-link
+  teammate:
+    user: mdi-action-account-circle
+    role: mdi-action-class
+    expertise: ion-ribbon-b
+    contacts: Possui Contatos?

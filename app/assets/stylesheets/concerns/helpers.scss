@@ -3,6 +3,10 @@
   text-shadow: black 0 0 10px;
 }
 
+.invisible {
+  display: none;
+}
+
 .row.no-bottom-spacing {
   margin-bottom: 0;
 }
@@ -192,4 +196,8 @@ h5.icon {
   .ion-arrow-swap {
     font-size: 1.2rem;
   }
+}
+
+a.selector {
+  cursor: pointer;
 }

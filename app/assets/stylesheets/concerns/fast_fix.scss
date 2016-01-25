@@ -12,6 +12,18 @@
   }
 }
 
+ul.padding {
+  li.collection-item.avatar.col.l6 {
+    padding-top: 20px;
+  }
+}
+
+#example_person {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 .card+.card {
   margin-top: 0;
 }

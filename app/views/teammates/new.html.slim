@@ -1,5 +1,10 @@
-h1 New teammate
+.row
+  h5.purple-text.center Adicione pessoas ao seu Time
+  =render  'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Back', teammates_path
+= render 'form'
+
+- @back_float_button_link = gen_back_link(@idea)
+=render 'layouts/partials/components/static/float_buttons/back'

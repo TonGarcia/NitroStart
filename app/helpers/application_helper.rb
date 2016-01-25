@@ -27,6 +27,11 @@ module ApplicationHelper
     return 'Não' if value == false
   end
 
+  # Return it role ID
+  def role(type)
+    ENUM[:roles].each {|role| return role if role[:name].downcase.to_sym == type }
+  end
+
   # Generate BackLink
   def gen_back_link(current_obj)
     if @pitch

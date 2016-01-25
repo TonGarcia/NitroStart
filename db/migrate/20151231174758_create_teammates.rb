@@ -2,9 +2,9 @@ class CreateTeammates < ActiveRecord::Migration
   def change
     create_table :teammates do |t|
       # Base attributes
-      t.string :role
-      t.string :expertise
-      t.boolean :contacts
+      t.string :role, limit: 45, null: false
+      t.string :expertise, limit: 140, null: false
+      t.boolean :contacts, null: false
 
       # Fixed Association
       t.belongs_to :user, index: true, foreign_key: true, null: false

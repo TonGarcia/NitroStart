@@ -1,0 +1,79 @@
+// Remove Children Elements from Parente Element
+function clearList(list, skip_first) {
+  var elements = list.children();
+
+  for (i = 0; i < elements.length; i++) {
+    if(isNaN(i) || (i==0 && skip_first)) continue;
+    elements[i].remove();
+  }
+}
+
+/**
+ * Receive it link/button clicked & check it user element
+ */
+function select_person(link_element) {
+  // Setup variables
+  var active_class = 'amber lighten-5';
+  var current_person = $(link_element);
+  var current_list_item = current_person.parents('.collection-item');
+
+  // Execute the Action
+  $('ul.padding li').removeClass(active_class);
+  current_list_item.addClass(active_class);
+}
+
+/**
+ * Receive it user PartialName & Retrieve it possible users array JSON
+ */
+function search_people(partial_name_element) {
+  // Set it variables up
+  var partial_name = $(partial_name_element).val();
+
+  // Prevent AJAX spamming
+  if(partial_name.length < 3) {
+    var invisible = 'invisible';
+    $('#alert_row').addClass(invisible);
+    $('#people_list').addClass(invisible);
+    return;
+  }
+
+  // Perform the Request  
+  var request_url = "<%= Rails.application.routes.url_helpers.people_search_path %>/" + partial_name + '.json';
+  $.get(request_url, function(resp) {
+    // AJAX Variables
+    var invisible = 'invisible';
+    var alert_row = $('#alert_row');
+    var people_list_row = $('#people_list');
+    var example_person = $('#example_person');
+    var people_list_element = people_list_row.children('ul');
+
+    // Check if there is an answer on the resp
+    if(resp.length == 0) {
+      people_list_row.addClass(invisible);
+      alert_row.removeClass(invisible);
+    } else {
+      alert_row.addClass(invisible);
+      people_list_row.removeClass(invisible);
+
+      // Clear it List
+      var skip_first = true;
+      var list = people_list_element;
+      clearList(list, skip_first);
+
+      // Setup it Person on the View
+      for(i in resp) {
+        // Base Variables
+        var person = resp[i];
+        var li_element = '<li class="' + example_person.attr('class') + '">';
+
+        // Set the elements values
+        var current_element_person = example_person.clone();
+        current_element_person.children('img').attr('src', person.picture);
+        current_element_person.children('span.title').html(person.name);
+
+        // Set on the View
+        people_list_element.append(li_element + current_element_person.html() + '</li>');
+      }
+    }
+  });
+}
