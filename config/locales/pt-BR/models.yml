@@ -97,11 +97,11 @@ pt-BR:
   # Competitor -----------------------------------------------------
       competitor:
         name: Nome do Concorrente
-        price: Preço Praticado
-        total_revenue: Faturamento Médio Mensal
-        total_costumers: Total de Consumidores
-        bad_stories: Pontos de INSATISFEITOS dos Consumidores
-        success_stories: Pontos de SATISFAÇÃO dos Consumidores
+        price: Preço Praticado por este Concorrente
+        total_revenue: Faturamento Médio Mensal deste Concorrente
+        total_costumers: Total de Consumidores deste Concorrente
+        bad_stories: Pontos de INSATISFEITOS dos Consumidores neste Concocrente
+        success_stories: Pontos de SATISFAÇÃO dos Consumidores neste Concocrente
         your_advantage: Suas Vantagens Competitivas sobre este Concorrente
 
   # Campaign -----------------------------------------------------
@@ -114,5 +114,5 @@ pt-BR:
       teammate:
         role: Papel Desempenhado
         user: Nome do Usuário
-        expertise: Experiência Profisisonal e/ou de Formação
-        contacts: Possui Contatos (QI - Quem Indica)?
+        expertise: Experiência Profisisonal e/ou de Formação Relevante para ESTE projeto
+        contacts: Possui Contatos Relevantes para o Negócio (QI - Quem Indica)?
