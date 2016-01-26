@@ -11,6 +11,7 @@
   .spacing_rows
     .row
       .col.l4
+        .footer-info.purple-text Fluxo de Funcionamento do Projeto
         -@project.avatar_file_name ? brand = @project.avatar.url(:original) : brand = 'defaults/how_works_flow.png'
         =image_tag brand, class: 'col l12', id: 'work_flow'
       .col.l7
@@ -26,16 +27,29 @@
         =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
         .footer-info.purple-text =render 'projects/partials/blog_stages'
 
+    .row
+      .col.l6.s6
+        .input-field.col.l12.s12
+          i class="prefix #{t_current_class_icons[:awards]}"
+          = f.check_box :awards, class: 'filled-in'
+          = f.label :awards, class: 'check_label'
 
-      .input-field.col.l3.offset-l1.s6
-        i class="prefix #{t_current_class_icons[:awards]}"
-        = f.check_box :awards, class: 'filled-in'
-        = f.label :awards, class: 'check_label'
+        .input-field.col.l12.s12
+          i class="prefix #{t_current_class_icons[:award_source]}"
+          = f.text_area :award_source, class: 'materialize-textarea'
+          = f.label :award_source
 
-      .input-field.col.l3.offset-l1.s6
-        i class="prefix #{t_current_class_icons[:patent]}"
-        = f.check_box :patent, class: 'filled-in'
-        = f.label :patent, class: 'check_label'
+      .col.l6.s6
+        .input-field.col.l12.s12
+          i class="prefix #{t_current_class_icons[:patent]}"
+          = f.check_box :patent, class: 'filled-in'
+          = f.label :patent, class: 'check_label'
+
+        .input-field.col.l12.s12
+          i class="prefix #{t_current_class_icons[:patent_source]}"
+          = f.text_area :patent_source, class: 'materialize-textarea'
+          = f.label :patent_source
+
 
     - @footer_link=true
     = render 'layouts/partials/components/static/float_buttons/save'

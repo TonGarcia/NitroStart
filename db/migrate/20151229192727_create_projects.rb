@@ -4,6 +4,10 @@ class CreateProjects < ActiveRecord::Migration
       # Base Attrs
       t.integer :stage, null: false
 
+      # Source Attrs
+      t.string :award_source, limit: 255, null: true
+      t.string :patent_source, limit: 255, null: true
+
       # Boolean attrs
       t.boolean :awards, null: false, default: false
       t.boolean :patent, null: false, default: false

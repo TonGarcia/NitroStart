@@ -12,8 +12,8 @@ class Traction < ActiveRecord::Base
   validates :costumer_channels, length: { minimum: 2, maximum: 140 }, presence: true
 
   # p2p attr association validations
-  validates :lead_cust, numericality: { greater_than: 0 }, presence: true, if: :amount_daily_lead
-  validates :amount_daily_lead, numericality: { greater_than: 0 }, presence: true, if: :lead_cust
-  validates :daily_growth_rate, numericality: { greater_than: 0 }, presence: true, if: :conversion_cust
-  validates :conversion_cust, numericality: { greater_than: 0 }, presence: true, if: :daily_growth_rate
+  validates :lead_cust, numericality: true, presence: true
+  validates :amount_daily_lead, numericality: true, presence: true
+  validates :daily_growth_rate, numericality: true, presence: true
+  validates :conversion_cust, numericality: true, presence: true
 end

@@ -23,20 +23,32 @@
       i class="prefix #{t_current_class_icons[:costumer_specification]}"
       = f.text_area :costumer_specification, class: 'materialize-textarea'
       = f.label :costumer_specification
-      .footer-info.purple-text Coloque Faixa Etária, Classe Social, Potencial Interesse
+      .footer-info.purple-text Coloque Faixa Etária, Classe Social, Potencial Interesse, etc
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:total_costumers]}"
       = f.text_field :total_costumers, class: 'formatted_int'
       = f.label :total_costumers
-      .footer-info.purple-text Efetue pesquisas como no IBGE, G1, Exame...
+      .footer-info.purple-text Efetue pesquisas em nível Global
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:money_source_link]}"
+      = f.text_field :money_source_link, class: 'formatted_int'
+      = f.label :money_source_link
+      .footer-info.purple-text Link da fonte do dado sobre Total de Consumidores do Mercado
 
     .input-field.col.l12.s12
       -current_attr = :total_money
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@market[current_attr], precision: 2)
       = f.label current_attr
-      .footer-info.purple-text Efetue pesquisas como no IBGE, G1, Exame...
+      .footer-info.purple-text Efetue pesquisas em nível Global (valor movimentado em Dólar)
+
+    .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:costumers_source_link]}"
+      = f.text_field :costumers_source_link, class: 'formatted_int'
+      = f.label :costumers_source_link
+      .footer-info.purple-text Link da fonte do dado sobre Total de Consumidores do Mercado
 
 
   - @footer_link=true

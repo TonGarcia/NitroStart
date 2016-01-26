@@ -21,12 +21,16 @@ locale_icon:
   project:
     stage: ion-connection-bars
     patent: ion-flag
+    patent_source: ion-link
     awards: ion-trophy
+    award_source: ion-link
   market:
     segment: ion-navigate
     currency_iso: mdi-editor-attach-money
     total_money: ion-arrow-swap
+    money_source_link: ion-link
     total_costumers: ion-ios-people
+    costumers_source_link: ion-link
     trends_insight: ion-ios-lightbulb-outline
     costumer_specification: ion-ios-paper-outline
   traction:

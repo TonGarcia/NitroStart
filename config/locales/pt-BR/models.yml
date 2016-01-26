@@ -53,14 +53,18 @@ pt-BR:
       project:
         stage: Estágio de Maturidade
         awards: Recebeu Prêmio?
+        award_source: Link(s) do(s) Prêmio(s)
         patent: Possui Patente?
+        patent_source: Link(s) da(s) Patente(s)
 
   # Market -----------------------------------------------------
       market:
-        segment: Segmento
+        segment: Segmento de Atuação
         currency_iso: Moeda
         total_money: Total de Dinheiro Movimentado
+        money_source_link: Fonte do dado de Dinheiro Movimentado
         total_costumers: Total de Consumidores
+        costumers_source_link: Fonte do dado de Consumidores
         trends_insight: Tendências e Inovações
         costumer_specification: Especificação dos Consumidores
 

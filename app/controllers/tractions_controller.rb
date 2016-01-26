@@ -60,7 +60,7 @@ class TractionsController < ApplicationController
   def destroy
     @traction.destroy
     respond_to do |format|
-      format.html { redirect_to traction_url, notice: 'Tração deletada com sucesso.' }
+      format.html { redirect_to [@nested_obj], notice: 'Tração deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

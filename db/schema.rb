@@ -126,7 +126,9 @@ ActiveRecord::Schema.define(version: 20160121001306) do
     t.string   "segment",                limit: 75,                 null: false
     t.integer  "currency_iso",           limit: 4,   default: 986,  null: false
     t.integer  "total_money",            limit: 8
+    t.string   "money_source_link",      limit: 255
     t.integer  "total_costumers",        limit: 8
+    t.string   "costumers_source_link",  limit: 255
     t.string   "trends_insight",         limit: 140
     t.string   "costumer_specification", limit: 255
     t.boolean  "active",                             default: true, null: false
@@ -163,6 +165,8 @@ ActiveRecord::Schema.define(version: 20160121001306) do
     t.integer  "avatar_file_size",    limit: 4
     t.string   "avatar_content_type", limit: 255
     t.string   "avatar_file_name",    limit: 255
+    t.string   "award_source",        limit: 255
+    t.string   "patent_source",       limit: 255
     t.boolean  "awards",                          default: false, null: false
     t.boolean  "patent",                          default: false, null: false
     t.boolean  "active",                          default: true,  null: false
@@ -237,9 +241,9 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_index "supporters", ["start_up_id"], name: "index_supporters_on_start_up_id", using: :btree
 
   create_table "teammates", force: :cascade do |t|
-    t.string   "role",        limit: 255
-    t.string   "expertise",   limit: 255
-    t.boolean  "contacts"
+    t.string   "role",        limit: 45,  null: false
+    t.string   "expertise",   limit: 140, null: false
+    t.boolean  "contacts",                null: false
     t.integer  "user_id",     limit: 4,   null: false
     t.integer  "pitch_id",    limit: 4
     t.integer  "start_up_id", limit: 4
