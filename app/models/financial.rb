@@ -9,7 +9,7 @@ class Financial < ActiveRecord::Base
 
   # Rails Validation
   validates :total_users, presence: true, numericality: { greater_than: 0 }
-  validates :bootstrapped, presence: true, numericality: { greater_than: 0 }
-  validates :total_costumers, presence: true, numericality: { in: 0..100 }, allow_blank: true
+  validates :bootstrapped, presence: true, numericality: { greater_than: 0 }, allow_blank: true
+  validates :total_costumers, presence: true, numericality: { greater_than: 0 }, allow_blank: true
   validates :market_penetration, presence: true, numericality: { in: 0..100 }, allow_blank: true
 end

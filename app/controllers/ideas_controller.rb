@@ -76,6 +76,7 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :how_validate).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params = params.require(:idea).permit(:main_problem, :second_problems, :current_solution, :tag_line_pitch, :high_concept_pitch, :why_must_success, :how_validate)
+      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

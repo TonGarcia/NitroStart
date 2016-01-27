@@ -32,9 +32,9 @@
       .footer-info.purple-text Efetue pesquisas em nível Global
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:money_source_link]}"
-      = f.text_field :money_source_link, class: 'formatted_int'
-      = f.label :money_source_link
+      i class="prefix #{t_current_class_icons[:costumers_source_link]}"
+      = f.text_field :costumers_source_link
+      = f.label :costumers_source_link
       .footer-info.purple-text Link da fonte do dado sobre Total de Consumidores do Mercado
 
     .input-field.col.l12.s12
@@ -45,11 +45,10 @@
       .footer-info.purple-text Efetue pesquisas em nível Global (valor movimentado em Dólar)
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:costumers_source_link]}"
-      = f.text_field :costumers_source_link, class: 'formatted_int'
-      = f.label :costumers_source_link
+      i class="prefix #{t_current_class_icons[:money_source_link]}"
+      = f.text_field :money_source_link
+      = f.label :money_source_link
       .footer-info.purple-text Link da fonte do dado sobre Total de Consumidores do Mercado
-
 
   - @footer_link=true
   = render 'layouts/partials/components/static/float_buttons/save'

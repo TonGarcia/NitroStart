@@ -22,4 +22,8 @@ class String
   def remove_formatter
     self.sub('formatted_', '')
   end
+
+  def to_link
+    Helpers::Formatter.link_formatter self
+  end
 end

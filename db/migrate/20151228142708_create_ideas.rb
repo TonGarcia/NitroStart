@@ -2,7 +2,7 @@ class CreateIdeas < ActiveRecord::Migration
   def change
     create_table :ideas do |t|
       # Main Problem it solve
-      t.string :main_problem, limit: 75, null: false
+      t.string :main_problem, limit: 80, null: false
 
       # Secondary problems solved
       t.string :second_problems, limit: 255, null: true
@@ -15,6 +15,9 @@ class CreateIdeas < ActiveRecord::Migration
 
       # One explanation phrase (for investors)
       t.string :high_concept_pitch, limit: 50, null: true
+
+      # One explanation phrase (for investors)
+      t.string :why_must_success, limit: 140, null: false
 
       # One explanation phrase (for investors)
       t.string :how_validate, limit: 140, null: true

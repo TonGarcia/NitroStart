@@ -8,6 +8,11 @@ module HistoricalControllers
     before_action :check_if_has_list, only: :index
   end
 
+  # Retrieve it index URL, useful for Delete action, for example.
+  def nested_index_url
+    send("#{@nested_obj.class.to_s.downcase.singularize}_path", @nested_obj)
+  end
+
   # Setup it dependence (objects)
   def set_nested
     # Setup variables

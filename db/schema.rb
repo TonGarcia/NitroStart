@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 75
     t.string   "high_concept_pitch", limit: 50
+    t.string   "why_must_success",   limit: 140,                null: false
     t.string   "how_validate",       limit: 140
     t.boolean  "active",                         default: true, null: false
     t.integer  "pitch_id",           limit: 4

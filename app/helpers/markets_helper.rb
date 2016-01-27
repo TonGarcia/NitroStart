@@ -12,6 +12,6 @@ module MarketsHelper
   end
 
   def market_range_attrs
-    [:formatted_total_costumers, :formatted_total_money]
+    [:formatted_total_costumers, :formatted_source_costumer, :formatted_total_money, :formatted_source_money]
   end
 end

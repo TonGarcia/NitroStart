@@ -37,6 +37,11 @@
       .footer-info.purple-text =render 'ideas/partials/blog_high_concept_link'
 
     .input-field.col.l12.s12
+      i class="prefix #{t_current_class_icons[:why_must_success]}"
+      = f.text_field :why_must_success
+      = f.label :why_must_success
+
+    .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:how_validate]}"
       = f.text_area :how_validate, class: 'materialize-textarea'
       = f.label :how_validate

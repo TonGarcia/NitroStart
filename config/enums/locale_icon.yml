@@ -9,6 +9,7 @@ locale_icon:
     current_solution: ion-shuffle
     tag_line_pitch: ion-chatbox-working
     high_concept_pitch: ion-briefcase
+    why_must_success: ion-ios-lightbulb
     how_validate: ion-flag
   business:
     partnerships: ion-loop
@@ -28,8 +29,10 @@ locale_icon:
     segment: ion-navigate
     currency_iso: mdi-editor-attach-money
     total_money: ion-arrow-swap
+    source_money: ion-link
     money_source_link: ion-link
     total_costumers: ion-ios-people
+    source_costumer: ion-link
     costumers_source_link: ion-link
     trends_insight: ion-ios-lightbulb-outline
     costumer_specification: ion-ios-paper-outline

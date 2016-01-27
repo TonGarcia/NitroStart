@@ -78,4 +78,12 @@ module Formatter
   def formatted_costumer_specification
     self.costumer_specification.gsub(/\n/, '<br/>')
   end
+
+  def formatted_source_costumer
+    self.costumers_source_link.to_link
+  end
+
+  def formatted_source_money
+    self.money_source_link.to_link
+  end
 end

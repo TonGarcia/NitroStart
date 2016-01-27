@@ -37,6 +37,7 @@ pt-BR:
         current_solution: Como este Problema é Solucionado Hoje
         tag_line_pitch: Tag Line Pitch - Venda pro Consumidor
         high_concept_pitch: High Concept Pitch - Venda pro Investidor
+        why_must_success: Por que você acredita que dará certo?
         how_validate: Como a Hipótese foi Validada
 
   # Business -----------------------------------------------------
@@ -62,9 +63,11 @@ pt-BR:
         segment: Segmento de Atuação
         currency_iso: Moeda
         total_money: Total de Dinheiro Movimentado
-        money_source_link: Fonte do dado de Dinheiro Movimentado
+        money_source_link: Fonte do dado sobre Dinheiro Movimentado
+        source_money: Fonte do dado sobre Dinheiro Movimentado
         total_costumers: Total de Consumidores
-        costumers_source_link: Fonte do dado de Consumidores
+        source_costumer: Fonte do dado sobre Consumidores
+        costumers_source_link: Fonte do dado sobre Consumidores
         trends_insight: Tendências e Inovações
         costumer_specification: Especificação dos Consumidores
 

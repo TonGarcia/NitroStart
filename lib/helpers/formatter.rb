@@ -14,5 +14,9 @@ module Helpers
       value = value.to_f unless value.is_a?Numeric
       "#{ApplicationController.helpers.number_with_precision(value, precision: 2, delimiter: ',')}%"
     end
+
+    def self.link_formatter(value)
+      "<a href='#{value}' target='_blank'> #{value} </a>"
+    end
   end
 end
