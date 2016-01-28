@@ -181,7 +181,11 @@ span#earning {
 @media only screen and (max-width : 992px) {
   .icon-explanation {
     .row.store_downloads {
-      margin-top: 45px !important;
+      margin-top: 35px !important;
+
+      a {
+        margin-bottom: 15px !important;
+      }
     }
   }
 }

@@ -190,6 +190,26 @@ h5.icon {
   }
 }
 
+img.grayscale {
+  opacity: 0.3;
+
+  transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+
+  filter: "alpha(opacity=30)";
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+img.grayscale:hover {
+  opacity: 1;
+  filter: none;
+  -webkit-filter: none;
+  filter: none;
+}
+
 .attr_shower {
   [class*=ion-ios],
   [class*=ion-],
@@ -200,4 +220,11 @@ h5.icon {
 
 a.selector {
   cursor: pointer;
+}
+
+// Mobile helpers
+@media only screen and (max-width : 992px) {
+  .margin-top-on-small {
+    margin-top: 25px;
+  }
 }

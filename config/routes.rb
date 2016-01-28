@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   match '/500', to: 'errors#internal_server_error', via: :all, as: :internal_server_error
 
   # Global "Home"/"LandingPages"
-  get '/landing2' => 'home#landing2', as: :investors
   get '/partners' => 'home#partners', as: :partners
   get '/startupers' => 'home#startupers', as: :startupers
 
@@ -92,5 +91,5 @@ Rails.application.routes.draw do
   end
 
   # RootRoute main LandingPage
-  root to: 'home#index'
+  root to: 'home#amateur_investor'
 end
