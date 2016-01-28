@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   # DeviseUser sessions
   devise_for :users,
              controllers: {
-                 sessions:            'users/sessions',
+                 # sessions:            'users/sessions',
                  passwords:           'users/passwords',
-                 registrations:       'users/registrations',
+                 # registrations:       'users/registrations',
                  confirmations:       'users/confirmations',
                  omniauth_callbacks:  'users/omniauth_callbacks'
              }

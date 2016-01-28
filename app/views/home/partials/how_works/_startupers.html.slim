@@ -1,0 +1,41 @@
+/! How does it work
+.row
+  section.partners
+    .container
+      .row
+        header
+          h4.purple-text.bold.center Como funciona para Empresas (Startupers)
+
+      .divider
+
+      .row
+        .col.s12.m3
+          h2.center.teal-text
+            = '4. '
+            i.ion-cash
+          h5.center  Captação
+          p.light.justify Acesso a Capital através da Plataforma NITRO START.
+          -if params[:action] == 'startupers'
+            p.center.red-text custo: 15% da Captação
+        .col.s12.m3.offset-m1
+          h2.center.blue-grey-text
+            = '5. '
+            i.ion-settings.styled
+          h5.center  Desenvolvimento
+          p.light.justify Fornecemos Equipe técnica de desenvolvimento do produto.
+          -if params[:action] == 'startupers'
+            p.center.red-text custo: até 30% da Startup
+        .col.s12.m4.offset-m1
+          h2.center.orange-text.text-darken-1
+            = '6. '
+            i.ion-flame
+          h5.center  Aceleração
+          p.light.justify Desenvolvimento do Negócio com governança & acesso a mercado.
+          -if params[:action] == 'startupers'
+            p.center.red-text custo: até 20% da Startup
+
+      -if params[:action] == 'startupers'
+        .row.observations
+          p.strong.justify.red-text * Você pode evoluir mais seu negócio e requisitar uma re-análise para diminuir as participações da NITRO.
+          p.strong.justify.red-text * Caso seu negócio esteja muito no começo (só a ideia ou com poucas validações) a participação pode ser maior.
+          p.strong.justify.red-text * Os custos de participação na Startup existem porque o risco e a dívida é totalmente da NITRO START e não do Empreendedor.

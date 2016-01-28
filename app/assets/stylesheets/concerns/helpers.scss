@@ -222,9 +222,13 @@ a.selector {
   cursor: pointer;
 }
 
+.remove_margin_top {
+  margin-top: 0 !important;
+}
+
 // Mobile helpers
 @media only screen and (max-width : 992px) {
-  .margin-top-on-small {
+  .margin_top_on_small {
     margin-top: 25px;
   }
 }
