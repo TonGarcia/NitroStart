@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
     t.integer  "total_costumers",    limit: 4
     t.decimal  "total_revenue",                precision: 12, scale: 2
     t.decimal  "total_expense",                precision: 10, scale: 2
-    t.decimal  "bootstrapped",                 precision: 10, scale: 2,                null: false
+    t.decimal  "bootstrapped",                 precision: 10, scale: 2
     t.integer  "market_penetration", limit: 4
     t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",           limit: 4
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_index "financials", ["start_up_id"], name: "index_financials_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
-    t.string   "main_problem",       limit: 75,                 null: false
+    t.string   "main_problem",       limit: 80,                 null: false
     t.string   "second_problems",    limit: 255
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 75
