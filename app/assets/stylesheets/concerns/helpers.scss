@@ -218,8 +218,19 @@ img.grayscale:hover {
   }
 }
 
+.rotate-180 {
+  transform: rotateY(180deg) !important;
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+}
+
 a.selector {
   cursor: pointer;
+}
+
+.margin_top {
+ margin-top: 25px;
 }
 
 .remove_margin_top {

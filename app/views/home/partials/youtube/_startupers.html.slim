@@ -1,0 +1,18 @@
+/! Commercial Partners Section
+.row.no-bottom-spacing
+  section.yellow.lighten-5.partners
+    .container
+      .row
+        header
+          h4.amber-text.text-darken-3.bold.center Aceleração & Investimento NITRO
+      .divider
+      .row
+        iframe.col.l6.s12 height="245px" src="https://www.youtube.com/embed/gaE--9DezdI" frameborder="0" allowfullscreen
+        .col.l5.offset-l1.margin-top-on-small
+          h5.hide-on-small-only.amber-text.text-darken-4.bold.center Vantagens NITRO
+          ul.advantages.amber-text.text-darken-3
+            -advantages = ['Sem Tarifas;', 'Aprenda a Empreender Empreendendo;', 'Captar Recursos para Tirar Ideias do Papel;', 'Quanto mais você descobre o seu Canvas (Mercado, Modelo, Clientes...) menor é nossa quota;', 'Alocamos profissioanis de todas as áreas (Design, TI, Marketing...) para o seu Negócio!']
+            -advantages.each do |advantage|
+              li
+                i.left-icon.ion-checkmark-round
+                = advantage

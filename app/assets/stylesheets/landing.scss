@@ -22,6 +22,11 @@
     min-height: 310px;
     max-height: 310px;
 
+    &.slim {
+      min-height: inherit;
+      max-height: inherit;
+    }
+
     &.expandable {
       max-height: none;
     }
