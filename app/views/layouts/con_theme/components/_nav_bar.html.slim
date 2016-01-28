@@ -1,6 +1,10 @@
 nav#application.navbar-top
   .nav-wrapper
     -@text_visual_identity = 'purple-text'
-    .hide-on-small-only
-      =render 'layouts/partials/components/static/brand'
+    =render 'layouts/partials/components/static/brand'
+
+    /Mobile ASIDE NAV Button
+    a.active-aside-menu href="#"
+      i.mdi-navigation-menu
+
     =render 'layouts/con_theme/structure/profile'

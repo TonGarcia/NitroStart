@@ -48,4 +48,14 @@ module ApplicationHelper
       end
     end
   end
+
+  # Return it used as current layout
+  def current_layout
+    controller.send(:_layout).to_sym
+  end
+
+  # Return the hide class if it layout is application
+  def hide_if(layout_sym)
+    current_layout == layout_sym ? 'hide-on-small-only' : nil
+  end
 end
