@@ -16,7 +16,7 @@
           | Logo do projeto. &nbsp;
           a href="#" Clique aqui caso não tenha
         - @pitch.avatar_file_name ? brand = @pitch.avatar.url(:original) : brand = 'brand/fb_page_white_space.png'
-        = image_tag brand, class: 'col l8 s6 offset-s1 semi-circle', id: 'pitch_avatar', onclick: 'trigger_invisible("#pitch_avatar")'
+        = image_tag brand, class: 'col l8 s6 offset-s1 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
         = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
         p.warning_label.center.strong Tamanho máximo:
         h6.center  1024 x 1024
