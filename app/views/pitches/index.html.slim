@@ -14,7 +14,8 @@
     .col.l6.s12
       .card.pitch_card
         .title
-          a href="#{pitch_path(pitch.id)}": h5.purple-text =pitch.name
+          a href="#{pitch_path(pitch.id)}"
+            h5.purple-text =pitch.name
           span.right.nitro_quote.orange-text.text-darken-1 ="Quota NITRO: #{formatted_requested_equity}"
         .content
           .row
@@ -23,6 +24,17 @@
                 =render "pitches/partials/widgets/#{widget}"
             .col.l6.m3.s12
               =render 'pitches/partials/widgets/campaign'
+          .row
+            .col.l4.s4
+              a.col.l12.s12.btn href="#{pitch_path(pitch)}"
+                i.ion-eye
+            .col.l4.s4
+              a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
+                i.mdi-editor-mode-edit
+            .col.l4.s4
+              = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+                i.mdi-action-delete
+
 
 -@float_opts={link: new_pitch_path}
 .fixed-action-btn=render 'home/partials/components/float_button'
