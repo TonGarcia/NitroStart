@@ -2,4 +2,14 @@
   a.call_video {
     margin-left: -9px !important;
   }
+
+  .pitch_card {
+    .card-panel.stats-card > i {
+      font-size: 3rem;
+
+      &[class*=ion-] {
+        bottom: -1.2rem;
+      }
+    }
+  }
 }

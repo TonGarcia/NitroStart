@@ -1,6 +1,6 @@
 module PitchesHelper
   def widgets
-    %w(hypothesis traction market_knowledge  project_build business team financial competitors provider campaign)
+    %w(hypothesis traction market_knowledge  project_build business team financial competitors provider)
   end
 
   def forbes_pitch_deck

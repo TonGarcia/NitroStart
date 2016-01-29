@@ -19,3 +19,10 @@ function trigger_invisible(target) {
 function trigger_click(target) {
     $(target).trigger('click');
 }
+
+// Toggle (show & hide) Aside Menu
+function toggle_aside_menu() {
+    var hide_on_small = 'hide-on-small-only';
+    var aside_menu = $('aside#side_nav_menu');
+    aside_menu.hasClass(hide_on_small) ? aside_menu.removeClass(hide_on_small) : aside_menu.addClass(hide_on_small)
+}

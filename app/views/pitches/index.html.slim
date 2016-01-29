@@ -21,7 +21,8 @@
             - widgets.each do |widget|
               .col.l6.m3.s6
                 =render "pitches/partials/widgets/#{widget}"
-
+            .col.l6.m3.s12
+              =render 'pitches/partials/widgets/campaign'
 
 -@float_opts={link: new_pitch_path}
 .fixed-action-btn=render 'home/partials/components/float_button'
