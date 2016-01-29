@@ -1,11 +1,16 @@
 // Global icons re-style
 i.left-icon {
   float: none;
-  margin-right: 15px;
+
+  &:before {
+    margin-right: 15px;
+  }
 }
 
-i.left-icon.slim {
-  margin-right: 10px;
+ul.advantages {
+  li i {
+    font-size: 2rem;
+  }
 }
 
 i.right-icon {

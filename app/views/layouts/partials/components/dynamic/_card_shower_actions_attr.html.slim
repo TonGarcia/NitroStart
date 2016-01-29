@@ -16,14 +16,14 @@
           =@shower_comp[:value]
 
     .row.attr_shower
-      .col.l4
-        a.col.l12.btn href="#{send("#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
+      .col.l4.s4
+        a.col.l12.s12.btn href="#{send("#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
           i.ion-eye
-      .col.l4
-        a.col.l12.btn.amber.darken-2 href="#{send("edit_#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
+      .col.l4.s4
+        a.col.l12.s12.btn.amber.darken-2 href="#{send("edit_#{nested_class_name}_#{current_class_name}_path", @nested_obj, @current_obj)}"
           i.mdi-editor-mode-edit
-      .col.l4
-        =link_to [@nested_obj, @current_obj], class: 'col l12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+      .col.l4.s4
+        =link_to [@nested_obj, @current_obj], class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
           i.mdi-action-delete
 
 -@shower_comp=nil

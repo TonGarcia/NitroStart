@@ -5,4 +5,5 @@ a.card-panel.stats-card.white-text href="#{pitch_businesses_path(@pitch.id)}"
     .blue-grey style="width: #{amount_filled}"
   i.ion-ios-briefcase
   span.count =amount_filled
-  .name.hide-on-small-only Negócio
+  -if params[:action] != 'index'
+    .name.hide-on-small-only Negócio

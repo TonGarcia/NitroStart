@@ -196,14 +196,17 @@ span#earning {
 
   ul.advantages {
     font-size: 1.4rem !important;
-
-    li {
-      margin-bottom: 15px;
-    }
   }
 
   .parallax-container {
     height: 150vh !important;
+  }
+}
+
+
+ul.advantages {
+  li {
+    margin-bottom: 15px;
   }
 }
 
