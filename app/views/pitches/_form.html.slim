@@ -11,33 +11,33 @@
 
   .spacing_rows
     .row
-      .col.l2.offset-l1.set-pitch_brand
-        h6.strong.purple-text
+      .col.s12.l2.offset-l1.set-pitch_brand
+        h6.s12.strong.purple-text
           | Logo do projeto. &nbsp;
           a href="#" Clique aqui caso não tenha
         - @pitch.avatar_file_name ? brand = @pitch.avatar.url(:original) : brand = 'brand/fb_page_white_space.png'
-        = image_tag brand, class: 'col l8 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
+        = image_tag brand, class: 'col l8 s6 offset-s1 semi-circle', id: 'pitch_avatar', onclick: 'trigger_invisible("#pitch_avatar")'
         = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
-        p.warning_label.strong Tamanho máximo:
+        p.warning_label.center.strong Tamanho máximo:
         h6.center  1024 x 1024
         h6.center 200 KB
 
 
-      .col.l3.offset-l1.set-pitch_cover
-        h6.strong.purple-text
+      .col.s12.l3.offset-l1.set-pitch_cover.mobile_margin_top
+        h6.s12.strong.purple-text
           | Banner do projeto. &nbsp;
           a href="#" Clique aqui caso não tenha
         -@pitch.cover_file_name ? brand = @pitch.cover.url(:original) : brand = 'defaults/startupers_cover.jpg'
-        =image_tag brand, class: 'col l12', id: 'cover', onclick: 'trigger_invisible("#pitch_cover")'
+        =image_tag brand, class: 'col l12 s12', id: 'cover', onclick: 'trigger_invisible("#pitch_cover")'
         = f.file_field :cover, onchange: 'show_brand(this, "#cover")', class: 'invisible'
-        p.strong Tamanho máximo:
+        .center.strong Tamanho máximo:
         h6.center  1350 x 300 & 350 KB
 
-      .col.l2.offset-l2
+      .col.s12.l2.offset-l2.mobile_margin_top
         h6.strong.purple-text
           | Vídeo do projeto. &nbsp;
           a href="#" Clique aqui caso não tenha
-        h1.set-video
+        h1.center.set-video
           a.modal-trigger href="#youtube_modal"
             i.ion-social-youtube.red-text.text-darken-2
 
