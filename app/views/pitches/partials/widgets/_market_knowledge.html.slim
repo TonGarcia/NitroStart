@@ -5,4 +5,5 @@ a.card-panel.stats-card.white-text href="#{pitch_markets_path(@pitch.id)}"
     .light-blue.darken-1 style="width: #{amount_filled}"
   i.ion-ios-pie
   span.count =amount_filled
-  .name.hide-on-small-only Mercado
+  -if params[:action] != 'index'
+    .name Mercado

@@ -5,4 +5,5 @@ a.card-panel.stats-card.white-text href="#{pitch_ideas_path(@pitch.id)}"
     .amber.darken-1 style="width: #{amount_filled}"
   i.fa.fa-lightbulb-o
   span.count =amount_filled
-  .name.hide-on-small-only Hipóteses
+  -if params[:action] != 'index'
+    .name Hipóteses

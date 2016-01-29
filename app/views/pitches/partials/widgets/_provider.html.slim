@@ -5,4 +5,5 @@ a.card-panel.stats-card.white-text href="#{pitch_providers_path(@pitch.id)}"
     .deep-purple.darken-1 style="width: #{amount_filled}"
   i.fa.fa-truck
   span.count =amount_filled
-  .name.hide-on-small-only Fornecedores
+  -if params[:action] != 'index'
+    .name Fornecedores

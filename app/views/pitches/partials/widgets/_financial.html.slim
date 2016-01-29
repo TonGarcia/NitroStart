@@ -5,4 +5,5 @@ a.card-panel.stats-card.white-text href="#{pitch_financials_path(@pitch.id)}"
     .teal.darken-1 style="width: #{amount_filled}"
   i.mdi-action-trending-up
   span.count =amount_filled
-  .name.hide-on-small-only Financeiro
+  -if params[:action] != 'index'
+    .name Financeiro
