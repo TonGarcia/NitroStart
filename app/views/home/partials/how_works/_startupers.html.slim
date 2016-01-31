@@ -1,12 +1,32 @@
 /! How does it work
-.row
-  section.partners
+.row.no-bottom-spacing
+  section.purple.lighten-5.partners
     .container
       .row
         header
           h4.purple-text.bold.center Como funciona para Empresas (Startupers)
 
       .divider
+
+      .row
+        .col.s12.m3
+          h2.center.purple-text
+            = '1. '
+            i.mdi-action-description
+          h5.center  Adicione Ideias
+          p.light.justify Preencha o Canvas com a sua Ideia, levantando o máximo sobre o Negócio advindo dela.
+        .col.s12.m3.offset-m1
+          h2.center.light-blue-text
+            = '2. '
+            i.ion-android-done-all
+          h5.center  Validações
+          p.light.justify Atraia Feedbacks & Apoiadores para validar preço, modelo de uso/receita e apelo.
+        .col.s12.m4.offset-m1
+          h2.center.black-text
+            = '3. '
+            i.mdi-action-find-in-page
+          h5.center  Análise do Projeto
+          p.light.justify O Projeto e a Validação são analisados. Caso não seja aceito, você volta para o 2 com feedbacks que te ajudarão a avançar!
 
       .row
         .col.s12.m3
@@ -23,16 +43,12 @@
             i.ion-settings.styled
           h5.center  Desenvolvimento
           p.light.justify Fornecemos Equipe técnica de desenvolvimento do produto.
-          -if params[:action] == 'startupers'
-            p.center.red-text custo: até 30% da Startup
         .col.s12.m4.offset-m1
           h2.center.orange-text.text-darken-1
             = '6. '
             i.ion-flame
           h5.center  Aceleração
           p.light.justify Desenvolvimento do Negócio com governança & acesso a mercado.
-          -if params[:action] == 'startupers'
-            p.center.red-text custo: até 20% da Startup
 
       -if params[:action] == 'startupers'
         .row.observations
