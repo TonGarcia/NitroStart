@@ -1,0 +1,47 @@
+.grey.lighten-4
+  .row.remove_margin_bottom
+    section.partners
+      .container
+        .row
+          h4.center.medium_margin_bottom
+            i.fa.fa-rocket.circle.padding.purple.white-text
+          h4.center Como Funciona
+          h5.grey-text.darken-2.center Tripulantes da Nav NITRO START (Startupers)
+
+
+        .row
+          .col.l5.s12
+            ul.topic_icons
+              -startupers_work_flow.each do |topic|
+                li.row
+                  .col.l2
+                    i class="left-icon purple-text #{topic[:icon]}"
+                  .col.l10
+                    span =topic[:text]
+
+            a.margin_bottom.btn.col.l12.s12 href="#{face_oauth_url}" Seja um Tripulante da NITRO
+
+          .col.l6.offset-l1.s12
+            =image_tag 'system_prints/notebook-cel-prints.png', class: 'col l12 s12'
+
+
+        .row.huge_margin_top.margin_bottom
+          h4.center.medium_margin_bottom
+            i.ion-flame.circle.padding.amber.darken-1.white-text
+          h4.center Como Funciona
+          h5.grey-text.darken-2.center Propulsores (Investidores Anjos e Co-Investidores)
+
+        .row.margin_top
+          .col.l6.s12
+            = image_tag 'system_prints/notebook-cel-prints-investor.png', class: 'col l12 s12'
+
+          .col.l5.offset-l1.s12
+            ul.topic_icons
+              - investors_work_flow.each do |topic|
+                li.row
+                  .col.l2
+                    i class="left-icon amber-text text-darken-2 #{topic[:icon]}"
+                  .col.l10
+                    span = topic[:text]
+
+            a.margin_bottom.btn.amber.col.l12.s12 href="#{face_oauth_url}" Seja um Propulsor da NITRO

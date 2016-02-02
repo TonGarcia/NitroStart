@@ -6,11 +6,13 @@
  *
  * My Styles
  *= require sign
+ *= require concerns/social
  *= require concerns/helpers
- *= require concerns/icon_styles
+ *= require concerns/fast_fix
  *= require concerns/parallax
  *= require concerns/progress
- *= require concerns/social
+ *= require concerns/icon_styles
+ *= require media_queries/small-and-down
 */
 
 @import "ionicons";
@@ -199,7 +201,7 @@ span#earning {
   }
 
   .parallax-container {
-    height: 150vh !important;
+    height: 100vh !important;
   }
 }
 

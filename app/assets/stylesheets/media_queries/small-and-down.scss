@@ -1,4 +1,28 @@
 @media only screen and (max-width : 600px) {
+  h2.title {
+    font-size: 2.5rem;
+  }
+
+  .action-btn {
+    & > span {
+      font-size: 1.2rem;
+    }
+  }
+
+  .non-parallax {
+    img {
+      display: block;
+      position: absolute;
+      left: -25%;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translateX(-50%);
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+  }
+
   a.call_video {
     margin-left: -9px !important;
   }

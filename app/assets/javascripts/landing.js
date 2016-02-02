@@ -19,8 +19,8 @@ $(document).ready(function(){
     setup_tabs();
     fix_error_field();
 
-    $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
+    if($(window).width() > 980) $('.parallax').parallax();
 
     $("a[rel^='prettyPhoto']").prettyPhoto({
         show_title: false,

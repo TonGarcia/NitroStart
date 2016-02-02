@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
+  get 'call_to_action/index'
+
   # Errors Routes
   match '/403', to: 'errors#forbidden', via: :all, as: :forbidden
   match '/404', to: 'errors#file_not_found', via: :all, as: :file_not_found
   match '/422', to: 'errors#unprocessable', via: :all, as: :unprocessable
   match '/500', to: 'errors#internal_server_error', via: :all, as: :internal_server_error
-
-  # Global "Home"/"LandingPages"
-  get '/partners' => 'home#partners', as: :partners
-  get '/startupers' => 'home#startupers', as: :startupers
 
   # DeviseUser sessions
   devise_for :users,
@@ -87,9 +85,9 @@ Rails.application.routes.draw do
 
   # Signed User Routes
   authenticated :user do
-    root to: 'dashboard#index', as: :authenticated_root
+    root to: 'call_to_action#index', as: :authenticated_root
   end
 
   # RootRoute main LandingPage
-  root to: 'home#amateur_investor'
+  root to: 'home#index'
 end

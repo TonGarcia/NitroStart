@@ -29,24 +29,52 @@
   }
 }
 
-// Spinner Application LoadPage progress
 #nprogress {
   .bar {
     height: 1.5px;
-    background: #9C27B0;
+    background: #fff;
   }
 
   .peg {
-    box-shadow: 0 0 10px #9C27B0, 0 0 5px #9C27B0;
+    box-shadow: 0 0 10px #fff, 0 0 5px #fff;
   }
 
   .spinner-icon {
     width: 20px;
     height: 20px;
-    border-top-color: #9C27B0;
-    border-left-color: #9C27B0;
+    border-top-color: #fff;
+    border-left-color: #fff;
   }
 }
+
+// Project Nitro progress bar
+.progress.semi-circle {
+  height: 10px;
+  border-radius: 5px;
+  .active {
+    content: " ";
+    height: 10px;
+  }
+}
+
+//// Spinner Application LoadPage progress
+//#nprogress {
+//  .bar {
+//    height: 1.5px;
+//    background: #9C27B0;
+//  }
+//
+//  .peg {
+//    box-shadow: 0 0 10px #9C27B0, 0 0 5px #9C27B0;
+//  }
+//
+//  .spinner-icon {
+//    width: 20px;
+//    height: 20px;
+//    border-top-color: #9C27B0;
+//    border-left-color: #9C27B0;
+//  }
+//}
 
 // Project Nitro progress bar
 .progress.semi-circle {

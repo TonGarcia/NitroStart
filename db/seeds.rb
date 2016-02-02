@@ -16,8 +16,5 @@ puts 'Inserting AdminUser...'.colorize(:green)
 
   admin = User.create(admin_params.merge(name:'Ciro NITRO Admin', email:'ciro@a.a', legal_id: CPF.generate))
   if admin.errors.empty? then puts "\t #{admin}".green else puts "\t #{admin}".red end
-
-  admin = User.create(admin_params.merge(name:'Cristiano NITRO Admin', email:'cristiano@a.a', legal_id: CPF.generate))
-  if admin.errors.empty? then puts "\t #{admin}".green else puts "\t #{admin}".red end
 puts '...AdminUser inserted.'.colorize(:light_blue)
 # /ADMIN

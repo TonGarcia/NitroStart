@@ -1,3 +1,19 @@
+html {
+  font-family: 'Roboto Mono', sans-serif !important;
+}
+
+p {
+  font-size: 18px;
+}
+
+.store_downloads {
+  .btn, .btn-large {
+    span {
+      font-size: 1.4rem;
+    }
+  }
+}
+
 .stats-card>i[class*=ion-] {
   bottom: -3.2rem;
 }

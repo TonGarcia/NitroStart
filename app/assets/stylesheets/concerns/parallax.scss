@@ -9,6 +9,16 @@
     background-color: rgba(0, 0, 0, 0.4);
   }
 
+  .darken-overlay {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
   .light-overlay {
     top:0;
     left:0;
@@ -16,7 +26,7 @@
     bottom:0;
     z-index:9999;
     position:absolute;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.08);
   }
 }
 

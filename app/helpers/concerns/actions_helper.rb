@@ -61,7 +61,7 @@ module Concerns::ActionsHelper
   def profile_actions
     [
         {name: t('actions.user.show'), icon: 'icon ion-person', link: root_path},
-        {name: t('actions.user.edit'), icon: 'icon ion-edit', link: edit_user_registration_path},
+        {name: t('actions.user.edit'), icon: 'icon ion-edit', link: root_path},
         {name: t('actions.user.password'), icon: 'icon ion-locked', link: root_path},
     ]
   end
