@@ -15,4 +15,7 @@ html
       =render 'home/partials/sign_button'
 
     /! Footer
-    =render 'layouts/partials/components/static/landing_footer'
+    .hide-on-small-only
+      =render 'layouts/partials/components/static/landing_footer'
+    .hide-on-med-and-up
+      =render 'layouts/partials/components/static/landing_mobile_footer'

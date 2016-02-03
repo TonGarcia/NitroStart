@@ -7,6 +7,18 @@ module ExternalLinksHelper
     user_omniauth_authorize_path('facebook')
   end
 
+  def face_page_url
+    'https://www.facebook.com/NitroStart'
+  end
+
+  def youtube_channel_url
+    'https://www.youtube.com/channel/UCTb-Mp8La6CXJreEdYEYn3Q'
+  end
+
+  def twitter_url
+    'https://www.twitter.com/NitroStart'
+  end
+
   def blog_startupers_landing_links
     [
         {href:'#', content: 'Entenda o que é Startup'},

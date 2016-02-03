@@ -24,6 +24,6 @@ module HomeHelper
   end
 
   def company_footer_description
-    'NitroStart - Copyright© & Registered® 2015 - Todos os direitos reservados.'
+    'Copyright© & Registered® 2016.'
   end
 end

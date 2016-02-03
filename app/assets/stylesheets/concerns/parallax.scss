@@ -30,6 +30,17 @@
   }
 }
 
+
+.hide-on-med-and-up {
+  .section.no-pad-bot {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image:url(image_path("defaults/jk.jpg"));
+  }
+}
+
 img.overlay {
   width: inherit;
   background-color:rgba(0, 0, 0, 0.4);

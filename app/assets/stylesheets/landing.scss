@@ -215,3 +215,17 @@ ul.advantages {
 input#estimate_investment {
   color: inherit;
 }
+
+footer.mobile {
+  .actions {
+    ul li {
+      margin-bottom: 10px;
+    }
+  }
+
+  .row.social_links {
+    a {
+      font-size: 2.5rem;
+    }
+  }
+}
