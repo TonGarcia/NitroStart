@@ -1,0 +1,7 @@
+-@blog_link = {} if @blog_link.nil?
+
+a class="left-icon slim #{@blog_link[:class]}" href="#{@blog_link[:href]}" target="_blank"
+  i.left-icon.slim.fa.fa-external-link
+  =@blog_link[:content]
+
+-@blog_link = nil

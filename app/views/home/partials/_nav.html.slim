@@ -2,3 +2,6 @@
   nav
     div class="nav-wrapper #{@visual_identity}"
       =render 'layouts/partials/components/static/brand'
+
+      ul#not-mobile.nav_actions.right.hide-on-small-only
+        = render 'home/partials/components/landing_menu_actions'

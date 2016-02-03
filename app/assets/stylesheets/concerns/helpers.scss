@@ -3,6 +3,10 @@
   text-shadow: black 0 0 10px;
 }
 
+section {
+  padding-top: 40px;
+}
+
 .invisible {
   display: none;
 }
@@ -127,8 +131,18 @@ h1.set-video {
   font-weight: 300;
 }
 
+.medium_strong {
+  font-weight: 400 !important;
+}
+
+.quotes {
+  p {
+    text-align: right;
+  }
+}
+
 .strong {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .space {
@@ -264,27 +278,31 @@ a.selector {
 }
 
 .huge_margin_top {
-  margin-top: 160px;
+  margin-top: 160px !important;
 }
 
 .margin_top {
- margin-top: 25px;
+ margin-top: 25px !important;
 }
 
 .margin_bottom {
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
 }
 
 .medium_margin_bottom {
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
+}
+
+.medium_margin_top {
+  margin-top: 50px !important;
 }
 
 .huge_margin_bottom {
-  margin-bottom: 160px;
+  margin-bottom: 160px !important;
 }
 
 .margin-right {
-  margin-right: 25px;
+  margin-right: 25px !important;
 }
 
 .roles {

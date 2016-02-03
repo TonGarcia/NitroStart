@@ -1,32 +1,34 @@
 /! Motivation Quotes Section
-.row
-  section.grey.yellow.lighten-5.partners
-    .container
-      .row
-        header
-          h4.blue-grey-text.text-darken-1.bold.center Inspire-se
-          h5.blue-grey-text.text-darken-1.bold.center Fazer o que se ama sempre foi um luxo para poucos. Você é especial!
-      .divider
-      .row
-        -quotes.each do |quote|
-          .col.l6.margin-top-on-small
+section#be_inspired
+  .row
+    .partners
+      .container
+        .row
+          header
+            h4.blue-grey-text.text-darken-1.bold.center Inspire-se
+            h5.blue-grey-text.text-darken-1.bold.center Fazer o que se ama sempre foi um luxo para poucos. Você é especial!
+        .divider
+        .row.quotes
+          -quotes.each do |quote|
+            .col.l6.margin-top-on-small
+              .card-panel.slim
+                .row.remove_margin_bottom
+                  h6.col.l10.s12
+                    i.mdi-editor-format-quote.rotate-180
+                    =quote[:text]
+                    i.mdi-editor-format-quote
+                  p.col.l12.s12.blue-grey-text.text-lighten-1 =quote[:author]
+
+          .col.l12
             .card-panel.slim
               h6
-                p.right.blue-grey-text.text-lighten-1 =quote[:author]
+                p.right.blue-grey-text.text-lighten-1 Dalai Lama
                 i.mdi-editor-format-quote.rotate-180
-                =quote[:text]
+                | Só existem dois dias no ano em que nada pode ser feito: Um se chama Ontem e outro se chama Amanhã. Hoje é o dia CERTO para amar e fazer o que se acredita.
                 i.mdi-editor-format-quote
 
-        .col.l12
-          .card-panel.slim
-            h6
-              p.right.blue-grey-text.text-lighten-1 Dalai Lama
-              i.mdi-editor-format-quote.rotate-180
-              | Só existem dois dias no ano em que nada pode ser feito: Um se chama Ontem e outro se chama Amanhã. Hoje é o dia CERTO para amar e fazer o que se acredita.
-              i.mdi-editor-format-quote
-
-            .row.margin_top
-              .col.l6.offset-l3
-                a.btn.blue href="#{user_omniauth_authorize_path('facebook')}"
-                  i.fa.fa-facebook.left-icon
-                  span Tire ideias do Papel AGORA!
+              .row.margin_top
+                .col.l6.offset-l3
+                  a.btn.blue href="#{user_omniauth_authorize_path('facebook')}"
+                    i.fa.fa-facebook.left-icon
+                    span Tire ideias do Papel AGORA!

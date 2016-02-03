@@ -1,0 +1,23 @@
+section#learn_more
+  .row.medium_margin_top
+    .card.col.l10.offset-l1.s12
+      .card-content
+        h5.center
+          | Saiba mais. Acesse nosso blog!
+
+        .row.margin_bottom.margin_top
+          .divider
+
+        /! Startupers Links
+        .col.l5.s12
+          -blog_startupers_landing_links.each do |link|
+            .col.l12.s12.margin_bottom
+              -@blog_link = link.merge(class: 'purple-text')
+              =render 'layouts/partials/components/static/blog_link'
+
+        /! Investors Links
+        .col.l5.offset-l2.s12
+          -blog_investors_landing_links.each do |link|
+            .col.l12.s12.margin_bottom
+              -@blog_link = link.merge(class: 'amber-text text-darken-4')
+              =render 'layouts/partials/components/static/blog_link'
