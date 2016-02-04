@@ -9,8 +9,8 @@ module Concerns::HowWorkHelper
 
   def investors_work_flow
     [
-        {icon: 'ion-thumbsup', text: 'Apoie Ideias'},
         {icon: 'fa fa-rocket', text: 'Selecione e Invista'},
+        {icon: 'ion-clock', text: 'Aguarde Faturamento'},
         {icon: 'ion-cash', text: 'Receba o Retorno'}
     ]
   end

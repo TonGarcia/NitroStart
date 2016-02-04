@@ -5,40 +5,53 @@ section#roles
         h3.center Para quem é?
         p.center.grey-text Descubra o seu Perfil e como você pode contribuir para o futuro do país e do mundo
 
-      .row.margin_top.roles
-        .col.l5.s12.margin_bottom
-          =image_tag 'defaults/icon_person/creative.png', class: 'col l12 s12 margin_bottom'
-          h5.center Pessoas Criativas
-          p.justify Mente borbulhando de ideias? Visões de diferentes possibilidades,  mundos e soluções para os problemas e necessidades do mundo? Seu lugar é aqui! Valorizamos suas habilidades mais do que qualquer outro. Aqui você pode ser você mesmo!
+      .row.margin_top.huge_margin_bottom
+        .col.l6.s12
+          = image_tag 'defaults/icon_person/creative.png', class: 'col l12 s12 margin_bottom'
+        .col.l6.s12.margin_top
+          h5.blue-grey-text.center Pessoas Criativas
+          p.justify Chega de ter suas Ideias sub-valorizadas; Seus reais potenciais sub-julgados e dificuldade em encontrar e manter um time. Seja LIVRE! Somente aqui suas Ideias realmente possuem valor e podem ser validadas, se tornar lucrativas e receber investimento sem precisar de uma longa jornada enfadonha. Nós da NITRO passamos por estes problemas. Investidores que só investem após faturamento; Aceleradora que só acelera em fase de escala e etc.
           a.col.l12.s12.action-btn.btn-large.purple.white-text href="#{face_oauth_url}"
             i.left-icon.fa.fa-rocket
             span Tire Ideias do Papel
 
 
-        .col.l5.offset-l2.s12
-          =image_tag 'defaults/icon_person/co_founders.png', class: 'col l12 s12 margin_bottom'
-          h5.center Pessoas Capacitadas
-          p.justify Co-Crie! Encontrou um Pitch ou um projeto incrível que combina com você ou que você possa ajudar? Seja co-criador e faça grandes ideias criarem Vida! Traga suas habilidades técnicas! Caso queira salário, também é possível!
+      .row.margin_top.huge_margin_bottom
+        .col.l6.s12.hide-on-med-and-up
+          = image_tag 'defaults/icon_person/co_founders.png', class: 'col l12 s12 margin_bottom'
+        .col.l6.s12
+          h5.blue-grey-text.center Pessoas Capacitadas
+          p.justify Já não aguenta mais o seu Chefe? Cansado do Trânsito até o Trabalho? Trabalhe de Casa sendo seu Próprio Chefe, Co-Crie na sua VIBE! Encontrou um Pitch ou um projeto incrível que combina com você ou que você possa ajudar? Seja co-criador e faça grandes ideias criarem Vida com suas habilidades técnicas! Caso queira salário, também é possível!
           a.col.l12.s12.action-btn.btn-large.amber.darken-2.white-text href="#{face_oauth_url}"
             i.left-icon.ion-settings
             span Participe das Ideias
+        .col.l6.s12.hide-on-small-only
+          = image_tag 'defaults/icon_person/co_founders.png', class: 'col l12 s12 margin_bottom'
 
 
-      .row.huge_margin_top.roles
-        .col.l5.s12.margin_bottom
-          =image_tag 'defaults/icon_person/co_investor.png', class: 'col l12 s12 margin_bottom'
-          h5.center Co-Invista
+
+      .row.margin_top.huge_margin_bottom
+        .col.l6.s12
+          = image_tag 'defaults/icon_person/co_investor.png', class: 'col l12 s12 margin_bottom'
+        .col.l6.s12.margin_top
+          h5.blue-grey-text.center Co-Investidor
           p.justify
             span.purple-text.strong.margin-right 12 anos em 1!
-            span Somente aqui você recebe com segurança o dobro do que investiu em até 1 ano após o início do faturamento.
+            span Sabia que a Inflação e o Leão comem mais do que a Poupança rende? Diga NÃO aos baixos rendimentos! Somente aqui o seu dinheiro Rende em 1 ano o que levaria 12 anos para render na Poupança. O Seguro NITRO garante que seu dinheiro não desvalorize, retirando-o na integra caso o projeto não gere lucros após o 1 ano de carência.
           a.col.l12.s12.action-btn.btn-large.purple.white-text href="#{new_user_registration_path}"
             i.left-icon.ion-ios-people
-            span Co-Invista
+            span Seja o Propulsor de Ideias
 
-        .col.l5.offset-l2.s12
-          =image_tag 'defaults/icon_person/angel_investor.png', class: 'col l12 s12 margin_bottom'
-          h5.center Investidor Anjo
-          p.justify Investimento Anjo Tradicional com Título de Dívidas. Rentabilidade média de 20X a longo prazo (mais de 5 anos de carência).
-          a.col.l12.s12.action-btn.btn-large.amber.darken-2.white-text href="#{new_user_registration_path}"
+
+      .row.margin_top.huge_margin_bottom
+        .col.l6.s12.hide-on-med-and-up
+          = image_tag 'defaults/icon_person/angel_investor.png', class: 'col l12 s12 margin_bottom'
+        .col.l6.s12.margin_top
+          h5.blue-grey-text.center Investidor Anjo
+          p.justify
+            span A economia não vai bem? As Startups NITRO são Internacionalizadas desde o Nascimento. Receioso de Investir?  Aqui seu dinheiro é tratado muito bem. Com nosso Seguro NITRO você garante que caso queira o Desinvestimento da Startup, a NITRO compra a sua parte sem prejuízo e provalvemente com Ganhos, garantindo liquidez e segurança nos investimentos.
+          a.col.l12.s12.action-btn.btn-large.amber.darken-2.white-text href="#{face_oauth_url}"
             i.left-icon.ion-flame
-            span Seja um Anjo
+            span Seja o Anjo de uma Startup
+        .col.l6.s12.hide-on-small-only
+          = image_tag 'defaults/icon_person/angel_investor.png', class: 'col l12 s12 margin_bottom'
