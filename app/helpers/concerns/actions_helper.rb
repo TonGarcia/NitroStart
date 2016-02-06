@@ -32,11 +32,21 @@ module Concerns::ActionsHelper
         label: 'Investidor',
         actions: [
             {name:t('actions.pitches.supporting'), icon:'ion-thumbsup', link: showroom_index_path, action_controller:'showroom'},
-            {name:t('actions.showroom.index'), icon:'mdi-action-dashboard', link: showroom_index_path, action_controller:'showroom'},
-            {name:t('actions.start_ups.invested'), icon:'ion-flame', link: showroom_index_path, action_controller:'showroom'},
+            # {name:t('actions.showroom.index'), icon:'mdi-action-dashboard', link: showroom_index_path, action_controller:'showroom'},
+            # {name:t('actions.start_ups.invested'), icon:'ion-flame', link: showroom_index_path, action_controller:'showroom'},
             # {name:t('actions.dashboard.investments'), icon:'mdi-action-trending-up', link: dashboard_investments_path, action_controller:'dashboard'},
         ]
     } # teammate
+  end
+
+  # List PartnersActions
+  def supporter_actions
+    {
+        label: 'Apoiadores',
+        actions: [
+          {name:t('actions.problems.new'), icon:'ion-android-warning', link: showroom_index_path, action_controller:'showroom'},
+        ]
+    }
   end
 
   # List PartnersActions
@@ -69,6 +79,7 @@ module Concerns::ActionsHelper
 # Array of grouped actions
   def aside_grouped_actions
     [
+      supporter_actions,
       start_up_actions,
       investor_actions,
       partners_actions,

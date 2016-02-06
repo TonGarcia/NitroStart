@@ -3,7 +3,8 @@ module Concerns::HowWorkHelper
     [
         {icon: 'ion-ios-lightbulb', text: 'Cadastre suas ideias'},
         {icon: 'ion-android-done-all', text: 'Valide suas Hipóteses'},
-        {icon: 'mdi-action-dashboard', text: 'Preencha o Canvas'}
+        {icon: 'mdi-action-dashboard', text: 'Preencha o Canvas'},
+        {icon: 'ion-ios-people', text: 'Forme sua Tripulação'}
     ]
   end
 

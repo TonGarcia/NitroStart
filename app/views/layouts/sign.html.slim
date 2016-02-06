@@ -18,5 +18,8 @@ html
             #sign_form.row
               =yield
 
-    /! FooterDesign
-    = render 'layouts/partials/components/static/landing_footer'
+    /! Footer
+    .hide-on-small-only
+      =render 'layouts/partials/components/static/landing_footer'
+    .hide-on-med-and-up
+      =render 'layouts/partials/components/static/landing_mobile_footer'

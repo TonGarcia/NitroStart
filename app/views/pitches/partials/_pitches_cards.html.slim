@@ -1,0 +1,23 @@
+-@pitches.each do |pitch|
+  -@pitch = pitch
+
+  .col.l3.s12
+    .card.pitch_card
+      .title
+        a href="#{pitch_path(pitch.id)}"
+          h5.purple-text =pitch.name
+        span.right.nitro_quote.orange-text.text-darken-1 ="Quota NITRO: #{formatted_requested_equity}"
+      .content
+        .row
+          =image_tag pitch.avatar, class: 'col l4 s4 semi-circle float_avatar'
+          =image_tag pitch.cover, class: 'col l12 s12'
+        .row
+          .col.l4.s4
+            a.col.l12.s12.btn href="#{pitch_path(pitch)}"
+              i.ion-eye
+          .col.l4.s4
+            a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
+              i.mdi-editor-mode-edit
+          .col.l4.s4
+            = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+              i.mdi-action-delete

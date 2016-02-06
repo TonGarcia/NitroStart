@@ -36,3 +36,8 @@ pt-BR:
       show: Detalhamento da Hipótese
       index: Listagem de Modelos de Negócio
       create: Explique sua Ideia
+    problems:
+      new: Reclame Aqui
+      edit: Atualizar o Problema
+      index: Listagem de seus Problemas
+      solutions: Propostas de Soluções

@@ -1,0 +1,18 @@
+table.table.table-bordered
+  thead
+    tr
+      th Nome
+      th Problema
+      th Segmento
+      th Canvas
+      th Editar
+      th Deletar
+
+  tbody
+    -@pitches.each do |pitch|
+      -@pitch = pitch
+      -hypothesis = @pitch.active(:idea)
+
+      tr
+        td =@pitch.name
+        td =hypothesis.main_problem
