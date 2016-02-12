@@ -12,7 +12,7 @@ pt-BR:
   # User -----------------------------------------------------
       user:
         name: Nome completo
-        username: Apelido (nome no link do perfil)
+        username: Apelido
         email: E-mail
         locale: Idioma
         gender: Sexo
@@ -25,20 +25,20 @@ pt-BR:
       pitch:
         name: Nome do Projeto
         cover: Banner
-        cover_file_size: Peso do Banner
+        cover_file_size: Tamanho do Banner
         avatar: Logo
-        cover_file_size: Peso da Logo
+        cover_file_size: Tamanho da Logo
         user: Criador
 
   # Idea -----------------------------------------------------
       idea:
-        main_problem: Principal Problema a ser Solucionado
-        second_problems: Problemas Secundários a serem Solucionado
-        current_solution: Como este Problema é Solucionado Hoje
-        tag_line_pitch: Tag Line Pitch - Venda pro Consumidor
-        high_concept_pitch: High Concept Pitch - Venda pro Investidor
-        why_must_success: Por que você acredita que dará certo?
-        how_validate: Como a Hipótese foi Validada
+        main_problem: Principal Problema
+        second_problems: Problemas Secundários
+        current_solution: Como é Solucionado Hoje
+        tag_line_pitch: Tag Line Pitch
+        high_concept_pitch: High Concept Pitch
+        why_must_success: Por que dará certo?
+        how_validate: Como Validou
 
   # Business -----------------------------------------------------
       business:
@@ -47,7 +47,7 @@ pt-BR:
         value_proposition: Proposta de Valor
         advantages: Vantagens sobre a Concorrência
         disadvantages: Desvantagens sobre a Concorrência
-        main_product_price: Preço do Principal Produto ou Serviço
+        main_product_price: Preço do Produto/Serviço
         costumer_success_stories: Feedback positivo de Consumidores
 
   # Project -----------------------------------------------------
@@ -62,12 +62,12 @@ pt-BR:
       market:
         segment: Segmento de Atuação
         currency_iso: Moeda
-        total_money: Total de Dinheiro Movimentado
-        money_source_link: Fonte do dado sobre Dinheiro Movimentado
-        source_money: Fonte do dado sobre Dinheiro Movimentado
+        total_money: Dinheiro Movimentado
+        money_source_link: Fonte sobre Dinheiro Movimentado
+        source_money: Fonte sobre Dinheiro Movimentado
         total_costumers: Total de Consumidores
-        source_costumer: Fonte do dado sobre Consumidores
-        costumers_source_link: Fonte do dado sobre Consumidores
+        source_costumer: Fonte sobre Consumidores
+        costumers_source_link: Fonte Consumidores
         trends_insight: Tendências e Inovações
         costumer_specification: Especificação dos Consumidores
 
@@ -76,36 +76,36 @@ pt-BR:
         grow_strategy: Estratégia de Crescimento
         lead_cust: Custo de Lead
         conversion_cust: Custo de Conversão
-        daily_growth_rate: Taxa de Crescimento da Conversão Diária
+        daily_growth_rate: Crescimento Diário de Conversões
         costumer_channels: Canais com os Clientes
         amount_daily_lead: Fluxo de Leads Diário
 
   # Financial -----------------------------------------------------
       financial:
-        bootstrapped: Total Investido de Bootstrap
-        total_revenue: Faturamento Mensal Total
-        total_expense: Custo Mensal Total
-        total_bootstrapped: Total Investido de Bootstrapping
+        bootstrapped: Investimento Bootstrapping
+        total_revenue: Faturamento Mensal
+        total_expense: Custo Mensal
+        total_bootstrapped: Investimento Bootstrapping
         total_users: Total de Usuários (não pagantes)
         total_costumers: Total de Consumidores (pagantes)
-        market_penetration: Taxa de Penetração de Mercado (em porcentagem)
+        market_penetration: Penetração de Mercado (porcentagem)
 
   # Provider -----------------------------------------------------
       provider:
         name: Nome do Parceiro/Fornecedor
         segment: Segmento de Atuação
-        provides: Serviço ou Produto Concedido/Fornecido
+        provides: Serviço/Produto Concedido/Fornecido
         counterpart: Contrapartidas Cobradas
 
   # Competitor -----------------------------------------------------
       competitor:
         name: Nome do Concorrente
-        price: Preço Praticado por este Concorrente
-        total_revenue: Faturamento Médio Mensal deste Concorrente
-        total_costumers: Total de Consumidores deste Concorrente
-        bad_stories: Pontos de INSATISFEITOS dos Consumidores neste Concocrente
-        success_stories: Pontos de SATISFAÇÃO dos Consumidores neste Concocrente
-        your_advantage: Suas Vantagens Competitivas sobre este Concorrente
+        price: Preço Praticado
+        total_revenue: Faturamento Médio Mensal
+        total_costumers: Total de Consumidores
+        bad_stories: Pontos de INSATISFEITOS dos Consumidores
+        success_stories: Pontos de SATISFAÇÃO dos Consumidores
+        your_advantage: Suas Vantagens Competitivas
 
   # Campaign -----------------------------------------------------
       campaign:

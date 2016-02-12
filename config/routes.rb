@@ -67,6 +67,8 @@ Rails.application.routes.draw do
   # StartUps raising routes
   scope 'showroom' do
     get '' => 'showroom#index', as: :showroom_index
+    get 'pitches' => 'showroom#pitches', as: :showroom_pitches
+    get 'startups' => 'showroom#startups', as: :showroom_startups
   end
 
   # Dashboard Tracking URLs
@@ -91,4 +93,6 @@ Rails.application.routes.draw do
 
   # RootRoute main LandingPage
   root to: 'home#index'
+
+  get "/:permalink" => "showroom#show", as: :showroom_campaign
 end
