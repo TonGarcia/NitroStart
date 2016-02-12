@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = @nested_obj.ideas
   end
 
   # GET /ideas/1

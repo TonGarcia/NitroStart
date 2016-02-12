@@ -8,7 +8,7 @@ class FinancialsController < ApplicationController
   # GET /financial
   # GET /financial.json
   def index
-    @financials = Financial.all
+    @financials = @nested_obj.financials
   end
 
   # GET /financial/1

@@ -8,7 +8,7 @@ class CompetitorsController < ApplicationController
   # GET /competitors
   # GET /competitors.json
   def index
-    @competitors = Competitor.all
+    @competitors = @nested_obj.competitors
   end
 
   # GET /competitors/1

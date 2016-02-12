@@ -9,7 +9,7 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = Business.all
+    @businesses = @nested_obj.businesses
   end
 
   # GET /businesses/1
