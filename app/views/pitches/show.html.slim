@@ -16,12 +16,19 @@
 
 .divider
 
-.row
-  -widgets.each do |widget|
+ul.tabs
+  li.tab.col.s3: a.purple-text href="#validations" Validações
+  li.tab.col.s3: a.purple-text href="#canvas" Canvas
+
+.row#validations
+  - validation_widgets.each do |widget|
+    .col.l4.s12
+      = render "pitches/partials/widgets/#{widget}"
+.row#canvas
+  -canvas_widgets.each do |widget|
     .col.l4.s12
       =render "pitches/partials/widgets/#{widget}"
 
-/ TODO add card showing Supporters feedbacks & metrics
 
 -@float_opts={link: edit_pitch_path(@pitch.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

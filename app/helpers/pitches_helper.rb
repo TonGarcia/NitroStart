@@ -3,6 +3,14 @@ module PitchesHelper
     %w(hypothesis traction market_knowledge  project_build business team financial competitors provider)
   end
 
+  def validation_widgets
+    %w(hypothesis campaign)
+  end
+
+  def canvas_widgets
+    %w(traction market_knowledge  project_build business team financial competitors provider)
+  end
+
   def forbes_pitch_deck
     'http://www.forbes.com/sites/chancebarnett/2014/05/09/investor-pitch-deck-to-raise-money-for-startups/#4dc4c6ee4863'
   end
