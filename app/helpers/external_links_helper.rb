@@ -19,6 +19,10 @@ module ExternalLinksHelper
     'https://www.twitter.com/NitroStart'
   end
 
+  def nitro_blog_url
+    'http://blog.nitrostart.com.br'
+  end
+
   def blog_startupers_landing_links
     [
         {href:'#', content: 'Entenda o que é Startup'},

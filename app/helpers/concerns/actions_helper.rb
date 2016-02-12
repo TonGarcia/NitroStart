@@ -77,9 +77,19 @@ module Concerns::ActionsHelper
     ]
   end
 
+  def general_actions
+    {
+        label: 'Geral',
+        actions: [
+            {name: 'Acesso Rápido', icon: 'ion-link', link: root_path}
+        ]
+    }
+  end
+
 # Array of grouped actions
   def aside_grouped_actions
     [
+      general_actions,
       # supporter_actions,
       start_up_actions,
       investor_actions,
