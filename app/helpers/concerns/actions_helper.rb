@@ -18,7 +18,6 @@ module Concerns::ActionsHelper
         # {name:'Trending Problemas', icon:'ion-speakerphone', link: start_ups_path, action_controller:'start_ups'},
         # {name:t('actions.dashboard.start_ups'), icon:'ion-speedometer', link: dashboard_start_ups_path, action_controller:'dashboard'},
         {name:t('actions.pitches.index'), icon:'mdi-action-assignment', link: pitches_path, action_controller:'pitches'},
-        {name:t('actions.problems.trending'), icon:'ion-ios-people', link: pitches_path, action_controller:'pitches'},
       ]
     }
 
@@ -46,6 +45,7 @@ module Concerns::ActionsHelper
         label: 'Apoiadores',
         actions: [
           {name:t('actions.problems.new'), icon:'ion-android-warning', link: showroom_index_path, action_controller:'showroom'},
+          {name:t('actions.problems.trending'), icon:'ion-ios-people', link: pitches_path, action_controller:'pitches'},
         ]
     }
   end
@@ -80,11 +80,11 @@ module Concerns::ActionsHelper
 # Array of grouped actions
   def aside_grouped_actions
     [
-      # supporter_actions,
+      supporter_actions,
       start_up_actions,
       investor_actions,
-      partners_actions,
-      tools_actions
+      # partners_actions,
+      # tools_actions
     ]
   end
 end

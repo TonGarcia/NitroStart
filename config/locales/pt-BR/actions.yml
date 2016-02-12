@@ -20,7 +20,7 @@ pt-BR:
       show: Detalhamento do Pitch (Projeto)
       index: Pitches (Projetos)
       create: Novo Pitch (Projeto)
-      supporting: Apoiar Pitches
+      supporting: Apoiar Pitches (Projetos)
     start_ups:
       index: Startups (Empresas)
       invested: Nitradas (Investimentos)
@@ -41,4 +41,4 @@ pt-BR:
       edit: Atualizar o Problema
       index: Listagem de seus Problemas
       solutions: Propostas de Soluções
-      trending: TopTrending Problemas
+      trending: Top Trendings

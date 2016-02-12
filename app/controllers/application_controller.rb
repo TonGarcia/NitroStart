@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_user, unless: :login_not_required
   before_action :configure_permitted_parameters, if: :devise_controller?
-  add_breadcrumb '<i class="fa fa-home"></i> Início'.html_safe, '/'
+  add_breadcrumb '<i class="mdi-action-home"></i> Início'.html_safe, '/'
 
   # 404 Rendered
   def not_found

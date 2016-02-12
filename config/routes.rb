@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :problems
   get 'call_to_action/index'
 
   # Errors Routes

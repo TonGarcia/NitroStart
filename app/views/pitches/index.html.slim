@@ -9,8 +9,29 @@
     | Quanto mais você levanta informações, fecha parcerias ou conquista clientes, menor é a Quota NITRO.
 
 .row
-  =render 'pitches/partials/pitches_cards'
-  =render 'pitches/partials/pitches_table'
+  - @pitches.each do |pitch|
+    - @pitch = pitch
+
+    .col.l6.s12
+      .card
+        .content
+          .right.grey-text
+            =pitch.updated_at.strftime('%d/%m/%Y - %H:%M:%S')
+          .row
+            .col.l12.s12
+              a href="#{pitch_path(pitch.id)}"
+                h5 =pitch.name
+          .row
+            .col.l4.s4
+              a.col.l12.s12.btn href="#{pitch_path(pitch)}"
+                i.ion-eye
+            .col.l4.s4
+              a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
+                i.mdi-editor-mode-edit
+            .col.l4.s4
+              = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+                i.mdi-action-delete
+
 
 -@float_opts={link: new_pitch_path}
 .fixed-action-btn=render 'home/partials/components/float_button'

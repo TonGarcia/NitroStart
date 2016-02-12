@@ -113,8 +113,8 @@ section {
 
 h1.set-video {
   i {
-    top: -30px;
-    font-size: 8rem;
+    top: -20px;
+    font-size: 4rem;
     position: relative;
   }
 }
@@ -287,6 +287,12 @@ a.selector {
 
 .slim_margin_bottom {
   margin-bottom: 10px !important;
+}
+
+.set-pitch_brand {
+  img#avatar {
+    margin: 0 0 30px -30px;
+  }
 }
 
 .float_avatar {

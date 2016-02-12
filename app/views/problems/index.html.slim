@@ -1,0 +1,23 @@
+h1 Listing problems
+
+table
+  thead
+    tr
+      th Description
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @problems.each do |problem|
+      tr
+        td = problem.description
+        td = problem.user
+        td = link_to 'Show', problem
+        td = link_to 'Edit', edit_problem_path(problem)
+        td = link_to 'Destroy', problem, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Problem', new_problem_path

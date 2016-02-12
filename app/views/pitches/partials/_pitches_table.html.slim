@@ -1,18 +1,19 @@
-table.table.table-bordered
-  thead
-    tr
-      th Nome
-      th Problema
-      th Segmento
-      th Canvas
-      th Editar
-      th Deletar
-
-  tbody
-    -@pitches.each do |pitch|
-      -@pitch = pitch
-      -hypothesis = @pitch.active(:idea)
-
+.col.l12.s12
+  table.col.l12.s12.table.table-bordered
+    thead
       tr
-        td =@pitch.name
-        td =hypothesis.main_problem
+        th Nome
+        th Problema
+        th Segmento
+        th Canvas
+        th Editar
+        th Deletar
+
+    tbody
+      -@pitches.each do |pitch|
+        -@pitch = pitch
+        -hypothesis = @pitch.active(:idea)
+
+        tr
+          td =@pitch.name
+          td =hypothesis.main_problem

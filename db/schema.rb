@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121001306) do
+ActiveRecord::Schema.define(version: 20160206174906) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -159,6 +159,20 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
+
+  create_table "problems", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "problems", ["user_id"], name: "index_problems_on_user_id", using: :btree
+
+  create_table "problems_users", id: false, force: :cascade do |t|
+    t.integer "user_id",    limit: 4, null: false
+    t.integer "problem_id", limit: 4, null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.integer  "stage",               limit: 4,                   null: false
@@ -326,6 +340,7 @@ ActiveRecord::Schema.define(version: 20160121001306) do
   add_foreign_key "markets", "pitches"
   add_foreign_key "markets", "start_ups"
   add_foreign_key "pitches", "users"
+  add_foreign_key "problems", "users"
   add_foreign_key "projects", "pitches"
   add_foreign_key "projects", "start_ups"
   add_foreign_key "providers", "pitches"

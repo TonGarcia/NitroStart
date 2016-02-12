@@ -10,7 +10,7 @@ module Avatar
                       path: "#{self.to_s.downcase.pluralize}/:attachment/:id/:style/#{self.to_s.downcase}",
                       url: ':s3_domain_url',
                       styles: { original: '300x300>', thumb: '75x75>' },
-                      default_url: 'brand/fb_page_white_space.png', if: :avatar?
+                      default_url: 'brand/ios_app_icon.png', if: :avatar?
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/, if: :avatar?
     validates_attachment_size :avatar, less_than: 200.kilobyte, if: :avatar?
   end
