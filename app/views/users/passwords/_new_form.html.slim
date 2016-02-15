@@ -5,7 +5,9 @@
 
   .divider.custom
 
-  = devise_error_messages!
+  - unless resource.errors.empty?
+    #devise_error.alert
+      = devise_error_messages!
 
   .row
     .input-field.col.l12.s12

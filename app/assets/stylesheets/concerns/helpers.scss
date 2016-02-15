@@ -289,6 +289,13 @@ a.selector {
   margin-bottom: 10px !important;
 }
 
+#devise_error.alert {
+  h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
 .set-pitch_brand {
   img#avatar {
     margin: 0 0 30px -30px;
