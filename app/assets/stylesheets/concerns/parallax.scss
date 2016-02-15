@@ -33,11 +33,11 @@
 
 .hide-on-med-and-up {
   .section.no-pad-bot {
-    height: 100vh;
+    //height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-image:url(image_path("defaults/jk.jpg"));
+    background-image:url(image_path("defaults/startupers_cover.jpg"));
   }
 }
 
