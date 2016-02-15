@@ -23,6 +23,10 @@ class String
     self.sub('formatted_', '')
   end
 
+  def raw_lines
+    self.gsub(/\n/, '<br/>')
+  end
+
   def to_link
     Helpers::Formatter.link_formatter self
   end

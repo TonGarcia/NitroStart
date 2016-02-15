@@ -1,5 +1,7 @@
 class PitchesController < ApplicationController
-  add_breadcrumb I18n.t('actions.pitch.index'), :pitches_path
+  add_breadcrumb I18n.t('actions.pitches.index'), :pitches_path
+  add_breadcrumb I18n.t('actions.pitches.show'), :pitch_path, only: %w(show)
+  add_breadcrumb I18n.t('actions.pitches.new'), :new_pitch_path, only: %w(new)
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
   # GET /pitches/1/campaign

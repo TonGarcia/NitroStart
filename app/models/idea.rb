@@ -1,5 +1,6 @@
 class Idea < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include WidgetTracker
 
   # Relations

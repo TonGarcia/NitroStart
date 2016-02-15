@@ -56,27 +56,31 @@ module Formatter
   end
 
   def formatted_your_advantage
-    self.your_advantage.gsub(/\n/, '<br/>')
+    self.your_advantage.raw_lines
   end
 
   def formatted_advantages
-    self.advantages.gsub(/\n/, '<br/>')
+    self.advantages.raw_lines
   end
 
   def formatted_disadvantages
-    self.disadvantages.gsub(/\n/, '<br/>')
+    self.disadvantages.raw_lines
   end
 
   def formatted_counterpart
-    self.counterpart.gsub(/\n/, '<br/>')
+    self.counterpart.raw_lines
   end
 
   def formatted_provides
-    self.provides.gsub(/\n/, '<br/>')
+    self.provides.raw_lines
   end
 
   def formatted_costumer_specification
-    self.costumer_specification.gsub(/\n/, '<br/>')
+    self.costumer_specification.raw_lines
+  end
+
+  def formatted_second_problems
+    self.second_problems.raw_lines
   end
 
   def formatted_source_costumer

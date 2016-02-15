@@ -81,7 +81,7 @@ module Concerns::ActionsHelper
     {
         label: 'Geral',
         actions: [
-            {name: 'Acesso Rápido', icon: 'ion-link', link: root_path, action_controller:'call_to_action'}
+            {name: t('actions.call_to_action.index'), icon: 'ion-link', link: root_path, action_controller:'call_to_action'}
         ]
     }
   end

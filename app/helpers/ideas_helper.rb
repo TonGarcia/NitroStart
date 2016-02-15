@@ -8,7 +8,7 @@ module IdeasHelper
   end
 
   def idea_problem_attrs
-    [:main_problem, :second_problems, :current_solution]
+    [:main_problem, :formatted_second_problems, :current_solution]
   end
 
   def idea_hypothesis_attrs

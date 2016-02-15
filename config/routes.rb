@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :problems
-  get 'call_to_action/index'
+  get 'call_to_action' => 'call_to_action#index', as: :call_to_action
 
   # Errors Routes
   match '/403', to: 'errors#forbidden', via: :all, as: :forbidden
