@@ -31,7 +31,7 @@ module Concerns::ActionsHelper
     {
         label: 'Investidor',
         actions: [
-            {name:t('actions.pitches.supporting'), icon:'ion-thumbsup', link: showroom_pitches_path, action_controller:'showroom'},
+            {name:t('actions.pitches.supporting'), icon:'ion-thumbsup', link: showroom_pitches_path, action_controller:'showroom.pitches'},
             # {name:t('actions.showroom.index'), icon:'mdi-action-dashboard', link: showroom_index_path, action_controller:'showroom'},
             # {name:t('actions.start_ups.invested'), icon:'ion-flame', link: showroom_index_path, action_controller:'showroom'},
             # {name:t('actions.dashboard.investments'), icon:'mdi-action-trending-up', link: dashboard_investments_path, action_controller:'dashboard'},
@@ -81,7 +81,7 @@ module Concerns::ActionsHelper
     {
         label: 'Geral',
         actions: [
-            {name: 'Acesso Rápido', icon: 'ion-link', link: root_path}
+            {name: 'Acesso Rápido', icon: 'ion-link', link: root_path, action_controller:'call_to_action'}
         ]
     }
   end

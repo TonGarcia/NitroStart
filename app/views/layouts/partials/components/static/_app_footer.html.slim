@@ -1,8 +1,10 @@
-footer#company_footer.hide-on-med-and-down.white
+footer#company_footer.white
   #main_footer
     .col.l12.s12
       .row
-        .col.l2.s12
+        .col.l2.s12.hide-on-small-only
+          =image_tag('brand/nitro_purple_logo.png', class:'brand', alt: slogan)
+        .col.l2.s6.offset-s3.hide-on-med-and-up
           =image_tag('brand/nitro_purple_logo.png', class:'brand', alt: slogan)
         .actions.col.l4.s12
           ul.contact_us.right
@@ -11,13 +13,27 @@ footer#company_footer.hide-on-med-and-down.white
           ul.about_product
             li: a.blue-grey-text Termos de Uso
             li: a.blue-grey-text Política de Privacidade
+
+        .col.l6.s12.mobile
+          .social_links
+            .col.s2.offset-s1.offset-l2
+              a.purple-text href="#{youtube_channel_url}" target="_blank"
+                i.fa.fa-youtube-play
+            .col.s2
+              a.purple-text href="#{face_page_url}" target="_blank"
+                i.fa.fa-facebook-square
+            .col.s2
+              a.purple-text href="#{twitter_url}" target="_blank"
+                i.fa.fa-twitter-square
+            .col.s2
+              a.purple-text href="#{youtube_channel_url}" target="_blank"
+                i.fa.fa-instagram
+            .col.s2
+              a.purple-text href="#{youtube_channel_url}" target="_blank"
+                i.ion-social-whatsapp
+
       #copyright.row
-        .col.l12.s12.blue-grey-text =app_footer_description
-        .col.l12.s12.blue-grey-text =company_footer_description
-      .row
-        #fb_like_box.right.col.l4
-          =render 'layouts/partials/components/static/fb_like_box'
-        .col.l1=pinit_button
-        .col.l2=like_button(app_id=ENV['FACEBOOK_KEY'])
-        #gplus.col.l3: .white=google_plus_button size: 'medium'
-        .col.l2=twitter_button
+        .col.l6.s12
+          .col.l12.s12.blue-grey-text.center =company_footer_description
+          .col.l12.s12.hide-on-med-and-up.blue-grey-text =slogan
+          .col.l12.s12.hide-on-small-only.blue-grey-text =app_footer_description

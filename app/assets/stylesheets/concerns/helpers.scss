@@ -347,6 +347,12 @@ a.selector {
   padding: 15px 25px;
 }
 
+.social_links {
+  a {
+    font-size: 2.5rem;
+  }
+}
+
 // Mobile helpers
 @media only screen and (max-width : 992px) {
   .margin_top_on_small {
