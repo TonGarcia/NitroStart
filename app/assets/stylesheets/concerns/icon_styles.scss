@@ -7,6 +7,16 @@ i.left-icon {
   }
 }
 
+.right-icon {
+  &:before {
+    margin-left: 15px;
+  }
+}
+
+.bit_bigger {
+  font-size: 1.4rem;
+}
+
 ul.advantages {
   li i {
     font-size: 2rem;

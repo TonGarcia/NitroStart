@@ -90,4 +90,8 @@ module Formatter
   def formatted_source_money
     self.money_source_link.to_link
   end
+
+  def formatted_inner_link
+    "up.nitrostart.com.br/#{self.link}"
+  end
 end

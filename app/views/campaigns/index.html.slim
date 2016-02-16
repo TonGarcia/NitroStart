@@ -1,25 +1,15 @@
-h1 Listing campaigns
+h4.center.purple-text Campanhas de Test A/B para Apoiadores
+=render  'layouts/partials/components/static/reference_sub_title'
 
-table
-  thead
-    tr
-      th Link
-      th Visible attrs
-      th Body
-      th
-      th
-      th
+.divider
 
-  tbody
-    - @campaigns.each do |campaign|
-      tr
-        td = campaign.link
-        td = campaign.visible_attrs
-        td = campaign.body
-        td = link_to 'Show', campaign
-        td = link_to 'Edit', edit_campaign_path(campaign)
-        td = link_to 'Destroy', campaign, data: {:confirm => 'Are you sure?'}, :method => :delete
+.row
+  -@nested_obj = @pitch
+  -@ref_attrs = campaign_index_attrs
 
-br
+  - @campaigns.each do |campaign|
+    -@current_obj = campaign
+    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-= link_to 'New Campaign', new_campaign_path
+-@float_opts={link: new_pitch_campaign_path(@pitch)}
+.fixed-action-btn=render 'home/partials/components/float_button'

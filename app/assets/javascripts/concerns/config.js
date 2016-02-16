@@ -6,21 +6,37 @@ function config_redactor() {
         formattingAdd: [
             {
                 tag: 'blockquote',
-                title: 'Citar',
-                class: 'fontsize-base quote',
+                title: 'Citação',
                 clear: true
             },
 
             {
-                tag: 'p',
-                title: 'Cabeçalho 1',
-                class: 'fontsize-larger fontweight-semibold',
+                tag: 'pre',
+                title: 'Área Técnica',
                 clear: true
             },
+
             {
-                tag: 'p',
+                tag: 'h1',
+                title: 'Cabeçalho 1',
+                clear: true
+            },
+
+            {
+                tag: 'h2',
                 title: 'Cabeçalho 2',
-                class: 'fontsize-large',
+                clear: true
+            },
+
+            {
+                tag: 'h3',
+                title: 'Cabeçalho 3',
+                clear: true
+            },
+
+            {
+                tag: 'h4',
+                title: 'Cabeçalho 4',
                 clear: true
             }],
         lang: 'pt_br',

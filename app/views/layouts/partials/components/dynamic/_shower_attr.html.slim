@@ -1,5 +1,4 @@
 -@shower_comp = {} if @shower_comp.nil?
--@current_model.nil? ? current_model = params[:controller].singularize : current_model = @current_model
 
 -I18n.with_options(scope: "activerecord.attributes.#{current_model}") do |i18n|
   -attrs = send(@shower_attrs)

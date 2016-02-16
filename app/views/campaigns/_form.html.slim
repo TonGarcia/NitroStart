@@ -14,10 +14,12 @@
       = f.label :link
       .footer-info.purple-text Prefira algo simples, direto e que identifique bem seu projeto. Tente não usar hífen, underline etc.
 
+  /! TODO add show canvas parts here to aux on create texts
 
   .spacing_rows
     .row
-      = render 'campaigns/partials/hand_free_filling'
+      #hand_free_filling
+        = f.text_area :body, class: 'redactor col l12 s12', rows: 40, cols: 120
 
 
   - @footer_link=true

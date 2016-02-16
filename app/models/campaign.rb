@@ -1,5 +1,6 @@
 class Campaign < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include WidgetTracker
 
   # Rails validations

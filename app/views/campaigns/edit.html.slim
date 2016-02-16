@@ -1,8 +1,12 @@
-h1 Editing campaign
+h4.center.purple-text Edição da Campanha
+=render  'layouts/partials/components/static/reference_sub_title'
+=render 'campaigns/partials/nitro_services_ad'
 
-== render 'form'
+.divider
 
-= link_to 'Show', @campaign
-'|
-= link_to 'Back', campaigns_path
+=render 'form'
+
+-@footer_link=true
+-@back_float_button_link = pitch_campaigns_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'
 

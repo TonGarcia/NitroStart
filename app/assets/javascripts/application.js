@@ -12,7 +12,6 @@
 //= require jquery.mask.min
 //= require redactor-rails
 //= require redactor-rails/plugins
-//= require lib/redactor/langs/pt_br
 //= require lib/redactor/video
 
 // My JS

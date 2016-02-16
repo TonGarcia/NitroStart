@@ -4,7 +4,11 @@ module ApplicationHelper
     'NitroStart'
   end
 
-  # Return the translation for the obj.attr passed
+  def current_model
+    @current_model.nil? ? params[:controller].singularize : @current_model
+  end
+
+    # Return the translation for the obj.attr passed
   def t_attrs(str_obj_attr)
     t("activerecord.attributes.#{str_obj_attr}")
   end
