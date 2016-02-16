@@ -15,30 +15,9 @@
       .footer-info.purple-text Prefira algo simples, direto e que identifique bem seu projeto. Tente não usar hífen, underline etc.
 
 
-
   .spacing_rows
     .row
-      .col.s12.l6.offset-l4
-        | Forma de Exibição da Campanha: &nbsp;
-
-        p
-          = f.radio_button :active_type, 'canvas', value: 1, class: 'with-gap', checked: @campaign.canvas_type?
-          label for="campaign_active_type_canvas" Canvas
-
-          = f.radio_button :active_type, 'body', value: 2, class: 'with-gap', checked: @campaign.body_type?
-          label for="campaign_active_type_body" Escrita Livre
-
-
-
-  .spacing_rows
-    .row
-      .col.s12.m12
-        ul.tabs
-          li.tab.col.s3: a href="#attrs_filling" onclick="trigger_click('#campaign_active_type_canvas')" =f.label :visible_attrs, class: 'purple-text'
-          li.tab.col.s3: a href="#hand_free_filling" onclick="trigger_click('#campaign_active_type_body')" =f.label :body, class: 'purple-text'
-
-
-
+      = render 'campaigns/partials/hand_free_filling'
 
 
   - @footer_link=true

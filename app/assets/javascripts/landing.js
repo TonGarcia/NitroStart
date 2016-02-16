@@ -11,7 +11,7 @@
 //= require prettyphoto-rails
 
 // My JS
-//= require partners
+//= require app/partners
 //= require concerns/fast_fix
 //= require concerns/accounting
 

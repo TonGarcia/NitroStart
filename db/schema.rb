@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206174906) do
+ActiveRecord::Schema.define(version: 20160215192313) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -210,6 +210,24 @@ ActiveRecord::Schema.define(version: 20160206174906) do
   add_index "providers", ["pitch_id"], name: "index_providers_on_pitch_id", using: :btree
   add_index "providers", ["start_up_id"], name: "index_providers_on_start_up_id", using: :btree
 
+  create_table "redactor_assets", force: :cascade do |t|
+    t.string   "data_file_name",    limit: 255, null: false
+    t.string   "data_content_type", limit: 255
+    t.integer  "data_file_size",    limit: 4
+    t.integer  "assetable_id",      limit: 4
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width",             limit: 4
+    t.integer  "height",            limit: 4
+    t.integer  "campaign_id",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
+  add_index "redactor_assets", ["campaign_id"], name: "index_redactor_assets_on_campaign_id", using: :btree
+
   create_table "social_sessions", force: :cascade do |t|
     t.string   "uid",            limit: 65,  null: false
     t.string   "name",           limit: 60,  null: false
@@ -348,6 +366,7 @@ ActiveRecord::Schema.define(version: 20160206174906) do
   add_foreign_key "projects", "start_ups"
   add_foreign_key "providers", "pitches"
   add_foreign_key "providers", "start_ups"
+  add_foreign_key "redactor_assets", "campaigns"
   add_foreign_key "social_sessions", "users"
   add_foreign_key "start_ups", "pitches"
   add_foreign_key "supporters", "pitches"

@@ -110,8 +110,8 @@ pt-BR:
   # Campaign -----------------------------------------------------
       campaign:
         link: Link do projeto up.nitrostart.com.br/
-        body: Corpo escrito Livremente
-        visible_attrs: Gerar a partir do Canvas
+        body: Escrita Livre
+        visible_attrs: Gerar via Canvas
 
   # Teammate -----------------------------------------------------
       teammate:

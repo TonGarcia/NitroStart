@@ -1,5 +1,6 @@
 .row
-  = image_tag(@pitch.cover.url, class: 'col l2 s12 banner')
+  = image_tag(@pitch.cover.url, class: 'col l2 s6 banner')
+  = image_tag(@pitch.avatar.url, class: 'col l2 s4 offset-s2 banner hide-on-med-and-up semi-circle')
 
   .col.l8
     h4.center.orange-text.text-darken-1
@@ -11,7 +12,7 @@
       i.left-icon.slim.fa.fa-external-link
       | Este fluxo foi baseado no Pitch Deck da Forbes
 
-  = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 s6 offset-s3 semi-circle')
+  = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 s6 offset-s3 semi-circle hide-on-small-only')
 
 
 .divider

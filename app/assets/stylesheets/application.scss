@@ -4,11 +4,13 @@
  *= require nprogress
  *= require nprogress-bootstrap
  *= require admin_materialize
- *= stub scaffolds
+ *= require redactor-rails
+ *= require redactor-rails/plugins
+ *= stub scaffolds.scss
  *
  * My Styles
  *= require sign
- *= require pitches
+ *= require app/pitches
  *= require concerns/theme.scss
  *= require concerns/helpers
  *= require concerns/fast_fix
@@ -19,4 +21,4 @@
  */
 
 @import 'ionicons';
-@import 'materialize_config';
+@import 'lib/materialize_config';

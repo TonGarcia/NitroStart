@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :problems
+  mount RedactorRails::Engine => '/redactor_rails'
   get 'call_to_action' => 'call_to_action#index', as: :call_to_action
 
   # Errors Routes

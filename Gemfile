@@ -69,9 +69,13 @@ gem 'prettyphoto-rails', '~> 0.2.1'
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.7'
 
-# GEMs for UPLOAD files
+# GEMs for INPUT UPLOAD
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip', '~> 4.3.0'
+
+# Redactor Upload Files
+gem 'mini_magick'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: '1578777fe3f30140347ebf27d1943471bbe4d425'
 
 # Faster & easier HTML
 gem 'slim-rails', '~> 3.0.1'
@@ -117,9 +121,6 @@ group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -172,6 +173,9 @@ gem 'bourbon', '~> 4.2.6'
 
 # Gem to create the social OAuth easily
 gem 'socials', '~> 1.0.1'
+
+# Redactor TextArea
+gem 'redactor-rails', '~> 0.5.0'
 
 # AdminTheme
 gem 'ionicons-rails', '~> 2.0.0'
