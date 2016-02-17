@@ -152,7 +152,6 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.datetime "updated_at",             null: false
     t.string   "avatar",     limit: 255
     t.string   "cover",      limit: 255
-    t.string   "image",      limit: 255
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
