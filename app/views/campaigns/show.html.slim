@@ -10,57 +10,14 @@ h4.center.purple-text Detalhamento da Campanha
       =@campaign.formatted_inner_link
 
 .row
-  .col.l4.s12
+  .col.l8
     .card-panel
-      h5.purple-text.center Alcance
-      .divider
-
-      .row
-        .col.l12.s12
-          h6.center Visualizações
-          h5.center.purple-text
-            i.left-icon.slim.ion-eye
-            | 91.372.991
-
-      .row
-        .col.l12.s12
-          h6.center Apoiadores
-          h5.center.purple-text
-            i.left-icon.slim.ion-thumbsup
-            | 3.453.543
-
-      .row
-        .col.l12.s12
-          h6.center Consumidores
-          h5.center.purple-text
-            i.left-icon.slim.ion-ios-people
-            | 720
-
-      .row
-        .col.l12.s12
-          h6.center Market Share
-          h5.center.purple-text
-            i.left-icon.slim.fa.fa-pie-chart
-            | 0,0015%
-
-      .row
-        .col.l12.s12
-          h6.center Crédito Adquirido
-          h5.center.purple-text
-            i.left-icon.slim.ion-cash
-            | R$ 155.749,00
-
-      .divider
-
-      .row
-        a.btn.col.l12.s12
-          i.left-icon.ion-speakerphone
-          | Feedbacks
+      .campaign_body
+        =raw @campaign.body
+  .col.l4
+    .card-panel
+      = render 'campaigns/partials/range_tracking'
 
 
-  .col.l8.s12
-    .card-panel.campaign_body
-      =raw @campaign.body
-
--@float_opts={link: edit_pitch_campaign_path(@pitch.id, @campaign.id), main_btn_icon: 'ion-edit'}
+    -@float_opts={link: edit_pitch_campaign_path(@pitch.id, @campaign.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

@@ -46,8 +46,11 @@ coverage/
 /doc/app/
 /doc/features.html
 /doc/specs.html
+/vendor/uploads
 /public/cache
+/public/uploads
 /public/stylesheets/compiled
+/public/system
 /public/system/*
 /spec/tmp/*
 /cache

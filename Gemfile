@@ -146,6 +146,11 @@ gem 'omniauth-instagram', '~> 1.0.2'
 gem 'twitter', '~> 5.15.0'
 gem 'linkedin', '~> 1.0.0'
 
+# World Countries Flags
+gem 'world-flags', '~> 0.6.5'
+# ISO Country Codes to use WorldFlags & Internationalize
+gem 'countries', '~> 1.2', '>= 1.2.5'
+
 # SocialButtons PlugIn
 gem 'shareable', '~> 1.1.4'
 

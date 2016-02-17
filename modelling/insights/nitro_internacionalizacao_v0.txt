@@ -1,0 +1,17 @@
+cara, como eu fiz tudo para ser N para N
+a pessoa pode criar várias campanhas de apoiadores
+e traduzer cada uma para um idioma
+e configurar qual a moeda corrente q ela vai usar
+Dolar, Euro ou Real
+se for Real a gente usa a Cielo q converte de Dolar e  Euro pra Real
+e cobramos aquela nossa %
+mas o se cara quiser usar Euro e Dolar a gente usa o PayPal e a gente aumenta a %
+aí o cara n sabe falar frances
+ele contrata alguem q estuda frances rpa fazer a tela pra ele em frances
+pq? temos q por bem explicito q o cara n pode usar o google tradutor
+pq? pq queremos q ele use girias
+a camapanha dele n pode ser um data-content
+um conteúdo de dados vomitados
+tem q ser algo envolvente
+e ai ja vendemos serviços de marketeiros tb
+saca?

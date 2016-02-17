@@ -6,6 +6,8 @@
  *= require admin_materialize
  *= require redactor-rails
  *= require redactor-rails/plugins
+ *= require flags/basic
+ *= require flags/flags32
  *= stub scaffolds.scss
  *
  * My Styles
@@ -18,6 +20,7 @@
  *= require media_queries/medium-and-down
  *= require media_queries/small-and-down
  *= require concerns/icon_styles.scss
+ *= require_tree ./app
  */
 
 @import 'ionicons';
