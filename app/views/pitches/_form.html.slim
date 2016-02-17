@@ -16,9 +16,8 @@
           | Logo do projeto.
           br
           a href="#" Clique aqui caso não tenha
-        - @pitch.avatar_file_name ? brand = @pitch.avatar.url(:original) : brand = 'brand/fb_page_white_space.png'
         .col.l12.s11.offset-s2
-          = image_tag brand, class: 'col l8 s6 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
+          = image_tag @pitch.avatar.url, class: 'col l8 s6 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
           = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
         .center.strong Tamanho máximo:
         h6.center  1024 x 1024
@@ -30,8 +29,7 @@
           | Banner do projeto.
           br
           a href="#" Clique aqui caso não tenha
-        -@pitch.cover_file_name ? brand = @pitch.cover.url(:original) : brand = 'defaults/startupers_cover.jpg'
-        =image_tag brand, class: 'col l12 s12', id: 'cover', onclick: 'trigger_invisible("#pitch_cover")'
+        =image_tag @pitch.cover.url, class: 'col l12 s12', id: 'cover', onclick: 'trigger_invisible("#pitch_cover")'
         = f.file_field :cover, onchange: 'show_brand(this, "#cover")', class: 'invisible'
         .center.strong Tamanho máximo:
         h6.center  1350 x 300 & 350 KB

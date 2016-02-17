@@ -9,6 +9,11 @@ class ErrorsController < ApplicationController
     render file: 'public/403.html.slim', status: :not_found, layout: 'errors'
   end
 
+  # 500
+  def internal_server_error
+    render file: 'public/500.html.slim', status: :not_found, layout: 'errors'
+  end
+
   # # DRY error display
   # def show
   #   render file: "public/#{params[:code]}.html.slim", status: :not_found, layout: layout_setup

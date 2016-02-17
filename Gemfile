@@ -69,12 +69,10 @@ gem 'prettyphoto-rails', '~> 0.2.1'
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.7'
 
-# GEMs for INPUT UPLOAD
-gem 'aws-sdk', '< 2.0'
-gem 'paperclip', '~> 4.3.0'
-
 # Redactor Upload Files
 gem 'mini_magick'
+gem 'carrierwave-aws', '~> 1.0'
+gem 'aws-sdk', '~> 2.2', '>= 2.2.16'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: '1578777fe3f30140347ebf27d1943471bbe4d425'
 
 # Faster & easier HTML

@@ -13,6 +13,7 @@
 //= require redactor-rails
 //= require redactor-rails/plugins
 //= require lib/redactor/video
+//= require lib/redactor/config
 
 // My JS
 //= require concerns/fast_fix

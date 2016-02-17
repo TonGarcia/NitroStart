@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215192313) do
+ActiveRecord::Schema.define(version: 20160217103009) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -145,19 +145,14 @@ ActiveRecord::Schema.define(version: 20160215192313) do
   add_index "markets", ["start_up_id"], name: "index_markets_on_start_up_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "name",                limit: 55,  null: false
-    t.datetime "cover_updated_at"
-    t.integer  "cover_file_size",     limit: 4
-    t.string   "cover_content_type",  limit: 255
-    t.string   "cover_file_name",     limit: 255
-    t.datetime "avatar_updated_at"
-    t.integer  "avatar_file_size",    limit: 4
-    t.string   "avatar_content_type", limit: 255
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "video_link",          limit: 255
-    t.integer  "user_id",             limit: 4,   null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "name",       limit: 55,  null: false
+    t.string   "video_link", limit: 255
+    t.integer  "user_id",    limit: 4,   null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "avatar",     limit: 255
+    t.string   "cover",      limit: 255
+    t.string   "image",      limit: 255
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
@@ -177,20 +172,17 @@ ActiveRecord::Schema.define(version: 20160215192313) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "stage",               limit: 4,                   null: false
-    t.datetime "avatar_updated_at"
-    t.integer  "avatar_file_size",    limit: 4
-    t.string   "avatar_content_type", limit: 255
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "award_source",        limit: 255
-    t.string   "patent_source",       limit: 255
-    t.boolean  "awards",                          default: false, null: false
-    t.boolean  "patent",                          default: false, null: false
-    t.boolean  "active",                          default: true,  null: false
-    t.integer  "pitch_id",            limit: 4
-    t.integer  "start_up_id",         limit: 4
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.integer  "stage",         limit: 4,                   null: false
+    t.string   "award_source",  limit: 255
+    t.string   "patent_source", limit: 255
+    t.boolean  "awards",                    default: false, null: false
+    t.boolean  "patent",                    default: false, null: false
+    t.boolean  "active",                    default: true,  null: false
+    t.integer  "pitch_id",      limit: 4
+    t.integer  "start_up_id",   limit: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "avatar",        limit: 255
   end
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree
@@ -247,15 +239,11 @@ ActiveRecord::Schema.define(version: 20160215192313) do
   add_index "social_sessions", ["user_id"], name: "index_social_sessions_on_user_id", using: :btree
 
   create_table "start_ups", force: :cascade do |t|
-    t.string   "name",               limit: 45,  null: false
-    t.datetime "brand_updated_at"
-    t.integer  "brand_file_size",    limit: 4
-    t.string   "brand_content_type", limit: 255
-    t.string   "brand_file_name",    limit: 255
-    t.integer  "equity_requested",   limit: 4,   null: false
-    t.integer  "pitch_id",           limit: 4,   null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "name",             limit: 45, null: false
+    t.integer  "equity_requested", limit: 4,  null: false
+    t.integer  "pitch_id",         limit: 4,  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "start_ups", ["pitch_id"], name: "index_start_ups_on_pitch_id", using: :btree
@@ -339,6 +327,7 @@ ActiveRecord::Schema.define(version: 20160215192313) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.integer  "invited_by_id",          limit: 4
+    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

@@ -1,0 +1,19 @@
+/! Cover Image (a banner, not a slider)
+#index-banner.parallax-container.expanded
+  .section.no-pad-bot
+    .container
+      .row
+        .col.l10.offset-l1
+          h1.header.center.white-text.shadow 500
+        .row.center
+          h3.header.col.s12.white-text.shadow Erro Interno no Servidor.
+          h4.header.col.s12.white-text.shadow Ooops!!! Por essa não esperávamos...
+          h4.header.col.s12.white-text.shadow Por favor, Contate nosso Suporte.
+        .row
+          =link_to root_path, class: 'btn-large col l6 offset-l2' do
+            i.ion-arrow-return-left.left-icon
+            | Voltar para a NITRO START
+
+  .parallax
+    .overlay
+    =image_tag('statics/500_space.png', id: 'cover', alt: 'Realize Sonhos com DINHEIRO dos Outros e Ganhe mais com o SUOR do outros')

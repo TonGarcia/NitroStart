@@ -1,7 +1,9 @@
 class Project < ActiveRecord::Base
   # Concerns Dependencies
-  include Avatar
   include WidgetTracker
+
+  # Attachments
+  mount_uploader :avatar, AvatarUploader
 
   # Relations
   belongs_to :pitch

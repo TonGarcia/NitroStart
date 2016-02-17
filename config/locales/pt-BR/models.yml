@@ -27,7 +27,7 @@ pt-BR:
         cover: Banner
         cover_file_size: Tamanho do Banner
         avatar: Logo
-        cover_file_size: Tamanho da Logo
+        avatar_file_size: Tamanho da Logo
         user: Criador
 
   # Idea -----------------------------------------------------

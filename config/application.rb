@@ -6,6 +6,20 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Amazon S3 With paper-clip
+aws_config = YAML.load_file("./config/aws.yml")
+aws_dev = aws_config['development']
+aws_prod = aws_config['production']
+
+# Amazon S3 With paper-clip (ENV)
+Rails.env.production? ? aws = aws_prod : aws = aws_dev
+aws = aws.deep_symbolize_keys
+
+ENV['AWS_REGION'] = aws[:region]
+ENV['S3_BUCKET_NAME'] = aws[:bucket]
+ENV['AWS_ACCESS_KEY_ID'] = aws[:access_key_id]
+ENV['AWS_SECRET_ACCESS_KEY'] = aws[:secret_access_key]
+
 module NitroStart
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -44,23 +58,17 @@ module NitroStart
     config.assets.initialize_on_precompile = false
     config.active_record.raise_in_transactional_callbacks = true
 
-    # Amazon S3 With paper-clip
-    aws_config = YAML.load_file("#{Rails.root.to_s}/config/aws.yml")
-    aws_dev = aws_config['development']
-    aws_prod = aws_config['production']
-
-    # Amazon S3 With paper-clip (ENV)
-    Rails.env.production? ? aws = aws_prod : aws = aws_dev
-    aws = aws.symbolize_keys!
-
+    # Config PaperClip
     config.paperclip_defaults = {
         storage: :s3,
         s3_credentials: {
-            url: "https://s3.amazonaws.com/#{aws[:bucket]}/",
-            bucket: aws[:bucket],
-            region: aws[:region],
-            access_key_id: aws[:access_key_id],
-            secret_access_key: aws[:secret_access_key]
+            storage: :s3,
+            s3_region: ENV['AWS_REGION'],
+            s3_credentials: {
+                bucket: ENV['S3_BUCKET_NAME'],
+                access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+            }
         }
     }
   end

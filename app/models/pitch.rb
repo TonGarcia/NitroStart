@@ -1,9 +1,11 @@
 class Pitch < ActiveRecord::Base
   # Concerns Dependencies
-  include Cover
-  include Avatar
   include EquityMath
   include HistoricalTrackable
+
+  # Attachments
+  mount_uploader :cover, CoverUploader
+  mount_uploader :avatar, AvatarUploader
 
   # Relations
   belongs_to :user

@@ -1,9 +1,9 @@
 # config/aws.yml
 defaults: &defaults
-  access_key_id:  # TODO access the AWS & get yours
-  secret_access_key:  # TODO access the AWS & get yours
-  region: sa-east-1
-  bucket: nitro-tst
+  s3_access_key_id:  # TODO access the AWS & get yours
+  s3_secret_access_key:  # TODO access the AWS & get yours
+  s3_region: sa-east-1
+  s3_bucket: nitro-tst
 
 development:
   <<: *defaults
@@ -12,4 +12,4 @@ test:
   <<: *defaults
 
 production:
-  bucket: nitro-production
+  s3_bucket: nitro-production

@@ -1,4 +1,11 @@
 function config_redactor() {
+    var csrf_token = $('meta[name=csrf-token]').attr('content');
+    var csrf_param = $('meta[name=csrf-param]').attr('content');
+    var params;
+    if (csrf_param !== undefined && csrf_token !== undefined) {
+        params = csrf_param + "=" + encodeURIComponent(csrf_token);
+    }
+
     // Config Redactor
     $('.redactor').redactor({
         source: false,
@@ -50,9 +57,11 @@ function config_redactor() {
         // application.js and application.css files and uncomment the line below:
         // "plugins": ['fontsize', 'fontcolor', 'fontfamily', 'fullscreen', 'textdirection', 'clips'],
         plugins: ['fontcolor', 'fontfamily', 'video'],
-        "imageUpload":"/redactor_rails/pictures?",
+        "imageUpload":"/redactor_rails/pictures?" + params,
         "imageGetJson":"/redactor_rails/pictures",
         "path":"/assets/app",
         "css":"style.css"
     });
-}
+};
+
+$(document).on( 'ready page:load', config_redactor );

@@ -15,9 +15,19 @@ p {
 }
 
 .campaign_body {
-  iframe {
+  iframe, img {
     max-width: 100% !important;
   }
+}
+
+pre {
+  overflow: auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #f8f8f8;
+  white-space: pre;
+  font-size: 90%;
 }
 
 #redactor-modal, #redactor-modal-box {

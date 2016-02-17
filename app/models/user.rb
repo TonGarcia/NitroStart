@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable, :timeoutable,
          :lockable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  # Attachments
+  mount_uploader :avatar, AvatarUploader
+
   # Relations
   has_many :pitches
   has_many :social_sessions
