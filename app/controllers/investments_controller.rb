@@ -73,6 +73,6 @@ class InvestmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def investment_params
-      params.require(:investment).permit(:general_terms, :raising_time, :founder_salaries, :costumer_conversion, :product_development, :equipments, :pitch_id, :start_up_id)
+      params.require(:investment).permit(:general_terms, :raising_time, :founder_salaries, :customer_conversion, :product_development, :equipments, :pitch_id, :start_up_id)
     end
 end

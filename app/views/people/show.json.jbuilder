@@ -1,1 +1,1 @@
-json.extract! @market, :id, :total_costumers, :total_money, :trends_insight, :costumer_specification, :pitch_id, :start_up_id, :created_at, :updated_at
+json.extract! @market, :id, :total_customers, :total_money, :trends_insight, :customer_specification, :pitch_id, :start_up_id, :created_at, :updated_at

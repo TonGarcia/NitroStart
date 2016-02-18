@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.string   "value_proposition",        limit: 140
     t.string   "advantages",               limit: 255,                                        null: false
     t.string   "disadvantages",            limit: 255,                                        null: false
-    t.string   "costumer_success_stories", limit: 255
+    t.string   "customer_success_stories", limit: 255
     t.decimal  "main_product_price",                   precision: 7, scale: 2, default: 0.0,  null: false
     t.boolean  "active",                                                       default: true, null: false
     t.integer  "pitch_id",                 limit: 4
@@ -44,14 +44,13 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "businesses", ["start_up_id"], name: "index_businesses_on_start_up_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
-    t.string   "link",          limit: 55,                null: false
-    t.integer  "active_type",   limit: 4,     default: 1, null: false
-    t.text     "body",          limit: 65535
-    t.text     "visible_attrs", limit: 65535
-    t.integer  "pitch_id",      limit: 4
-    t.integer  "start_up_id",   limit: 4
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.string   "link",        limit: 55,    null: false
+    t.text     "body",        limit: 65535
+    t.string   "locale",      limit: 2,     null: false
+    t.integer  "pitch_id",    limit: 4
+    t.integer  "start_up_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "campaigns", ["pitch_id"], name: "index_campaigns_on_pitch_id", using: :btree
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.string   "name",            limit: 55,                                          null: false
     t.decimal  "price",                       precision: 8,  scale: 2
     t.decimal  "total_revenue",               precision: 15, scale: 2
-    t.integer  "total_costumers", limit: 4
+    t.integer  "total_customers", limit: 4
     t.string   "success_stories", limit: 140
     t.string   "bad_stories",     limit: 140
     t.string   "your_advantage",  limit: 255
@@ -77,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
 
   create_table "financials", force: :cascade do |t|
     t.integer  "total_users",        limit: 4,                                         null: false
-    t.integer  "total_costumers",    limit: 4
+    t.integer  "total_customers",    limit: 4
     t.decimal  "total_revenue",                precision: 12, scale: 2
     t.decimal  "total_expense",                precision: 10, scale: 2
     t.decimal  "bootstrapped",                 precision: 10, scale: 2
@@ -114,7 +113,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.integer  "general_terms",       limit: 4,                                        null: false
     t.integer  "raising_time",        limit: 4
     t.decimal  "founder_salaries",              precision: 7, scale: 2, default: 0.0,  null: false
-    t.decimal  "costumer_conversion",           precision: 5, scale: 2, default: 0.0,  null: false
+    t.decimal  "customer_conversion",           precision: 5, scale: 2, default: 0.0,  null: false
     t.decimal  "product_development",           precision: 7, scale: 2, default: 0.0,  null: false
     t.decimal  "equipments",                    precision: 5, scale: 2, default: 0.0,  null: false
     t.boolean  "active",                                                default: true, null: false
@@ -130,10 +129,10 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.integer  "currency_iso",           limit: 4,   default: 986,  null: false
     t.integer  "total_money",            limit: 8
     t.string   "money_source_link",      limit: 255
-    t.integer  "total_costumers",        limit: 8
-    t.string   "costumers_source_link",  limit: 255
+    t.integer  "total_customers",        limit: 8
+    t.string   "customers_source_link",  limit: 255
     t.string   "trends_insight",         limit: 140
-    t.string   "costumer_specification", limit: 255
+    t.string   "customer_specification", limit: 255
     t.boolean  "active",                             default: true, null: false
     t.integer  "pitch_id",               limit: 4
     t.integer  "start_up_id",            limit: 4
@@ -283,7 +282,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.decimal  "conversion_cust",               precision: 5, scale: 2
     t.integer  "amount_daily_lead", limit: 4
     t.integer  "daily_growth_rate", limit: 4
-    t.string   "costumer_channels", limit: 140,                                        null: false
+    t.string   "customer_channels", limit: 140,                                        null: false
     t.boolean  "active",                                                default: true, null: false
     t.integer  "pitch_id",          limit: 4
     t.integer  "start_up_id",       limit: 4

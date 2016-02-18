@@ -16,6 +16,6 @@ module BusinessesHelper
   end
 
   def business_result_attrs
-    [:value_proposition, :costumer_success_stories]
+    [:value_proposition, :customer_success_stories]
   end
 end

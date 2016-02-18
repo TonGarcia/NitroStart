@@ -73,12 +73,12 @@ class FinancialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def financial_params
-      base_params = params.require(:financial).permit(:total_users, :total_costumers, :total_revenue, :total_expense, :bootstrapped, :market_penetration)
+      base_params = params.require(:financial).permit(:total_users, :total_customers, :total_revenue, :total_expense, :bootstrapped, :market_penetration)
       base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
 
       # un-format int
       base_params[:total_users] = base_params[:total_users].to_non_formatted_int if base_params[:total_users]
-      base_params[:total_costumers] = base_params[:total_costumers].to_non_formatted_int if base_params[:total_costumers]
+      base_params[:total_customers] = base_params[:total_customers].to_non_formatted_int if base_params[:total_customers]
 
       # un-format currency
       base_params[:total_revenue] = base_params[:total_revenue].currency_to_non_formatted_int if base_params[:total_revenue]

@@ -14,7 +14,15 @@
       = f.label :link
       .footer-info.purple-text Prefira algo simples, direto e que identifique bem seu projeto. Tente não usar hífen, underline etc.
 
-  /! TODO add show canvas parts here to aux on create texts
+    .input-field.col.l6.s12
+      i class="prefix #{t_current_class_icons[:locale]}"
+      = select_tag(:locale, options_for_select(idioms), prompt: t('activerecord.attributes.campaign.locale'), class: 'browser-default col l10 offset-s1', onchange:'show_countries_flags_for(this, "#flags")')
+
+  .row
+    #loader.hide.col.l6.s3.offset-s5
+      =render 'layouts/con_theme/components/circle_loader'
+    #flags.col.l12.s12
+
 
   .spacing_rows
     .row

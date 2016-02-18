@@ -26,3 +26,25 @@ function toggle_aside_menu() {
     var aside_menu = $('aside#side_nav_menu');
     aside_menu.hasClass(hide_on_small) ? aside_menu.removeClass(hide_on_small) : aside_menu.addClass(hide_on_small)
 }
+
+// Show CountryFlag on Target
+function show_countries_flags_for(idiom, target) {
+  // Layout Changes
+  $('#flags').addClass('hide');
+  $('#loader').removeClass('hide');
+
+  // Setup Variables
+  var idiom_code = $(idiom).find('option:selected').val();
+  var idiom_flags_path = "<%= Rails.application.routes.url_helpers.idiom_flags_path %>";
+  var url_ajax = idiom_flags_path + '?locale=' + idiom_code;
+
+  // Perform AJAX
+  $.get(url_ajax, function(data) {
+    // Perform it action
+    $('#flags').html(data);
+
+    // Change it Layout
+    $('#loader').addClass('hide');
+    $('#flags').removeClass('hide');
+  });
+}

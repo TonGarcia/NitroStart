@@ -73,12 +73,12 @@ class MarketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def market_params
-      permitted_params = params.require(:market).permit(:segment, :total_costumers, :costumers_source_link, :total_money, :money_source_link, :trends_insight, :costumer_specification)
+      permitted_params = params.require(:market).permit(:segment, :total_customers, :customers_source_link, :total_money, :money_source_link, :trends_insight, :customer_specification)
       permitted_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
 
       # String to int
       permitted_params[:total_money] = permitted_params[:total_money].currency_to_non_formatted_int if permitted_params[:total_money]
-      permitted_params[:total_costumers] = permitted_params[:total_costumers].to_non_formatted_int if permitted_params[:total_costumers]
+      permitted_params[:total_customers] = permitted_params[:total_customers].to_non_formatted_int if permitted_params[:total_customers]
 
       permitted_params
     end

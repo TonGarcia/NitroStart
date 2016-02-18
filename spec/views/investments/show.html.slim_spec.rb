@@ -6,7 +6,7 @@ RSpec.describe "investments/show", type: :view do
       :general_terms => 1,
       :raising_time => 2,
       :founder_salaries => "9.99",
-      :costumer_conversion => "9.99",
+      :customer_conversion => "9.99",
       :product_development => "9.99",
       :equipments => "9.99",
       :pitch => nil,

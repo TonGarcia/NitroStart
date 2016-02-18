@@ -4,7 +4,7 @@ RSpec.describe "financials/index", type: :view do
   before(:each) do
     assign(:financials, [
       Financial.create!(
-        :total_costumers => 1,
+        :total_customers => 1,
         :total_revenue => 2,
         :total_expense => 3,
         :conversion_price => 4,
@@ -13,7 +13,7 @@ RSpec.describe "financials/index", type: :view do
         :start_up => nil
       ),
       Financial.create!(
-        :total_costumers => 1,
+        :total_customers => 1,
         :total_revenue => 2,
         :total_expense => 3,
         :conversion_price => 4,

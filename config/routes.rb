@@ -79,6 +79,8 @@ Rails.application.routes.draw do
     get 'investments' => 'dashboard#investments', as: :dashboard_investments
   end
 
+  # Ajax Routes
+  get 'idiom_flags' => 'locale#idiom_flags', as: :idiom_flags
 
   # Admin Routes
   namespace :admin do

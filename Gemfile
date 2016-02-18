@@ -75,6 +75,10 @@ gem 'carrierwave-aws', '~> 1.0'
 gem 'aws-sdk', '~> 2.2', '>= 2.2.16'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: '1578777fe3f30140347ebf27d1943471bbe4d425'
 
+# Convert HTML render into a simple IMG
+# gem 'imgkit', '~> 1.6', '>= 1.6.1'
+# gem 'wkhtmltoimage-binary', '~> 0.12.2'
+
 # Faster & easier HTML
 gem 'slim-rails', '~> 3.0.1'
 

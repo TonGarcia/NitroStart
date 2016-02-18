@@ -7,9 +7,9 @@ module Formatter
     self.total_users.to_s.to_int_formatter
   end
 
-  # Formatted Total Costumers, pretty view
-  def formatted_total_costumers
-    self.total_costumers.to_s.to_int_formatter
+  # Formatted Total customers, pretty view
+  def formatted_total_customers
+    self.total_customers.to_s.to_int_formatter
   end
 
   def formatted_amount_daily_lead
@@ -20,7 +20,7 @@ module Formatter
     self.daily_growth_rate.to_s.to_int_formatter
   end
 
-  # Formatted Total Costumers, pretty view
+  # Formatted Total customers, pretty view
   def formatted_total_money
     self.total_money.to_s.to_currency_formatter
   end
@@ -75,16 +75,16 @@ module Formatter
     self.provides.raw_lines
   end
 
-  def formatted_costumer_specification
-    self.costumer_specification.raw_lines
+  def formatted_customer_specification
+    self.customer_specification.raw_lines
   end
 
   def formatted_second_problems
     self.second_problems.raw_lines
   end
 
-  def formatted_source_costumer
-    self.costumers_source_link.to_link
+  def formatted_source_customer
+    self.customers_source_link.to_link
   end
 
   def formatted_source_money

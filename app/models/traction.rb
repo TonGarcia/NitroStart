@@ -9,7 +9,7 @@ class Traction < ActiveRecord::Base
 
   # Rails validations
   validates :grow_strategy, length: { minimum: 2, maximum: 140 }, presence: true
-  validates :costumer_channels, length: { minimum: 2, maximum: 140 }, presence: true
+  validates :customer_channels, length: { minimum: 2, maximum: 140 }, presence: true
 
   # p2p attr association validations
   validates :lead_cust, numericality: true, presence: true

@@ -5,7 +5,7 @@ class CreateCompetitors < ActiveRecord::Migration
       t.string :name, limit: 55, null: false
       t.decimal :price, precision: 8, scale: 2, null: true
       t.decimal :total_revenue, precision: 15, scale: 2, null: true
-      t.integer :total_costumers, null: true
+      t.integer :total_customers, null: true
       t.string :success_stories, limit: 140, null: true
       t.string :bad_stories, limit: 140, null: true
       t.string :your_advantage, limit: 255, null: true

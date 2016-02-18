@@ -1,0 +1,6 @@
+= flag_list 32 do
+  -@countries.each do |country|
+    .col
+      -if country.currency
+        = "(#{country.currency.symbol})"
+      = flag(country.alpha2.downcase.to_sym, title: country.translations['pt'])

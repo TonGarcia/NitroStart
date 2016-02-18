@@ -60,7 +60,7 @@ pt-BR:
         installments: Prestações
         remote_uid: Identificador do comprador no aplicativo cliente
         redirect_link: Link de redirecionamento
-        costumer_email: E-mail do comprador
+        customer_email: E-mail do comprador
 
   # LogRequest -----------------------------------------------------
       log_request:

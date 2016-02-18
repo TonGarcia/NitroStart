@@ -2,7 +2,7 @@ class CreateSupporters < ActiveRecord::Migration
   def change
     create_table :supporters do |t|
       # Base Attrs
-      # It default 1 means costumer, but it can be programmer, designers...
+      # It default 1 means customer, but it can be programmer, designers...
       t.integer :role, null: false, default: 1
 
       # Scaffold Attributes

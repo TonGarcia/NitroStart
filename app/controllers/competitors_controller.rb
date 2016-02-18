@@ -73,14 +73,14 @@ class CompetitorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def competitor_params
-      base_params = params.require(:competitor).permit(:name, :price, :total_revenue, :total_costumers, :bad_stories, :success_stories, :your_advantage)
+      base_params = params.require(:competitor).permit(:name, :price, :total_revenue, :total_customers, :bad_stories, :success_stories, :your_advantage)
 
       # un-format currency
       base_params[:price] = base_params[:price].currency_to_non_formatted_int if base_params[:price]
       base_params[:total_revenue] = base_params[:total_revenue].currency_to_non_formatted_int if base_params[:total_revenue]
 
       # un-format int
-      base_params[:total_costumers] = base_params[:total_costumers].currency_to_non_formatted_int if base_params[:total_costumers]
+      base_params[:total_customers] = base_params[:total_customers].currency_to_non_formatted_int if base_params[:total_customers]
 
       base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end

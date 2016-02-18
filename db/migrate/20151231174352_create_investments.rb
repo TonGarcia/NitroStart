@@ -5,7 +5,7 @@ class CreateInvestments < ActiveRecord::Migration
       t.integer :general_terms, null: false
       t.integer :raising_time, null: true
       t.decimal :founder_salaries, precision: 7, scale: 2, default: 0, null: false
-      t.decimal :costumer_conversion, precision: 5, scale: 2, default: 0, null: false
+      t.decimal :customer_conversion, precision: 5, scale: 2, default: 0, null: false
       t.decimal :product_development, precision: 7, scale: 2, default: 0, null: false
       t.decimal :equipments, precision: 5, scale: 2, default: 0, null: false
       t.boolean :active, null: false, default: true

@@ -5,7 +5,7 @@ RSpec.describe "businesses/show", type: :view do
     @business = assign(:business, Business.create!(
       :partnerships => "Partnerships",
       :growth_metrics => "Growth Metrics",
-      :costumer_success_stories => "Costumer Success Stories",
+      :customer_success_stories => "customer Success Stories",
       :awards => false,
       :patent => false,
       :pitch => nil,
@@ -17,7 +17,7 @@ RSpec.describe "businesses/show", type: :view do
     render
     expect(rendered).to match(/Partnerships/)
     expect(rendered).to match(/Growth Metrics/)
-    expect(rendered).to match(/Costumer Success Stories/)
+    expect(rendered).to match(/customer Success Stories/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(/false/)
     expect(rendered).to match(//)

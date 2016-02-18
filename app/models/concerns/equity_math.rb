@@ -64,11 +64,11 @@ module EquityMath
     financial_obj = self.active(:financial) unless financial_obj
     !financial_obj.bootstrapped.nil? && financial_obj.bootstrapped > 0 ? bootstrapping_additional = 0 : bootstrapping_additional = 10
 
-    # No Costumer, only lead, set additional
-    (financial_obj.nil? || financial_obj.total_costumers.nil? || financial_obj.total_costumers == 0) ? no_costumer_additional = 20 : no_costumer_additional = 0
+    # No customer, only lead, set additional
+    (financial_obj.nil? || financial_obj.total_customers.nil? || financial_obj.total_customers == 0) ? no_customer_additional = 20 : no_customer_additional = 0
 
     # Calc it final equity requested
-    equity = base_equity + additional_equity + stage_additional + bootstrapping_additional + no_costumer_additional
+    equity = base_equity + additional_equity + stage_additional + bootstrapping_additional + no_customer_additional
 
     # Prevent Equity to be greater than 100 & filling not decrease percent
     if equity >= 100

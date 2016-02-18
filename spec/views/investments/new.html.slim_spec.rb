@@ -6,7 +6,7 @@ RSpec.describe "investments/new", type: :view do
       :general_terms => 1,
       :raising_time => 1,
       :founder_salaries => "9.99",
-      :costumer_conversion => "9.99",
+      :customer_conversion => "9.99",
       :product_development => "9.99",
       :equipments => "9.99",
       :pitch => nil,
@@ -25,7 +25,7 @@ RSpec.describe "investments/new", type: :view do
 
       assert_select "input#investment_founder_salaries[name=?]", "investment[founder_salaries]"
 
-      assert_select "input#investment_costumer_conversion[name=?]", "investment[costumer_conversion]"
+      assert_select "input#investment_customer_conversion[name=?]", "investment[customer_conversion]"
 
       assert_select "input#investment_product_development[name=?]", "investment[product_development]"
 

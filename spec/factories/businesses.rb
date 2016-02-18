@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :business do
     partnerships "MyString"
 growth_metrics "MyString"
-costumer_success_stories "MyString"
+customer_success_stories "MyString"
 awards false
 patent false
 pitch nil

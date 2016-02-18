@@ -7,8 +7,13 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
+  # Dynamic Store Selection
+  def self.choose_storage
+    Rails.env.production? ? :aws : :file
+  end
+
+  # Dynamic Store Selection
+  storage choose_storage
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -28,6 +33,10 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  # Process the image to be no wider than specified px
+  process :resize_to_limit => [990, -1]
+
+  # Enable to read dimensions
   process :read_dimensions
 
   # Create different versions of your uploaded files:
@@ -44,6 +53,8 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     RedactorRails.image_file_types
   end
+
+  process quality: 450
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

@@ -8,7 +8,7 @@ module TractionsHelper
   end
 
   def traction_strategy_attrs
-    [:grow_strategy, :costumer_channels]
+    [:grow_strategy, :customer_channels]
   end
 
   def traction_range_attrs

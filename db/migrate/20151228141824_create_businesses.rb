@@ -7,7 +7,7 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :value_proposition, limit: 140, null: true
       t.string :advantages, limit: 255, null: false
       t.string :disadvantages, limit: 255, null: false
-      t.string :costumer_success_stories, limit: 255, null: true
+      t.string :customer_success_stories, limit: 255, null: true
       t.decimal :main_product_price, precision: 7, scale: 2, default: 0, null: false
       t.boolean :active, null: false, default: true
 

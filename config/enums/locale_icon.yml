@@ -18,7 +18,7 @@ locale_icon:
     advantages: ion-thumbsup
     disadvantages: ion-thumbsdown
     main_product_price: ion-cash
-    costumer_success_stories: ion-chatbox-working
+    customer_success_stories: ion-chatbox-working
   project:
     stage: ion-connection-bars
     patent: ion-flag
@@ -31,21 +31,21 @@ locale_icon:
     total_money: ion-arrow-swap
     source_money: ion-link
     money_source_link: ion-link
-    total_costumers: ion-ios-people
-    source_costumer: ion-link
-    costumers_source_link: ion-link
+    total_customers: ion-ios-people
+    source_customer: ion-link
+    customers_source_link: ion-link
     trends_insight: ion-ios-lightbulb-outline
-    costumer_specification: ion-ios-paper-outline
+    customer_specification: ion-ios-paper-outline
   traction:
     grow_strategy: ion-android-locate
     lead_cust: ion-ios-people
     conversion_cust: ion-android-contact
     daily_growth_rate: fa fa-line-chart
-    costumer_channels: ion-speakerphone
+    customer_channels: ion-speakerphone
     amount_daily_lead: ion-stats-bars
   financial:
     total_users: ion-ios-people
-    total_costumers: ion-android-contacts
+    total_customers: ion-android-contacts
     total_revenue: fa fa-sign-in
     total_expense: fa fa-sign-out
     bootstrapped: ion-cash
@@ -59,12 +59,13 @@ locale_icon:
     name: mdi-action-account-circle
     price: ion-ios-pricetag
     total_revenue: ion-cash
-    total_costumers: ion-ios-people
+    total_customers: ion-ios-people
     bad_stories: ion-sad
     success_stories: ion-android-contacts
     your_advantage: ion-android-star
   campaign:
     link: ion-link
+    locale: ion-android-globe
   teammate:
     user: mdi-action-account-circle
     role: mdi-action-class

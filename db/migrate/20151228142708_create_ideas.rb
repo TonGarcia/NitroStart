@@ -10,7 +10,7 @@ class CreateIdeas < ActiveRecord::Migration
       # How does it fixed today?
       t.string :current_solution, limit: 140, null: true
 
-      # One sell phrase (for costumers)
+      # One sell phrase (for customers)
       t.string :tag_line_pitch, limit: 75, null: true
 
       # One explanation phrase (for investors)

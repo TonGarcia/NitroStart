@@ -5,7 +5,7 @@ RSpec.describe "businesses/new", type: :view do
     assign(:business, Business.new(
       :partnerships => "MyString",
       :growth_metrics => "MyString",
-      :costumer_success_stories => "MyString",
+      :customer_success_stories => "MyString",
       :awards => false,
       :patent => false,
       :pitch => nil,
@@ -22,7 +22,7 @@ RSpec.describe "businesses/new", type: :view do
 
       assert_select "input#business_growth_metrics[name=?]", "business[growth_metrics]"
 
-      assert_select "input#business_costumer_success_stories[name=?]", "business[costumer_success_stories]"
+      assert_select "input#business_customer_success_stories[name=?]", "business[customer_success_stories]"
 
       assert_select "input#business_awards[name=?]", "business[awards]"
 

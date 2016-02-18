@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "markets/new", type: :view do
   before(:each) do
     assign(:market, Market.new(
-      :total_costumers => "",
+      :total_customers => "",
       :total_money => 1,
       :trends_insight => "MyString",
-      :costumer_specification => "MyString",
+      :customer_specification => "MyString",
       :pitch => nil,
       :start_up => nil
     ))
@@ -17,13 +17,13 @@ RSpec.describe "markets/new", type: :view do
 
     assert_select "form[action=?][method=?]", markets_path, "post" do
 
-      assert_select "input#market_total_costumers[name=?]", "market[total_costumers]"
+      assert_select "input#market_total_customers[name=?]", "market[total_customers]"
 
       assert_select "input#market_total_money[name=?]", "market[total_money]"
 
       assert_select "input#market_trends_insight[name=?]", "market[trends_insight]"
 
-      assert_select "input#market_costumer_specification[name=?]", "market[costumer_specification]"
+      assert_select "input#market_customer_specification[name=?]", "market[customer_specification]"
 
       assert_select "input#market_pitch_id[name=?]", "market[pitch_id]"
 
