@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  layout 'card_aside'
+  layout 'application'
   respond_to :html, :json
   protect_from_forgery with: :exception
   before_action :setup_user, unless: :login_not_required

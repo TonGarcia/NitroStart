@@ -1,12 +1,14 @@
-h4.center.purple-text Edição da Campanha
-=render  'layouts/partials/components/static/reference_sub_title'
-=render 'campaigns/partials/nitro_services_ad'
+.row
+  h5.purple-text.center Edição da Campanha
+  h6.center.purple-text Apoiadores São potenciais Clientes e potenciais Investidores para o seu Produto/Serviço
+  =render 'layouts/partials/components/static/reference_sub_title'
 
 .divider
 
-=render 'form'
+.margin_bottom
+  =render 'campaigns/partials/nitro_services_ad'
 
--@footer_link=true
--@back_float_button_link = pitch_campaigns_path(@pitch)
-=render 'layouts/partials/components/static/float_buttons/back'
+  = render 'form'
 
+  - @back_float_button_link = gen_back_link(@campaign)
+  =render 'layouts/partials/components/static/float_buttons/back'

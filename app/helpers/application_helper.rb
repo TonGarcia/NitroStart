@@ -62,9 +62,4 @@ module ApplicationHelper
   def hide_if(layout_sym)
     current_layout == layout_sym ? 'hide-on-small-only' : nil
   end
-
-  # Return the Idioms ISO Code List
-  def idioms
-    [:en, :pt, :es, :fr, :it, :de]
-  end
 end

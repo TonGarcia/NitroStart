@@ -3,8 +3,12 @@ i.left-icon {
   float: none;
 
   &:before {
-    margin-right: 15px;
+    margin-right: 10px;
   }
+}
+
+span.margin_right {
+  margin-right: 5px;
 }
 
 .right-icon {
@@ -34,7 +38,7 @@ ul.topic_icons {
   }
 }
 
-i.right-icon {
+.right-icon {
   float: none;
   margin-left: 15px;
 }

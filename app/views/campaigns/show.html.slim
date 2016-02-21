@@ -4,13 +4,16 @@ h4.center.purple-text Detalhamento da Campanha
 .divider
 
 .row
-  h6.center
-    a.underline target="_blank" href="http://#{@campaign.formatted_inner_link}"
-      i.left-icon.slim.fa.fa-external-link
-      =@campaign.formatted_inner_link
+    h6.center
+      span.purple-text.margin_right Idioma:
+      =t_idiom(@campaign.locale)
+    h6.center
+      a.underline target="_blank" href="http://#{@campaign.formatted_inner_link}"
+        i.left-icon.slim.fa.fa-external-link
+        =@campaign.formatted_inner_link
 
 .row
-  .col.l8
+  .col.l8.s12
     .card-panel
       .campaign_body
         =raw @campaign.body

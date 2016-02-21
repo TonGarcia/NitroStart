@@ -65,7 +65,8 @@ locale_icon:
     your_advantage: ion-android-star
   campaign:
     link: ion-link
-    locale: ion-android-globe
+    locale: mdi-action-language
+    locale_flags: ion-android-globe
   teammate:
     user: mdi-action-account-circle
     role: mdi-action-class

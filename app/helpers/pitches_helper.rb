@@ -4,11 +4,11 @@ module PitchesHelper
   end
 
   def validation_widgets
-    %w(hypothesis campaign)
+    %w(hypothesis team competitors campaign)
   end
 
   def canvas_widgets
-    %w(traction market_knowledge  project_build business team financial competitors provider)
+    %w(traction market_knowledge  project_build business financial provider)
   end
 
   def forbes_pitch_deck

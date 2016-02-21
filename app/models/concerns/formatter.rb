@@ -91,6 +91,10 @@ module Formatter
     self.money_source_link.to_link
   end
 
+  def formatted_locale
+    I18n.t "idioms.#{self.locale}"
+  end
+
   def formatted_inner_link
     "up.nitrostart.com.br/#{self.link}"
   end

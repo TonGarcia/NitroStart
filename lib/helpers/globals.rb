@@ -1,6 +1,19 @@
 module Helpers
   # Global & testable data creator
   class Globals
+    def self.find_all_countries_by_languages(locale)
+      # Base setup
+      countries = ISO3166::Country.find_all_countries_by_languages(locale)
+
+      # Brazil is PT-BR
+      if locale == 'pt'
+        countries.unshift ISO3166::Country.find_all_countries_by_name('Brazil').first
+      end
+
+      # return those countries
+      countries
+    end
+
     # Get it Global App
     def self.app
       app = App.first

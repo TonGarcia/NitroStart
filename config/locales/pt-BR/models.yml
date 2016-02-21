@@ -111,7 +111,8 @@ pt-BR:
       campaign:
         link: Link do projeto up.nitrostart.com.br/
         body: Escrita Livre
-        locale: Localidade/Idioma
+        locale: Idioma
+        locale_flags: Países do Idioma
 
   # Teammate -----------------------------------------------------
       teammate:

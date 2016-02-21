@@ -1,0 +1,14 @@
+@media only screen and (min-width: 993px) {
+  .content-wrap {
+    .row {
+      .col.offset-s2, .col.offset-s3, .col.offset-s4, .col.offset-s5,
+      .col.offset-s6, .col.offset-s7, .col.offset-s8, .col.offset-s9,
+      .col.offset-s10, .col.offset-s11, .col.offset-s11 {
+
+        &.rm_offset_s {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+}
