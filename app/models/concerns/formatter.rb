@@ -79,6 +79,14 @@ module Formatter
     self.customer_specification.raw_lines
   end
 
+  def formatted_success_stories
+    self.success_stories.raw_lines
+  end
+
+  def formatted_bad_stories
+    self.bad_stories.raw_lines
+  end
+
   def formatted_second_problems
     self.second_problems.raw_lines
   end

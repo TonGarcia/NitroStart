@@ -12,7 +12,7 @@ module CompetitorsHelper
   end
 
   def competitor_feedback_results
-    [:success_stories, :bad_stories]
+    [:formatted_success_stories, :formatted_bad_stories]
   end
 
   def competitor_your_propositions

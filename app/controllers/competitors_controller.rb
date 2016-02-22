@@ -32,7 +32,7 @@ class CompetitorsController < ApplicationController
 
     respond_to do |format|
       if @competitor.save
-        format.html { redirect_to [@nested_obj, @competitor], notice: 'Competitor was successfully created.' }
+        format.html { redirect_to [@nested_obj, @competitor], notice: 'Concorrente cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @competitor }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class CompetitorsController < ApplicationController
   def update
     respond_to do |format|
       if @competitor.update(competitor_params)
-        format.html { redirect_to [@nested_obj, @competitor], notice: 'Competitor was successfully updated.' }
+        format.html { redirect_to [@nested_obj, @competitor], notice: 'Concorrente atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @competitor }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class CompetitorsController < ApplicationController
   def destroy
     @competitor.destroy
     respond_to do |format|
-      format.html { redirect_to competitors_url, notice: 'Competitor was successfully destroyed.' }
+      format.html { redirect_to competitors_url, notice: 'Concorrente deletado com sucesso.' }
       format.json { head :no_content }
     end
   end

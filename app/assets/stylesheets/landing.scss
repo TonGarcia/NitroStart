@@ -12,7 +12,8 @@
  *= require concerns/parallax
  *= require concerns/progress
  *= require concerns/icon_styles
- *= require media_queries/small-and-down
+ *= require media_queries/small
+ *= require media_queries/medium-and-down
 */
 
 @import "ionicons";

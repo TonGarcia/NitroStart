@@ -1,0 +1,23 @@
+Nome:
+    Poupança
+
+Preço:
+    R$ 0,00
+
+Total Consumidores:
+    55.000.000
+
+Faturamento:
+    R$ 22.000.000.000,00
+
+Pontos de Satisfação:
+    - O resgate do investimento é garantido;
+    - É garantido que o dinheiro não evapore;
+
+Pontos de Insatisfação:
+    - Rende pouco (0,5 a 0,8% a.m);
+    - Corre risco de ser confiscada (já foi uma vez).
+
+Suas Vantagens:
+    - Rendimento muito maior;
+    - Risco semelhante, porém com propósito maior de valor agregado.

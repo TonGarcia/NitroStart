@@ -3,6 +3,21 @@
     margin-top: -5px !important;
   }
 
+  .medium_down_margin_top {
+    margin-top: 65px !important;
+  }
+
+  #error_bg_img {
+    background-color: #d6d6d6;
+    background-position: center;
+    background-position-y: -35px;
+
+    .container {
+      margin-top: 5% !important;
+      min-height: 100vh !important;
+    }
+  }
+
   .icon-explanation {
     h4 {
       margin-bottom: 5px !important;

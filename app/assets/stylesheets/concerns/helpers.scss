@@ -13,8 +13,17 @@
   position: absolute;
 }
 
+#error_bg_img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .underline {
   text-decoration: underline;
+}
+
+.header {
+  margin: 0 !important;
 }
 
 span.title {

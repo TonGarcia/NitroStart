@@ -20,6 +20,14 @@ function toast_flags() {
   });
 }
 
+function setup_bg_error_img() {
+  var body_element = $('#error_bg_img');
+  if(body_element.length == 0) return;
+
+  var bg_img_url = $('#bg_img').attr('src');
+  body_element.attr('style', 'background-image: url('+bg_img_url+')');
+}
+
 // Trigger click on invisible element
 function trigger_invisible(target) {
     $(target).trigger('click');

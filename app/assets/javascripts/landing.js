@@ -13,11 +13,13 @@
 // My JS
 //= require app/partners
 //= require concerns/fast_fix
+//= require concerns/helpers.js.erb
 //= require concerns/accounting
 
 $(document).ready(function(){
     setup_tabs();
     fix_error_field();
+    setup_bg_error_img();
 
     $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
