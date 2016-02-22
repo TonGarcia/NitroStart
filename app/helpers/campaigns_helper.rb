@@ -1,5 +1,5 @@
 module CampaignsHelper
   def campaign_index_attrs
-    [:link, :formatted_locale, :locale_flags]
+    [:formatted_locale, :link] #locale_flags
   end
 end

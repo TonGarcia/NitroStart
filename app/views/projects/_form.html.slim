@@ -12,19 +12,19 @@
     .row
       .col.l4
         .footer-info.purple-text Fluxo de Funcionamento do Projeto
-        -@project.avatar.url ? brand = @project.avatar.url : brand = 'defaults/how_works_flow.png'
+        -@project.work_flow.url ? brand = @project.work_flow.url : brand = 'defaults/how_works_flow.png'
         =image_tag brand, class: 'col l12', id: 'work_flow'
       .col.l7
         .upload-avatar.file-field.input-field
           input class="file-path validate" type="text"
           .btn
             span File
-            = f.file_field :avatar, onchange: 'show_brand(this, "#work_flow")'
+            = f.file_field :work_flow, onchange: 'show_brand(this, "#work_flow")'
 
 
     .row
       .input-field.col.l12.s12
-        =select_tag 'project[stage]', options_for_select(ENUM[:start_up_stages].to_view_array), prompt: 'Estágio de Maturidade', class: 'material'
+        = f.select :stage, options_for_select(ENUM[:start_up_stages].to_view_array, @project.stage), prompt: 'Estágio de Maturidade', class: 'material', onchange:'show_countries_flags_for(this, "#flags")'
         .footer-info.purple-text =render 'projects/partials/blog_stages'
 
     .row

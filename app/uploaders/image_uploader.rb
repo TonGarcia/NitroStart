@@ -26,5 +26,12 @@ class ImageUploader < CarrierWave::Uploader::Base
     "#{Rails.root}/tmp/uploads"
   end
 
+  # Convert & process uploaded file
+  version :base
+  version :base do
+    # process resize_to_fill: [1350,300]
+    process convert: :jpg
+  end
+
   process quality: 80
 end

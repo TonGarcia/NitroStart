@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20160217103009) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "link",        limit: 55,    null: false
-    t.text     "body",        limit: 65535
     t.string   "locale",      limit: 2,     null: false
+    t.text     "body",        limit: 65535
     t.integer  "pitch_id",    limit: 4
     t.integer  "start_up_id", limit: 4
     t.datetime "created_at",                null: false
@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.integer  "start_up_id",   limit: 4
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.string   "avatar",        limit: 255
+    t.string   "work_flow",     limit: 255
   end
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree

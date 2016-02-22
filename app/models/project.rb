@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   include WidgetTracker
 
   # Attachments
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :work_flow, WorkFlowUploader
 
   # Relations
   belongs_to :pitch
