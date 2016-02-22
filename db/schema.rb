@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "financials", ["start_up_id"], name: "index_financials_on_start_up_id", using: :btree
 
   create_table "ideas", force: :cascade do |t|
-    t.string   "main_problem",       limit: 80,                 null: false
-    t.string   "second_problems",    limit: 255
+    t.string   "main_problem",       limit: 90,                 null: false
+    t.string   "second_problems",    limit: 400
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 75
     t.string   "high_concept_pitch", limit: 50
@@ -144,13 +144,13 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "markets", ["start_up_id"], name: "index_markets_on_start_up_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
+    t.string   "cover",      limit: 255
+    t.string   "avatar",     limit: 255
     t.string   "name",       limit: 55,  null: false
     t.string   "video_link", limit: 255
     t.integer  "user_id",    limit: 4,   null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "avatar",     limit: 255
-    t.string   "cover",      limit: 255
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.string   "work_flow",     limit: 255
     t.integer  "stage",         limit: 4,                   null: false
     t.string   "award_source",  limit: 255
     t.string   "patent_source", limit: 255
@@ -180,7 +181,6 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.integer  "start_up_id",   limit: 4
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.string   "work_flow",     limit: 255
   end
 
   add_index "projects", ["pitch_id"], name: "index_projects_on_pitch_id", using: :btree
@@ -294,6 +294,7 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "tractions", ["start_up_id"], name: "index_tractions_on_start_up_id", using: :btree
 
   create_table "users", force: :cascade do |t|
+    t.string   "avatar",                 limit: 255
     t.string   "name",                   limit: 50,               null: false
     t.integer  "role",                   limit: 4,   default: 2,  null: false
     t.string   "email",                  limit: 255, default: "", null: false
@@ -325,7 +326,6 @@ ActiveRecord::Schema.define(version: 20160217103009) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.integer  "invited_by_id",          limit: 4
-    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

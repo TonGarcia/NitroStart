@@ -25,6 +25,7 @@ gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'jquery-mask-plugin', '~> 0.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'json', '~> 1.8', '>= 1.8.3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -149,6 +150,10 @@ gem 'omniauth-instagram', '~> 1.0.2'
 # Social
 gem 'twitter', '~> 5.15.0'
 gem 'linkedin', '~> 1.0.0'
+gem 'rest-graph', '~> 2.0', '>= 2.0.3'
+
+# Store access_token in HTTP_COOKIE
+gem 'rack', '~> 1.6', '>= 1.6.4'
 
 # World Countries Flags
 gem 'world-flags', '~> 0.6.5'

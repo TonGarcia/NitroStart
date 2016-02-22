@@ -12,6 +12,6 @@ module IdeasHelper
   end
 
   def idea_hypothesis_attrs
-    [:tag_line_pitch, :why_must_success, :high_concept_pitch, :how_validate]
+    [:tag_line_pitch, :high_concept_pitch, :why_must_success, :how_validate]
   end
 end

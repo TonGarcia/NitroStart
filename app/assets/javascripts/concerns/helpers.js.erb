@@ -10,6 +10,16 @@ function show_brand(input, img_ref) {
     }
 }
 
+function toast_flags() {
+  $('.flags .flag').click(function() {
+    var flag_element = $(this);
+    var country_name = flag_element.attr('title');
+    var duration = 1000;
+
+    Materialize.toast(country_name, duration, 'rounded');
+  });
+}
+
 // Trigger click on invisible element
 function trigger_invisible(target) {
     $(target).trigger('click');
@@ -46,5 +56,8 @@ function show_countries_flags_for(idiom, target) {
     // Change it Layout
     $('#loader').addClass('hide');
     $('#flags').removeClass('hide');
+
+    // Add flags event
+    toast_flags();
   });
 }

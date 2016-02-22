@@ -1,0 +1,21 @@
+Problema:
+    É ruim tanto pro Pai quanto para o Filho gerenciar a Mesada com Dinheiro em Espécie
+
+Sec. Prob:
+    - A criança quer ter um cartão (isso a faz se sentir mais importante e adulta);
+    - As crianças gastam a mesada toda (descontrole no uso do dinheiro);
+    - A mesada é colocada em um cofrinho ao invés de um investimento (Poupança, por exemplo);
+    - Além de dar a mesada os pais dão presente de Aniversário e de Natal
+
+Como é Solucionado Hoje:
+    Conta-Corrente ou Conta-Poupança para o Filho
+
+TagLine:
+    Você dá a mesada e nós damos o Presente de Natal e Aniversário
+
+HighConcept:
+    Contro.ly para Alunos de Escolas (crianças)
+
+Pq Sucesso?:
+    Porque os pais entendem este modelo como sendo mais cômodo e representa redução de custos
+

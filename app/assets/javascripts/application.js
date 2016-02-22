@@ -17,13 +17,19 @@
 
 // My JS
 //= require concerns/fast_fix
+//= require concerns/helpers.js.erb
 //= require_tree
 
-$(function(){
+
+function setup() {
+    toast_flags();
     config_redactor();
     $('.slider').slider();
     $(".button-collapse").sideNav();
     $('.nav_actions a').scrollTo({
         speed: 500
     });
-});
+}
+
+$(setup);
+$(document).on('page:load', setup);

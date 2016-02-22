@@ -4,7 +4,7 @@ module PitchesHelper
   end
 
   def validation_widgets
-    %w(hypothesis team competitors campaign)
+    %w(hypothesis competitors team campaign)
   end
 
   def canvas_widgets

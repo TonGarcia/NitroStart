@@ -8,6 +8,10 @@
           li = message
 
   .row
+    .alert.alert-border-bottom.alert-border-left.amber.lighten-4.amber-text.text-darken-4
+      strong Nós não recomendamos o uso do Google Tradutor e outros Sistemas de Traução para Traduzir sua Campanha. Os Tradutores Consultores Nitro não só traduzem, mas também trazem uma forma local/cultural de se comunicar no país destino, criando relacionamento com o público.
+
+  .row
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:link]}"
       = f.text_field :link
@@ -17,7 +21,7 @@
     .input-field.col.l6.s12
       i class="prefix #{t_current_class_icons[:locale]}"
       .col.l10.offset-l1
-        = f.select :locale, options_for_select(idioms, @campaign.locale), {}, {prompt: t('activerecord.attributes.campaign.locale'), class:'browser-default', onchange:'show_countries_flags_for(this, "#flags")'}
+        = f.select :locale, options_for_select(idioms, @campaign.locale), {prompt: t('activerecord.attributes.campaign.locale')}, {class:'browser-default', onchange:'show_countries_flags_for(this, "#flags")'}
 
   .row
     #loader.hide.col.l6.s3.offset-s5
