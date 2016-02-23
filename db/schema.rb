@@ -262,12 +262,14 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "supporters", ["start_up_id"], name: "index_supporters_on_start_up_id", using: :btree
 
   create_table "teammates", force: :cascade do |t|
-    t.string   "role",        limit: 45, null: false
-    t.integer  "user_id",     limit: 4,  null: false
+    t.string   "role",        limit: 45,                  null: false
+    t.boolean  "verified",               default: false,  null: false
+    t.string   "permissions", limit: 75, default: "none", null: false
+    t.integer  "user_id",     limit: 4,                   null: false
     t.integer  "pitch_id",    limit: 4
     t.integer  "start_up_id", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   add_index "teammates", ["pitch_id"], name: "index_teammates_on_pitch_id", using: :btree

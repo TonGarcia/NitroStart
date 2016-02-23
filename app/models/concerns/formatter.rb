@@ -106,4 +106,8 @@ module Formatter
   def formatted_inner_link
     "up.nitrostart.com.br/#{self.link}"
   end
+
+  def permissions_sym
+    self.permissions.to_sym
+  end
 end

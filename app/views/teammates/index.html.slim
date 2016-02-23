@@ -14,8 +14,9 @@ h4.center.purple-text Tripulantes Adicionados
           h6.strong
             span.card-title.activator.right
               i.mdi-navigation-more-vert.right
-            i.left-icon.purple-text.mdi-action-class
-            = teammate.role
+            span.truncate
+              i.left-icon.purple-text.mdi-action-class
+              = teammate.role
           h6.truncate =user.base_name
 
         .card-reveal

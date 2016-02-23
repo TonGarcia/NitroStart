@@ -1,6 +1,6 @@
 /! Team
 a.card-panel.stats-card.cyan.white-text href="#{pitch_teammates_path(@pitch)}"
   i.ion-ios-people
-  span.count 1
+  span.count = @pitch.teammates.length
   -if params[:action] != 'index'
     .name Tripulantes

@@ -1,5 +1,6 @@
 class Teammate < ActiveRecord::Base
   # Concerns Dependencies
+  include Formatter
   include ViewerAttr
 
   # Relations
@@ -22,7 +23,7 @@ class Teammate < ActiveRecord::Base
   private
     # setup variables & attributes
     def setup
-      unless self.id && self.user_id
+      if !self.id && !self.user_id
         self.user_id = User.decrypt_identifier(self.user_hash_id)
       end
     end

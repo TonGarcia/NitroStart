@@ -4,6 +4,7 @@ class CreateTeammates < ActiveRecord::Migration
       # Base attributes
       t.string :role, limit: 45, null: false
       t.boolean :verified, default: false, null: false
+      t.string :permissions, limit: 75, default: 'none', null: false
 
       # Fixed Association
       t.belongs_to :user, index: true, foreign_key: true, null: false

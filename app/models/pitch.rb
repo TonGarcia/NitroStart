@@ -1,6 +1,7 @@
 class Pitch < ActiveRecord::Base
   # Concerns Dependencies
   include EquityMath
+  include TeammatesAssociations
   include HistoricalTrackable
 
   # Attachments
@@ -11,17 +12,17 @@ class Pitch < ActiveRecord::Base
   belongs_to :user
 
   # The many associations mean the many possibilities
-  has_many :ideas
-  has_many :markets
-  has_many :projects
-  has_many :providers
-  has_many :tractions
-  has_many :financials
-  has_many :supporters
-  has_many :businesses
-  has_many :competitors
-  has_many :campaigns
-  has_many :teammates
+  has_many :ideas, dependent: :destroy
+  has_many :markets, dependent: :destroy
+  has_many :projects, dependent: :destroy
+  has_many :providers, dependent: :destroy
+  has_many :tractions, dependent: :destroy
+  has_many :financials, dependent: :destroy
+  has_many :supporters, dependent: :destroy
+  has_many :businesses, dependent: :destroy
+  has_many :competitors, dependent: :destroy
+  has_many :campaigns, dependent: :destroy
+  has_many :teammates, dependent: :destroy
 
   # The One Association
   has_one :start_up

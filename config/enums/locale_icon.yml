@@ -70,5 +70,4 @@ locale_icon:
   teammate:
     user: mdi-action-account-circle
     role: mdi-action-class
-    expertise: ion-ribbon-b
-    contacts: Possui Contatos?
+    permissions: ion-ribbon-b

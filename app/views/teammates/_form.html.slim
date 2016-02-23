@@ -20,11 +20,19 @@
   #people_list.row
 
   .row
-    .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:role]}"
-      = f.text_field :role
-      = f.label :role
-      .footer-info.purple-text =render 'teammates/partials/blog_role'
+    .col.l12.s12
+      .input-field.col.l12.s12
+        i class="purple-text prefix #{t_current_class_icons[:permissions]}"
+        = f.check_box :permissions, {class: 'filled-in'}, checked_value = 'admin'
+        = f.label :permissions, class: 'check_label'
+
+  .row
+    .col.l12.s12
+      .input-field.col.l12.s12
+        i class="prefix #{t_current_class_icons[:role]}"
+        = f.text_field :role
+        = f.label :role
+
 
   -@footer_link=true
   =render 'layouts/partials/components/static/float_buttons/save'

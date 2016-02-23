@@ -14,6 +14,7 @@ class TeammatesController < ApplicationController
   # GET /teammates/1
   # GET /teammates/1.json
   def show
+    redirect_to nested_path_to(@teammate)
   end
 
   # GET /teammates/new
@@ -73,6 +74,7 @@ class TeammatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teammate_params
-      params.require(:teammate).permit(:role, :expertise, :contacts, :team_id).merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params = params.require(:teammate).permit(:role, :permissions)
+      base_params.merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

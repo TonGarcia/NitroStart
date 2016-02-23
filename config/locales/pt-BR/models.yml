@@ -23,12 +23,13 @@ pt-BR:
 
   # Pitch -----------------------------------------------------
       pitch:
+        user: Criador
         name: Nome do Projeto
         cover: Banner
         cover_file_size: Tamanho do Banner
         avatar: Logo
         avatar_file_size: Tamanho da Logo
-        user: Criador
+        teammates: Tripulante
 
   # Idea -----------------------------------------------------
       idea:
@@ -118,5 +119,4 @@ pt-BR:
       teammate:
         role: Papel Desempenhado
         user: Nome do Tripulante
-        expertise: Experiência Profisisonal e/ou de Formação Relevante para ESTE projeto
-        contacts: Possui Contatos Relevantes para o Negócio (QI - Quem Indica)?
+        permissions: Permissões de Admin?

@@ -64,7 +64,7 @@ class PitchesController < ApplicationController
   def destroy
     @pitch.destroy
     respond_to do |format|
-      format.html { redirect_to pitches_url, notice: 'Pitch was successfully destroyed.' }
+      format.html { redirect_to pitches_url, notice: 'Pitch destruído com sucesso.' }
       format.json { head :no_content }
     end
   end
