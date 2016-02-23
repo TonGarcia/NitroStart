@@ -2,7 +2,7 @@
 module ViewerAttr
   extend ActiveSupport::Concern
 
-  def user_viewer
-    self.user.name
+  def user_name
+    self.user ? self.user.name : ''
   end
 end

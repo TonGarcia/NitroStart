@@ -1,15 +1,48 @@
-h4.center.purple-text Pessoas Adicionadas ao Time
+h4.center.purple-text Tripulantes Adicionados
 =render  'layouts/partials/components/static/reference_sub_title'
 
-.divider
+.row#teammates
+  -@teammates.each do |teammate|
+    -user = teammate.user
+    .col.s6.m3.l2
+      .card
+        .card-image
+          a href="#"
+            =image_tag user.profile
 
-.row
-  -@nested_obj = @nested_obj
-  -@ref_attrs = idea_index_attrs
+        .card-content.activator.center
+          h6.strong
+            span.card-title.activator.right
+              i.mdi-navigation-more-vert.right
+            i.left-icon.purple-text.mdi-action-class
+            = teammate.role
+          h6.truncate =user.base_name
 
-  - @teammates.each do |teammate|
-    -@current_obj = teammate
-    =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
+        .card-reveal
+          span.card-title.truncate
+            i class="mdi-navigation-close right"
+          .row.card-title
+            .col.l4.s4
+              a.amber-text.text-darken-2
+                i.ion-android-mail
+            .col.l4.s4
+              a.green-text
+                i.ion-social-whatsapp
+            .col.l4.s4
+              a.blue-text.text-darken-1
+                i.fa.fa-facebook-square
+
+          .row.card-title
+            .col.l4.s4
+              a.purple-text
+                i.mdi-action-face-unlock
+            .col.l4.s4
+              a.amber-text.text-darken-3 href="#{send("edit_#{nested_class_name}_teammate_path", @nested_obj, teammate)}"
+                i.mdi-editor-mode-edit
+            .col.l4.s4
+              = link_to [@nested_obj, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
+                i.mdi-action-delete
+
 
 -@float_opts={link: new_pitch_teammate_path(@nested_obj)}
 .fixed-action-btn=render 'home/partials/components/float_button'

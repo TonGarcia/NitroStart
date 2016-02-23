@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   # Global Resources
   resources :pitches do
     # Nested Objects
-    resource :team
     resources :ideas
     resources :businesses
     resources :projects
@@ -52,15 +51,6 @@ Rails.application.routes.draw do
     resources :investments
   end
 
-
-  # Non-Scope Actions
-  get 'people/search(/:partial_name)' => 'people#search', as: :people_search
-
-  # Pitch supporters caption routes
-  # resources :campaign do
-  #
-  # end
-
   # Non-Nested objects
   resources :teammates
   resources :people, except: [:delete, :update]
@@ -81,6 +71,7 @@ Rails.application.routes.draw do
 
   # Ajax Routes
   get 'idiom_flags' => 'locale#idiom_flags', as: :idiom_flags
+  get 'people/search(/:partial_name)' => 'people#search', as: :person_search
 
   # Admin Routes
   namespace :admin do

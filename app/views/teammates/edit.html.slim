@@ -1,8 +1,10 @@
-h1 Editing teammate
+h4.center.purple-text Edição do Cadastro de Tripulante
+=render  'layouts/partials/components/static/reference_sub_title'
 
-== render 'form'
+.divider
 
-= link_to 'Show', @teammate
-'|
-= link_to 'Back', teammates_path
+=render 'form'
 
+-@footer_link=true
+-@back_float_button_link = pitch_teammates_path(@pitch)
+=render 'layouts/partials/components/static/float_buttons/back'

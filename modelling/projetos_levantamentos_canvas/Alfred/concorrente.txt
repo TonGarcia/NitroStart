@@ -1,0 +1,25 @@
+Nome
+    Empregada Doméstica
+
+Preço Praticado
+    R$ 880,00
+
+Total de Consumidores
+    180.000
+
+Faturamento Médio Mensal
+    R$ 880,00
+
+Pontos de SATISFAÇÃO dos Consumidores
+- Deixa a casa limpa e cheirosa;
+- Serve as refeições e arruma a casa;
+- Cuida dos animais de estimação e do quintal;
+
+Pontos de INSATISFEITOS dos Consumidores
+- Poucas são honestas;
+- Com a nova lei CLT ficou caro.
+
+Suas Vantagens Competitivas
+- Não possui necessidade de ser CLT;
+- É mais barato do que a empregada convencional;
+- Não corre risco de furtos e outros problemas relacionados a desonestidade ou crimes.

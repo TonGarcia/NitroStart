@@ -2,6 +2,12 @@
 module Security
   extend ActiveSupport::Concern
 
+  # Return it ID encrypted
+  def encrypted_identifier
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+    crypt.encrypt_and_sign(self.id)
+  end
+
   # Generate Invitation Code
   def invitation_code_gen
     re_tries = 0

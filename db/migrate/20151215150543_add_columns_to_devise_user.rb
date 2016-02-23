@@ -4,7 +4,8 @@ class AddColumnsToDeviseUser < ActiveRecord::Migration
     add_column :users, :name, :string, limit: 50, null: false, after: :id
 
     # legal_id necessary only if on company creation
-    add_column :users, :legal_id, :string, limit: 45, null: true, after: :email
+    add_column :users, :username, :string, limit: 55, null: true, after: :email
+    add_column :users, :legal_id, :string, limit: 45, null: true, after: :username
     add_column :users, :locale, :string, limit: 5, null: true, after: :legal_id
     add_column :users, :gender, 'char(1)', null: true, after: :locale
     add_column :users, :invite_key, :string, limit: 255, null: true, after: :gender

@@ -1,2 +1,16 @@
-h1 People#show
-p Find me in app/views/people/show.html.slim
+-if @people.empty?
+  .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
+    | Pessoa não encontrada. Os participantes de seu time precisam ser usuário NITRO. &nbsp;
+    a href="#" Convide aqui os outros Integrantes.
+-else
+  ul.padding.collection.col.l12.s12
+    -@people.each do |person|
+      li.collection-item.avatar.col.l6
+        = image_tag(person.picture, class: 'circle')
+        span.title =person.name
+        input name="user_id" type="radio" value="#{person.encrypted_identifier}"
+
+        p
+          a.selector onclick="select_person(this)"
+            i.left-icon.ion-checkmark-circled
+            | Selecionar Empreendedor

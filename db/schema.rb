@@ -262,14 +262,12 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "supporters", ["start_up_id"], name: "index_supporters_on_start_up_id", using: :btree
 
   create_table "teammates", force: :cascade do |t|
-    t.string   "role",        limit: 45,  null: false
-    t.string   "expertise",   limit: 140, null: false
-    t.boolean  "contacts",                null: false
-    t.integer  "user_id",     limit: 4,   null: false
+    t.string   "role",        limit: 45, null: false
+    t.integer  "user_id",     limit: 4,  null: false
     t.integer  "pitch_id",    limit: 4
     t.integer  "start_up_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "teammates", ["pitch_id"], name: "index_teammates_on_pitch_id", using: :btree
@@ -294,10 +292,11 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "tractions", ["start_up_id"], name: "index_tractions_on_start_up_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "avatar",                 limit: 255
+    t.string   "profile",                limit: 255
     t.string   "name",                   limit: 50,               null: false
     t.integer  "role",                   limit: 4,   default: 2,  null: false
     t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "username",               limit: 55
     t.string   "legal_id",               limit: 45
     t.string   "locale",                 limit: 5
     t.string   "zip_code",               limit: 30

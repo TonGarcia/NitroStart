@@ -18,5 +18,6 @@ class PeopleController < ApplicationController
   # GET /people/:partial_name.json
   def search
     @people = User.where('name LIKE ? AND role != ? AND id != ?', "%#{params[:partial_name]}%", role(:admin)[:id], @current_user.id)
+    render layout: 'blank'
   end
 end

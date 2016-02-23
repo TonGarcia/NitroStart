@@ -117,6 +117,6 @@ pt-BR:
   # Teammate -----------------------------------------------------
       teammate:
         role: Papel Desempenhado
-        user: Nome do Usuário
+        user: Nome do Tripulante
         expertise: Experiência Profisisonal e/ou de Formação Relevante para ESTE projeto
         contacts: Possui Contatos Relevantes para o Negócio (QI - Quem Indica)?

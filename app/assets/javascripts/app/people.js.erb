@@ -16,6 +16,7 @@ function select_person(link_element) {
   var active_class = 'amber lighten-5';
   var current_person = $(link_element);
   var current_list_item = current_person.parents('.collection-item');
+  var radio = current_list_item.children('input').attr('checked', 'checked');
 
   // Execute the Action
   $('ul.padding li').removeClass(active_class);
@@ -30,50 +31,11 @@ function search_people(partial_name_element) {
   var partial_name = $(partial_name_element).val();
 
   // Prevent AJAX spamming
-  if(partial_name.length < 3) {
-    var invisible = 'invisible';
-    $('#alert_row').addClass(invisible);
-    $('#people_list').addClass(invisible);
-    return;
-  }
+  if(partial_name.length < 3) return;
 
-  // Perform the Request  
-  var request_url = "<%= Rails.application.routes.url_helpers.people_search_path %>/" + partial_name + '.json';
+  // Perform the Request
+  var request_url = "<%= Rails.application.routes.url_helpers.person_search_path %>/" + partial_name;
   $.get(request_url, function(resp) {
-    // AJAX Variables
-    var invisible = 'invisible';
-    var alert_row = $('#alert_row');
-    var people_list_row = $('#people_list');
-    var example_person = $('#example_person');
-    var people_list_element = people_list_row.children('ul');
-
-    // Check if there is an answer on the resp
-    if(resp.length == 0) {
-      people_list_row.addClass(invisible);
-      alert_row.removeClass(invisible);
-    } else {
-      alert_row.addClass(invisible);
-      people_list_row.removeClass(invisible);
-
-      // Clear it List
-      var skip_first = true;
-      var list = people_list_element;
-      clearList(list, skip_first);
-
-      // Setup it Person on the View
-      for(i in resp) {
-        // Base Variables
-        var person = resp[i];
-        var li_element = '<li class="' + example_person.attr('class') + '">';
-
-        // Set the elements values
-        var current_element_person = example_person.clone();
-        current_element_person.children('img').attr('src', person.picture);
-        current_element_person.children('span.title').html(person.name);
-
-        // Set on the View
-        people_list_element.append(li_element + current_element_person.html() + '</li>');
-      }
-    }
+    $('#people_list').html(resp);
   });
 }

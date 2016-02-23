@@ -9,27 +9,15 @@
 
 
   .row
+    -params[:action] == 'edit' ? disabled = true : disabled = false
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:user]}"
-      = f.text_field :user, onkeyup: 'search_people(this)'
+      = f.text_field :user_name, onkeyup: 'search_people(this)', disabled: disabled
       = f.label :user
 
-
-  #people_list.row.invisible
-    ul.padding.collection.col.l12.s12
-      li#example_person.collection-item.avatar.col.l6
-        -u = User.first
-        =image_tag(u.picture, class: 'circle')
-        span.title =u.name
-        p
-          a.selector onclick="select_person(this)"
-            i.left-icon.ion-checkmark-circled
-            | Selecionar Empreendedor
-
-  #alert_row.row.invisible
-    .alert.alert-border-bottom.alert-border-left.cyan.lighten-4.cyan-text.text-darken-2
-      | Pessoa não encontrada. Os participantes de seu time precisam ser usuário NITRO. &nbsp;
-      a href="#" Convide aqui os outros Integrantes.
+  -unless @teammate.user.nil?
+    input name="user_id" type="radio" value="#{@teammate.user.encrypted_identifier}"
+  #people_list.row
 
   .row
     .input-field.col.l12.s12
@@ -37,21 +25,6 @@
       = f.text_field :role
       = f.label :role
       .footer-info.purple-text =render 'teammates/partials/blog_role'
-
-
-    .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:expertise]}"
-      = f.text_area :expertise, class: 'materialize-textarea'
-      = f.label :expertise
-
-
-  .spacing_rows
-    .row
-      .input-field.col.offset-l2.l8.s12
-        i class="prefix #{t_current_class_icons[:contacts]}"
-        = f.check_box :contacts, class: 'filled-in'
-        = f.label :contacts
-
 
   -@footer_link=true
   =render 'layouts/partials/components/static/float_buttons/save'

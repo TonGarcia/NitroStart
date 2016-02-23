@@ -8,7 +8,7 @@ class TeammatesController < ApplicationController
   # GET /teammates
   # GET /teammates.json
   def index
-    @teammates = Teammate.all
+    @teammates = @nested_obj.teammates
   end
 
   # GET /teammates/1
@@ -32,8 +32,8 @@ class TeammatesController < ApplicationController
 
     respond_to do |format|
       if @teammate.save
-        format.html { redirect_to @teammate, notice: 'Teammate was successfully created.' }
-        format.json { render :show, status: :created, location: @teammate }
+        format.html { redirect_to nested_path_to(@teammate), notice: "Um pedido de confirmação foi enviado para #{@teammate.user.name}" }
+        format.json { render :show, status: :created, location: [@nested_obj, @teammate] }
       else
         format.html { render :new }
         format.json { render json: @teammate.errors, status: :unprocessable_entity }
@@ -46,8 +46,8 @@ class TeammatesController < ApplicationController
   def update
     respond_to do |format|
       if @teammate.update(teammate_params)
-        format.html { redirect_to @teammate, notice: 'Teammate was successfully updated.' }
-        format.json { render :show, status: :ok, location: @teammate }
+        format.html { redirect_to nested_path_to(@teammate), notice: "O Tripulante #{@teammate.user.name} foi atualizado." }
+        format.json { render :show, status: :ok, location: [@nested_obj, @teammate] }
       else
         format.html { render :edit }
         format.json { render json: @teammate.errors, status: :unprocessable_entity }
@@ -73,11 +73,6 @@ class TeammatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teammate_params
-      params.require(:teammate).permit(:role, :expertise, :contacts, :team_id, :user_id)
-    end
-
-    # Setup it dependence (objects)
-    def set_nested
-
+      params.require(:teammate).permit(:role, :expertise, :contacts, :team_id).merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end

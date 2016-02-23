@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :lockable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Attachments
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :profile, ProfileUploader
 
   # Relations
   has_many :pitches
@@ -31,6 +31,12 @@ class User < ActiveRecord::Base
 
   # Logic Attr (not persisted)
   attr_accessor :password_rechecked
+
+  # Return it ID decrypted
+  def self.decrypt_identifier(encrypted_id)
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+    crypt.decrypt_and_verify(encrypted_id)
+  end
 
   private
     # Check if it user is new & if it have a Social Session

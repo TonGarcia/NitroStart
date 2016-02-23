@@ -7,6 +7,11 @@ module Profile
     self.id == 1
   end
 
+  def base_name
+    names = self.name.split(' ')
+    "#{names.first} #{names.last}"
+  end
+
   # Return it address as object
   def address
     address_hash = {}

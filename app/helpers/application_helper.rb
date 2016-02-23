@@ -20,6 +20,14 @@ module ApplicationHelper
     @class_icons = locale_icon(current_class)
   end
 
+  def nested_class_name
+    @nested_obj.class.name.downcase
+  end
+
+  def current_class_name
+    @current_obj.class.name.downcase
+  end
+
   # Return it LocaleIcon based on model name passed as param
   def locale_icon(model)
     ENUM[:locale_icon][model]

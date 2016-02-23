@@ -13,6 +13,13 @@ module HistoricalControllers
     send("#{@nested_obj.class.to_s.downcase.singularize}_path", @nested_obj)
   end
 
+  # Return it index path on nested object
+  def nested_path_to(obj)
+    pluralized_obj = obj.class.to_s.downcase.pluralize
+    singularized_nested = @nested_obj.class.to_s.downcase.singularize
+    send("#{singularized_nested}_#{pluralized_obj}_path", @nested_obj)
+  end
+
   # Setup it dependence (objects)
   def set_nested
     # Setup variables
