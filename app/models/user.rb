@@ -14,7 +14,9 @@ class User < ActiveRecord::Base
 
   # Relations
   has_many :pitches
+  has_many :teammates
   has_many :social_sessions
+  has_many :pitches, through: :teammates
   has_many :start_ups, through: :pitches
 
   # Custom validations

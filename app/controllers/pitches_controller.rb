@@ -73,6 +73,7 @@ class PitchesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_pitch
       @pitch = @current_user.pitches.where(id: params[:id]).take
+      @pitch = @current_user.pitches if @pitch.nil?
       redirect_to forbidden_path if @pitch.nil?
     end
 

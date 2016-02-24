@@ -3,8 +3,7 @@ class ShowroomController < ApplicationController
   # Show specific PITCH or STARTUP based on it defined permalink
   def show
     @campaign = Campaign.where(link: params[:permalink]).take
-    # TODO if @campaign.nil throw 404 error
-
+    redirect_to file_not_found_path if @campaign.nil?
   end
 
   # GET /showroom/pitches

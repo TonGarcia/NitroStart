@@ -5,6 +5,8 @@ class Teammate < ActiveRecord::Base
 
   # Relations
   belongs_to :user
+  belongs_to :pitch
+  belongs_to :start_up
 
   # Rails validations
   validates :role, length: { minimum: 2, maximum: 45 }, presence: true
