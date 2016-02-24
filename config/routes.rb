@@ -34,7 +34,9 @@ Rails.application.routes.draw do
     resources :investments
     resources :supporters
     resources :campaigns
-    resources :teammates
+    resources :teammates do
+      get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
+    end
   end
 
   # StartUp - Nested Objects
@@ -47,8 +49,12 @@ Rails.application.routes.draw do
     resources :revenues
     resources :financials
     resources :competitors
-      resources :providers
+    resources :providers
+    resources :campaigns
     resources :investments
+    resources :teammates do
+      get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
+    end
   end
 
   # Non-Nested objects

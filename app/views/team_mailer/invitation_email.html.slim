@@ -1,0 +1,9 @@
+p ="Olá #{@user.name}."
+p ="Você foi convidado para o Time #{@nested_obj.name} por #{@nested_obj.user.name}."
+
+p Você pode confirmar sua participação neste time através do link abaixo:
+p =link_to @confirm_url, @confirm_url
+
+br
+p Ou você ainda pode cancelar sua participação neste time clicando em:
+p =link_to @decline_url, @decline_url

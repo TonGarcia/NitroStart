@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
     crypt.decrypt_and_verify(encrypted_id)
   end
 
+  # Return the team which the user have accept invitation (association = :start_up or :pitch)
+  def confirmed_team(association)
+    self.send(association.to_s).where(teammates: {verified: true})
+  end
+
   private
     # Check if it user is new & if it have a Social Session
     def has_social_and_not_persisted

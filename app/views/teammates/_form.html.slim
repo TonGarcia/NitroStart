@@ -17,13 +17,14 @@
 
   -unless @teammate.user.nil?
     input name="user_id" type="radio" value="#{@teammate.user.encrypted_identifier}"
+
   #people_list.row
 
   .row
     .col.l12.s12
       .input-field.col.l12.s12
         i class="purple-text prefix #{t_current_class_icons[:permissions]}"
-        = f.check_box :permissions, {class: 'filled-in'}, checked_value = 'admin'
+        = f.check_box :permissions, {class: 'filled-in', checked: @teammate.admin? }
         = f.label :permissions, class: 'check_label'
 
   .row
@@ -32,6 +33,7 @@
         i class="prefix #{t_current_class_icons[:role]}"
         = f.text_field :role
         = f.label :role
+        .footer-info.purple-text =render 'teammates/partials/blog_role'
 
 
   -@footer_link=true

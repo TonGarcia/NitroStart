@@ -25,12 +25,14 @@
             .col.l4.s4
               a.col.l12.s12.btn href="#{pitch_path(pitch)}"
                 i.ion-eye
-            .col.l4.s4
-              a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
-                i.mdi-editor-mode-edit
-            .col.l4.s4
-              = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
-                i.mdi-action-delete
+
+            -if user_has_admin_permissions
+              .col.l4.s4
+                a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
+                  i.mdi-editor-mode-edit
+              .col.l4.s4
+                = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+                  i.mdi-action-delete
 
 
 -@float_opts={link: new_pitch_path}

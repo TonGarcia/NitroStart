@@ -7,7 +7,7 @@ h4.center.purple-text Tripulantes Adicionados
   -@teammates.each do |teammate|
     -user = teammate.user
     .col.s6.m3.l2
-      .card
+      div class="card #{additional_user_card_class(teammate)}"
         .card-image
           a href="#"
             =image_tag user.profile
