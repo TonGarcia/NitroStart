@@ -32,9 +32,14 @@ class Teammate < ActiveRecord::Base
   end
 
   # Check if it user is the pitch creator
-  def owner?
+  def owner?(external_nested_obj=nil)
     return false if self.nested_obj.nil?
-    self.nested_obj.user_id == self.user_id
+
+    if external_nested_obj
+      return external_nested_obj.user_id == self.user_id
+    else
+      return self.nested_obj.user_id == self.user_id
+    end
   end
 
   # Check if it teammate had confirmed
@@ -46,6 +51,12 @@ class Teammate < ActiveRecord::Base
   # Return it filled nested (pitch/startup)
   def nested_obj
     self.pitch || self.start_up
+  end
+
+  # Verify it team association
+  def verify
+    self.verified = true
+    self.save
   end
 
   private

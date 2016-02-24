@@ -17,7 +17,7 @@ h4.center.purple-text Tripulantes Adicionados
             span.card-title.activator.right
               i.mdi-navigation-more-vert.right
             span.truncate
-              i.left-icon.purple-text.mdi-action-class
+              i.mdi-action-class.left-icon
               = teammate.role
           h6.truncate =user.base_name
 
@@ -39,12 +39,14 @@ h4.center.purple-text Tripulantes Adicionados
             .col.l4.s4
               a.purple-text
                 i.mdi-action-face-unlock
-            .col.l4.s4
-              a.amber-text.text-darken-3 href="#{send("edit_#{nested_class_name}_teammate_path", @nested_obj, teammate)}"
-                i.mdi-editor-mode-edit
-            .col.l4.s4
-              = link_to [@nested_obj, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
-                i.mdi-action-delete
+            -if edit_teammate_permission(teammate)
+              .col.l4.s4
+                a.amber-text.text-darken-3 href="#{send("edit_#{nested_class_name}_teammate_path", @nested_obj, teammate)}"
+                  i.mdi-editor-mode-edit
+            -if destroy_teammate_permission(teammate)
+              .col.l4.s4
+                = link_to [@nested_obj, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
+                  i.mdi-action-delete
 
 
 -@float_opts={link: new_pitch_teammate_path(@nested_obj)}

@@ -42,6 +42,9 @@ module Concerns
       user.timezone = timezone if user.timezone.nil? && !timezone.nil?
       # /User attrs
 
+      # Prevent Confirmation Email for SocialSession User LogIn
+      user.confirmed_at = Time.now
+
       not_validate ? user.save(validate:false) : user.save
       user
     end

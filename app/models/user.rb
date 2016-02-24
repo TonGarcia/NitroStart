@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
   include Profile
   include Security
 
-  # Devise Methods
-  devise :database_authenticatable, :registerable, :confirmable, :timeoutable,
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  # :validatable
+  devise :database_authenticatable, :registerable, :timeoutable, :confirmable,
          :lockable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Attachments
@@ -33,16 +35,25 @@ class User < ActiveRecord::Base
 
   # Logic Attr (not persisted)
   attr_accessor :password_rechecked
-
-  # Return it ID decrypted
-  def self.decrypt_identifier(encrypted_id)
-    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
-    crypt.decrypt_and_verify(encrypted_id)
-  end
+  attr_accessor :teammate_ref
 
   # Return the team which the user have accept invitation (association = :start_up or :pitch)
   def confirmed_team(association)
     self.send(association.to_s).where(teammates: {verified: true})
+  end
+
+  # return it teammate register for a nestedobj (:pitch / :start_up)
+  def teammate(nested_obj)
+    return self.teammate_ref unless self.teammate_ref.nil?
+    associated_id = "#{nested_obj.class.to_s.to_sym}_id"
+    self.teammate_ref = self.teammates.where("#{associated_id}": nested_obj.id).take
+  end
+
+  # ================================ STATIC METHODS ================================
+  # Return it ID decrypted
+  def self.decrypt_identifier(encrypted_id)
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+    crypt.decrypt_and_verify(encrypted_id)
   end
 
   private

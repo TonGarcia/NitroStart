@@ -6,8 +6,8 @@ class TeamMailer < ApplicationMailer
     nested_class_name = nested_obj.class.to_s.downcase.singularize
 
     @url  = send("#{nested_class_name}_teammate_confirm_invitation_url", nested_obj, teammate)
-    @confirm_url = "#{@url}?confirm=true"
-    @decline_url = "#{@url}?confirm=false"
+    @confirm_url = "#{@url}?confirm=accept"
+    @decline_url = "#{@url}?confirm=decline"
 
     mail(to: @user.email, subject: "Você foi Convidado para o Time: #{nested_obj.name}")
   end

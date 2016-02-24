@@ -9,7 +9,7 @@ module TeammatesAssociations
 
   # Before save/validate Pitch/Startup set it user owner as a teammate
   def add_it_owner_as_teammate
-    self.teammates << Teammate.new(role: 'Admin', verified: true, permissions: 'admin', user_id: self.user_id)
+    self.teammates << Teammate.new(role: 'Owner', verified: true, permissions: 'admin', user_id: self.user_id)
     self.save
   end
 

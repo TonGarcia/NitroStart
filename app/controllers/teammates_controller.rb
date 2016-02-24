@@ -2,16 +2,26 @@ class TeammatesController < ApplicationController
   # Controllers Concerns
   include HistoricalControllers
 
+  # View Helpers to Controller
+  include TeammatesHelper
+
   #  Event Triggers
   before_action :set_teammate, only: [:show, :edit, :update, :destroy]
 
   # GET /teammates/1/confirm_invitation
   # GET /teammates/1/confirm_invitation.json
   def confirm_invitation
-    if params[:confirmation] == 'accepted'
-      redirect_to nested_path_to(@teammate), flash: { notice: 'Bem-vindo ao Time de Tripulantes!' }
-    elsif params[:confirmation] == 'declined'
-      redirect_to root_path, flash: { notice: 'Convite Rejeitado com Sucesso.' }
+    teammate = Teammate.find(params[:teammate_id])
+    redirect_to forbidden_path unless teammate.user_id == @current_user.id
+
+    if params[:confirm] == 'accept'
+      verified = teammate.verify
+      verified ? msg = 'Bem-vindo ao Time de Tripulantes!' : msg = 'Oops! Ocorreu um erro, tente novamente. Caso o erro persista peça para ser adicionado novamente ao time.'
+      redirect_to nested_path_to(teammate), flash: { notice: msg }
+    elsif params[:confirmation] == 'decline'
+      @teammate.destroy
+      msg = "Convite do time #{teammate.pitch.name} Rejeitado com Sucesso."
+      redirect_to root_path, flash: { notice: msg }
     end
   end
 
@@ -29,6 +39,7 @@ class TeammatesController < ApplicationController
 
   # GET /teammates/new
   def new
+    redirect_to forbidden_path unless owner_teammate || admin_teammate
     @teammate = Teammate.new
   end
 
@@ -84,8 +95,13 @@ class TeammatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teammate_params
-      base_params = params.require(:teammate).permit(:role, :permissions)
-      base_params[:permissions] == '1' ? base_params[:permissions] = 'admin' : base_params[:permissions] = 'none'
+      if owner_teammate
+        base_params = params.require(:teammate).permit(:role, :permissions)
+        base_params[:permissions] == '1' ? base_params[:permissions] = 'admin' : base_params[:permissions] = 'none'
+      else
+        base_params = params.require(:teammate).permit(:role)
+      end
+
       base_params.merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
     end
 end
