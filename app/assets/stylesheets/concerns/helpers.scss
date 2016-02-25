@@ -13,6 +13,10 @@
   position: absolute;
 }
 
+.content-top-wrap {
+  padding-top: calc(55px + 1.3rem);
+}
+
 #error_bg_img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -48,8 +52,16 @@ section {
   border-radius: 50% !important;
 }
 
-.medium-thin {
-  font-weight: 300;
+.thin {
+  font-weight: 100 !important;
+}
+
+.normal-thin {
+  font-weight: 400 !important;
+}
+
+.bold {
+
 }
 
 .card {
@@ -167,6 +179,35 @@ h1.set-video {
 .quotes {
   p {
     text-align: right;
+  }
+}
+
+img.ribbon {
+  z-index: 1;
+  max-width: 50%;
+  position: absolute !important;
+}
+
+span.ribbon-label {
+  z-index: 2;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+span.ribbon-label {
+  &.admin {
+    top: 28px;
+  }
+
+  &.owner {
+    top: 32px;
+  }
+
+  &.pending {
+    top: 22px;
   }
 }
 

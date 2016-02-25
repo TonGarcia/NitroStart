@@ -1,0 +1,17 @@
+nav#application.navbar-top
+  .nav-wrapper.purple.white-text
+    =render 'layouts/partials/components/static/brand'
+
+    ul#not-mobile.nav_actions.right.hide-on-med-and-down
+      li
+        a href="#{showroom_pitches_path}" class="#{@text_visual_identity}"
+          | Vitrine de Ideias
+      li
+        a href="#{new_pitch_path}" class="#{@text_visual_identity}"
+          | Comece seu Projeto
+      li
+        a href="#{new_user_registration_path}" class="#{@text_visual_identity}"
+          | Registre-se
+      li
+        a href="#{new_user_session_path}" class="#{@text_visual_identity}"
+          | Login

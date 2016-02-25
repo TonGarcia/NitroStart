@@ -104,7 +104,7 @@ module Formatter
   end
 
   def formatted_inner_link
-    "up.nitrostart.com.br/#{self.link}"
+    "#{Rails.application.config.action_mailer.default_url_options[:host]}/#{self.link}"
   end
 
   def permissions_sym

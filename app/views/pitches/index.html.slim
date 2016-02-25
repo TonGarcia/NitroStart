@@ -26,10 +26,12 @@
               a.col.l12.s12.btn href="#{pitch_path(pitch)}"
                 i.ion-eye
 
-            -if user_has_admin_permissions
+            -if admin_teammate(@current_user.teammate(@pitch))
               .col.l4.s4
                 a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
                   i.mdi-editor-mode-edit
+
+            -if owner_teammate(@pitch)
               .col.l4.s4
                 = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
                   i.mdi-action-delete

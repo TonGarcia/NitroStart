@@ -4,6 +4,11 @@ class Campaign < ActiveRecord::Base
   include Formatter
   include WidgetTracker
 
+  # Relations
+  belongs_to :pitch
+  belongs_to :start_up
+  has_many :supporters
+
   # Rails validations
   validates :locale, length: { is: 2 }, presence: true
   validates :link, length: { minimum: 3, maximum: 55 }, presence: true
@@ -16,6 +21,17 @@ class Campaign < ActiveRecord::Base
   # Locale Countries Array
   def locale_countries
     Helpers::Globals.find_all_countries_by_languages(self.locale)
+  end
+
+  # Return it nested/parent obj
+  def nested_obj
+    return self.pitch if self.pitch_id
+    return self.start_up if self.start_up_id
+  end
+
+  # Return it nested/parent obj (:startup / :pitch) name
+  def name
+    self.nested_obj.name
   end
 
   # Return it currency hash

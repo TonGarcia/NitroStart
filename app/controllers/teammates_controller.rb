@@ -12,16 +12,16 @@ class TeammatesController < ApplicationController
   # GET /teammates/1/confirm_invitation.json
   def confirm_invitation
     teammate = Teammate.find(params[:teammate_id])
-    redirect_to forbidden_path unless teammate.user_id == @current_user.id
+    return redirect_to forbidden_path unless teammate.user_id == @current_user.id
 
     if params[:confirm] == 'accept'
       verified = teammate.verify
       verified ? msg = 'Bem-vindo ao Time de Tripulantes!' : msg = 'Oops! Ocorreu um erro, tente novamente. Caso o erro persista peça para ser adicionado novamente ao time.'
-      redirect_to nested_path_to(teammate), flash: { notice: msg }
-    elsif params[:confirmation] == 'decline'
-      @teammate.destroy
+      return redirect_to nested_path_to(teammate), flash: { notice: msg }
+    elsif params[:confirm] == 'decline'
+      teammate.destroy
       msg = "Convite do time #{teammate.pitch.name} Rejeitado com Sucesso."
-      redirect_to root_path, flash: { notice: msg }
+      return redirect_to root_path, flash: { notice: msg }
     end
   end
 

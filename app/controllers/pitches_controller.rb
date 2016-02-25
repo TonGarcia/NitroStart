@@ -4,6 +4,9 @@ class PitchesController < ApplicationController
   add_breadcrumb I18n.t('actions.pitches.new'), :new_pitch_path, only: %w(new)
   before_action :set_pitch, only: [:show, :edit, :update, :destroy]
 
+  # View Helpers to Controller
+  include TeammatesHelper
+
   # GET /pitches/1/campaign
   def campaign
     @pitch = Pitch.find(params[:pitch_id])

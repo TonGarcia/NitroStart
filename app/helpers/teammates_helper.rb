@@ -1,21 +1,27 @@
 module TeammatesHelper
   # Aditional user teammate card class to show it user state/role (admin, normal, pending_confirmation)
-  def additional_user_card_class(teammate)
+  def user_status(teammate)
     if teammate.confirmation_pending?
-      pending_add_class = 'amber lighten-5 amber-text text-darken-4'
-      return pending_add_class
+      pending_add_class = 'amber'
+      return {class: pending_add_class, status: 'pending', role: 'Pending'}
     elsif teammate.user_id == @nested_obj.user_id
-      owner_add_class = 'purple lighten-5 purple-text text-darken-2'
-      return owner_add_class
+      owner_add_class = 'purple'
+      return {class: owner_add_class, status: 'owner', role: 'Dono'}
     elsif teammate.admin?
-      admin_add_class = 'light-blue lighten-5 light-blue-text text-darken-2'
-      return admin_add_class
+      admin_add_class = 'black'
+      return {class: admin_add_class, status: 'admin', role: 'Admin'}
+    else
+
     end
   end
 
   # User owner condition
-  def owner_teammate
-    @current_user.id == @nested_obj.user_id
+  def owner_teammate(nested_obj=nil)
+    if nested_obj
+      @current_user.id == nested_obj.user_id
+    else
+      @current_user.id == @nested_obj.user_id
+    end
   end
 
   # Check if it user is an admin

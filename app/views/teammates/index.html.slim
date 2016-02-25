@@ -6,10 +6,14 @@ h4.center.purple-text Tripulantes Adicionados
 .row#teammates
   -@teammates.each do |teammate|
     -user = teammate.user
+    -user_status_hash = user_status(teammate)
     .col.s6.m3.l2
-      div class="card #{additional_user_card_class(teammate)}"
+      .card
         .card-image
           a href="#"
+            -if user_status_hash
+              span class="white-text ribbon-label #{user_status_hash[:status]}" =user_status_hash[:role]
+              =image_tag "layout/ribbons/#{user_status_hash[:class]}-ribbon.png", class: 'ribbon'
             =image_tag user.profile
 
         .card-content.activator.center
@@ -23,7 +27,7 @@ h4.center.purple-text Tripulantes Adicionados
 
         .card-reveal
           span.card-title.truncate
-            i class="mdi-navigation-close right"
+            i.mdi-navigation-close.right
           .row.card-title
             .col.l4.s4
               a.amber-text.text-darken-2

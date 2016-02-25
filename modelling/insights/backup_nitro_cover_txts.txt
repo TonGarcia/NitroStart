@@ -1,0 +1,8 @@
+      /.row.hide-on-small-only.huge_margin_top
+      /  h2.medium_margin_top.title.medium-thin.white-text.center Conquiste sua Liberdade Financeira!
+      /  h4.title.medium-thin.huge_margin_top.white-text.center Somos um Espaço de Transformação de Ideias em Negócios Lucrativos e Investimentos Seguros
+      /  h5.medium-thin.margin_top.white-text.center Primeiro e Única Plataforma de Cross Equity Funding com Seguradora de Investimentos de Riscos
+      /.row.hide-on-med-and-up.medium_margin_bottom
+      /  h2.medium_margin_top.title.medium-thin.white-text.center Conquiste sua Liberdade Financeira!
+      /  h5.medium-thin.huge_margin_top.white-text.center Somos um Espaço de Transformação de Ideias em Negócios Lucrativos e Investimentos Seguros
+      /  h5.medium-thin.margin_top.white-text.center Primeiro e Única Plataforma de Cross Equity Funding com Seguradora de Investimentos de Riscos
