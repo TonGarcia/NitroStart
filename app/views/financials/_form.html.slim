@@ -41,14 +41,14 @@
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@financial[current_attr], precision: 2)
       = f.label current_attr
-      .footer-info.purple-text =render 'financials/partials/blog_bootstrapped'
+      .footer-info.purple-text =render 'financials/partials/academy_bootstrapped'
 
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:market_penetration]}"
       = f.text_field :market_penetration
       = f.label :market_penetration
-      .footer-info.purple-text =render 'financials/partials/blog_market_share'
+      .footer-info.purple-text =render 'financials/partials/academy_market_share'
 
 
 

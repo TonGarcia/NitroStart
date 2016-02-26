@@ -110,7 +110,7 @@ pt-BR:
 
   # Campaign -----------------------------------------------------
       campaign:
-        link: Link do projeto up.nitrostart.com.br/
+        link: Link do projeto up.nitrostart.me/
         body: Escrita Livre
         locale: Idioma
         locale_flags: Países do Idioma

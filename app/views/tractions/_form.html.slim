@@ -13,14 +13,14 @@
       i class="prefix #{t_current_class_icons[:grow_strategy]}"
       = f.text_field :grow_strategy
       = f.label :grow_strategy
-      .footer-info.purple-text =render 'tractions/partials/blog_strategy'
+      .footer-info.purple-text =render 'tractions/partials/academy_strategy'
 
     .input-field.col.l12.s12
       - current_attr = :lead_cust
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@traction[current_attr], precision: 2)
       = f.label current_attr
-      .footer-info.purple-text =render 'tractions/partials/blog_lead'
+      .footer-info.purple-text =render 'tractions/partials/academy_lead'
 
 
     .input-field.col.l12.s12
@@ -28,21 +28,21 @@
       i class="prefix #{t_current_class_icons[current_attr]}"
       = f.text_field current_attr, class: 'currency', value: number_with_precision(@traction[current_attr], precision: 2)
       = f.label current_attr
-      .footer-info.purple-text =render 'tractions/partials/blog_conversion'
+      .footer-info.purple-text =render 'tractions/partials/academy_conversion'
 
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:amount_daily_lead]}"
       = f.text_field :amount_daily_lead, class: 'formatted_int'
       = f.label :amount_daily_lead
-      .footer-info.purple-text =render 'tractions/partials/blog_daily_lead'
+      .footer-info.purple-text =render 'tractions/partials/academy_daily_lead'
 
 
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:daily_growth_rate]}"
       = f.text_field :daily_growth_rate, class: 'formatted_int'
       = f.label :daily_growth_rate
-      .footer-info.purple-text =render 'tractions/partials/blog_daily_conversion'
+      .footer-info.purple-text =render 'tractions/partials/academy_daily_conversion'
 
 
     .input-field.col.l12.s12

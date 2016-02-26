@@ -25,7 +25,7 @@
     .row
       .input-field.col.l12.s12
         = f.select :stage, options_for_select(ENUM[:start_up_stages].to_view_array, @project.stage), prompt: 'Estágio de Maturidade', class: 'material', onchange:'show_countries_flags_for(this, "#flags")'
-        .footer-info.purple-text =render 'projects/partials/blog_stages'
+        .footer-info.purple-text =render 'projects/partials/academy_stages'
 
     .row
       .col.l6.s6
