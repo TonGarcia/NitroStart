@@ -29,6 +29,16 @@ class Campaign < ActiveRecord::Base
     return self.start_up if self.start_up_id
   end
 
+  # Return teammates which have no pending
+  def active_team
+    self.nested_obj.active_team
+  end
+
+  # Return it creator user
+  def owner
+    self.nested_obj.user
+  end
+
   # Return it nested/parent obj (:startup / :pitch) name
   def name
     self.nested_obj.name

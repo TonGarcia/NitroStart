@@ -1,4 +1,8 @@
 @media only screen and (min-width: 993px) {
+  .container.content-top-wrap {
+    width: 100%;
+  }
+
   .content-wrap {
     .row {
       .col.offset-s2, .col.offset-s3, .col.offset-s4, .col.offset-s5,

@@ -14,13 +14,13 @@ h4.center.purple-text Detalhamento da Campanha
 
 .row
   .col.l8.s12
-    .card-panel
+    #campaign.card-panel
       .campaign_body
         =raw @campaign.body
   .col.l4
     .card-panel
-      = render 'campaigns/partials/range_tracking'
+      = render 'campaigns/partials/aside_card/owner_tracking_view'
 
 
-    -@float_opts={link: edit_pitch_campaign_path(@pitch.id, @campaign.id), main_btn_icon: 'ion-edit'}
+-@float_opts={link: edit_pitch_campaign_path(@pitch.id, @campaign.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

@@ -3,6 +3,13 @@ h4.center.purple-text Campanhas de Test A/B para Apoiadores
 
 .divider
 
+/Link to Complete Overview
+.row
+  h6.center.purple-text
+    =link_to pitch_path(@pitch) do
+      i.mdi-action-dashboard.left-icon
+      | Acompanhamento e Métricas de Todas Campanhas
+
 .row
   -@nested_obj = @pitch
   -@ref_attrs = campaign_index_attrs

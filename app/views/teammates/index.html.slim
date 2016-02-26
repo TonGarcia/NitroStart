@@ -14,7 +14,7 @@ h4.center.purple-text Tripulantes Adicionados
             -if user_status_hash
               span class="white-text ribbon-label #{user_status_hash[:status]}" =user_status_hash[:role]
               =image_tag "layout/ribbons/#{user_status_hash[:class]}-ribbon.png", class: 'ribbon'
-            =image_tag user.profile
+            =image_tag user.profile, class: 'profile'
 
         .card-content.activator.center
           h6.strong

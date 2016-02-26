@@ -6,6 +6,8 @@ module HistoricalControllers
     before_action :set_nested
     before_action :previous_controller
     before_action :check_if_has_list, only: :index
+    before_action :check_user_admin_permissions, except: [:index, :show]
+    before_action :check_user_teammate_permissions, only: [:index, :show]
   end
 
   # Retrieve it index URL, useful for Delete action, for example.
@@ -58,5 +60,15 @@ module HistoricalControllers
     elsif params[:start_up_id]
       add_breadcrumb I18n.t('actions.start_up.index'), pitches_path
     end
+  end
+
+  # Check if it current_user has admin permissions to exec it action
+  def check_user_admin_permissions
+    # TODO redir 403 if not admin
+  end
+
+  # Check if it current_user is a teammate to have permissions to exec it action
+  def check_user_teammate_permissions
+    # TODO redir 403 if not teammate
   end
 end

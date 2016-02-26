@@ -85,6 +85,12 @@ section {
   }
 }
 
+#teammates {
+  .profile {
+    min-height: 144px !important;
+  }
+}
+
 .card-panel.stats-card.circle {
   min-height: 90px;
   max-height: 90px;
@@ -198,12 +204,8 @@ span.ribbon-label {
 }
 
 span.ribbon-label {
-  &.admin {
+  &.admin, &.owner {
     top: 28px;
-  }
-
-  &.owner {
-    top: 32px;
   }
 
   &.pending {
@@ -353,6 +355,10 @@ a.selector {
 
 .desk_huge_margin_top {
   margin-top: 160px !important;
+}
+
+.small_padding_top {
+  padding-top: 10px !important;
 }
 
 .padding_top {

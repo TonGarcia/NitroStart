@@ -6,12 +6,10 @@ module TeammatesHelper
       return {class: pending_add_class, status: 'pending', role: 'Pending'}
     elsif teammate.user_id == @nested_obj.user_id
       owner_add_class = 'purple'
-      return {class: owner_add_class, status: 'owner', role: 'Dono'}
+      return {class: owner_add_class, status: 'owner', role: 'Owner'}
     elsif teammate.admin?
       admin_add_class = 'black'
       return {class: admin_add_class, status: 'admin', role: 'Admin'}
-    else
-
     end
   end
 

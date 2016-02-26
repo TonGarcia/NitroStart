@@ -1,1 +1,15 @@
-h4.center.purple-text =@dynamic_title
+.row
+  .center.purple-text
+    h4 =@dynamic_title
+    h6
+      | por
+      strong.right-icon =@campaign.owner.name
+
+.row
+  .col.l8.s12
+    #campaign.card-panel
+      .campaign_body
+        = raw @campaign.body
+  .col.l4
+    .card-panel
+      = render 'campaigns/partials/aside_card/supporter_tracking_view'

@@ -4,7 +4,7 @@
     -western_europe = ISO3166::Country.find_all_countries_by_subregion("Western Europe")
     -southern_europe = ISO3166::Country.find_all_countries_by_subregion("Southern Europe")
     /TODO Locale language selection ISO3166::Country.find_all_countries_by_languages("es")
-    -countries = south_america+southern_europe+western_europe
+    -countries = south_america+southern_europe
 
     h6.center
       i.left-icon.slim.ion-android-globe
@@ -30,26 +30,44 @@
 
   .col.l12.s12
     h6.center
-      i.left-icon.slim.ion-ios-people
+      i.left-icon.slim.mdi-action-shopping-cart
       | Consumidores
     h5.center.purple-text
-      | 720
-
-  .col.l12.s12
-    h6.center
-      i.left-icon.slim.fa.fa-pie-chart
-      | Market Share
-    h5.center.purple-text
-      | 0,0015%
+      | 723
 
   .col.l12.s12
     h6.center
       i.left-icon.slim.ion-cash
-      | Crédito Adquirido
+      | Crédito Total Adquirido
     h5.center.purple-text
-      | R$ 155.749,00
+      | R$ 18.306,36
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-ios-people
+      | Idealizadores
+    .small_padding_top
+      -@campaign.active_team.each do |teammate|
+        .col.l4.s6
+          =image_tag teammate.user.profile, class: 'circle col l8 offset-l2 s12'
+          h6.small_padding_top.center =teammate.user.base_name
 
 .row
-  a.btn.col.l12.s12
-    i.left-icon.ion-speakerphone
-    | Feedbacks
+  .col.l6.s6
+    a.btn.green.col.l12.s12
+      i.slim.ion-thumbsup
+  .col.l6.s6
+    a.btn.red.col.l12.s12
+      i.slim.ion-thumbsdown
+
+.row
+  .col.l12.s12
+    a.btn.teal.col.l12.s12
+      i.left-icon.ion-cash
+      | Adquirir Créditos
+
+.row
+  .col.l12.s12
+    a.btn.col.l12.s12
+      i.left-icon.ion-share
+      | Compartilhar
