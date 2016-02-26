@@ -1,6 +1,6 @@
 h4.center.purple-text Detalhamento do Estágio do Projeto
 =render  'layouts/partials/components/static/reference_sub_title'
-
+=render 'home/partials/components/flat_button'
 .divider
 
 .spacing_rows
@@ -16,13 +16,18 @@ h4.center.purple-text Detalhamento do Estágio do Projeto
         h6.purple-text
           i class="left-icon slim #{locale_icon(:project)[:awards]}"
           =i18n.t(:awards)
-        =to_view @project.awards
+        h6
+          i class="left-icon #{boolean_icon @project.awards}"
+          a href="#{@project.award_source}" link do prêmio
 
       .col.l3.offset-l1
         h6.purple-text
           i class="left-icon slim #{locale_icon(:project)[:patent]}"
           =i18n.t(:patent)
-        =to_view @project.patent
+          h6
+            i class="left-icon #{boolean_icon @project.patent}"
+            -if @project.patent?
+              a href="#{@project.patent_source}" link da patente
 
   .row
     .col.l8.offset-l2.s12

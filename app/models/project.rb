@@ -11,6 +11,8 @@ class Project < ActiveRecord::Base
 
   # Rails validations
   validates :stage, inclusion: { in: 0..10 }, presence: true
+  validates :award_source, presence: true, length: { minimum: 10, maximum: 255 }, if: :awards?
+  validates :patent_source, presence: true, length: { minimum: 10, maximum: 255 }, if: :patent?
 
   #  View Stage Attribute
   def view_stage

@@ -33,10 +33,14 @@ module ApplicationHelper
     ENUM[:locale_icon][model]
   end
 
+  # Return it boolean icon
+  def boolean_icon(value)
+    return 'ion-checkmark-round green-text' if value == true
+    return 'ion-close-round red-text' if value == false
+  end
+
   # Show as readable
   def to_view(value, attr=nil)
-    return 'Sim' if value == true
-    return 'Não' if value == false
   end
 
   # Return it role ID

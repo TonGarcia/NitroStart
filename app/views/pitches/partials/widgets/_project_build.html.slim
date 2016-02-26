@@ -6,4 +6,5 @@ a.card-panel.stats-card.white-text href="#{pitch_projects_path(@pitch.id)}"
   i.ion-settings
   span.count =amount_filled
   -if params[:action] != 'index'
-    .name Projeto
+    .hide-on-small-only.name Desenvolvimento do Produto
+    .hide-on-med-and-up.name Produto
