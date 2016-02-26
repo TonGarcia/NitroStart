@@ -1,0 +1,22 @@
+1. cadastra sua ideia, depois de ja ter a ideia
+2. cadastre a equipe que vai fazer aquela ideia contigo
+3. após ter a equipe levante quem é seus concorrentes pq sabendo a análise de SWOT deles você faz o resto do canvas
+4. conhecendo seus concorrentes você vai entender seu mercado, por exemplo o q seus consumidores pensam é só ver o q você colocou q os consumidores falam do concorrente (SWOT)
+5. após saber seu mercado e concorrente você monta o seu business em cima do SWOT do concorrente e do Mercado no qual vocês estão inseridos
+6. Sabendo como seu negócio vai girar descubra quem são seus forncedores
+7. agora nos diga em que pé/estado está seu projeto
+8. após nos dizer em que pé está nos diga os dados que seu projeto já alcançou
+9. financeiro: no diga como estão as finanças do seu projeto
+
+
+Formulação da ideia de forma mais dinamica e simultanea:
+ 1. preencho o canvas e a medida q preencho o canvas já vou preenchendo a tela de apoiadores
+ 2. A medida que vou preenchendo a tela de apoiadores já começo o marketing dela para amigos para já ter os early dos early dando massa e corpo pro meu público
+ 3. Antes mesmo de terminar de preencher a tela de apoiadores (com ela pela metade mesmo) já vou verificando os feedbacks e as métricas da campanha para ir ajustando o que estiver errado e testar se tem uma forma melhor de fazer o market fit (TEST A/B) criando mais telas de apoiadores com dizeres diferentes
+
+Perceba que este modelo é o melhor para n perder tempo e o mais foda: FAZ TUDO SIMULTENAMENTE e é o modelo mais otimizado possível e é o modelo q necessita um time, o outro modelo q mandei anteriormente dá pra pessoa fazer só, agora esse que tem coisas acontecendo ao mesmo tempo precisa estar em time.
+
+ 4. O sistema me notifica que já tenho relevancia suficiente para virar uma empresa (sair de pitch para startup)
+ 5. Começo a minha captação
+ 6. enquanto estou capitando o desenvolvimento da plataforma é feito pelos Rented
+ 7. eu lanço independente de conseguir meta de captação (as vezes com 5mil reais já sai um MVP bom)

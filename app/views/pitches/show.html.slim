@@ -14,22 +14,17 @@
 
   = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 s6 offset-s3 semi-circle hide-on-small-only')
 
+=render 'home/partials/components/flat_button'
 
 .divider
 
-ul.tabs
-  li.tab.col.s3: a.purple-text href="#validations" Validações
-  li.tab.col.s3: a.purple-text href="#canvas" Canvas
+.row
+  .col.l6.offset-l3.s12
+    = render 'pitches/partials/widgets/campaign'
 
-.row#validations
-  - validation_widgets.each do |widget|
+  - widgets.each do |widget|
     .col.l4.s12
       = render "pitches/partials/widgets/#{widget}"
-.row#canvas
-  -canvas_widgets.each do |widget|
-    .col.l4.s12
-      =render "pitches/partials/widgets/#{widget}"
-
 
 -@float_opts={link: edit_pitch_path(@pitch.id), main_btn_icon: 'ion-edit'}
 .fixed-action-btn=render 'home/partials/components/float_button'

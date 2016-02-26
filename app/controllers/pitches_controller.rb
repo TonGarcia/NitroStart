@@ -78,6 +78,7 @@ class PitchesController < ApplicationController
       @pitch = @current_user.pitches.where(id: params[:id]).take
       @pitch = @current_user.pitches if @pitch.nil?
       redirect_to forbidden_path if @pitch.nil?
+      @current_obj = @pitch
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -3,16 +3,16 @@
 pt-BR:
   controllers:
     ideas: Ideia & Hipóteses
-    pitches: Projetos
-    projects: Desenvolvimetno
+    pitches: Projeto
+    projects: Produto
     supporters: Apoiadores
     providers: Parceiros e Fornecedores
     showroom: Vitrine
     start_ups: Startups
-    competitors: Concorrentes
+    competitors: Concorrente
     financials: Desempenho Financeiro
     dashboard: Painel de Acompanhamento
-    businesses: Modelos de Negócio
+    businesses: Modelo de Negócio
     markets: Mercado de Atuação
     tractions: Tração de Crescimento
     campaigns: Campanhas para Apoiadores

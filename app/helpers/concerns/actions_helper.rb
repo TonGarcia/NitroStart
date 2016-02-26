@@ -1,5 +1,34 @@
 module Concerns::ActionsHelper
-# List AdminActions
+  # Create it  action url based on controller & action
+  def flat_url
+    nested_obj_class = @nested_obj.class.to_s.downcase
+    current_obj_class = params[:controller].singularize
+
+    if params[:action] == 'index'
+      if @nested_obj.nil?
+        return_url = send("new_#{current_obj_class}_path")
+      else
+        return_url = send("new_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj)
+      end
+    elsif params[:action] == 'show'
+      if @nested_obj.nil?
+        return_url = send("edit_#{current_obj_class}_path", @current_obj)
+      else
+        return_url = send("edit_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj)
+      end
+    end
+
+    return_url
+  end
+
+  # Create it  action text based on controller & action
+  def flat_action
+    partial_msg = t("messages.partials.#{params[:action]}")
+    object_name = t("controllers.#{params[:controller]}")
+    "#{partial_msg} #{object_name}"
+  end
+
+  # List AdminActions
   def admin_actions
     {
       label: 'Admin',

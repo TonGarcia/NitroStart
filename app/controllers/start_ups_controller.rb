@@ -65,6 +65,7 @@ class StartUpsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_start_up
       @start_up = StartUp.find(params[:id])
+      @current_obj = @start_up
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

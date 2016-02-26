@@ -1,0 +1,5 @@
+pt-BR:
+  messages:
+    partials:
+      show: Editar
+      index: Adicionar
