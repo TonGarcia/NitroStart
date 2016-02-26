@@ -59,6 +59,11 @@ class Teammate < ActiveRecord::Base
     self.save
   end
 
+  # Resend it invitation email
+  def resend_invitation_email
+    send_invitation_email
+  end
+
   private
     # setup variables & attributes
     def setup

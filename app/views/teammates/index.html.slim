@@ -52,6 +52,11 @@ h4.center.purple-text Tripulantes Adicionados
                 = link_to [@nested_obj, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
                   i.mdi-action-delete
 
+          -unless teammate.verified?
+            .row.card-title
+              =link_to send("#{nested_class_name}_teammate_resend_invitation_path", @nested_obj, teammate), class: 'right-icon' do
+                i.ion-paper-airplane.left-icon
+                span.normal_thin.normal_font Re-Convidar
 
 -@float_opts={link: new_pitch_teammate_path(@nested_obj)}
 .fixed-action-btn=render 'home/partials/components/float_button'

@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :supporters
     resources :campaigns
     resources :teammates do
+      get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
       get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
     end
   end
@@ -53,12 +54,12 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :investments
     resources :teammates do
+      get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
       get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
     end
   end
 
   # Non-Nested objects
-  resources :teammates
   resources :people, except: [:delete, :update]
 
   # StartUps raising routes

@@ -8,19 +8,30 @@ class TeammatesController < ApplicationController
   #  Event Triggers
   before_action :set_teammate, only: [:show, :edit, :update, :destroy]
 
+  # GET /teammates/1/resend_invitation
+  # GET /teammates/1/resend_invitation.json
+  def resend_invitation
+    @teammate = Teammate.find(params[:teammate_id])
+    current_user_is_the_owner = @current_user.id == @teammate.nested_obj.user_id
+    return redirect_to forbidden_path unless current_user_is_the_owner
+
+    @teammate.resend_invitation_email
+    return redirect_to nested_path_to(@teammate), flash: { notice: "Convite re-enviado com sucesso para #{@teammate.user.name}" }
+  end
+
   # GET /teammates/1/confirm_invitation
   # GET /teammates/1/confirm_invitation.json
   def confirm_invitation
-    teammate = Teammate.find(params[:teammate_id])
-    return redirect_to forbidden_path unless teammate.user_id == @current_user.id
+    @teammate = Teammate.find(params[:teammate_id])
+    return redirect_to forbidden_path unless @teammate.user_id == @current_user.id
 
     if params[:confirm] == 'accept'
-      verified = teammate.verify
+      verified = @teammate.verify
       verified ? msg = 'Bem-vindo ao Time de Tripulantes!' : msg = 'Oops! Ocorreu um erro, tente novamente. Caso o erro persista peça para ser adicionado novamente ao time.'
-      return redirect_to nested_path_to(teammate), flash: { notice: msg }
+      return redirect_to nested_path_to(@teammate), flash: { notice: msg }
     elsif params[:confirm] == 'decline'
-      teammate.destroy
-      msg = "Convite do time #{teammate.pitch.name} Rejeitado com Sucesso."
+      @teammate.destroy
+      msg = "Convite do time #{@teammate.pitch.name} Rejeitado com Sucesso."
       return redirect_to root_path, flash: { notice: msg }
     end
   end
