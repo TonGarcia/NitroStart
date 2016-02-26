@@ -8,7 +8,7 @@ module TeammatesHelper
       owner_add_class = 'purple'
       return {class: owner_add_class, status: 'owner', role: 'Owner'}
     elsif teammate.admin?
-      admin_add_class = 'black'
+      admin_add_class = 'red'
       return {class: admin_add_class, status: 'admin', role: 'Admin'}
     end
   end

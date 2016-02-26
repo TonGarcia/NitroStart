@@ -14,7 +14,7 @@ module Concerns::ActionsHelper
       if @nested_obj.nil?
         return_url = send("edit_#{current_obj_class}_path", @current_obj)
       else
-        return_url = send("edit_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj)
+        return_url = send("edit_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj, @current_obj)
       end
     end
 
