@@ -12,11 +12,11 @@ class TeammatesController < ApplicationController
   # GET /teammates/1/resend_invitation.json
   def resend_invitation
     @teammate = Teammate.find(params[:teammate_id])
-    current_user_is_the_owner = @current_user.id == @teammate.nested_obj.user_id
+    current_user_is_the_owner = @current_user.id == @teammate.pitch.user_id
     return redirect_to forbidden_path unless current_user_is_the_owner
 
     @teammate.resend_invitation_email
-    return redirect_to nested_path_to(@teammate), flash: { notice: "Convite re-enviado com sucesso para #{@teammate.user.name}" }
+    return redirect_to pitch_teammate_path(@pitch, @teammate), flash: { notice: "Convite re-enviado com sucesso para #{@teammate.user.name}" }
   end
 
   # GET /teammates/1/confirm_invitation
@@ -28,7 +28,7 @@ class TeammatesController < ApplicationController
     if params[:confirm] == 'accept'
       verified = @teammate.verify
       verified ? msg = 'Bem-vindo ao Time de Tripulantes!' : msg = 'Oops! Ocorreu um erro, tente novamente. Caso o erro persista peça para ser adicionado novamente ao time.'
-      return redirect_to nested_path_to(@teammate), flash: { notice: msg }
+      return redirect_to pitch_teammate_path(@pitch, @teammate), flash: { notice: msg }
     elsif params[:confirm] == 'decline'
       @teammate.destroy
       msg = "Convite do time #{@teammate.pitch.name} Rejeitado com Sucesso."
@@ -39,13 +39,13 @@ class TeammatesController < ApplicationController
   # GET /teammates
   # GET /teammates.json
   def index
-    @teammates = @nested_obj.teammates
+    @teammates = @pitch.teammates
   end
 
   # GET /teammates/1
   # GET /teammates/1.json
   def show
-    redirect_to nested_path_to(@teammate)
+    redirect_to pitch_teammate_path(@pitch, @teammate)
   end
 
   # GET /teammates/new
@@ -65,8 +65,8 @@ class TeammatesController < ApplicationController
 
     respond_to do |format|
       if @teammate.save
-        format.html { redirect_to nested_path_to(@teammate), notice: "Um pedido de confirmação foi enviado para #{@teammate.user.name}" }
-        format.json { render :show, status: :created, location: [@nested_obj, @teammate] }
+        format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "Um pedido de confirmação foi enviado para #{@teammate.user.name}" }
+        format.json { render :show, status: :created, location: [@pitch, @teammate] }
       else
         format.html { render :new }
         format.json { render json: @teammate.errors, status: :unprocessable_entity }
@@ -79,8 +79,8 @@ class TeammatesController < ApplicationController
   def update
     respond_to do |format|
       if @teammate.update(teammate_params)
-        format.html { redirect_to nested_path_to(@teammate), notice: "O Tripulante #{@teammate.user.name} foi atualizado." }
-        format.json { render :show, status: :ok, location: [@nested_obj, @teammate] }
+        format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "O Tripulante #{@teammate.user.name} foi atualizado." }
+        format.json { render :show, status: :ok, location: [@pitch, @teammate] }
       else
         format.html { render :edit }
         format.json { render json: @teammate.errors, status: :unprocessable_entity }
@@ -93,7 +93,7 @@ class TeammatesController < ApplicationController
   def destroy
     @teammate.destroy
     respond_to do |format|
-      format.html { redirect_to nested_path_to(@teammate), notice: "O Tripulante #{@teammate.user.name} foi removido e será notificado." }
+      format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "O Tripulante #{@teammate.user.name} foi removido e será notificado." }
       format.json { head :no_content }
     end
   end
@@ -114,6 +114,6 @@ class TeammatesController < ApplicationController
         base_params = params.require(:teammate).permit(:role)
       end
 
-      base_params.merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params.merge!(user_hash_id: params[:user_id], pitch_id: params[:pitch_id])
     end
 end

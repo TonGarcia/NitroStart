@@ -3,8 +3,7 @@ module CampaignsHelper
     [:formatted_locale, :link] #locale_flags
   end
 
-  def h_full_report_path(nested, current)
-    nested_class = nested.class.to_s.downcase
-    send("#{nested_class}_campaign_full_report_path", nested, current)
+  def h_full_report_path(pitch, campaign)
+    pitch_campaign_full_report_path(pitch, campaign)
   end
 end

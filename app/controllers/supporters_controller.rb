@@ -29,7 +29,7 @@ class SupportersController < ApplicationController
 
     respond_to do |format|
       if @supporter.save
-        format.html { redirect_to [@nested_obj, @supporter], notice: 'Modelo de Negócio salvo com sucesso.' }
+        format.html { redirect_to [@pitch, @supporter], notice: 'Apoio registrado com sucesso.' }
         format.json { render :show, status: :created, location: @supporter }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class SupportersController < ApplicationController
   def update
     respond_to do |format|
       if @supporter.update(supporter_params)
-        format.html { redirect_to [@nested_obj, @supporter], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
+        format.html { redirect_to [@pitch, @supporter], notice: 'Apoio atualizado com Sucesso!' }
         format.json { render :show, status: :ok, location: @supporter }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class SupportersController < ApplicationController
   def destroy
     @supporter.destroy
     respond_to do |format|
-      format.html { redirect_to @nested_obj, notice: 'supporter was successfully destroyed.' }
+      format.html { redirect_to @pitch, notice: 'Apoio removido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,6 @@ class SupportersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supporter_params
-      params.require(:supporter).permit(:how_much_pays, :pay_the_expected, :positive_feedback, :negative_feedback).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      params.require(:supporter).permit(:how_much_pays, :pay_the_expected, :positive_feedback, :negative_feedback).merge!(pitch_id: params[:pitch_id])
     end
 end

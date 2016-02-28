@@ -3,36 +3,20 @@ module HistoricalControllers
   extend ActiveSupport::Concern
 
   included do
-    before_action :set_nested
+    before_action :set_pitch
     before_action :previous_controller
     before_action :check_if_has_list, only: :index
     before_action :check_user_admin_permissions, except: [:index, :show]
     before_action :check_user_teammate_permissions, only: [:index, :show]
   end
 
-  # Retrieve it index URL, useful for Delete action, for example.
-  def nested_index_url
-    send("#{@nested_obj.class.to_s.downcase.singularize}_path", @nested_obj)
-  end
-
-  # Return it index path on nested object
-  def nested_path_to(obj)
-    pluralized_obj = obj.class.to_s.downcase.pluralize
-    singularized_nested = @nested_obj.class.to_s.downcase.singularize
-    send("#{singularized_nested}_#{pluralized_obj}_path", @nested_obj)
-  end
-
   # Setup it dependence (objects)
-  def set_nested
+  def set_pitch
     # Setup variables
     @pitch = @current_user.pitches.where(id: params[:pitch_id]).take if params[:pitch_id]
-    @start_up = @current_user.start_ups.where(id: params[:start_up_id]).take if params[:start_up_id]
 
-    # Raise 403
-    redirect_to(forbidden_path) if @pitch.nil? && @start_up.nil?
-
-    # Return it
-    @nested_obj = @start_up || @pitch
+    # Raise 403 if pitch not found
+     redirect_to(forbidden_path) if @pitch.nil?
   end
 
   # If there is no list it redirects to new

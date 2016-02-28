@@ -11,9 +11,8 @@ class CreateBusinesses < ActiveRecord::Migration
       t.decimal :main_product_price, precision: 7, scale: 2, default: 0, null: false
       t.boolean :active, null: false, default: true
 
-      # Associations (it relation can be both, but never none)
-      t.belongs_to :pitch, index: true, foreign_key: true, null: true
-      t.belongs_to :start_up, index: true, foreign_key: true, null: true
+      # Associations
+      t.belongs_to :pitch, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
     end

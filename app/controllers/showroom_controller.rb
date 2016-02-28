@@ -10,7 +10,7 @@ class ShowroomController < ApplicationController
     redirect_to file_not_found_path if @campaign.nil?
 
     # Setup view variables
-    @dynamic_title = @campaign.nested_obj.name
+    @dynamic_title = @campaign.pitch.name
 
     # Define it layout
     self.class.layout 'dynamic'

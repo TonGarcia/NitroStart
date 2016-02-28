@@ -17,7 +17,7 @@ module Avatar
 
   # Custom get avatar
   def picture(type=:thumb)
-    # Check it avatar or it nested avatar ref
+    # Check it avatar or it avatar ref
     return self.avatar.url(type) if self.avatar_file_name
     nil
   end

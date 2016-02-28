@@ -8,7 +8,7 @@ class MarketsController < ApplicationController
   # GET /markets
   # GET /markets.json
   def index
-    @markets = @nested_obj.markets
+    @markets = @pitch.markets
   end
 
   # GET /markets/1
@@ -32,7 +32,7 @@ class MarketsController < ApplicationController
 
     respond_to do |format|
       if @market.save
-        format.html { redirect_to [@nested_obj, @market], notice: 'Mercado foi criado com sucesso.' }
+        format.html { redirect_to [@pitch, @market], notice: 'Mercado foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @market }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class MarketsController < ApplicationController
   def update
     respond_to do |format|
       if @market.update(market_params)
-        format.html { redirect_to [@nested_obj, @market], notice: 'Mercado foi atualizado com sucesso.' }
+        format.html { redirect_to [@pitch, @market], notice: 'Mercado foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @market }
       else
         format.html { render :edit }
@@ -74,7 +74,7 @@ class MarketsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def market_params
       permitted_params = params.require(:market).permit(:segment, :total_customers, :customers_source_link, :total_money, :money_source_link, :trends_insight, :customer_specification)
-      permitted_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      permitted_params.merge!(pitch_id: params[:pitch_id])
 
       # String to int
       permitted_params[:total_money] = permitted_params[:total_money].currency_to_non_formatted_int if permitted_params[:total_money]

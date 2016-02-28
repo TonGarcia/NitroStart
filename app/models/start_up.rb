@@ -4,5 +4,5 @@ class StartUp < ActiveRecord::Base
   include HistoricalTrackable
 
   # Relations
-  belongs_to :pitch
+  has_many :pitches, through: :startup_pitches
 end

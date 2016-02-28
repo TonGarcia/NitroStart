@@ -1,25 +1,39 @@
 module Concerns::ActionsHelper
   # Create it  action url based on controller & action
   def flat_url
-    nested_obj_class = @nested_obj.class.to_s.downcase
     current_obj_class = params[:controller].singularize
 
+    if params[:controller] == 'pitches'
+      case params[:action]
+        when 'index'
+          return new_pitch_path @pitch
+        when 'show'
+          return edit_pitch_path @pitch
+      end
+    end
+
     if params[:action] == 'index'
-      if @nested_obj.nil?
-        return_url = send("new_#{current_obj_class}_path")
+      if @pitch.nil?
+        return_url = new_pitch_path
       else
-        return_url = send("new_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj)
+        return_url = send("new_pitch_#{current_obj_class}_path", @pitch)
       end
     elsif params[:action] == 'show'
-      if @nested_obj.nil?
+      if @pitch.nil?
         return_url = send("edit_#{current_obj_class}_path", @current_obj)
       else
-        return_url = send("edit_#{nested_obj_class}_#{current_obj_class}_path", @nested_obj, @current_obj)
+        return_url = send("edit_pitch_#{current_obj_class}_path", @pitch, @current_obj)
       end
     end
 
     return_url
   end
+
+  # Return it nested obj class name
+  def nested_class_name
+    @nested_obj.class.to_s.downcase
+  end
+
 
   # Create it  action text based on controller & action
   def flat_action
@@ -52,7 +66,7 @@ module Concerns::ActionsHelper
 
     start_up_ref = {name:t('actions.start_ups.index'), icon:'mdi-action-assignment-turned-in', link: start_ups_path, action_controller:'start_ups'}
     start_up_section[:actions] << start_up_ref unless @current_user.start_ups.empty?
-     start_up_section
+    start_up_section
   end
 
   # List LegalPersonActions

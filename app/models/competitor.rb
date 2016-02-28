@@ -5,9 +5,11 @@ class Competitor < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails Validations
   validates :name, presence: true, length: { minimum: 2, maximum: 55 }
   validates :your_advantage, presence: true, length: { minimum: 3, maximum: 255 }
+
+  # Validate Association
+  validates_presence_of :pitch_id
 end

@@ -8,7 +8,7 @@ class ProvidersController < ApplicationController
   # GET /providers
   # GET /providers.json
   def index
-    @providers = @nested_obj.providers
+    @providers = @pitch.providers
   end
 
   # GET /providers/1
@@ -32,7 +32,7 @@ class ProvidersController < ApplicationController
 
     respond_to do |format|
       if @provider.save
-        format.html { redirect_to [@nested_obj, @provider], notice: 'Provider was successfully created.' }
+        format.html { redirect_to [@pitch, @provider], notice: 'Fornecedor criado com sucesso.' }
         format.json { render :show, status: :created, location: @provider }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ProvidersController < ApplicationController
   def update
     respond_to do |format|
       if @provider.update(provider_params)
-        format.html { redirect_to [@nested_obj, @provider], notice: 'Provider was successfully updated.' }
+        format.html { redirect_to [@pitch, @provider], notice: 'Forneedor atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @provider }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class ProvidersController < ApplicationController
   def destroy
     @provider.destroy
     respond_to do |format|
-      format.html { redirect_to providers_url, notice: 'Provider was successfully destroyed.' }
+      format.html { redirect_to pitch_path(@pitch), notice: 'Fornecedor deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +74,6 @@ class ProvidersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.require(:provider).permit(:name, :segment, :provides, :counterpart).merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      params.require(:provider).permit(:name, :segment, :provides, :counterpart).merge!(pitch_id: params[:pitch_id])
     end
 end

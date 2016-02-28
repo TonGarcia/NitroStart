@@ -5,11 +5,13 @@ class Financial < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails Validation
   validates :total_users, presence: true, numericality: { greater_than: 0 }
   validates :bootstrapped, presence: true, numericality: { greater_than: 0 }, allow_blank: true
   validates :total_customers, presence: true, numericality: { greater_than: 0 }, allow_blank: true
   validates :market_penetration, presence: true, numericality: { in: 0..100 }, allow_blank: true
+
+  # Validate Association
+  validates_presence_of :pitch_id
 end

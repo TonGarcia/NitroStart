@@ -5,7 +5,6 @@ class Business < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails validations
   validates :revenue_model, length: { minimum: 2, maximum: 255 }

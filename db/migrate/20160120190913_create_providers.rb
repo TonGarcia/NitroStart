@@ -6,9 +6,8 @@ class CreateProviders < ActiveRecord::Migration
       t.string :provides, limit: 255, null: false
       t.string :counterpart, limit: 255, null: true
 
-      # Associations (it relation can be both, but never none)
-      t.belongs_to :pitch, index: true, foreign_key: true
-      t.belongs_to :start_up, index: true, foreign_key: true
+      # Associations
+      t.belongs_to :pitch, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
     end

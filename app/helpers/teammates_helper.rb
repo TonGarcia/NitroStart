@@ -4,7 +4,7 @@ module TeammatesHelper
     if teammate.confirmation_pending?
       pending_add_class = 'amber'
       return {class: pending_add_class, status: 'pending', role: 'Pending'}
-    elsif teammate.user_id == @nested_obj.user_id
+    elsif teammate.user_id == @pitch.user_id
       owner_add_class = 'purple'
       return {class: owner_add_class, status: 'owner', role: 'Owner'}
     elsif teammate.admin?
@@ -15,16 +15,16 @@ module TeammatesHelper
 
   # User owner condition
   def owner_teammate(nested_obj=nil)
-    if nested_obj
-      @current_user.id == nested_obj.user_id
-    else
+    if @nested_obj
       @current_user.id == @nested_obj.user_id
+    elsif nested_obj
+      @current_user.id == nested_obj.user_id
     end
   end
 
   # Check if it user is an admin
   def admin_teammate(teammate=nil)
-    teammate ? teammate.admin? : @current_user.teammate(@nested_obj).admin?
+    teammate ? teammate.admin? : @current_user.teammate(@pitch).admin?
   end
 
   # Cehck if it current teammate loop is the current user

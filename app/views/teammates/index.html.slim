@@ -45,18 +45,18 @@ h4.center.purple-text Tripulantes Adicionados
                 i.mdi-action-face-unlock
             -if edit_teammate_permission(teammate)
               .col.l4.s4
-                a.amber-text.text-darken-3 href="#{send("edit_#{nested_class_name}_teammate_path", @nested_obj, teammate)}"
+                a.amber-text.text-darken-3 href="#{edit_pitch_teammate_path(@pitch, teammate)}"
                   i.mdi-editor-mode-edit
             -if destroy_teammate_permission(teammate)
               .col.l4.s4
-                = link_to [@nested_obj, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
+                = link_to [@pitch, teammate], class: 'red-text', data: {confirm: 'Are you sure?'}, method: :delete do
                   i.mdi-action-delete
 
           -unless teammate.verified?
             .row.card-title
-              =link_to send("#{nested_class_name}_teammate_resend_invitation_path", @nested_obj, teammate), class: 'right-icon' do
+              =link_to send("#{pitch_teammate_resend_invitation_path(@pitch, teammate)}"), class: 'right-icon' do
                 i.ion-paper-airplane.left-icon
                 span.normal_thin.normal_font Re-Convidar
 
--@float_opts={link: new_pitch_teammate_path(@nested_obj)}
+-@float_opts={link: new_pitch_teammate_path(@pitch)}
 .fixed-action-btn=render 'home/partials/components/float_button'

@@ -8,7 +8,7 @@ class FinancialsController < ApplicationController
   # GET /financial
   # GET /financial.json
   def index
-    @financials = @nested_obj.financials
+    @financials = @pitch.financials
   end
 
   # GET /financial/1
@@ -32,7 +32,7 @@ class FinancialsController < ApplicationController
 
     respond_to do |format|
       if @financial.save
-        format.html { redirect_to [@nested_obj, @financial], notice: 'Financial was successfully created.' }
+        format.html { redirect_to [@pitch, @financial], notice: 'Financeiro criado com sucesso.' }
         format.json { render :show, status: :created, location: @financial }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class FinancialsController < ApplicationController
   def update
     respond_to do |format|
       if @financial.update(financial_params)
-        format.html { redirect_to [@nested_obj, @financial], notice: 'Financial was successfully updated.' }
+        format.html { redirect_to [@pitch, @financial], notice: 'Financeiro atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @financial }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class FinancialsController < ApplicationController
   def destroy
     @financial.destroy
     respond_to do |format|
-      format.html { redirect_to nested_index_url, notice: 'Financial was successfully destroyed.' }
+      format.html { redirect_to pitch_path(@pitch), notice: 'Financeiro deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -74,7 +74,7 @@ class FinancialsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def financial_params
       base_params = params.require(:financial).permit(:total_users, :total_customers, :total_revenue, :total_expense, :bootstrapped, :market_penetration)
-      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params.merge!(pitch_id: params[:pitch_id])
 
       # un-format int
       base_params[:total_users] = base_params[:total_users].to_non_formatted_int if base_params[:total_users]

@@ -6,7 +6,6 @@ class Campaign < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
   has_many :supporters
 
   # Rails validations
@@ -15,33 +14,26 @@ class Campaign < ActiveRecord::Base
   validates_uniqueness_of :link, on: [:create, :update]
 
   # Validate Association
-  validates_presence_of :pitch_id, unless: :start_up_id
-  validates_presence_of :start_up_id, unless: :pitch_id
+  validates_presence_of :pitch_id
 
   # Locale Countries Array
   def locale_countries
     Helpers::Globals.find_all_countries_by_languages(self.locale)
   end
 
-  # Return it nested/parent obj
-  def nested_obj
-    return self.pitch if self.pitch_id
-    return self.start_up if self.start_up_id
-  end
-
   # Return teammates which have no pending
   def active_team
-    self.nested_obj.active_team
+    self.pitch.active_team
   end
 
   # Return it creator user
   def owner
-    self.nested_obj.user
+    self.pitch.user
   end
 
-  # Return it nested/parent obj (:startup / :pitch) name
+  # Return it pitch name
   def name
-    self.nested_obj.name
+    self.pitch.name
   end
 
   # Return it currency hash

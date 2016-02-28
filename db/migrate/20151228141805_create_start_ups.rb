@@ -6,7 +6,7 @@ class CreateStartUps < ActiveRecord::Migration
       t.integer :equity_requested, null: false
 
       # Associations
-      t.belongs_to :pitch, index: true, foreign_key: true, null: false
+      t.belongs_to :user, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
     end

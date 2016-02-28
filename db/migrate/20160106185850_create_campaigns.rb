@@ -8,9 +8,8 @@ class CreateCampaigns < ActiveRecord::Migration
       # Body is the Text Editor, like any other CrowdFunding
       t.text :body, limit: 64.kilobytes-1, null: true
 
-      # Associations (it relation can be both, but never none)
-      t.belongs_to :pitch, index: true, foreign_key: true, null: true
-      t.belongs_to :start_up, index: true, foreign_key: true, null: true
+      # Associations
+      t.belongs_to :pitch, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
     end

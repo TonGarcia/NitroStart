@@ -17,7 +17,7 @@ module Cover
 
   # Custom get avatar
   def picture(type=:thumb)
-    # Check it avatar or it nested avatar ref
+    # Check it avatar or it avatar ref
     return self.cover.url(type) if self.cover_file_name
     nil
   end

@@ -10,6 +10,7 @@ class Pitch < ActiveRecord::Base
 
   # Relations
   belongs_to :user
+  has_many :start_ups, through: :startup_pitches
 
   # The many associations mean the many possibilities
   has_many :ideas, dependent: :destroy

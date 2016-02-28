@@ -6,15 +6,13 @@ class Teammate < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails validations
   validates :role, length: { minimum: 2, maximum: 45 }, presence: true
 
   # Association Validations
   validates_presence_of :user_id
-  validates_presence_of :pitch_id, unless: :start_up_id
-  validates_presence_of :start_up_id, unless: :pitch_id
+  validates_presence_of :pitch_id
 
   # Custom Setup attributes
   before_validation :setup
@@ -32,25 +30,14 @@ class Teammate < ActiveRecord::Base
   end
 
   # Check if it user is the pitch creator
-  def owner?(external_nested_obj=nil)
-    return false if self.nested_obj.nil?
-
-    if external_nested_obj
-      return external_nested_obj.user_id == self.user_id
-    else
-      return self.nested_obj.user_id == self.user_id
-    end
+  def owner?
+    self.pitch.user_id == self.user_id
   end
 
   # Check if it teammate had confirmed
   def confirmation_pending?
     return false if owner?
     !self.verified
-  end
-
-  # Return it filled nested (pitch/startup)
-  def nested_obj
-    self.pitch || self.start_up
   end
 
   # Verify it team association
@@ -75,12 +62,12 @@ class Teammate < ActiveRecord::Base
     # Delivery an invitation email to notify the team association
     def send_invitation_email
       unless self.verified?
-        TeamMailer.invitation_email(self, nested_obj).deliver_later
+        TeamMailer.invitation_email(self, self.pitch).deliver_later
       end
     end
 
     # Delivery a Disassociation Notification E-mail
     def send_disassociation_email
-      TeamMailer.disassociation_email(self, nested_obj).deliver_later
+      TeamMailer.disassociation_email(self, pitch).deliver_later
     end
 end

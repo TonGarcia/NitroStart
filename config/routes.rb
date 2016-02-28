@@ -40,33 +40,13 @@ Rails.application.routes.draw do
 
     resources :campaigns do
       get 'full_report' => 'campaigns#full_report', as: :full_report
-    end
-  end
-
-  # StartUp - Nested Objects
-  resources :start_ups do
-    resources :ideas
-    resources :businesses
-    resources :projects
-    resources :markets
-    resources :tractions
-    resources :revenues
-    resources :financials
-    resources :competitors
-    resources :providers
-    resources :investments
-    resources :teammates do
-      get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
-      get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
-    end
-
-    resources :campaigns do
-      get 'full_report' => 'campaigns#full_report', as: :full_report
+      resources :supporters
     end
   end
 
   # Non-Nested objects
   resources :people, except: [:delete, :update]
+  resources :start_ups
 
   # StartUps raising routes
   scope 'showroom' do

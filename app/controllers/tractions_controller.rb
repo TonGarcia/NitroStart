@@ -8,7 +8,7 @@ class TractionsController < ApplicationController
   # GET /traction
   # GET /traction.json
   def index
-    @tractions = @nested_obj.tractions
+    @tractions = @pitch.tractions
   end
 
   # GET /traction/1
@@ -32,7 +32,7 @@ class TractionsController < ApplicationController
 
     respond_to do |format|
       if @traction.save
-        format.html { redirect_to [@nested_obj, @traction], notice: 'Tração criada com sucesso.' }
+        format.html { redirect_to [@pitch, @traction], notice: 'Tração criada com sucesso.' }
         format.json { render :show, status: :created, location: @traction }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TractionsController < ApplicationController
   def update
     respond_to do |format|
       if @traction.update(traction_params)
-        format.html { redirect_to [@nested_obj, @traction], notice: 'Tração atualizada com sucesso.' }
+        format.html { redirect_to [@pitch, @traction], notice: 'Tração atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @traction }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class TractionsController < ApplicationController
   def destroy
     @traction.destroy
     respond_to do |format|
-      format.html { redirect_to [@nested_obj], notice: 'Tração deletada com sucesso.' }
+      format.html { redirect_to [@pitch], notice: 'Tração deletada com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -75,7 +75,7 @@ class TractionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def traction_params
       base_params = params.require(:traction).permit(:grow_strategy, :lead_cust, :conversion_cust, :daily_growth_rate, :amount_daily_lead, :customer_channels)
-      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params.merge!(pitch_id: params[:pitch_id])
 
       # Decimal converting
       base_params[:lead_cust] = base_params[:lead_cust].sub(',', '.').to_f

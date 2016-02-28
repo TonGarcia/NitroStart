@@ -8,7 +8,7 @@ class CompetitorsController < ApplicationController
   # GET /competitors
   # GET /competitors.json
   def index
-    @competitors = @nested_obj.competitors
+    @competitors = @pitch.competitors
   end
 
   # GET /competitors/1
@@ -32,7 +32,7 @@ class CompetitorsController < ApplicationController
 
     respond_to do |format|
       if @competitor.save
-        format.html { redirect_to [@nested_obj, @competitor], notice: 'Concorrente cadastrado com sucesso.' }
+        format.html { redirect_to [@pitch, @competitor], notice: 'Concorrente cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @competitor }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class CompetitorsController < ApplicationController
   def update
     respond_to do |format|
       if @competitor.update(competitor_params)
-        format.html { redirect_to [@nested_obj, @competitor], notice: 'Concorrente atualizado com sucesso.' }
+        format.html { redirect_to [@pitch, @competitor], notice: 'Concorrente atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @competitor }
       else
         format.html { render :edit }
@@ -82,6 +82,6 @@ class CompetitorsController < ApplicationController
       # un-format int
       base_params[:total_customers] = base_params[:total_customers].currency_to_non_formatted_int if base_params[:total_customers]
 
-      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params.merge!(pitch_id: params[:pitch_id])
     end
 end

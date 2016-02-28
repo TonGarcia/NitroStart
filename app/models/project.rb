@@ -7,12 +7,14 @@ class Project < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails validations
   validates :stage, inclusion: { in: 0..10 }, presence: true
   validates :award_source, presence: true, length: { minimum: 10, maximum: 255 }, if: :awards?
   validates :patent_source, presence: true, length: { minimum: 10, maximum: 255 }, if: :patent?
+
+  # Validate Association
+  validates_presence_of :pitch_id
 
   #  View Stage Attribute
   def view_stage

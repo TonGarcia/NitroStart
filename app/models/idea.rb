@@ -5,7 +5,6 @@ class Idea < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
-  belongs_to :start_up
 
   # Rails validations (Must be Present)
   validates :main_problem, length: { minimum: 10, maximum: 90 }, presence: true
@@ -17,4 +16,7 @@ class Idea < ActiveRecord::Base
   validates :second_problems, length: { minimum: 10, maximum: 400 }, allow_blank: true
   validates :current_solution, length: { minimum: 5, maximum: 140 }, allow_blank: true
   validates :high_concept_pitch, length: { minimum: 10, maximum: 50 }, allow_blank: true
+
+  # Validate Association
+  validates_presence_of :pitch_id
 end

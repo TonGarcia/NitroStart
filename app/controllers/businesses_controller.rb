@@ -9,7 +9,7 @@ class BusinessesController < ApplicationController
   # GET /businesses
   # GET /businesses.json
   def index
-    @businesses = @nested_obj.businesses
+    @businesses = @pitch.businesses
   end
 
   # GET /businesses/1
@@ -33,7 +33,7 @@ class BusinessesController < ApplicationController
 
     respond_to do |format|
       if @business.save
-        format.html { redirect_to [@nested_obj, @business], notice: 'Modelo de Negócio salvo com sucesso.' }
+        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio salvo com sucesso.' }
         format.json { render :show, status: :created, location: @business }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class BusinessesController < ApplicationController
   def update
     respond_to do |format|
       if @business.update(business_params)
-        format.html { redirect_to [@nested_obj, @business], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
+        format.html { redirect_to [@pitch, @business], notice: 'Modelo de Negócio Atualizado com Sucesso!' }
         format.json { render :show, status: :ok, location: @business }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class BusinessesController < ApplicationController
   def destroy
     @business.destroy
     respond_to do |format|
-      format.html { redirect_to @nested_obj, notice: 'Business was successfully destroyed.' }
+      format.html { redirect_to @pitch, notice: 'Modelo de Negócio deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -75,6 +75,6 @@ class BusinessesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_params
       base_params = params.require(:business).permit(:partnerships, :value_proposition, :main_product_price, :revenue_model, :advantages, :disadvantages, :customer_success_stories)
-      base_params.merge!(pitch_id: params[:pitch_id], start_up_id: params[:start_up_id])
+      base_params.merge!(pitch_id: params[:pitch_id])
     end
 end

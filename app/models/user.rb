@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
   # Relations
   has_many :pitches
   has_many :teammates
+  has_many :start_ups
   has_many :social_sessions
   has_many :pitches, through: :teammates
-  has_many :start_ups, through: :pitches
 
   # Custom validations
   # after_create :sign_up
@@ -42,11 +42,10 @@ class User < ActiveRecord::Base
     self.send(association.to_s).where(teammates: {verified: true})
   end
 
-  # return it teammate register for a nestedobj (:pitch / :start_up)
-  def teammate(nested_obj)
+  # return it teammate register for a pitch
+  def teammate(pitch)
     return self.teammate_ref unless self.teammate_ref.nil?
-    associated_id = "#{nested_obj.class.to_s.to_sym}_id"
-    self.teammate_ref = self.teammates.where("#{associated_id}": nested_obj.id).take
+    self.teammate_ref = self.teammates.where(pitch_id: pitch.id).take
   end
 
   # ================================ STATIC METHODS ================================
