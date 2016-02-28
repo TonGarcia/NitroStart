@@ -1,6 +1,22 @@
 h4.center.purple-text Detalhamento da Campanha
 =render  'layouts/partials/components/static/reference_sub_title'
-=render  'home/partials/components/flat_button'
+
+.row
+  .col.l6.hide-on-med-and-down
+    a.btn.col.l12 href="#{flat_url}"
+      -# Define it icons based on action params
+      -if params[:action] == 'index'
+        i.left-icon.fa.fa-plus
+      -elsif params[:action] == 'show'
+      i.left-icon.ion-edit
+
+      -# Define it text based on action & controller params
+      =flat_action
+
+  =link_to h_full_report_path(@nested_obj, @current_obj), class: 'btn amber darken-1 col l6 s12' do
+    i.mdi-action-dashboard.left-icon
+    | Relatório Completo
+
 .divider
 
 .row

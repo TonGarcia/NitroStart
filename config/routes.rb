@@ -33,10 +33,13 @@ Rails.application.routes.draw do
     resources :providers
     resources :investments
     resources :supporters
-    resources :campaigns
     resources :teammates do
       get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
       get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
+    end
+
+    resources :campaigns do
+      get 'full_report' => 'campaigns#full_report', as: :full_report
     end
   end
 
@@ -51,11 +54,14 @@ Rails.application.routes.draw do
     resources :financials
     resources :competitors
     resources :providers
-    resources :campaigns
     resources :investments
     resources :teammates do
       get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
       get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
+    end
+
+    resources :campaigns do
+      get 'full_report' => 'campaigns#full_report', as: :full_report
     end
   end
 

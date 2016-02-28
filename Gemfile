@@ -102,6 +102,9 @@ gem 'rents', '~> 1.0', '>= 1.0.8'
 # Schedule tasks
 gem 'rufus-scheduler', '~> 3.1.10'
 
+# GeoKit to Local System check IP & GeoLoc actions
+gem 'geokit', '~> 1.10'
+
 group :development, :test do
   # RSPec for BDD practices
   gem 'rspec-rails', '~> 3.4.0'

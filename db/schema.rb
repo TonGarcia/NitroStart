@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217103009) do
+ActiveRecord::Schema.define(version: 20160226194612) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -335,6 +335,19 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  create_table "visitors", force: :cascade do |t|
+    t.string   "ip",          limit: 35,  null: false
+    t.string   "country",     limit: 2,   null: false
+    t.string   "device",      limit: 140, null: false
+    t.integer  "user_id",     limit: 4
+    t.integer  "campaign_id", limit: 4,   null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "visitors", ["campaign_id"], name: "index_visitors_on_campaign_id", using: :btree
+  add_index "visitors", ["user_id"], name: "index_visitors_on_user_id", using: :btree
+
   add_foreign_key "businesses", "pitches"
   add_foreign_key "businesses", "start_ups"
   add_foreign_key "campaigns", "pitches"
@@ -364,4 +377,6 @@ ActiveRecord::Schema.define(version: 20160217103009) do
   add_foreign_key "teammates", "users"
   add_foreign_key "tractions", "pitches"
   add_foreign_key "tractions", "start_ups"
+  add_foreign_key "visitors", "campaigns"
+  add_foreign_key "visitors", "users"
 end

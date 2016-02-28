@@ -1,4 +1,7 @@
 class ShowroomController < ApplicationController
+  # Track it visitor before perform the requested action
+  before_action :setup_visitor, only: [:show]
+
   # GET /:permalink
   # Show specific PITCH or STARTUP based on it defined permalink
   def show
@@ -29,5 +32,13 @@ class ShowroomController < ApplicationController
     def login_not_required
       setup_user unless session["warden.user.user.key"].nil?
       true
+    end
+
+    # Setup it visitor reference
+    def setup_visitor
+      # TODO check if it visitor have a session (is it loged-in)
+      # TODO get all visitor info & add user_id if exist
+      # TODO persist it visitor
+      # TODO save it visitor ID on cookie
     end
 end
