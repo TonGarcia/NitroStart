@@ -14,7 +14,8 @@
 
   = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 s6 offset-s3 semi-circle hide-on-small-only')
 
-=render 'home/partials/components/flat_button'
+-if admin_teammate(current_user_teammate)
+  =render 'home/partials/components/flat_button'
 
 .divider
 

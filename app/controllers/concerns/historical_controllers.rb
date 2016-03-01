@@ -24,6 +24,15 @@ module HistoricalControllers
 
   # If there is no list it redirects to new
   def check_if_has_list
+    # prevent it redirect_to new event if user not admin
+    unless admin_teammate(current_user_teammate)
+      if params[:action] == 'index' && params[:controller] != 'pitches'
+        flash[:alert] = 'Atenção. Somente o Criador e os Administradores podem inserir e alterar informações.'
+      end
+
+      return
+    end
+
     single_obj_class_name = params[:controller].singularize
     obj_class = single_obj_class_name.humanize.constantize
 
@@ -50,7 +59,7 @@ module HistoricalControllers
   end
 
   # Check if it current_user has admin permissions to exec it action
-  def check_user_admin_permissionsc
+  def check_user_admin_permissions
     current_user_teammate = @current_user.teammates.where(pitch_id: @pitch.id).take
     redirect_to forbidden_path unless admin_teammate(current_user_teammate)
   end

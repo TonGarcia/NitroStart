@@ -1,6 +1,8 @@
 .col.l12.center.purple-text
   h5 Seus Pitches (Projetos)
-=render 'home/partials/components/flat_button'
+
+-if admin_teammate(current_user_teammate)
+  =render 'home/partials/components/flat_button'
 
 .divider
 
