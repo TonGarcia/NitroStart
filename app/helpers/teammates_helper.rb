@@ -13,6 +13,10 @@ module TeammatesHelper
     end
   end
 
+  def current_user_teammate
+    @current_user.teammates.where(pitch_id: params[:pitch_id]).take
+  end
+
   # User owner condition
   def owner_teammate(nested_obj=nil)
     if @nested_obj
