@@ -7,5 +7,5 @@
    | StartUp Acelerada (Empresa): &nbsp;
    strong=link_to @start_up.name, pitch_path(@start_up)
 
--if admin_teammate(current_user_teammate) && !params[:action] == 'edit'
+-if admin_teammate(current_user_teammate)
   =render 'home/partials/components/flat_button'

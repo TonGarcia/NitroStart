@@ -40,6 +40,7 @@ class TeammatesController < ApplicationController
   # GET /teammates.json
   def index
     @teammates = @pitch.teammates
+    @current_obj = @teammates
   end
 
   # GET /teammates/1
