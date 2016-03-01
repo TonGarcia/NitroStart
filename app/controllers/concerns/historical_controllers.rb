@@ -2,6 +2,9 @@
 module HistoricalControllers
   extend ActiveSupport::Concern
 
+  # View Helpers to Controller
+  include TeammatesHelper
+
   included do
     before_action :set_pitch
     before_action :previous_controller
@@ -47,12 +50,14 @@ module HistoricalControllers
   end
 
   # Check if it current_user has admin permissions to exec it action
-  def check_user_admin_permissions
-    # TODO redir 403 if not admin
+  def check_user_admin_permissionsc
+    current_user_teammate = @current_user.teammates.where(pitch_id: @pitch.id).take
+    redirect_to forbidden_path unless admin_teammate(current_user_teammate)
   end
 
   # Check if it current_user is a teammate to have permissions to exec it action
   def check_user_teammate_permissions
-    # TODO redir 403 if not teammate
+    current_user_teammate = @current_user.teammates.where(pitch_id: @pitch.id).take
+    redirect_to forbidden_path if current_user_teammate.nil?
   end
 end

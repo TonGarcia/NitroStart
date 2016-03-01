@@ -45,7 +45,7 @@ class TeammatesController < ApplicationController
   # GET /teammates/1
   # GET /teammates/1.json
   def show
-    redirect_to pitch_teammate_path(@pitch, @teammate)
+    redirect_to pitch_teammates_path @pitch
   end
 
   # GET /teammates/new

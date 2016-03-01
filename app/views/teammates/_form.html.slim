@@ -12,7 +12,7 @@
     -params[:action] == 'edit' ? disabled = true : disabled = false
     .input-field.col.l12.s12
       i class="prefix #{t_current_class_icons[:user]}"
-      = f.text_field :user_name, onkeyup: 'search_people(this)', disabled: disabled
+      = f.text_field :user_name, onkeyup: 'search_people(this)', autocomplete: 'off', disabled: disabled
       = f.label :user
 
   -unless @teammate.user.nil?

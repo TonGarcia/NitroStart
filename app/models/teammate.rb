@@ -31,7 +31,8 @@ class Teammate < ActiveRecord::Base
 
   # Check if it user is the pitch creator
   def owner?
-    self.pitch.user_id == self.user_id
+    self.pitch_id.nil? ? current_pitch = Pitch.new : current_pitch = self.pitch
+    self.id && current_pitch.user_id == self.user_id
   end
 
   # Check if it teammate had confirmed
