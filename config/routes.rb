@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :problems
   mount RedactorRails::Engine => '/redactor_rails'
   get 'call_to_action' => 'call_to_action#index', as: :call_to_action
 
@@ -45,8 +44,9 @@ Rails.application.routes.draw do
   end
 
   # Non-Nested objects
-  resources :people, except: [:delete, :update]
+  resources :problems
   resources :start_ups
+  resources :people, except: [:delete, :update]
 
   # StartUps raising routes
   scope 'showroom' do

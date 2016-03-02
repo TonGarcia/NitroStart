@@ -9,7 +9,6 @@ h4.center.purple-text Detalhamento do Parceiro/Fornecedor
       .title
         h5.center Informações do Parceiro
       .content
-        -@nested_obj = @pitch
         -@current_obj = @provider
         -@shower_attrs = 'provider_info_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'
@@ -19,7 +18,6 @@ h4.center.purple-text Detalhamento do Parceiro/Fornecedor
       .title
         h5.center Expectativas na Parceria
       .content
-        -@nested_obj = @pitch
         -@current_obj = @provider
         -@shower_attrs = 'provider_relation_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'

@@ -17,6 +17,7 @@ module HistoricalControllers
   def set_pitch
     # Setup variables
     @pitch = @current_user.pitches.where(id: params[:pitch_id]).take if params[:pitch_id]
+    @nested_obj = @pitch
 
     # Raise 403 if pitch not found
      redirect_to(forbidden_path) if @pitch.nil?

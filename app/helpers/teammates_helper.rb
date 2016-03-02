@@ -14,7 +14,7 @@ module TeammatesHelper
   end
 
   def current_user_teammate
-    @current_user.teammates.where(pitch_id: params[:pitch_id]).take
+    @current_user.teammates.where(pitch_id: @pitch.id).take
   end
 
   # User owner condition
@@ -28,7 +28,13 @@ module TeammatesHelper
 
   # Check if it user is an admin
   def admin_teammate(teammate=nil)
-    teammate ? teammate.admin? : @current_user.teammate(@pitch).admin?
+    teammate ? teammate.admin? : current_user_teammate.admin?
+  end
+
+  # Actions to skip some component
+  def skip_for_it_action
+    current_action = params[:action]
+    current_action == 'new' || current_action == 'edit'
   end
 
   # Cehck if it current teammate loop is the current user

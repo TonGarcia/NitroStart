@@ -1,8 +1,6 @@
 .col.l12.center.purple-text
   h5 Seus Pitches (Projetos)
-
--if admin_teammate(current_user_teammate)
-  =render 'home/partials/components/flat_button'
+=render 'home/partials/components/flat_button'
 
 .divider
 
@@ -29,7 +27,7 @@
               a.col.l12.s12.btn href="#{pitch_path(pitch)}"
                 i.ion-eye
 
-            -if admin_teammate(@current_user.teammate(@pitch))
+            -if admin_teammate(@current_user.teammates(@pitch).take)
               .col.l4.s4
                 a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
                   i.mdi-editor-mode-edit

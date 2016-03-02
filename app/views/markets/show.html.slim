@@ -9,7 +9,6 @@ h4.center.purple-text Detalhamento do Mercado de Atuação
       .title
         h5.center Entendimento do Mercado
       .content
-        -@nested_obj = @pitch
         -@current_obj = @market
         -@shower_attrs = 'market_segment_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'
@@ -20,7 +19,6 @@ h4.center.purple-text Detalhamento do Mercado de Atuação
       .title
         h5.center Tamanho do Mercado
       .content
-        - @nested_obj = @pitch
         - @current_obj = @market
         - @shower_attrs = 'market_range_attrs'
         = render 'layouts/partials/components/dynamic/shower_attr'

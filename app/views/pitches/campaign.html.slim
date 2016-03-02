@@ -1,6 +1,5 @@
 .row
   -@pitch.associations.each do |association|
-    - @nested_obj = @pitch
     - @current_obj = @pitch.active(association)
     - @current_model = association.to_s.downcase
     - @shower_attrs = "#{@current_model}_all_attrs"

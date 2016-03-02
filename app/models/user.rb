@@ -44,7 +44,8 @@ class User < ActiveRecord::Base
 
   # return it teammate register for a pitch
   def teammate(pitch)
-    return self.teammate_ref unless self.teammate_ref.nil?
+    return {error: 'pitch nil'} if pitch.nil?
+    return self.teammate_ref if self.teammate_ref.nil?
     self.teammate_ref = self.teammates.where(pitch_id: pitch.id).take
   end
 

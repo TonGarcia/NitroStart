@@ -6,12 +6,11 @@ h6.center.purple-text
 .divider
 
 .row
-  - @nested_obj = @pitch
   - @ref_attrs = business_index_attrs
 
   - @businesses.each do |business|
     -@current_obj = business
     =render 'layouts/partials/components/dynamic/card_shower_actions_attr'
 
-    -@float_opts={link: new_pitch_business_path(@pitch)}
+-@float_opts={link: new_pitch_business_path(@pitch)}
 .fixed-action-btn=render 'home/partials/components/float_button'

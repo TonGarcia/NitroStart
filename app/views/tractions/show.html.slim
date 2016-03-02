@@ -9,7 +9,6 @@ h4.center.purple-text Detalhamento da Tração de Crescimento
       .title
         h5.center Estratégia de ganho de Escala
       .content
-        -@nested_obj = @pitch
         -@current_obj = @traction
         -@shower_attrs = 'traction_strategy_attrs'
         =render 'layouts/partials/components/dynamic/shower_attr'
@@ -19,7 +18,6 @@ h4.center.purple-text Detalhamento da Tração de Crescimento
       .title
         h5.center Alcance da Estratégia
       .content
-        - @nested_obj = @pitch
         - @current_obj = @traction
         - @shower_attrs = 'traction_range_attrs'
         = render 'layouts/partials/components/dynamic/shower_attr'
@@ -29,7 +27,6 @@ h4.center.purple-text Detalhamento da Tração de Crescimento
       .title
         h5.center Resultados da Estratégia
       .content
-        - @nested_obj = @pitch
         - @current_obj = @traction
         - @shower_attrs = 'traction_results_attrs'
         = render 'layouts/partials/components/dynamic/shower_attr'
