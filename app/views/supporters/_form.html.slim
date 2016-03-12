@@ -1,34 +1,49 @@
-= form_for [@pitch, @provider] do |f|
-  - current_obj = @provider
+h5.purple-text.center Acrescente seu Feedback
+
+= form_for [@pitch, @campaign, @supporter] do |f|
+  - current_obj = @supporter
   - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Fornecedor de ser registrado:"
+      strong = "Atenção. Apoio não registrado devido a #{pluralize(current_obj.errors.count, "erro")}:"
       ul.style_warning_list
         - current_obj.errors.full_messages.each do |message|
           li = message
 
+  .row.medium_margin_bottom
+    .input-field.col.l12.s12.feedback_type
+      .col.l6.s6
+        =f.radio_button :feedback_type, 'positive', class: 'with-gap', checked: (params[:feedback] == 'positive' || @supporter.feedback_type == 'positive')
+        =f.label :feedback_type_positive do
+          i.teal-text.ion-thumbsup
+
+      .col.l6.s6
+        =f.radio_button :feedback_type, 'negative', class: 'with-gap', checked: (params[:feedback] == 'negative' || @supporter.feedback_type == 'negative')
+        =f.label :feedback_type_negative do
+          i.red-text.ion-thumbsdown
+
   .row
-    .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:name]}"
-      = f.text_field :name
-      = f.label :name
+    .margin_top
+      .input-field.col.l12.s12
+        i class="prefix #{t_current_class_icons[:how_much_pays]}"
+        = f.text_field :how_much_pays, class: 'currency'
+        = f.label :how_much_pays
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:segment]}"
-      = f.text_field :segment
-      = f.label :segment
+      i class="prefix teal-text #{t_current_class_icons[:positive_feedback]}"
+      = f.text_area :positive_feedback, class: 'materialize-textarea'
+      = f.label :positive_feedback
 
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:provides]}"
-      = f.text_area :provides, class: 'materialize-textarea'
-      = f.label :provides
+      i class="prefix red-text #{t_current_class_icons[:negative_feedback]}"
+      = f.text_area :negative_feedback, class: 'materialize-textarea'
+      = f.label :negative_feedback
 
+  .row
+    .col.l8.s12
+      button.btn-large.teal.col.l12.s12 type="submit" name="commit" value= "add_credit"
+        i.left-icon.ion-cash
+        | Adquira Créditos
 
-    .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:counterpart]}"
-      = f.text_area :counterpart, class: 'materialize-textarea'
-      = f.label :counterpart
-
-
-  -@footer_link=true
-  =render 'layouts/partials/components/static/float_buttons/save'
+    .col.l4.s12
+      -@footer_link=true
+      =render 'layouts/partials/components/static/float_buttons/save'

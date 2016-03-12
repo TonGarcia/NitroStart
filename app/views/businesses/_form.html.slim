@@ -2,7 +2,7 @@
   -current_obj = @business
   - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Modelo de Negócio de ser registrada:"
+      strong = "Atenção. Modelo de Negócio não registrado devido a #{pluralize(current_obj.errors.count, "erro")}:"
       ul.style_warning_list
         - current_obj.errors.full_messages.each do |message|
           li =message

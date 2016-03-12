@@ -1,5 +1,6 @@
 class SupportersController < ApplicationController
   #  Event Triggers
+  before_action :set_nested
   before_action :set_supporter, only: [:show, :edit, :update, :destroy]
 
   # GET /supporters
@@ -15,7 +16,14 @@ class SupportersController < ApplicationController
 
   # GET /supporters/new
   def new
+    # setup objs
     @supporter = Supporter.new
+
+    # Setup view variables
+    @dynamic_title = @campaign.pitch.name
+
+    # Define it layout
+    self.class.layout 'dynamic'
   end
 
   # GET /supporters/1/edit
@@ -25,11 +33,13 @@ class SupportersController < ApplicationController
   # POST /supporters
   # POST /supporters.json
   def create
-    @supporter = supporter.new(supporter_params)
+    @supporter = Supporter.new(supporter_params)
+    supporter_link = [@pitch, @campaign, @supporter]
+    params[:commit].empty? ? action_destination = supporter_link : action_destination = # TODO checkout_url
 
     respond_to do |format|
       if @supporter.save
-        format.html { redirect_to [@pitch, @supporter], notice: 'Apoio registrado com sucesso.' }
+        format.html { redirect_to action_destination, notice: 'Apoio registrado com sucesso.' }
         format.json { render :show, status: :created, location: @supporter }
       else
         format.html { render :new }
@@ -65,12 +75,24 @@ class SupportersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_supporter
-      @supporter = supporter.find(params[:id])
+      @supporter = Supporter.find(params[:id])
       @current_obj = @supporter
+    end
+
+    def set_nested
+      @pitch = Pitch.find(params[:pitch_id]) if params[:pitch_id]
+      @campaign = Campaign.find(params[:campaign_id]) if params[:campaign_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supporter_params
-      params.require(:supporter).permit(:how_much_pays, :pay_the_expected, :positive_feedback, :negative_feedback).merge!(pitch_id: params[:pitch_id])
+      # Base Supporter attributes
+      base_params = params.require(:supporter).permit(:feedback_type, :how_much_pays, :positive_feedback, :negative_feedback)
+
+      # Format it amount
+      base_params[:how_much_pays] = BigDecimal.new(NitroPay::Currency.to_operator_str(base_params[:how_much_pays]))/100
+
+      # Add it association keys
+      base_params.merge!(pitch_id: params[:pitch_id], user_id: @current_user.id, campaign_id: params[:campaign_id])
     end
 end

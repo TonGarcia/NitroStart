@@ -14,7 +14,7 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :tag_line_pitch, limit: 75, null: true
 
       # One explanation phrase (for investors)
-      t.string :high_concept_pitch, limit: 50, null: true
+      t.string :high_concept_pitch, limit: 75, null: true
 
       # One explanation phrase (for investors)
       t.string :why_must_success, limit: 140, null: false

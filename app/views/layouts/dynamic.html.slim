@@ -3,6 +3,7 @@ html
   head = render 'layouts/partials/structure/dynamic_head'
   body
     /! Nav Components
+    -@text_visual_identity = 'purple-text'
     -if @current_user.nil?
       = render 'layouts/con_theme/components/no_user_nav_bar'
     -else

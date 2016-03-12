@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228132926) do
+ActiveRecord::Schema.define(version: 20160311234144) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160228132926) do
   add_index "businesses", ["pitch_id"], name: "index_businesses_on_pitch_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
-    t.string   "link",       limit: 55,    null: false
+    t.string   "permalink",  limit: 55,    null: false
     t.string   "locale",     limit: 2,     null: false
     t.text     "body",       limit: 65535
     t.integer  "pitch_id",   limit: 4,     null: false
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 20160228132926) do
   end
 
   add_index "campaigns", ["pitch_id"], name: "index_campaigns_on_pitch_id", using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",        limit: 100, null: false
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "categories", ["category_id"], name: "index_categories_on_category_id", using: :btree
 
   create_table "competitors", force: :cascade do |t|
     t.string   "name",            limit: 55,                                          null: false
@@ -67,6 +76,24 @@ ActiveRecord::Schema.define(version: 20160228132926) do
   end
 
   add_index "competitors", ["pitch_id"], name: "index_competitors_on_pitch_id", using: :btree
+
+  create_table "customer_fundings", force: :cascade do |t|
+    t.string   "tid",          limit: 255, null: false
+    t.integer  "status",       limit: 4,   null: false
+    t.integer  "amount",       limit: 4,   null: false
+    t.string   "response",     limit: 255, null: false
+    t.integer  "user_id",      limit: 4
+    t.integer  "pitch_id",     limit: 4
+    t.integer  "campaign_id",  limit: 4
+    t.integer  "supporter_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "customer_fundings", ["campaign_id"], name: "index_customer_fundings_on_campaign_id", using: :btree
+  add_index "customer_fundings", ["pitch_id"], name: "index_customer_fundings_on_pitch_id", using: :btree
+  add_index "customer_fundings", ["supporter_id"], name: "index_customer_fundings_on_supporter_id", using: :btree
+  add_index "customer_fundings", ["user_id"], name: "index_customer_fundings_on_user_id", using: :btree
 
   create_table "financials", force: :cascade do |t|
     t.integer  "total_users",        limit: 4,                                         null: false
@@ -88,7 +115,7 @@ ActiveRecord::Schema.define(version: 20160228132926) do
     t.string   "second_problems",    limit: 400
     t.string   "current_solution",   limit: 140
     t.string   "tag_line_pitch",     limit: 75
-    t.string   "high_concept_pitch", limit: 50
+    t.string   "high_concept_pitch", limit: 75
     t.string   "why_must_success",   limit: 140,                null: false
     t.string   "how_validate",       limit: 140
     t.boolean  "active",                         default: true, null: false
@@ -115,6 +142,24 @@ ActiveRecord::Schema.define(version: 20160228132926) do
   end
 
   add_index "markets", ["pitch_id"], name: "index_markets_on_pitch_id", using: :btree
+
+  create_table "page_views", force: :cascade do |t|
+    t.string   "ip",           limit: 30,  null: false
+    t.string   "url",          limit: 140, null: false
+    t.string   "locale",       limit: 45
+    t.string   "device",       limit: 75
+    t.string   "browser",      limit: 50
+    t.integer  "cookie_id",    limit: 4
+    t.integer  "user_id",      limit: 4
+    t.integer  "campaign_id",  limit: 4,   null: false
+    t.integer  "supporter_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "page_views", ["campaign_id"], name: "index_page_views_on_campaign_id", using: :btree
+  add_index "page_views", ["supporter_id"], name: "index_page_views_on_supporter_id", using: :btree
+  add_index "page_views", ["user_id"], name: "index_page_views_on_user_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
     t.string   "cover",      limit: 255
@@ -228,8 +273,8 @@ ActiveRecord::Schema.define(version: 20160228132926) do
 
   create_table "supporters", force: :cascade do |t|
     t.integer  "role",              limit: 4,                            default: 1, null: false
+    t.string   "feedback_type",     limit: 20,                                       null: false
     t.decimal  "how_much_pays",                 precision: 15, scale: 2
-    t.boolean  "pay_the_expected",                                                   null: false
     t.string   "positive_feedback", limit: 255
     t.string   "negative_feedback", limit: 255
     t.integer  "user_id",           limit: 4,                                        null: false
@@ -328,10 +373,18 @@ ActiveRecord::Schema.define(version: 20160228132926) do
 
   add_foreign_key "businesses", "pitches"
   add_foreign_key "campaigns", "pitches"
+  add_foreign_key "categories", "categories"
   add_foreign_key "competitors", "pitches"
+  add_foreign_key "customer_fundings", "campaigns"
+  add_foreign_key "customer_fundings", "pitches"
+  add_foreign_key "customer_fundings", "supporters"
+  add_foreign_key "customer_fundings", "users"
   add_foreign_key "financials", "pitches"
   add_foreign_key "ideas", "pitches"
   add_foreign_key "markets", "pitches"
+  add_foreign_key "page_views", "campaigns"
+  add_foreign_key "page_views", "supporters"
+  add_foreign_key "page_views", "users"
   add_foreign_key "pitches", "users"
   add_foreign_key "problems", "users"
   add_foreign_key "projects", "pitches"

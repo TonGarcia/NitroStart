@@ -1,0 +1,58 @@
+.row#metrics_tracking
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-android-globe
+      = "(#{@page_view_countries.length}) Países dos Visitantes"
+    .col.l12.s12
+      = flag_list 32 do
+        -@page_view_countries.each do |page_view_country|
+          -current_locale = page_view_country.locale
+          -next if current_locale.nil?
+          -country = ISO3166::Country[current_locale]
+          -next if country.nil?
+          = flag(country.alpha2.downcase.to_sym, title: country.translations['pt'], class: 'col l2')
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-eye
+      | Visualizações
+    h5.center.purple-text
+      =format_int(@campaign.page_views.length)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.ion-person
+      | Visitas Únicas
+    h5.center.purple-text
+      =format_int(@campaign.unique_page_views)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-thumbsup
+      | Apoiadores
+    h5.center.purple-text
+      =format_int(@campaign.supporters.group(:user_id).length)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.mdi-action-shopping-cart
+      | Adquiriram Crédito
+    h5.center.purple-text
+      =format_int(@campaign.customer_fundings.length)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-cash
+      | Crédito Total Adquirido
+    h5.center.purple-text
+      =format_currency(@campaign.customer_fundings.count(:amount))
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-ios-people
+      | Idealizadores
+    .small_padding_top
+      -@campaign.active_team.each do |teammate|
+        .col.l4.s6
+          =image_tag teammate.user.profile, class: 'circle col l8 offset-l2 s12'
+          h6.small_padding_top.center =teammate.user.base_name

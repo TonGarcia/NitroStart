@@ -4,7 +4,7 @@ pt-BR:
   activerecord:
     models:
       user: Usuário
-      pitch: Pitch (Projeto)
+      pitch: Projeto
       idea: Explicação da Ideia do Projeto
 
     attributes:
@@ -110,9 +110,9 @@ pt-BR:
 
   # Campaign -----------------------------------------------------
       campaign:
-        link: Link do projeto up.nitrostart.me/
         body: Escrita Livre
         locale: Idioma
+        permalink: Link do projeto up.nitrostart.me/
         locale_flags: Países do Idioma
 
   # Teammate -----------------------------------------------------
@@ -120,3 +120,9 @@ pt-BR:
         role: Papel Desempenhado
         user: Nome do Tripulante
         permissions: Permissões de Admin?
+
+  # Supporter -----------------------------------------------------
+      supporter:
+        how_much_pays:  Quanto você pagaria
+        positive_feedback: Pontos Positivos
+        negative_feedback: Pontos Negativos

@@ -29,9 +29,7 @@ h4.center.purple-text Detalhamento da Campanha
 
 .row
   .col.l8.s12
-    #campaign.card-panel
-      .campaign_body
-        =raw @campaign.body
+    =render 'campaigns/partials/campaign_body'
   .col.l4
     .card-panel
       = render 'campaigns/partials/aside_card/owner_tracking_view'

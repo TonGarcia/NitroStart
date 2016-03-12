@@ -1,3 +1,14 @@
+function setup() {
+  // SetUp Masks
+  $('.currency').mask('000.000.000.000.000,00', {reverse: true});
+  $('.formatted_int').mask('000.000.000.000.000', {reverse: true});
+
+  // Setup Slider & Collaps
+  toast_flags();
+  $('.slider').slider();
+  $(".button-collapse").sideNav();
+}
+
 // show the Ad dynamic after it "upload_intent"
 function show_brand(input, img_ref) {
     if (input.files && input.files[0]) {
@@ -8,6 +19,14 @@ function show_brand(input, img_ref) {
         };
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+function scrollTo() {
+  $("a[href^='#']").click(function(e) {
+    e.preventDefault();
+    var dest = $(this).attr('href');
+    $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow');
+  });
 }
 
 function toast_flags() {

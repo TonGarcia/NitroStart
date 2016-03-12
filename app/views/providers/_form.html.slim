@@ -2,7 +2,7 @@
   - current_obj = @provider
   - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Fornecedor de ser registrado:"
+      strong = "Atenção. Fornecedor não registrado devido a #{pluralize(current_obj.errors.count, "erro")}:"
       ul.style_warning_list
         - current_obj.errors.full_messages.each do |message|
           li = message

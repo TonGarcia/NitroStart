@@ -1,0 +1,4 @@
+V0 = CustomerFunding & Validação de Hipoteses
+V1 = V0 + Re-Design + Desenvolvimento das Ideias via RentsJobs + Registro de Patente
+V2 = V1 + Sistema de Abertura de Empresa Automatizado + Espaço de Trabalho (ImpactHub ou outro co-working)
+V3 = V2 + Internacionalização do Sistema e das Empresas já Aceleradas

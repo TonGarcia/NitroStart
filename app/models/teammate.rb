@@ -6,6 +6,7 @@ class Teammate < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :pitch
+  has_many :campaigns, through: :pitch
 
   # Rails validations
   validates :role, length: { minimum: 2, maximum: 45 }, presence: true

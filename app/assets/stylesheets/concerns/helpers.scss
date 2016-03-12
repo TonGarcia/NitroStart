@@ -17,6 +17,12 @@
   padding-top: calc(55px + 1.3rem);
 }
 
+.feedback_type {
+  i {
+    font-size: 2rem;
+  }
+}
+
 #error_bg_img {
   background-size: cover;
   background-repeat: no-repeat;

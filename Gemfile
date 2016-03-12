@@ -95,9 +95,11 @@ gem 'rest-client', '~> 1.8.0'
 # Format legal documents
 gem 'cpf_cnpj', '~> 0.2.1'
 
-# Rents & Cielo connection version
-gem 'cielo_old', '~> 1.0.1'
-gem 'rents', '~> 1.0', '>= 1.0.8'
+# NitroPay payment GEM
+gem 'nitro_pay', '~> 1.0', '>= 1.0.2'
+
+# Get user BrowserInfo
+gem 'browser', '~> 2.0', '>= 2.0.2'
 
 # Schedule tasks
 gem 'rufus-scheduler', '~> 3.1.10'
@@ -202,7 +204,6 @@ gem 'admin_materialize', '~> 0.1.3', git:'https://github.com/TonGarcia/admin_the
 
 # SendGrid send e-mail
 gem 'mail', '~> 2.6.3'
-gem 'sendgrid-ruby', '~> 1.1.6'
 
 # Heroku pre compile
 gem 'rails_12factor', group: :production

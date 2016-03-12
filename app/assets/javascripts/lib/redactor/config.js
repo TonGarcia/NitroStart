@@ -1,13 +1,14 @@
 function config_redactor() {
+    var params;
     var csrf_token = $('meta[name=csrf-token]').attr('content');
     var csrf_param = $('meta[name=csrf-param]').attr('content');
-    var params;
+
     if (csrf_param !== undefined && csrf_token !== undefined) {
         params = csrf_param + "=" + encodeURIComponent(csrf_token);
     }
 
     // Config Redactor
-    $('.redactor').redactor({
+    $('.redactor_text').redactor({
         source: false,
         formatting: ['p'],
         formattingAdd: [

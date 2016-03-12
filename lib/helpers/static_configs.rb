@@ -12,5 +12,9 @@ module Helpers
     def self.translate_transaction status_code
       Helpers::StaticConfigs.translates[:card_operators][:cielo][:transaction_code][status_code]
     end
+
+    def self.host
+      Rails.application.config.action_mailer.default_url_options[:host]
+    end
   end
 end

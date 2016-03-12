@@ -49,6 +49,11 @@ class User < ActiveRecord::Base
     self.teammate_ref = self.teammates.where(pitch_id: pitch.id).take
   end
 
+  # Return if it user is already a supporter of the passed campaign
+  def is_a_supporter_of?(campaign)
+    !campaign.supporters.where(user_id: self.id).take.nil?
+  end
+
   # ================================ STATIC METHODS ================================
   # Return it ID decrypted
   def self.decrypt_identifier(encrypted_id)

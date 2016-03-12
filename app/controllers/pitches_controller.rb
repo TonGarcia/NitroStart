@@ -12,6 +12,10 @@ class PitchesController < ApplicationController
     @pitch = Pitch.find(params[:pitch_id])
   end
 
+  # PitchDeck PDF
+  def deck_pdf
+  end
+
   # GET /pitches
   # GET /pitches.json
   def index

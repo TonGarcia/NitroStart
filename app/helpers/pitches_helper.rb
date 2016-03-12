@@ -1,6 +1,6 @@
 module PitchesHelper
   def widgets
-    %w(hypothesis team competitors market_knowledge business provider project_build  traction financial)
+    %w(campaign team competitors market_knowledge business provider project_build  traction financial)
   end
 
   def validation_widgets

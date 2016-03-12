@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   mount RedactorRails::Engine => '/redactor_rails'
   get 'call_to_action' => 'call_to_action#index', as: :call_to_action
 
@@ -31,7 +32,6 @@ Rails.application.routes.draw do
     resources :competitors
     resources :providers
     resources :investments
-    resources :supporters
     resources :teammates do
       get 'resend_invitation' => 'teammates#resend_invitation', as: :resend_invitation
       get 'confirm_invitation' => 'teammates#confirm_invitation', as: :confirm_invitation
@@ -39,8 +39,12 @@ Rails.application.routes.draw do
 
     resources :campaigns do
       get 'full_report' => 'campaigns#full_report', as: :full_report
-      resources :supporters
+      get 'checkout_callback' => 'campaigns#checkout_callback', as: :checkout_callback
+      resources :supporters, except: [:update, :delete]
     end
+
+    get 'deck_pdf' => 'pitch#deck_pdf', as: :deck_pdf
+    get 'dashboard' => 'dashboard#pitch', as: :dashboard
   end
 
   # Non-Nested objects

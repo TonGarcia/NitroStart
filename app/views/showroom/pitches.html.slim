@@ -2,9 +2,7 @@ h4.center.purple-text =@campaign.pitch.name
 
 .row
   .col.l8.s12
-    .card-panel
-      .campaign_body
-        = raw @campaign.body
+    =render 'campaigns/partials/campaign_body'
   .col.l4
     .card-panel
       = render 'campaigns/partials/range_tracking'

@@ -14,22 +14,12 @@
 //= require redactor-rails/plugins
 //= require lib/redactor/video
 //= require lib/redactor/config
+//= require lib/redactor/langs/pt_br
 
 // My JS
 //= require concerns/fast_fix
 //= require concerns/helpers.js.erb
-//= require_tree
-
-
-function setup() {
-    toast_flags();
-    config_redactor();
-    $('.slider').slider();
-    $(".button-collapse").sideNav();
-    $('.nav_actions a').scrollTo({
-        speed: 500
-    });
-}
+//= require_tree ./app
 
 $(setup);
 $(document).on('page:load', setup);

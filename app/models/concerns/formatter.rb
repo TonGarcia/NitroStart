@@ -104,7 +104,7 @@ module Formatter
   end
 
   def formatted_inner_link
-    "#{Rails.application.config.action_mailer.default_url_options[:host]}/#{self.link}"
+    "#{Helpers::StaticConfigs.host}/#{self.permalink}"
   end
 
   def permissions_sym

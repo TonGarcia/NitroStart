@@ -21,7 +21,7 @@
     -if devise_mapping.rememberable?
       .row
         .input-field.col.l10.offset-l2.s12
-          = f.check_box :remember_me
+          = f.check_box :remember_me, class: 'filled-in'
           = f.label :remember_me
 
   .row

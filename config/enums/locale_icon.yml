@@ -64,10 +64,14 @@ locale_icon:
     success_stories: ion-android-contacts
     your_advantage: ion-android-star
   campaign:
-    link: ion-link
+    permalink: ion-link
     locale: mdi-action-language
     locale_flags: ion-android-globe
   teammate:
     user: mdi-action-account-circle
     role: mdi-action-class
     permissions: ion-ribbon-b
+  supporter:
+    how_much_pays: ion-cash
+    positive_feedback: ion-thumbsup
+    negative_feedback: ion-thumbsdown

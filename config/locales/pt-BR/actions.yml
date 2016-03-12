@@ -16,11 +16,11 @@ pt-BR:
       start_ups: Desempenho Startups
       investments: Relatório Investimentos
     pitches:
-      new: Novo Pitch (Projeto)
-      show: Detalhamento do Pitch (Projeto)
-      index: Pitches (Projetos)
-      create: Novo Pitch (Projeto)
-      supporting: Apoiar Pitches (Projetos)
+      new: Novo Projeto
+      show: Detalhamento do Projeto
+      index: Projetos
+      create: Novo Projeto
+      supporting: Apoiar Projetos
     start_ups:
       index: Startups (Empresas)
       invested: Nitradas (Investimentos)

@@ -8,7 +8,7 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require materialize-sprockets
-//= require prettyphoto-rails
+//= require jquery.mask.min
 
 // My JS
 //= require app/partners
@@ -17,27 +17,21 @@
 //= require concerns/accounting
 
 $(document).ready(function(){
+    $('.parallax').parallax();
+
+    setup();
+    scrollTo();
     setup_tabs();
     fix_error_field();
     setup_bg_error_img();
 
-    $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
-
-    $("a[rel^='prettyPhoto']").prettyPhoto({
-        show_title: false,
-        allow_resize: true
-    });
-
-    $('.nav-wrapper a[href*="#"]').on('click', function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-    });
 });
 
 
 $(document).on('page:load', function(){
     setup_tabs();
+    $('.parallax').parallax();
 });
 
 
@@ -61,3 +55,6 @@ function fix_error_field() {
 
     $([0]).html();
 }
+
+$(setup);
+$(document).on('page:load', setup);

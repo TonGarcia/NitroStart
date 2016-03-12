@@ -1,15 +1,27 @@
 .row
   .center.purple-text
-    h4 =@dynamic_title
+    h3 =@dynamic_title
+
+    h5 =@active_idea.tag_line_pitch
+    -if @active_idea.tag_line_pitch.nil? && @campaign.teammate?(@current_user)
+      h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o TagLinePitch da Hipótese e ele aparecerá aqui
+
     h6
       | por
       strong.right-icon =@campaign.owner.name
 
+    -if @active_idea.main_problem
+      h6
+        strong ="\"#{@active_idea.main_problem}\" "
+        | é um problema para você? Então conheça este projeto!
+        i.right-icon.bit_bigger.ion-android-arrow-down
+    -elsif @active_idea.main_problem.nil? && @campaign.teammate?(@current_user)
+      h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o Problema que sua Hipótese visa Solucionar e ele aparecerá aqui
+
+
 .row
   .col.l8.s12
-    #campaign.card-panel
-      .campaign_body
-        = raw @campaign.body
+    =render 'campaigns/partials/campaign_body'
   .col.l4
     .card-panel
       = render 'campaigns/partials/aside_card/supporter_tracking_view'

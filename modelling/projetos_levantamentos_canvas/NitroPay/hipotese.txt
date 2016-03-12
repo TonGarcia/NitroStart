@@ -1,0 +1,20 @@
+Principal Problema
+    Alto custo dos Meios de Pagamento
+
+Problemas Secundários
+- Dificuldade de Integração;
+- Dificuldade de Negociar tarifas;
+
+Como é Solucionado Hoje
+    Após alcançar grandes volumes entra em contato, caso não baixe a tarifa troca-se de fornecedor
+
+Tag Line Pitch
+    Chega de dar uma porcentagem do seu negócio para o processador de cartões
+
+High Concept Pitch
+    Meio de Pagamento de Economia Criativa
+
+Por que dará certo?
+    Porque existem tarifas que chegam a 7%. O gateway virou um sócio
+
+Como Validou

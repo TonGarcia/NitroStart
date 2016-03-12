@@ -1,16 +1,12 @@
 class ShowroomController < ApplicationController
   # Track it visitor before perform the requested action
+  include CampaignSetups
+
   before_action :setup_visitor, only: [:show]
 
   # GET /:permalink
   # Show specific PITCH or STARTUP based on it defined permalink
   def show
-    # Base check/search it campaign
-    @campaign = Campaign.where(link: params[:permalink]).take
-    redirect_to file_not_found_path if @campaign.nil?
-
-    # Setup view variables
-    @dynamic_title = @campaign.pitch.name
 
     # Define it layout
     self.class.layout 'dynamic'

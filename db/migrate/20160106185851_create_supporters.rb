@@ -6,8 +6,8 @@ class CreateSupporters < ActiveRecord::Migration
       t.integer :role, null: false, default: 1
 
       # Scaffold Attributes
+      t.string :feedback_type, limit: 20, null: false
       t.decimal :how_much_pays, precision: 15, scale: 2, null: true
-      t.boolean :pay_the_expected, null: false
       t.string :positive_feedback, limit: 255, null: true
       t.string :negative_feedback, limit: 255, null: true
 

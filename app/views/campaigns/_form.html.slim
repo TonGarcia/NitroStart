@@ -2,7 +2,7 @@
   - current_obj = @campaign
   - if current_obj.errors.any?
     .alert.alert-border-left
-      strong = "Atenção. #{pluralize(current_obj.errors.count, "erro")} impediu o Modelo de Negócio de ser registrada:"
+      strong = "Atenção. Campanha não registrada devido a #{pluralize(current_obj.errors.count, "erro")}:"
       ul.style_warning_list
         - current_obj.errors.full_messages.each do |message|
           li = message
@@ -23,16 +23,16 @@
 
   .row
     .input-field.col.l12.s12
-      i class="prefix #{t_current_class_icons[:link]}"
-      = f.text_field :link
-      = f.label :link
+      i class="prefix #{t_current_class_icons[:permalink]}"
+      = f.text_field :permalink
+      = f.label :permalink
       .footer-info.purple-text Prefira algo simples, direto e que identifique bem seu projeto. Tente não usar hífen, underline etc.
 
 
   .spacing_rows
     .row
       #hand_free_filling
-        = f.text_area :body, class: 'redactor col l12 s12', rows: 40, cols: 120
+        = f.text_area :body, class: 'redactor_text col l12 s12', rows: 40, cols: 120
 
 
   - @footer_link=true
