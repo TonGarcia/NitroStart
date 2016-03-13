@@ -8,7 +8,7 @@ class CreatePageViews < ActiveRecord::Migration
       t.string :device, limit: 75, null: true
       t.string :browser, limit: 50, null: true
 
-      # Reference to prevent count recurrent user
+      # Reference to prevent count recurrent user, cookie_id = nested_page_view_id
       t.integer :cookie_id, null: true
 
       # Associations

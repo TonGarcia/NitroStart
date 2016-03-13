@@ -34,6 +34,11 @@ class Campaign < ActiveRecord::Base
     self.page_views.where(cookie_id: nil).length
   end
 
+  # Return people which have returned
+  def recurrent_page_views
+    self.page_views.where.not(cookie_id: nil).group(:cookie_id).length
+  end
+
   # Return teammates which have no pending
   def active_team
     self.pitch.active_team

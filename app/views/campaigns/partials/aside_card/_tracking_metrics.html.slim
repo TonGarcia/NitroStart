@@ -28,6 +28,13 @@
 
   .col.l12.s12
     h6.center
+      i.left-icon.ion-person
+      | Pessoas que Retornaram
+    h5.center.purple-text
+      =format_int(@campaign.recurrent_page_views)
+
+  .col.l12.s12
+    h6.center
       i.left-icon.slim.ion-thumbsup
       | Apoiadores
     h5.center.purple-text
