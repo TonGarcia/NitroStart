@@ -61,6 +61,9 @@ class Campaign < ActiveRecord::Base
 
   private
     def create_checkout_link
+      # Prevent infinite loop
+      return if self.checkout_page_link
+
       title = self.name
       redirect = pitch_campaign_checkout_callback_url(self.pitch, self, host: Helpers::StaticConfigs.host)
       alert_msg = "Atenção! Você está comprando créditos válidos somente para aquisição de itens do projeto #{title}."
@@ -72,6 +75,14 @@ class Campaign < ActiveRecord::Base
           redirect_link: redirect,
           description: description
       }
+
+      checkout_transaction = NitroPay::Transaction.new(checkout_page_params)
+      resp = checkout_transaction.charge_page
+
+      self.checkout_id = resp[:id]
+      self.checkout_request_id = resp[:request_id]
+      self.checkout_page_link = resp[:checkout_page]
+      self.save
     end
 
     def update_checkout_link

@@ -8,6 +8,11 @@ class CreateCampaigns < ActiveRecord::Migration
       # Body is the Text Editor, like any other CrowdFunding
       t.text :body, limit: 64.kilobytes-1, null: true
 
+      # Remote attributes
+      t.integer :checkout_id, null: true
+      t.integer :checkout_request_id, null: true
+      t.string :checkout_page_link, null: true
+
       # Associations
       t.belongs_to :pitch, index: true, foreign_key: true, null: false
 

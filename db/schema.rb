@@ -42,12 +42,15 @@ ActiveRecord::Schema.define(version: 20160311234144) do
   add_index "businesses", ["pitch_id"], name: "index_businesses_on_pitch_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
-    t.string   "permalink",  limit: 55,    null: false
-    t.string   "locale",     limit: 2,     null: false
-    t.text     "body",       limit: 65535
-    t.integer  "pitch_id",   limit: 4,     null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "permalink",           limit: 55,    null: false
+    t.string   "locale",              limit: 2,     null: false
+    t.text     "body",                limit: 65535
+    t.integer  "checkout_id",         limit: 4
+    t.integer  "checkout_request_id", limit: 4
+    t.string   "checkout_page_link",  limit: 255
+    t.integer  "pitch_id",            limit: 4,     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "campaigns", ["pitch_id"], name: "index_campaigns_on_pitch_id", using: :btree

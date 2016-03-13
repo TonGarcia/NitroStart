@@ -41,12 +41,21 @@ module NitroStart
       Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? 'sign'   : 'application' }
     end
 
+    # Setup Host
     if Rails.env.production?
       config.action_mailer.default_url_options = { host: 'up.nitrostart.me' }
     else
       config.action_mailer.default_url_options = { host: 'nitro.dev:5000' }
     end
 
+    # Setup NitroPay keys
+    if Rails.env.production?
+      NitroPay.app_id = Rails.application.secrets.nitro_pay.app_id
+      NitroPay.secret_key = Rails.application.secrets.nitro_pay.secret_key
+    else
+      NitroPay.debug = true
+      NitroPay.test_env = true
+    end
 
     # Load social keys
     social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
