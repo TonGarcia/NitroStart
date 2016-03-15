@@ -28,7 +28,7 @@
 
   .col.l12.s12
     h6.center
-      i.left-icon.ion-person
+      i.left-icon.ion-ios-refresh-empty
       | Pessoas que Retornaram
     h5.center.purple-text
       =format_int(@campaign.recurrent_page_views)
@@ -51,6 +51,13 @@
     h6.center
       i.left-icon.slim.ion-cash
       | Crédito Total Adquirido
+    h5.center.purple-text
+      =format_currency(@campaign.customer_fundings.count(:amount))
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-cash
+      | Valor médio de Créditos Adquirido
     h5.center.purple-text
       =format_currency(@campaign.customer_fundings.count(:amount))
 

@@ -9,7 +9,7 @@ class CustomerFunding < ActiveRecord::Base
   validates :tid, length: {minimum: 1}, presence: true
   validates :response, length: {minimum: 5}, presence: true
   validates :amount, numericality: {greater_than: 0}, presence: true
-  validates :status, numericality: {greater_than_or_equal_to: 0}, presence: true
+  validates :status, length: {minimum: 3}, presence: true
 
   # Rails Associations Validations
   validates_presence_of :user

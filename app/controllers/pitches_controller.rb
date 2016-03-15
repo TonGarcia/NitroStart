@@ -43,7 +43,7 @@ class PitchesController < ApplicationController
 
     respond_to do |format|
       if @pitch.save
-        format.html { redirect_to @pitch, notice: 'Pitch criado com sucesso! Agora nos dê mais informações sobre seu Projeto!' }
+        format.html { redirect_to @pitch, notice: 'Projeto criado com sucesso! Agora nos dê mais informações sobre seu Projeto!' }
         format.json { render :show, status: :created, location: @pitch }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class PitchesController < ApplicationController
   def update
     respond_to do |format|
       if @pitch.update(pitch_params)
-        format.html { redirect_to @pitch, notice: 'Pitch atualizado com sucesso! Continue alimentando-o com mais informações!' }
+        format.html { redirect_to @pitch, notice: 'Projeto atualizado com sucesso! Continue alimentando-o com mais informações!' }
         format.json { render :show, status: :ok, location: @pitch }
       else
         format.html { render :edit }
@@ -71,7 +71,7 @@ class PitchesController < ApplicationController
   def destroy
     @pitch.destroy
     respond_to do |format|
-      format.html { redirect_to pitches_url, notice: 'Pitch destruído com sucesso.' }
+      format.html { redirect_to pitches_url, notice: 'Projeto destruído com sucesso.' }
       format.json { head :no_content }
     end
   end

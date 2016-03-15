@@ -6,8 +6,9 @@ class CampaignsController < ApplicationController
   #  Event Triggers
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
-  # GET /campaigns/:id/checkout_callback
+  # GET /pitches/pitch_id/campaigns/campaign_id/checkout_callback?tid
   def checkout_callback
+
   end
 
   # GET /campaigns
@@ -79,6 +80,9 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:permalink, :locale, :body).merge!(pitch_id: params[:pitch_id])
+      base_params = params.require(:campaign).permit(:permalink, :locale, :body).merge!(pitch_id: params[:pitch_id])
+      # TODO remove it when it comes global
+      base_params[:locale] = 'pt'
+      base_params
     end
 end

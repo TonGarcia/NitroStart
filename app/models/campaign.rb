@@ -24,6 +24,9 @@ class Campaign < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :pitch_id
 
+  # Aux attributes
+  attr_accessor :just_created
+
   # Locale Countries Array
   def locale_countries
     Helpers::Globals.find_all_countries_by_languages(self.locale)
@@ -65,9 +68,9 @@ class Campaign < ActiveRecord::Base
       return if self.checkout_page_link
 
       title = self.name
-      redirect = pitch_campaign_checkout_callback_url(self.pitch, self, host: Helpers::StaticConfigs.host)
+      redirect = callback_checkout_url host: Helpers::StaticConfigs.host
       alert_msg = "Atenção! Você está comprando créditos válidos somente para aquisição de itens do projeto #{title}."
-      description = "<strong>Projeto</strong>: #{title}<br><strong>Tipo da Compra</strong>: Créditos para uso exclusivo neste projeto, após o lançamento do mesmo<br><strong>Descrição</strong>: #{self.pitch.active(:idea).tag_line_pitch}."
+      description = "A Nitro Start garante que este Projeto será executado. Caso não seja viável, tecnicamente, você poderá remanejar seu crédito.<br><br> <strong>Projeto</strong>: #{title}<br><strong>Tipo da Compra</strong>: Créditos para uso exclusivo neste projeto, após o lançamento do mesmo<br><strong>Descrição</strong>: #{self.pitch.active(:idea).tag_line_pitch}."
 
       checkout_page_params = {
           title: title,
@@ -82,20 +85,22 @@ class Campaign < ActiveRecord::Base
       self.checkout_id = resp[:id]
       self.checkout_request_id = resp[:request_id]
       self.checkout_page_link = resp[:checkout_page]
+      self.just_created = true
       self.save
     end
 
     def update_checkout_link
-      title = self.name
-      redirect = Rails.application.routes.url_helpers.pitch_campaign_callback_url(self.pitch, self, host: Helpers::StaticConfigs.host)
-      alert_msg = "Atenção! Você está comprando créditos válidos somente para aquisição de itens do projeto #{title}."
-      description = "<strong>Projeto</strong>: #{title}<br><strong>Tipo da Compra</strong>: Créditos para uso exclusivo neste projeto, após o lançamento do mesmo<br><strong>Descrição</strong>: #{self.pitch.active(:idea).tag_line_pitch}."
-
-      checkout_page_params = {
-          title: title,
-          alert: alert_msg,
-          redirect_link: redirect,
-          description: description
-      }
+      # return if self.just_created
+      # title = self.name
+      # redirect = pitch_campaign_checkout_callback_url(self.pitch, self, host: Helpers::StaticConfigs.host)
+      # alert_msg = "Atenção! Você está comprando créditos válidos somente para aquisição de itens do projeto #{title}."
+      # description = "A Nitro Start garante que este Projeto será executado. Caso não seja viável, tecnicamente, você poderá remanejar seu crédito.<br><br> <strong>Projeto</strong>: #{title}<br><strong>Tipo da Compra</strong>: Créditos para uso exclusivo neste projeto, após o lançamento do mesmo<br><strong>Descrição</strong>: #{self.pitch.active(:idea).tag_line_pitch}."
+      #
+      # checkout_page_params = {
+      #     title: title,
+      #     alert: alert_msg,
+      #     redirect_link: redirect,
+      #     description: description
+      # }
     end
 end

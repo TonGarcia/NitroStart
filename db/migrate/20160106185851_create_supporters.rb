@@ -4,6 +4,7 @@ class CreateSupporters < ActiveRecord::Migration
       # Base Attrs
       # It default 1 means customer, but it can be programmer, designers...
       t.integer :role, null: false, default: 1
+      t.integer :checkout_id, null: true
 
       # Scaffold Attributes
       t.string :feedback_type, limit: 20, null: false

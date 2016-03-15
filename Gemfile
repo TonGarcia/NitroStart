@@ -96,7 +96,7 @@ gem 'rest-client', '~> 1.8.0'
 gem 'cpf_cnpj', '~> 0.2.1'
 
 # NitroPay payment GEM
-gem 'nitro_pay', '~> 1.0', '>= 1.0.3'
+gem 'nitro_pay', '~> 1.0', '>= 1.0.6'
 
 # Get user BrowserInfo
 gem 'browser', '~> 2.0', '>= 2.0.2'

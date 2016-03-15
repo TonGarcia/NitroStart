@@ -46,6 +46,17 @@ function config_redactor() {
                 tag: 'h4',
                 title: 'Cabeçalho 4',
                 clear: true
+            },
+
+            {
+                tag: 'h5',
+                title: 'Cabeçalho 5',
+                clear: true
+            },
+            {
+                tag: 'h6',
+                title: 'Cabeçalho 6',
+                clear: true
             }],
         lang: 'pt_br',
         maxHeight: 800,

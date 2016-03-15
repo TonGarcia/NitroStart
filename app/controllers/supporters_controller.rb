@@ -34,11 +34,11 @@ class SupportersController < ApplicationController
   # POST /supporters.json
   def create
     @supporter = Supporter.new(supporter_params)
-    supporter_link = [@pitch, @campaign, @supporter]
-    params[:commit].empty? ? action_destination = supporter_link : action_destination = # TODO checkout_url
 
     respond_to do |format|
       if @supporter.save
+        supporter_link = [@pitch, @campaign, @supporter]
+        params[:commit].empty? ? action_destination = supporter_link : action_destination = "#{@campaign.checkout_page_link}?ref=#{@supporter.id}"
         format.html { redirect_to action_destination, notice: 'Apoio registrado com sucesso.' }
         format.json { render :show, status: :created, location: @supporter }
       else
@@ -54,7 +54,7 @@ class SupportersController < ApplicationController
     respond_to do |format|
       if @supporter.update(supporter_params)
         format.html { redirect_to [@pitch, @supporter], notice: 'Apoio atualizado com Sucesso!' }
-        format.json { render :show, status: :ok, location: @supporter }
+        format.json { render :show, status: :ok, location:                            @supporter }
       else
         format.html { render :edit }
         format.json { render json: @supporter.errors, status: :unprocessable_entity }

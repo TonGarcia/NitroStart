@@ -39,7 +39,6 @@ Rails.application.routes.draw do
 
     resources :campaigns do
       get 'full_report' => 'campaigns#full_report', as: :full_report
-      get 'checkout_callback' => 'campaigns#checkout_callback', as: :checkout_callback
       resources :supporters, except: [:update, :delete]
     end
 
@@ -51,6 +50,12 @@ Rails.application.routes.draw do
   resources :problems
   resources :start_ups
   resources :people, except: [:delete, :update]
+
+  # HandShake controller
+  scope 'callback' do
+    get 'checkout' => 'callbacks#checkout', as: :callback_checkout
+  end
+
 
   # StartUps raising routes
   scope 'showroom' do

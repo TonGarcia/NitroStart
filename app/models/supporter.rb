@@ -18,10 +18,6 @@ class Supporter < ActiveRecord::Base
   validates_presence_of :pitch_id
   validates_presence_of :campaign_id
 
-  # Return it supporter checkout link
-  def checkout_link
-  end
-
   private
     def positive?
       self.feedback_type == 'positive'
