@@ -72,7 +72,7 @@ module Concerns::ActionsHelper
   # List LegalPersonActions
   def investor_actions
     {
-        label: 'Investidor',
+        label: 'Propulsor de Ideias',
         actions: [
             {name:t('actions.pitches.supporting'), icon:'ion-thumbsup', link: showroom_pitches_path, action_controller:'showroom.pitches'},
             # {name:t('actions.showroom.index'), icon:'mdi-action-dashboard', link: showroom_index_path, action_controller:'showroom'},

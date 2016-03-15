@@ -43,7 +43,7 @@
   .col.l12.s12
     h6.center
       i.left-icon.slim.mdi-action-shopping-cart
-      | Adquiriram Crédito
+      | Consumidores
     h5.center.purple-text
       =format_int(@campaign.customer_fundings.length)
 
@@ -52,14 +52,14 @@
       i.left-icon.slim.ion-cash
       | Crédito Total Adquirido
     h5.center.purple-text
-      =format_currency(@campaign.customer_fundings.count(:amount))
+      =format_currency(@campaign.supporter_funding_raised)
 
   .col.l12.s12
     h6.center
       i.left-icon.slim.ion-cash
       | Valor médio de Créditos Adquirido
     h5.center.purple-text
-      =format_currency(@campaign.customer_fundings.count(:amount))
+      =format_currency(@campaign.average_supporter_funding_raised)
 
   .col.l12.s12
     h6.center

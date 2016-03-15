@@ -25,6 +25,7 @@ class Campaign < ActiveRecord::Base
   validates_presence_of :pitch_id
 
   # Aux attributes
+  attr_accessor :raised
   attr_accessor :just_created
 
   # Locale Countries Array
@@ -60,6 +61,19 @@ class Campaign < ActiveRecord::Base
   # Return it pitch name
   def name
     self.pitch.name
+  end
+
+  # Return it amount raised by supporter funding
+  def supporter_funding_raised
+    card_operator_formatter = 100
+    formatted_amount = customer_fundings.sum(:amount)
+    self.raised = formatted_amount/card_operator_formatter
+  end
+
+  # Return it average funding raised based on it supporters length amount
+  def average_supporter_funding_raised
+    self.raised = supporter_funding_raised if self.raised.nil?
+    self.raised/self.supporters.length
   end
 
   private

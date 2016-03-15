@@ -8,7 +8,7 @@ module CampaignSetups
 
   def set_bind_objs
     # Prevent it setup if not a show action
-    return if params[:action] != 'show' || params[:controller] != 'showroom'
+    return if params[:action] != 'show' && params[:controller] != 'showroom'
 
     # Base check/search it campaign
     if params[:permalink]
