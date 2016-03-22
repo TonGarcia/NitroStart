@@ -2,7 +2,7 @@ ul
   li
   li.user
     /! User Profile link
-    a.dropdown-button href="#!" data-activates="user-dropdown"
+    a.dropdown-button href="#" data-activates="user-dropdown"
       =image_tag @current_user.picture, class: 'circle grey lighten-3'
       =truncate(@current_user.name, length: 25)
       i.mdi-navigation-expand-more.right

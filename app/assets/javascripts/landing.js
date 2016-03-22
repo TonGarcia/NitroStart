@@ -8,7 +8,6 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require materialize-sprockets
-//= require jquery.mask.min
 
 // My JS
 //= require app/partners

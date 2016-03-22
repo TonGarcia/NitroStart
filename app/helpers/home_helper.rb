@@ -9,9 +9,9 @@ module HomeHelper
     'NITRO START'
   end
 
-  # Must return it app slogan phrase based on user locale (default is pt-BR)
+  # Must return ittem app slogan phrase based on user locale (default is pt-BR)
   def slogan
-    'Investimentos mais simples, rentáveis e seguros.'
+    'Empreender nunca foi tão fácil, barato e seguro.'
   end
 
   # Return it app_name with it slogan

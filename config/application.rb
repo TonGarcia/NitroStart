@@ -6,20 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# Amazon S3 With paper-clip
-aws_config = YAML.load_file("./config/aws.yml")
-aws_dev = aws_config['development']
-aws_prod = aws_config['production']
-
-# Amazon S3 With paper-clip (ENV)
-Rails.env.production? ? aws = aws_prod : aws = aws_dev
-aws = aws.deep_symbolize_keys
-
-ENV['AWS_REGION'] = aws[:region]
-ENV['S3_BUCKET_NAME'] = aws[:bucket]
-ENV['AWS_ACCESS_KEY_ID'] = aws[:access_key_id]
-ENV['AWS_SECRET_ACCESS_KEY'] = aws[:secret_access_key]
-
 module NitroStart
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -48,14 +34,19 @@ module NitroStart
       config.action_mailer.default_url_options = { host: 'nitro.dev:5000' }
     end
 
-    # Setup NitroPay keys
-    if Rails.env.production?
-      NitroPay.app_id = Rails.application.secrets.nitro_pay.app_id
-      NitroPay.secret_key = Rails.application.secrets.nitro_pay.secret_key
-    else
-      NitroPay.debug = true
-      NitroPay.test_env = true
-    end
+    # Amazon S3 With paper-clip
+    aws_config = YAML.load_file(File.join(Rails.root, 'config', 'social_keys.yml'))
+    aws_dev = aws_config['development']
+    aws_prod = aws_config['production']
+
+    # Amazon S3 With paper-clip (ENV)
+    Rails.env.production? ? aws = aws_prod : aws = aws_dev
+    aws = aws.deep_symbolize_keys
+
+    ENV['AWS_REGION'] = aws[:region]
+    ENV['S3_BUCKET_NAME'] = aws[:bucket]
+    ENV['AWS_ACCESS_KEY_ID'] = aws[:access_key_id]
+    ENV['AWS_SECRET_ACCESS_KEY'] = aws[:secret_access_key]
 
     # Load social keys
     social_keys = File.join(Rails.root, 'config', 'social_keys.yml')

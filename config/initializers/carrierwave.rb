@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   config.aws_acl    = 'public-read'
-  config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
+  config.aws_bucket = ENV['S3_BUCKET_NAME']
 
   # Set custom options such as cache control to leverage browser caching
   config.aws_attributes = {
@@ -10,9 +10,9 @@ CarrierWave.configure do |config|
 
   # Setup AWS Credentials
   config.aws_credentials = {
-    region:            ENV.fetch('AWS_REGION'),
-    access_key_id:     ENV.fetch('AWS_ACCESS_KEY_ID'),
-    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY')
+    region:            ENV['AWS_REGION'],
+    access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
   }
 
 

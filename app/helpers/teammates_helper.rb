@@ -49,6 +49,6 @@ module TeammatesHelper
 
   # Check permission to show it destroy path button
   def destroy_teammate_permission(teammate)
-    owner_teammate || current_teammate(teammate)
+    (owner_teammate || current_teammate(teammate)) && @current_user.id != teammate.user_id
   end
 end
