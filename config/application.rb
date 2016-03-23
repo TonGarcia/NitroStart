@@ -35,7 +35,7 @@ module NitroStart
     end
 
     # Amazon S3 With paper-clip
-    aws_config = YAML.load_file(File.join(Rails.root, 'config', 'social_keys.yml'))
+    aws_config = YAML::load_file(Rails.root.join('config', 'aws.yml'))
     aws_dev = aws_config['development']
     aws_prod = aws_config['production']
 
@@ -49,8 +49,8 @@ module NitroStart
     ENV['AWS_SECRET_ACCESS_KEY'] = aws[:secret_access_key]
 
     # Load social keys
-    social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
-    CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(social_keys)))[Rails.env]
+    social_keys = YAML::load_file(Rails.root.join('config', 'social_keys.yml'))
+    CONFIG = social_keys[Rails.env]
     CONFIG.each do |k,v|
       ENV[k.upcase] ||= v
     end

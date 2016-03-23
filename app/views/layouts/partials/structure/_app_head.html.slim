@@ -2,11 +2,6 @@ title ="#{app_name} - #{t("controllers.#{params[:controller]}")}"
 meta name="description" content="#{app_name_slogan}"
 meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
 
-= javascript_include_tag 'https://www.google.com/jsapi'
-= javascript_include_tag 'https://apis.google.com/js/plusone.js'
-= javascript_include_tag 'http://www.google.com/jsapi', 'chartkick'
-= javascript_include_tag 'application', 'data-turbolinks-track' => true
-
 link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'
 = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 =render 'layouts/partials/components/static/google_analytics'

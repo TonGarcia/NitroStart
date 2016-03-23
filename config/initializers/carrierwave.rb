@@ -15,7 +15,6 @@ CarrierWave.configure do |config|
     secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
   }
 
-
   # UNCOMMENT IF AN IMAGE CAN'T BE RETRIEVED IF USER NOT LOGGED
   # config.aws_signer = -> (unsigned_url, options) { Aws::CF::Signer.sign_url unsigned_url, options }
 end

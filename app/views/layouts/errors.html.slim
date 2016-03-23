@@ -4,3 +4,5 @@ html
     = render 'layouts/partials/structure/landing_head'
   body#error_bg_img
     = yield
+
+    = javascript_include_tag 'landing', 'data-turbolinks-track' => true
