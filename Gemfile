@@ -185,6 +185,12 @@ gem 'social-buttons', '0.3.7'
 # Rails google materialize (ATTENTION, MATERIAL 0.95.X NOT WORKING)
 gem 'materialize-sass', '0.97.3'
 
+# Only icons from material design
+gem 'material-icons-rails', '~> 0.1.2'
+
+# CreativeTim Landing
+gem 'creative_awesome_landing', '~> 0.0.5'
+
 # To create the time_line
 gem 'bourbon', '~> 4.2.6'
 

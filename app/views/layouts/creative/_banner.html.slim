@@ -1,0 +1,25 @@
+.wrapper
+  .parallax.filter-gradient.blue data-color="blue"
+    .parallax-background
+      =image_tag 'defaults/startupers_cover.jpg', class: 'parallax-background-image', style: 'margin-top: 0px;'
+    .container
+      .row
+        /! Mobile App image
+        .col-md-7.hidden-xs
+          .parallax-image
+            /! , class:'phone'
+            =image_tag 'system_prints/mac_and_iphone.png'
+        .col-md-5
+          .description
+            h2.text-center Seus Sonhos e Projetos Realizados GRÁTIS
+            h5.justify
+              | Você tem uma grande ideia e pretende torná-la uma empresa (CEO), mas não sabe desenvolver o produto e não tem dinheiro para pagar (CTO) ou é difícil de encontrar um time (CDO, CMO, CLO e todos Cs que existem)? A
+              i NITRO START
+              | é para você! Você fica com o único C que importa: CEO. Nós fazemos o resto.
+            .buttons
+              a.light-green-text href="#"
+                i.left-icon.slim.fa.fa-external-link
+                | Entenda o que são os C-Levels
+
+              a.margin_left.btn.btn-fill.btn-neutral
+                | Iniciar Jornada

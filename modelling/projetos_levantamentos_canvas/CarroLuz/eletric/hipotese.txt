@@ -1,5 +1,5 @@
 Principal Problema
-    Preço da Gasolina
+    Preço do Combustível
 
 Problemas Secundários
 - Poluição;
@@ -10,7 +10,7 @@ Como é Solucionado Hoje
     Paga-se o preço da Bomba
 
 Tag Line Pitch
-    Liberte-se dos Preços dos Combustíveis
+    Liberte-se do Preços do Combustível
 
 High Concept Pitch
     Primeiro Carro Elétrico com Retroalimentação do mundo

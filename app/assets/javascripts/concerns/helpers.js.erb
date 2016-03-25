@@ -25,7 +25,7 @@ function scrollTo() {
   $("a[href^='#']").click(function(e) {
     e.preventDefault();
     var dest = $(this).attr('href');
-    $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow');
+    if(dest) $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow');
   });
 }
 

@@ -11,7 +11,7 @@ module HomeHelper
 
   # Must return ittem app slogan phrase based on user locale (default is pt-BR)
   def slogan
-    'Empreender nunca foi tão fácil, barato e seguro.'
+    'Realize seus sonhos e projetos.'
   end
 
   # Return it app_name with it slogan
@@ -25,5 +25,9 @@ module HomeHelper
 
   def company_footer_description
     'Copyright© & Registered® 2016.'
+  end
+
+  def partners_brands
+    ['uniceub', 'ucb', 'cdt', 'sebrae', 'anjos', 'criatec']
   end
 end

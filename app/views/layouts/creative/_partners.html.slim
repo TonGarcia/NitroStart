@@ -1,0 +1,9 @@
+.section.section-gray.section-clients
+  .container.text-center
+    h4.header-text Quem já está conosco
+    p As principais instituições de ensino (UniCEUB - universidade mais empreendedora do Brasil 2015, UCB - recebeu o BEPiD de capacitação Apple e a UnB - segunda melhor universidade federal) bem como instituições de Investimentos em inovação (Associação de Investidores Anjos do Brasil e CRIATEC Fundo de Investimento) e orgão fomentadores (SEBRAE) são nossos principais clientes e parceiros.
+    .logos
+      ul.list-unstyled
+        -partners_brands.each do |brand|
+          li
+            =image_tag "partners/#{brand}.png"

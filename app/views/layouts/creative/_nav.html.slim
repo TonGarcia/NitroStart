@@ -1,0 +1,25 @@
+nav.navbar.navbar-transparent.navbar-top role="navigation"
+  .container
+    /! Brand
+    .navbar-header
+      /! Mobile Nav Button
+      button#menu-toggle.navbar-toggle type="button" data-toggle="collapse" data-target="#example"
+        span.sr-only Toggle navigation
+        span.icon-bar bar1
+        span.icon-bar.bar2
+        span.icon-bar.bar3
+      /! Logo
+      a href="#"
+        .logo-container
+          .logo
+            =image_tag 'brand/nitro_circle_fb_icon.png', alt: 'NITRO START Realize seus Projetos'
+          .brand
+            i NITRO START
+
+    /! Action Links
+    #example.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="#"
+            i.fa.fa-facebook-square
+            | Facebook
