@@ -1,13 +1,16 @@
 /*
  * Frameworks
  *= require font-awesome
- *= require creative-tim/bootstrap
  *= require creative-tim/landing-page
  *= require creative-tim/pe-icon-7-stroke
  *
  * My Styles
- *= require lib/creative_helpers
+ *= require lib/creative/creative_helpers
+ *= require lib/creative/creative_large_screen
+ *= require lib/creative/creative_small_screen
  *
 */
 
 @import 'ionicons';
+@import "bootstrap-sprockets";
+@import "bootstrap";

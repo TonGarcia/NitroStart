@@ -1,0 +1,82 @@
+// ########### FIXERS #################
+
+.description {
+  .justify {
+    i {
+      margin: 0 5px;
+    }
+  }
+}
+
+.landing-page .logos li {
+  margin-bottom: 30px;
+}
+
+.landing-page .section-features #how_works .card {
+  min-height: 320px;
+
+  img {
+    max-width: 50%;
+  }
+}
+
+.header-text {
+  line-height: 36px;
+}
+
+.btn.btn-neutral {
+  background-color: transparent;
+  border-color: whitesmoke;
+}
+
+.btn:hover, .btn:focus, .btn.focus {
+  color: #fff !important;
+  background-color: transparent;
+  border-color: white;
+}
+
+
+// ########### TEXT FORMATS #################
+
+i {
+  margin-right: 5px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+// ########### TEXT COLORS #################
+
+.white-text {
+  color: #fff !important;
+}
+
+.light-green-text {
+  color: #2CFF97 !important;
+
+  &:hover {
+    color: #29DE7E !important;
+  }
+}
+
+// ########### SPACING ###################
+
+.margin_left {
+  margin-left: 35px;
+}
+
+.margin_right {
+  margin-right: 35px;
+}
+.margin_top {
+  margin-top: 40px;
+}
+
+.small_margin_top {
+  margin-top: 10px;
+}
+
+.margin_bottom {
+  margin-bottom: 40px;
+}

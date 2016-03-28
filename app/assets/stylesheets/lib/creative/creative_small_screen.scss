@@ -1,0 +1,23 @@
+@media only screen and (max-width : 600px) {
+  .landing-page .parallax {
+    height: 640px;
+
+    .mobile_margin_top {
+      margin-top: 55px;
+    }
+  }
+
+  .mobile_margin_left {
+    margin-top: 17px;
+  }
+
+  .parallax {
+    .parallax-background {
+      img {
+        left: -80px;
+        margin-top: 0;
+        position: relative;
+      }
+    }
+  }
+}

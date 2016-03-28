@@ -188,6 +188,9 @@ gem 'materialize-sass', '0.97.3'
 # Only icons from material design
 gem 'material-icons-rails', '~> 0.1.2'
 
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 # CreativeTim Landing
 gem 'creative_awesome_landing', '~> 0.0.5'
 

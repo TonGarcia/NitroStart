@@ -13,11 +13,8 @@ html
     = favicon_link_tag 'brand/purple_small_flame_tmp.png'
     = csrf_meta_tags
   body.landing-page.landing-page2 cz-shortcut-listen="true"
-    /! Banner
-    =render 'layouts/creative/nav'
-    =render 'layouts/creative/banner'
+    /! LandingBody
+    =yield
 
-    /! Partners
-    =render 'layouts/creative/partners'
-
+    /! Footer javascript, it accelerate page load
     = javascript_include_tag 'creative_landing', 'data-turbolinks-track' => true
