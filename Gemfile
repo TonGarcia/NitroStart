@@ -192,7 +192,10 @@ gem 'material-icons-rails', '~> 0.1.2'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # CreativeTim Landing
-gem 'creative_awesome_landing', '~> 0.0.5'
+gem 'creative_awesome_landing', '~> 1.0.1'
+
+# Fix navbar on scroll
+gem 'jquery_sticky_rails', '~> 1.0.1'
 
 # To create the time_line
 gem 'bourbon', '~> 4.2.6'
