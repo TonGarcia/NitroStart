@@ -73,6 +73,8 @@ class Campaign < ActiveRecord::Base
   # Return it average funding raised based on it supporters length amount
   def average_supporter_funding_raised
     self.raised = supporter_funding_raised if self.raised.nil?
+    count_supporters = self.supporters.length
+    return count_supporters if count_supporters == 0
     self.raised/self.supporters.length
   end
 

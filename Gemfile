@@ -96,7 +96,7 @@ gem 'rest-client', '~> 1.8.0'
 gem 'cpf_cnpj', '~> 0.2.1'
 
 # NitroPay payment GEM
-gem 'nitro_pay', '~> 1.0', '>= 1.0.8'
+gem 'nitro_pay', '~> 1.0', '>= 1.0.9'
 
 # Get user BrowserInfo
 gem 'browser', '~> 2.0', '>= 2.0.2'
@@ -183,7 +183,7 @@ gem 'active_median', '~> 0.1.0'
 gem 'social-buttons', '0.3.7'
 
 # Rails google materialize (ATTENTION, MATERIAL 0.95.X NOT WORKING)
-gem 'materialize-sass', '0.97.3'
+gem 'materialize-sass', '0.97.5'
 
 # Only icons from material design
 gem 'material-icons-rails', '~> 0.1.2'

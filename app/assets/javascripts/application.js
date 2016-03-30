@@ -7,8 +7,8 @@
 // PlugIns
 //= require nprogress
 //= require nprogress-turbolinks
-//= require materialize-sprockets
 //= require admin_materialize
+//= require materialize-sprockets
 //= require jquery.mask.min
 //= require redactor-rails
 //= require redactor-rails/plugins

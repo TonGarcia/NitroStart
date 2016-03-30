@@ -21,14 +21,6 @@ function show_brand(input, img_ref) {
     }
 }
 
-function scrollTo() {
-  $("a[href^='#']").click(function(e) {
-    e.preventDefault();
-    var dest = $(this).attr('href');
-    if(dest) $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow');
-  });
-}
-
 function toast_flags() {
   $('.flags .flag').click(function() {
     var flag_element = $(this);

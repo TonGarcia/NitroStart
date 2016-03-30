@@ -1,6 +1,8 @@
 doctype html
 html
-  head = render 'layouts/partials/structure/app_head'
+  head
+    =render 'layouts/partials/structure/app_head'
+    =javascript_include_tag 'application', 'data-turbolinks-track' => true
   body
     /! Nav Components
     =render 'layouts/con_theme/components/nav_bar'
@@ -20,4 +22,3 @@ html
     = javascript_include_tag 'https://www.google.com/jsapi'
     = javascript_include_tag 'https://apis.google.com/js/plusone.js'
     = javascript_include_tag 'http://www.google.com/jsapi', 'chartkick'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true

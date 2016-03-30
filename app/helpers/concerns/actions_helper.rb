@@ -61,7 +61,7 @@ module Concerns::ActionsHelper
         # {name:'Trending Problemas', icon:'ion-speakerphone', link: start_ups_path, action_controller:'start_ups'},
         # {name:t('actions.dashboard.start_ups'), icon:'ion-speedometer', link: dashboard_start_ups_path, action_controller:'dashboard'},
         {name:t('actions.pitches.index'), icon:'mdi-action-assignment', link: pitches_path, action_controller:'pitches'},
-        {name:t('actions.helps.faq'), icon:'fa fa-question-circle', link: pitches_path, action_controller:'pitches'},
+        # {name:t('actions.helps.faq'), icon:'fa fa-question-circle', link: pitches_path, action_controller:'pitches'},
       ]
     }
 
