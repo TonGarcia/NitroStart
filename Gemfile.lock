@@ -204,6 +204,8 @@ GEM
       sass (~> 3.3)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
     mime-types (2.99)
     mini_magick (4.4.0)
     mini_portile2 (2.0.0)
@@ -466,6 +468,7 @@ DEPENDENCIES
   mail (~> 2.6.3)
   material-icons-rails (~> 0.1.2)
   materialize-sass (= 0.97.5)
+  meta-tags (~> 2.1)
   mini_magick
   mysql2 (~> 0.4.2)
   newrelic_rpm (~> 3.14.1.311)

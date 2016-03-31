@@ -34,7 +34,7 @@ module TeammatesHelper
   # Actions to skip some component
   def skip_for_it_action
     current_action = params[:action]
-    current_action == 'new' || current_action == 'edit'
+    current_action == 'new' || current_action == 'edit' || current_action == 'create'
   end
 
   # Cehck if it current teammate loop is the current user
