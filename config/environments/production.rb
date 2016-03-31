@@ -68,14 +68,16 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default charset: 'utf-8'
 
+
+
   config.action_mailer.smtp_settings = {
       port:                 587,
       domain:               'gmail.com',
       address:              'smtp.gmail.com',
       authentication:       :plain,
       enable_starttls_auto: true,
-      user_name:            'no.reply.nitro.start@gmail.com',
-      password:             'Nitro2016'
+      user_name:            Rails.application.secrets.mail['user_name'],
+      password:             Rails.application.secrets.mail['password'],
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
