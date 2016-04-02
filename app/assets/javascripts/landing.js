@@ -19,7 +19,6 @@ $(document).ready(function(){
     $('.parallax').parallax();
 
     setup();
-    scrollTo();
     setup_tabs();
     fix_error_field();
     setup_bg_error_img();

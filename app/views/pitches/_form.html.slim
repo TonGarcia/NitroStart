@@ -17,7 +17,7 @@
           br
           a href="#" Clique aqui caso não tenha
         .col.l12.s11.offset-s2
-          = image_tag @pitch.avatar.url, class: 'col l8 s6 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
+          = image_tag @pitch.avatar.url, class: 'col l8 offset-l2 s6 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
           = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
         .center.strong Tamanho máximo:
         h6.center  1024 x 1024

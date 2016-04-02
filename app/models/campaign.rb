@@ -7,6 +7,7 @@ class Campaign < ActiveRecord::Base
 
   # Relations
   belongs_to :pitch
+  belongs_to :idea
   has_many :supporters
   has_many :page_views
   has_many :customer_fundings

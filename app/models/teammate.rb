@@ -53,6 +53,11 @@ class Teammate < ActiveRecord::Base
     send_invitation_email
   end
 
+  # Helper to easy call it user name
+  def name
+    self.user.name
+  end
+
   private
     # setup variables & attributes
     def setup

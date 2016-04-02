@@ -9,6 +9,7 @@ module Helpers
 
       # Check if the auth & user exists
       social_session = SocialSession.where(provider: auth.provider, uid: auth.uid.to_s).first_or_initialize
+      return social_session.user if !social_session.nil? && social_session.user
       user = current_user || User.where("email = '#{auth_info.email}'").first || social_session.user || User.new
 
       # Persist the user & it social_session

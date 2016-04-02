@@ -1,7 +1,7 @@
 class CreateCampaigns < ActiveRecord::Migration
   def change
     create_table :campaigns do |t|
-      # Link to the campaign, like: up.nitrostart.me/my-campaign
+      # Link to the campaign, like: www.nitrostart.me/my-campaign
       t.string :permalink, limit: 55, unique: true, null: false
       # Locale Campaign (like: pt, br, it... ISO 3166)
       t.column :locale, 'char(2)', null: false

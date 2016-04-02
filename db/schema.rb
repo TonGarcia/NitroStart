@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331123057) do
+ActiveRecord::Schema.define(version: 20160402112009) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 20160331123057) do
     t.integer  "pitch_id",            limit: 4,     null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.integer  "idea_id",             limit: 4,     null: false
   end
 
+  add_index "campaigns", ["idea_id"], name: "index_campaigns_on_idea_id", using: :btree
   add_index "campaigns", ["pitch_id"], name: "index_campaigns_on_pitch_id", using: :btree
 
   create_table "categories", force: :cascade do |t|

@@ -1,12 +1,12 @@
 function setup() {
   // SetUp Masks
-  $('.currency').mask('000.000.000.000.000,00', {reverse: true});
-  $('.formatted_int').mask('000.000.000.000.000', {reverse: true});
+  if($('.currency').length) $('.currency').mask('000.000.000.000.000,00', {reverse: true});
+  if($('.formatted_int').length) $('.formatted_int').mask('000.000.000.000.000', {reverse: true});
 
   // Setup Slider & Collaps
   toast_flags();
-  $('.slider').slider();
-  $(".button-collapse").sideNav();
+  if($('.slider').length) $('.slider').slider();
+  if($(".button-collapse").length) $(".button-collapse").sideNav();
 }
 
 // show the Ad dynamic after it "upload_intent"

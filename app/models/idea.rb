@@ -7,7 +7,7 @@ class Idea < ActiveRecord::Base
   belongs_to :pitch
 
   # Rails validations (Must be Present)
-  validates :main_problem, length: { minimum: 10, maximum: 90 }, presence: true
+  validates :main_problem, length: { minimum: 5, maximum: 90 }, presence: true
   validates :why_must_success, length: { minimum: 10, maximum: 140 }, presence: true
 
   # Rails validations (AllowBlank)

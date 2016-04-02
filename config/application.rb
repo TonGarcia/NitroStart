@@ -29,7 +29,7 @@ module NitroStart
 
     # Setup Host
     if Rails.env.production?
-      config.action_mailer.default_url_options = { host: 'up.nitrostart.me' }
+      config.action_mailer.default_url_options = { host: 'www.nitrostart.me' }
     else
       config.action_mailer.default_url_options = { host: 'nitro.dev:5000' }
     end

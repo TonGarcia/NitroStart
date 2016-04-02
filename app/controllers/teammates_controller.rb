@@ -80,7 +80,7 @@ class TeammatesController < ApplicationController
   def update
     respond_to do |format|
       if @teammate.update(teammate_params)
-        format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "O Tripulante #{@teammate.user.name} foi atualizado." }
+        format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "O Tripulante <strong>#{@teammate.user.name}</strong> foi atualizado." }
         format.json { render :show, status: :ok, location: [@pitch, @teammate] }
       else
         format.html { render :edit }
@@ -92,9 +92,10 @@ class TeammatesController < ApplicationController
   # DELETE /teammates/1
   # DELETE /teammates/1.json
   def destroy
+    teammate_name = @teammate.name
     @teammate.destroy
     respond_to do |format|
-      format.html { redirect_to pitch_teammate_path(@pitch, @teammate), notice: "O Tripulante #{@teammate.user.name} foi removido e será notificado." }
+      format.html { redirect_to pitch_teammates_path(@pitch), notice: "O Tripulante <strong>#{teammate_name}</strong> foi removido e será notificado." }
       format.json { head :no_content }
     end
   end

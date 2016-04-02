@@ -61,6 +61,7 @@ module HistoricalControllers
 
   # Check if it current_user has admin permissions to exec it action
   def check_user_admin_permissions
+    return if params[:action] == 'confirm_invitation' && params[:controller] == 'teammates'
     current_user_teammate = @current_user.teammates.where(pitch_id: @pitch.id).take
     redirect_to forbidden_path unless admin_teammate(current_user_teammate)
   end
