@@ -64,6 +64,7 @@ locale_icon:
     success_stories: ion-android-contacts
     your_advantage: ion-android-star
   campaign:
+    idea: ion-ios-lightbulb
     permalink: ion-link
     locale: mdi-action-language
     locale_flags: ion-android-globe

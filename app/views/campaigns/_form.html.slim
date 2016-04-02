@@ -17,6 +17,12 @@
   /      = f.select :locale, options_for_select(idioms, @campaign.locale), {prompt: t('activerecord.attributes.campaign.locale')}, {class: 'browser-default', onchange: 'show_countries_flags_for(this, "#flags")'}
 
   .row
+    .input-field.col.l6.s12
+      i class="prefix #{t_current_class_icons[:idea]}"
+      .col.l10.offset-l1
+        = f.collection_select :idea_id, @pitch.ideas, :id, :main_problem, {prompt: t('activerecord.attributes.campaign.idea')}
+
+  .row
     #loader.hide.col.l6.s3.offset-s5
       =render 'layouts/con_theme/components/circle_loader'
     #flags.col.l12.s12

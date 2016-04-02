@@ -80,7 +80,7 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      base_params = params.require(:campaign).permit(:permalink, :locale, :body).merge!(pitch_id: params[:pitch_id])
+      base_params = params.require(:campaign).permit(:idea_id, :permalink, :locale, :body).merge!(pitch_id: params[:pitch_id])
       # TODO remove it when it comes global
       base_params[:locale] = 'pt'
       base_params

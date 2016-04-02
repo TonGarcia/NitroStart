@@ -24,6 +24,7 @@ class Campaign < ActiveRecord::Base
   # Validate Association
   validates_presence_of :body
   validates_presence_of :pitch_id
+  validates_presence_of :idea_id
 
   # Aux attributes
   attr_accessor :raised
