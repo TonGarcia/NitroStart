@@ -70,4 +70,10 @@ module ApplicationHelper
   def hide_if(layout_sym)
     current_layout == layout_sym ? 'hide-on-small-only' : nil
   end
+
+    # Return the hide class if it layout is application
+  def hide_brand
+    hide_array = [:application, :dynamic]
+    return 'hide-on-small-only' if hide_array.include?(current_layout)
+  end
 end

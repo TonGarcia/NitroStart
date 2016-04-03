@@ -1,18 +1,18 @@
 doctype html
 html
-  head = render 'layouts/partials/structure/dynamic_head'
+  head =render 'layouts/partials/structure/dynamic_head'
   body
     /! Nav Components
     -@text_visual_identity = 'purple-text'
     -if @current_user.nil?
-      = render 'layouts/con_theme/components/no_user_nav_bar'
+      =render 'layouts/con_theme/components/no_user_nav_bar'
     -else
-      = render 'layouts/con_theme/components/nav_bar'
+      =render 'layouts/con_theme/components/nav_bar'
 
     .container.content-top-wrap
       =yield
 
     /! FooterDesign
-    = render 'layouts/partials/components/static/app_footer'
+    =render 'layouts/partials/components/static/app_footer'
 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    =javascript_include_tag 'application', 'data-turbolinks-track' => true
