@@ -3,6 +3,11 @@ class CreateCampaigns < ActiveRecord::Migration
     create_table :campaigns do |t|
       # Link to the campaign, like: www.nitrostart.me/my-campaign
       t.string :permalink, limit: 55, unique: true, null: false
+      t.string :video, limit: 255, null: true
+      t.string :banner, limit: 255, null: true
+
+      # If true it is not visible
+      t.boolean :draft, default: true
       # Locale Campaign (like: pt, br, it... ISO 3166)
       t.column :locale, 'char(2)', null: false
       # Body is the Text Editor, like any other CrowdFunding

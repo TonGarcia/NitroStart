@@ -375,6 +375,10 @@ a.selector {
   padding-top: 35px !important;
 }
 
+.small_margin_left {
+  margin-left: 10px;
+}
+
 .margin_top {
  margin-top: 25px !important;
 }
@@ -390,10 +394,25 @@ a.selector {
   }
 }
 
+.big_icon {
+  font-size: 7rem;
+  text-align: right;
+  margin-top: -35px;
+}
+
 .set-pitch_brand {
   img#avatar {
-    margin-bottom: 30px;
+    margin-top: -10px;
   }
+}
+
+img.pit_show {
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+.not_fixed_bar {
+  position: inherit !important;
 }
 
 .float_avatar {
@@ -427,6 +446,10 @@ a.selector {
     min-height: 284px;
     max-height: 284px;
   }
+}
+
+.remove_padding {
+  padding: 0 !important;
 }
 
 .remove_margin_top {

@@ -5,7 +5,6 @@ class Pitch < ActiveRecord::Base
   include HistoricalTrackable
 
   # Attachments
-  mount_uploader :cover, CoverUploader
   mount_uploader :avatar, AvatarUploader
 
   # Relations

@@ -16,11 +16,44 @@
   /    .col.l10.offset-l1
   /      = f.select :locale, options_for_select(idioms, @campaign.locale), {prompt: t('activerecord.attributes.campaign.locale')}, {class: 'browser-default', onchange: 'show_countries_flags_for(this, "#flags")'}
 
+
+  .row
+    = image_tag @campaign.banner.url, class: 'col l2 s12', id: 'banner', onclick: 'trigger_invisible("#campaign_banner")'
+    = f.file_field :banner, onchange: 'show_brand(this, "#banner")', class: 'invisible'
+    .col.l4.s12
+      h6.strong.purple-text Banner do projeto
+      a href="#" Clique aqui caso não tenha
+      h6
+        strong Tamanho e Peso: &nbsp;
+        | 1350 x 300 350kb
+
+    a.modal-trigger href="#youtube_modal" data-target="youtube_modal"
+      i.col.l2.s12.big_icon.ion-social-youtube.red-text.text-darken-2
+    .col.l4.s12
+      h6.strong.purple-text Vídeo do projeto
+      a href="#" Clique aqui caso não tenha
+
+  #youtube_modal.modal
+    .modal-content
+      .row
+        .input-field.col.l12.s12
+          i class="prefix #{t_current_class_icons[:video]}"
+          = f.text_field :video
+          = f.label :video
+    .modal-footer
+      a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" Cancelar
+      a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" Salvar
+
   .row
     .input-field.col.l6.s12
-      i class="prefix #{t_current_class_icons[:idea]}"
+      i class="prefix purple-text #{t_current_class_icons[:idea]}"
       .col.l10.offset-l1
         = f.collection_select :idea_id, @pitch.ideas, :id, :main_problem, {prompt: t('activerecord.attributes.campaign.idea')}
+
+    .input-field.col.l6.s12
+      i class="prefix purple-text #{t_current_class_icons[:draft]}"
+      = f.check_box :draft, class: 'filled-in'
+      = f.label :draft, class: 'check_label'
 
   .row
     #loader.hide.col.l6.s3.offset-s5
@@ -32,14 +65,13 @@
       i class="prefix #{t_current_class_icons[:permalink]}"
       = f.text_field :permalink
       = f.label :permalink
-      .footer-info.purple-text Prefira algo simples, direto e que identifique bem seu projeto. Tente não usar hífen, underline etc.
+      .footer-info.purple-text Escreva no formato que pessoas encontrem no Gogole, por exemplo: como-abrir-startup-sem-dinheiro
 
 
   .spacing_rows
     .row
       #hand_free_filling
         = f.text_area :body, class: 'redactor_text col l12 s12', rows: 40, cols: 120
-
 
   - @footer_link=true
   = render 'layouts/partials/components/static/float_buttons/save'

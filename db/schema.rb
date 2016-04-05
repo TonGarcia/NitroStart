@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(version: 20160402112009) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "permalink",           limit: 55,    null: false
+    t.string   "video",               limit: 255
+    t.string   "banner",              limit: 255
+    t.boolean  "draft"
     t.string   "locale",              limit: 2,     null: false
     t.text     "body",                limit: 65535
     t.integer  "checkout_id",         limit: 4
@@ -168,13 +171,12 @@ ActiveRecord::Schema.define(version: 20160402112009) do
   add_index "page_views", ["user_id"], name: "index_page_views_on_user_id", using: :btree
 
   create_table "pitches", force: :cascade do |t|
-    t.string   "cover",      limit: 255
-    t.string   "avatar",     limit: 255
-    t.string   "name",       limit: 55,  null: false
-    t.string   "video_link", limit: 255
-    t.integer  "user_id",    limit: 4,   null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",                 limit: 55,  null: false
+    t.string   "avatar",               limit: 255
+    t.boolean  "technical_validation"
+    t.integer  "user_id",              limit: 4,   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "pitches", ["user_id"], name: "index_pitches_on_user_id", using: :btree

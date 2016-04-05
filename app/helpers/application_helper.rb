@@ -66,6 +66,11 @@ module ApplicationHelper
     controller.send(:_layout).to_sym
   end
 
+  # Check if navbar must be fixed or not
+  def not_fixed_bar?
+    'not_fixed_bar' if current_layout == :dynamic
+  end
+
   # Return the hide class if it layout is application
   def hide_if(layout_sym)
     current_layout == layout_sym ? 'hide-on-small-only' : nil

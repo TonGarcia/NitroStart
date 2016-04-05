@@ -1,9 +1,7 @@
 .row
-  = image_tag(@pitch.cover.url, class: 'col l2 s6 banner')
-  = image_tag(@pitch.avatar.url, class: 'col l2 s4 offset-s2 banner hide-on-med-and-up semi-circle')
-
-  .col.l8
+  .col.l12
     h4.center.orange-text.text-darken-1
+      = image_tag(@pitch.avatar.url, class: 'semi-circle pit_show')
       ="Pitch: #{@pitch.name}"
     h6.center.purple-text
       | Quota de Participação NITRO: &nbsp;
@@ -11,8 +9,6 @@
     a.col.l12.center href="#{forbes_pitch_deck}" target="_blank" class="#{external_link_color}"
       i.left-icon.slim.fa.fa-external-link
       | Este fluxo foi baseado no Pitch Deck da Forbes
-
-  = image_tag(@pitch.avatar.url, class: 'col l1 offset-l1 s6 offset-s3 semi-circle hide-on-small-only')
 
 .row
   .col.l3.offset-l3.s6

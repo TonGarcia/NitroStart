@@ -3,55 +3,20 @@
     - @error_obj = @pitch
     = render 'layouts/con_theme/components/error'
 
-  .row
-    .input-field.col.l12.s12
+  .row.set-pitch_brand
+    = image_tag @pitch.avatar.url, class: 'col l1 s12 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
+    = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
+    .col.l5.s12
+      h6.strong.purple-text Logo do seu Projeto
+      a href="#" Caso não tenha, adquira aqui
+      h6
+        strong Tamanho e Peso: &nbsp;
+        | 1024x1024 200kb
+
+    .input-field.col.l6.s12
       i class="prefix #{t_current_class_icons[:name]}"
       = f.text_field :name
       = f.label :name
-
-  .spacing_rows
-    .row
-      .col.s12.l2.offset-l1.set-pitch_brand
-        h6.s12.center.strong.purple-text
-          | Logo do projeto.
-          br
-          a href="#" Clique aqui caso não tenha
-        .col.l12.s11.offset-s2
-          = image_tag @pitch.avatar.url, class: 'col l8 offset-l2 s6 semi-circle', id: 'avatar', onclick: 'trigger_invisible("#pitch_avatar")'
-          = f.file_field :avatar, onchange: 'show_brand(this, "#avatar")', class: 'invisible'
-        .center.strong Tamanho máximo:
-        h6.center  1024 x 1024
-        h6.center 200 KB
-
-
-      .col.s12.l3.offset-l1.set-pitch_cover.mobile_margin_top
-        h6.s12.center.strong.purple-text
-          | Banner do projeto.
-          br
-          a href="#" Clique aqui caso não tenha
-        =image_tag @pitch.cover.url, class: 'col l12 s12', id: 'cover', onclick: 'trigger_invisible("#pitch_cover")'
-        = f.file_field :cover, onchange: 'show_brand(this, "#cover")', class: 'invisible'
-        .center.strong Tamanho máximo:
-        h6.center  1350 x 300 & 350 KB
-
-      .col.s12.l2.offset-l2.mobile_margin_top
-        h6.center.strong.purple-text
-          | Vídeo do projeto.
-          br
-          a href="#" Clique aqui caso não tenha
-        h1.center.set-video
-          a.modal-trigger href="#youtube_modal" data-target="youtube_modal"
-            i.ion-social-youtube.red-text.text-darken-2
-
-  #youtube_modal.modal
-    .modal-content
-      .input-field.col.l12.s12
-        i class="prefix #{t_current_class_icons[:video_link]}"
-        = f.text_field :video_link
-        = f.label :video_link
-    .modal-footer
-      a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" Cancelar
-      a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" Salvar
 
   -@footer_link=true
   =render 'layouts/partials/components/static/float_buttons/save'

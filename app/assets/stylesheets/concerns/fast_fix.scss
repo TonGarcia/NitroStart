@@ -16,6 +16,10 @@ p {
   }
 }
 
+nav ul a:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
 strong {
   font-weight: bold !important;
 }

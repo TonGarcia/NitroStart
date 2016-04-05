@@ -8,7 +8,7 @@ class Supporter < ActiveRecord::Base
 
   # Rails Validations
   validates :feedback_type, length: { minimum: 1, maximum: 20 }, presence: true
-  validates :how_much_pays, numericality: { greater_than: 0 }, presence: true
+  validates :how_much_pays, numericality: { greater_than_or_equal_to: 0 }, presence: true
   validates :positive_feedback, length: { minimum: 5, maximum: 140 }, if: :positive?
   validates :negative_feedback, length: { minimum: 5, maximum: 140 }, if: :negative?
 

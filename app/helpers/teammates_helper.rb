@@ -14,6 +14,7 @@ module TeammatesHelper
   end
 
   def current_user_teammate
+    return Teammate.new if @pitch.nil?
     @current_user.teammates.where(pitch_id: @pitch.id).take
   end
 

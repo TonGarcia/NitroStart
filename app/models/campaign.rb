@@ -5,6 +5,9 @@ class Campaign < ActiveRecord::Base
   include WidgetTracker
   include Rails.application.routes.url_helpers
 
+  # Attachments
+  mount_uploader :banner, CoverUploader
+
   # Relations
   belongs_to :pitch
   belongs_to :idea
@@ -14,6 +17,7 @@ class Campaign < ActiveRecord::Base
 
   # Setup attributes, like CheckoutPage
   after_create :create_checkout_link
+  before_validation :check_video_link
   before_validation :update_checkout_link, on: :update
 
   # Rails validations
@@ -81,6 +85,24 @@ class Campaign < ActiveRecord::Base
   end
 
   private
+    def check_video_link
+      if !self.video.nil? && !self.video.empty?
+        if self.video.index 'youtube'
+          unless self.video.index 'embed'
+            video_link_param = 'v='
+
+            start_video_param_id = self.video.index(video_link_param)+video_link_param.length
+            end_video_param_id = self.video.length
+
+            video_remote_id = self.video[start_video_param_id..end_video_param_id]
+            self.video = "https://www.youtube.com/embed/#{video_remote_id}"
+          end
+        else
+          self.errors.add(:video, 'deve ser um Link válido do YouTube')
+        end
+      end
+    end
+
     def create_checkout_link
       # Prevent infinite loop
       return if self.checkout_page_link

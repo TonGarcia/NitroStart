@@ -110,6 +110,8 @@ pt-BR:
 
   # Campaign -----------------------------------------------------
       campaign:
+        draft: Rascunho
+        video: Link do YouTube
         body: Escrita Livre
         idea: Hipótese a ser validada
         locale: Idioma

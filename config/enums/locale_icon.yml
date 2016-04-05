@@ -2,7 +2,6 @@
 locale_icon:
   pitch:
     name: mdi-action-assignment-ind
-    video_link: ion-social-youtube
   idea:
     main_problem: ion-alert-circled
     second_problems: ion-alert
@@ -64,10 +63,12 @@ locale_icon:
     success_stories: ion-android-contacts
     your_advantage: ion-android-star
   campaign:
+    draft: ion-compose
     idea: ion-ios-lightbulb
     permalink: ion-link
     locale: mdi-action-language
     locale_flags: ion-android-globe
+    video: ion-social-youtube
   teammate:
     user: mdi-action-account-circle
     role: mdi-action-class
