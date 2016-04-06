@@ -69,6 +69,11 @@ class Campaign < ActiveRecord::Base
     self.pitch.name
   end
 
+  # Amount of people that bought
+  def amount_customers
+    self.customer_fundings.group(:user_id).length
+  end
+
   # Return it amount raised by supporter funding
   def supporter_funding_raised
     card_operator_formatter = 100

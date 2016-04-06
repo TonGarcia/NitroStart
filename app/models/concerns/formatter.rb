@@ -110,4 +110,8 @@ module Formatter
   def permissions_sym
     self.permissions.to_sym
   end
+
+  def custom_draft
+    self.draft ? '<span class="red-text">Rascunho</span>' : '<span class="green-text">Ativo</span>'
+  end
 end

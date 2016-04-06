@@ -64,6 +64,7 @@ locale_icon:
     your_advantage: ion-android-star
   campaign:
     draft: ion-compose
+    custom_draft: ion-compose
     idea: ion-ios-lightbulb
     permalink: ion-link
     locale: mdi-action-language

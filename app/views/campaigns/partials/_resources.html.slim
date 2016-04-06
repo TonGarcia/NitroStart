@@ -1,0 +1,10 @@
+-if !@campaign.video.empty? && !@campaign.banner.to_s.empty?
+  ul.tabs
+    li.tab.col.s3: a href="#video" Vídeo
+    li.tab.col.s3: a href="#banner" Banner
+
+#video
+  -if !@campaign.video.empty?
+    iframe width="560" height="315" src="#{@campaign.video}" frameborder="0" allowfullscreen
+#banner
+  =image_tag @campaign.banner, class: 'col l12 s12'

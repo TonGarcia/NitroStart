@@ -8,7 +8,7 @@ module CampaignsHelper
   end
 
   def campaign_index_attrs
-    [:formatted_locale, :permalink] #locale_flags
+    [:custom_draft, :permalink] #locale_flags :formatted_locale
   end
 
   def h_full_report_path(pitch, campaign)

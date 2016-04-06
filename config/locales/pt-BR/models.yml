@@ -110,6 +110,7 @@ pt-BR:
 
   # Campaign -----------------------------------------------------
       campaign:
+        custom_draft: Status
         draft: Rascunho
         video: Link do YouTube
         body: Escrita Livre

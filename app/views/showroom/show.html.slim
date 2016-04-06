@@ -1,39 +1,50 @@
-.row
+#campaign_show.row
   .center.blue-grey-text
     h3 =@dynamic_title
-
-    h5 =@active_idea.tag_line_pitch
-    -if @active_idea.tag_line_pitch.nil? && @campaign.teammate?(@current_user)
+    h5.green-text = @active_idea.tag_line_pitch
+    - if @active_idea.tag_line_pitch.nil? && @campaign.teammate?(@current_user)
       h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o TagLinePitch da Hipótese e ele aparecerá aqui
-
     -if @active_idea.main_problem
       h6
-        strong ="\"#{@active_idea.main_problem}\" "
+        strong.red-text ="\"#{@active_idea.main_problem}\" "
         | é um problema para você? Então conheça este projeto!
         i.right-icon.bit_bigger.ion-android-arrow-down
     -elsif @active_idea.main_problem.nil? && @campaign.teammate?(@current_user)
       h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o Problema que sua Hipótese visa Solucionar e ele aparecerá aqui
 
-    -if @pitch.technical_validation?
-      .row
-        .col.l8.offset-l2.s12
-          .alert.teal.lighten-5.teal-text.text-darken-2 Para a sua Segurança, a NITRO START garante o desenvolvimento e entrega deste produto/serviço.
-    -else
-      .row
-        -if @campaign.teammate?(@current_user)
-          a href="#"
-            i.mdi-action-assignment-turned-in.left-icon
-            | Requisitar Avaliação Técnica
-          i.tooltipped.fa.fa-question-circle.small_margin_left data-position="top" data-delay="50" data-tooltip="Aumenta a confiança do Consumidor e Diminui a Quota Nitro"
+    /! Technical Alert Validation
+    = render 'campaigns/partials/technical_validation'
 
-        .col.l8.offset-l2.s12
-          .alert.orange.lighten-5.orange-text.text-darken-2
-            | Este Produto/Serviço ainda não tem o Desenvolvimento e Entrega garantidos pela  NITRO START.
-            br
-            a href="#" Clique aqui e notifique o Criador, caso considere impressindível.
+.row.medium_margin_top
+  /! Resources
+  .col.l6.offset-l1.s12
+    =render 'campaigns/partials/resources'
+  .col.l5.s12
+    .card-panel
+      h4.blue-grey-text.strong =format_currency(@campaign.supporter_funding_raised)
+      h6
+        | adquiridos por &nbsp;
+        strong =@campaign.amount_customers
+        | &nbsp; consumidores
+      -if !@campaign.idea.second_problems.nil? && !@campaign.idea.second_problems.empty?
+        .row
+          h6 Mais problemas Solucionados:
+          h6.justify.red-text =raw @campaign.idea.formatted_second_problems
 
+      .divider
 
+      .row.strong
+        a.col.l6.s12.amber-text.text-darken-2 href="#"
+          i.left-icon.ion-android-share-alt
+          | Entenda InvestShare
 
+        a.col.l6.s12.teal-text href="#"
+          i.left-icon.ion-cash
+          | Adquirir Créditos
+
+.row
+  .col.l12.s12
+    .center
 
 
 /.row

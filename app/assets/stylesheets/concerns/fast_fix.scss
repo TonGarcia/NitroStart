@@ -2,6 +2,12 @@ p {
   font-size: 18px;
 }
 
+#campaign_show {
+  h5 {
+    font-size: 1.4rem;
+  }
+}
+
 .store_downloads {
   .btn, .btn-large {
     span {
@@ -17,7 +23,7 @@ p {
 }
 
 nav ul a:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.02) !important;
 }
 
 strong {
