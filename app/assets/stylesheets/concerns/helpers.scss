@@ -3,6 +3,14 @@
   text-shadow: black 0 0 10px;
 }
 
+a.icon_btn {
+  text-align: center;
+
+  i {
+    font-size: 2rem;
+  }
+}
+
 .bg_img{
   z-index: -1;
   min-width: 100%;

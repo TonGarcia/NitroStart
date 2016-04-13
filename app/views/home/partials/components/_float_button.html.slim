@@ -1,4 +1,4 @@
--if admin_teammate(current_user_teammate) && !skip_for_it_action
+-if @float_opts[:skip_validation] || (admin_teammate(current_user_teammate) && !skip_for_it_action)
   .hide-on-large-only
     -@float_opts[:main_btn_color] = 'purple darken-2' unless @float_opts[:main_btn_color]
     -@float_opts[:main_btn_icon] = 'fa fa-plus' unless @float_opts[:main_btn_icon]

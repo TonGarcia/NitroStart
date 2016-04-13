@@ -25,22 +25,22 @@
 
           .row
             .col.l3.s3
-              a.col.l12.s12.btn.blue-grey.darken-2 href="#{pitch_dashboard_path(pitch)}"
+              a.icon_btn.col.l12.s12.blue-grey-text.text-darken-2 href="#{pitch_dashboard_path(pitch)}"
                 i.mdi-action-dashboard
             .col.l3.s3
-              a.col.l12.s12.btn href="#{pitch_path(pitch)}"
+              a.icon_btn.col.l12.s12.purple-text href="#{pitch_path(pitch)}"
                 i.ion-eye
 
             -if admin_teammate(@current_user.teammates(@pitch).take)
               .col.l3.s3
-                a.col.l12.s12.btn.amber.darken-2 href="#{edit_pitch_path(pitch)}"
+                a.icon_btn.col.l12.s12.amber-text.text-darken-2 href="#{edit_pitch_path(pitch)}"
                   i.mdi-editor-mode-edit
 
             -if owner_teammate(@pitch)
               .col.l3.s3
-                = link_to pitch, class: 'col l12 s12 btn red', data: {confirm: 'Are you sure?'}, method: :delete do
+                = link_to pitch, class: 'col l12 s12 icon_btn red-text', data: {confirm: 'Are you sure?'}, method: :delete do
                   i.mdi-action-delete
 
 
--@float_opts={link: new_pitch_path}
+-@float_opts={link: new_pitch_path, skip_validation: true}
 .fixed-action-btn=render 'home/partials/components/float_button'
