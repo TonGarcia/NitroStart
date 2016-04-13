@@ -75,6 +75,9 @@ Rails.application.routes.draw do
   get 'idiom_flags' => 'locale#idiom_flags', as: :idiom_flags
   get 'people/search(/:partial_name)' => 'people#search', as: :person_search
 
+  # Global Routes
+  get 'nitro_methodology' => 'home#methodology', as: :nitro_methodology
+
   # Admin Routes
   namespace :admin do
     constraints subdomain: 'admin' do

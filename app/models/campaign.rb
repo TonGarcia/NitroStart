@@ -16,9 +16,7 @@ class Campaign < ActiveRecord::Base
   has_many :customer_fundings
 
   # Setup attributes, like CheckoutPage
-  after_create :create_checkout_link
   before_validation :check_video_link
-  before_validation :update_checkout_link, on: :update
 
   # Rails validations
   validates :locale, length: { is: 2 }, presence: true

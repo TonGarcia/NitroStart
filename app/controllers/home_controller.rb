@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
   end
 
-  def startupers_landing
+  def methodology
   end
 
   protected

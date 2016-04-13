@@ -6,5 +6,7 @@
 #video
   -if !@campaign.video.empty?
     iframe width="560" height="315" src="#{@campaign.video}" frameborder="0" allowfullscreen
+
 #banner
-  =image_tag @campaign.banner, class: 'col l12 s12'
+  -unless @campaign.banner.to_s == @campaign.banner.default_url
+    =image_tag @campaign.banner, class: 'col l12 s12'

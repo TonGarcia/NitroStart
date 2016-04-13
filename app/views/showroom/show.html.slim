@@ -27,8 +27,8 @@
         strong =@campaign.amount_customers
         | &nbsp; consumidores
       -if !@campaign.idea.second_problems.nil? && !@campaign.idea.second_problems.empty?
-        .row
-          h6 Mais problemas Solucionados:
+        .vertical_margin
+          h6 Mais problemas solucionados:
           h6.justify.red-text =raw @campaign.idea.formatted_second_problems
 
       .divider

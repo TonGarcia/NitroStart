@@ -21,6 +21,10 @@ a.icon_btn {
   position: absolute;
 }
 
+.col {
+  min-height: 1px;
+}
+
 .content-top-wrap {
   padding-top: calc(55px + 1.3rem);
 }
@@ -393,6 +397,10 @@ a.selector {
 
 .slim_margin_bottom {
   margin-bottom: 10px !important;
+}
+
+.vertical_margin {
+  margin: 30px 0;
 }
 
 #devise_error.alert {
