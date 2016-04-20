@@ -490,6 +490,12 @@ img.pit_show {
   }
 }
 
+.wide_screen {
+  width: 100%;
+  margin-top: -20px;
+  padding-top: 35px;
+}
+
 // Mobile helpers
 @media only screen and (max-width : 992px) {
   .margin_top_on_small {

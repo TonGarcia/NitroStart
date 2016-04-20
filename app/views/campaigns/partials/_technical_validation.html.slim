@@ -1,17 +1,19 @@
 - if @pitch.technical_validation?
   .row
-    .col.l8.offset-l2.s12
+    .col.l12.s12
       .alert.teal.lighten-5.teal-text.text-darken-2 Para a sua Segurança, a NITRO START garante o desenvolvimento e entrega deste produto/serviço.
 - else
-.row
-  - if @campaign.teammate?(@current_user)
-    a href="#"
-      i.mdi-action-assignment-turned-in.left-icon
-      | Requisitar Avaliação Técnica
-    i.tooltipped.fa.fa-question-circle.small_margin_left data-position="top" data-delay="50" data-tooltip="Aumenta a confiança do Consumidor e Diminui a Quota Nitro"
+  .row.center
+    - if @campaign.teammate?(@current_user)
+      a href="#"
+        i.mdi-action-assignment-turned-in.left-icon
+        | Requisitar Avaliação Técnica
+      i.tooltipped.fa.fa-question-circle.small_margin_left data-position="top" data-delay="50" data-tooltip="Aumenta a confiança do Consumidor e Diminui a Quota Nitro"
 
-  .col.l8.offset-l2.s12
-    .alert.orange.lighten-5.orange-text.text-darken-2
-      | Este Produto/Serviço ainda não tem o Desenvolvimento e Entrega garantidos pela  NITRO START.
-      br
-      a href="#" Clique aqui e notifique o Criador, caso considere impressindível
+    .col.l12.s12
+      .alert.orange.lighten-5.orange-text.text-darken-2.center
+        | Este Produto/Serviço ainda não tem o Desenvolvimento e a Entrega garantidos pela  NITRO START.
+        - if !@campaign.teammate?(@current_user)
+          br
+          br
+          a href="#" Clique aqui e notifique o Criador, caso considere imprescindível

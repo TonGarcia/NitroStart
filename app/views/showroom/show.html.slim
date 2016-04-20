@@ -1,55 +1,57 @@
-#campaign_show.row
-  .center.blue-grey-text
-    h3 =@dynamic_title
-    h5.green-text = @active_idea.tag_line_pitch
-    - if @active_idea.tag_line_pitch.nil? && @campaign.teammate?(@current_user)
-      h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o TagLinePitch da Hipótese e ele aparecerá aqui
-    -if @active_idea.main_problem
-      h6
-        strong.red-text ="\"#{@active_idea.main_problem}\" "
-        | é um problema para você? Então conheça este projeto!
-        i.right-icon.bit_bigger.ion-android-arrow-down
-    -elsif @active_idea.main_problem.nil? && @campaign.teammate?(@current_user)
-      h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o Problema que sua Hipótese visa Solucionar e ele aparecerá aqui
+.wide_screen.grey.lighten-5
+  .container.content-top-wrap.remove_padding
+    #campaign_show.row
+      .center.blue-grey-text
+        h3 =@dynamic_title
+        h5.green-text = @active_idea.tag_line_pitch
+        - if @active_idea.tag_line_pitch.nil? && @campaign.teammate?(@current_user)
+          h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o TagLinePitch da Hipótese e ele aparecerá aqui
+        -if @active_idea.main_problem
+          h6
+            strong.red-text ="\"#{@active_idea.main_problem}\" "
+            | é um problema para você? Então conheça este projeto!
+            i.right-icon.bit_bigger.ion-android-arrow-down
+        -elsif @active_idea.main_problem.nil? && @campaign.teammate?(@current_user)
+          h6: a href="#{new_pitch_idea_path(@campaign.pitch)}" Cadastre o Problema que sua Hipótese visa Solucionar e ele aparecerá aqui
 
-    /! Technical Alert Validation
-    = render 'campaigns/partials/technical_validation'
+    .row.medium_margin_top
+      /! Resources
+      .col.l6.s12
+        =render 'campaigns/partials/resources'
+      .col.l6.s12
+        .card-panel
+          h4.blue-grey-text.strong =format_currency(@campaign.supporter_funding_raised)
+          h6
+            | adquiridos por &nbsp;
+            strong =@campaign.amount_customers
+            | &nbsp; consumidores
+          -if !@campaign.idea.second_problems.nil? && !@campaign.idea.second_problems.empty?
+            .vertical_margin
+              h6 Mais problemas solucionados:
+              h6.justify.red-text =raw @campaign.idea.formatted_second_problems
 
-.row.medium_margin_top
-  /! Resources
-  .col.l6.offset-l1.s12
-    =render 'campaigns/partials/resources'
-  .col.l5.s12
-    .card-panel
-      h4.blue-grey-text.strong =format_currency(@campaign.supporter_funding_raised)
-      h6
-        | adquiridos por &nbsp;
-        strong =@campaign.amount_customers
-        | &nbsp; consumidores
-      -if !@campaign.idea.second_problems.nil? && !@campaign.idea.second_problems.empty?
-        .vertical_margin
-          h6 Mais problemas solucionados:
-          h6.justify.red-text =raw @campaign.idea.formatted_second_problems
+          /! Technical Alert Validation
+          = render 'campaigns/partials/technical_validation'
 
-      .divider
+          .divider
 
-      .row.strong
-        a.col.l6.s12.amber-text.text-darken-2 href="#"
-          i.left-icon.ion-android-share-alt
-          | Entenda InvestShare
+          .row.strong
+            a.col.l6.s12.amber-text.text-darken-2 href="#"
+              i.left-icon.ion-android-share-alt
+              | Entenda BuyByShare (CompreCompartilhando)
 
-        a.col.l6.s12.teal-text href="#"
-          i.left-icon.ion-cash
-          | Adquirir Créditos
+            a.col.l6.s12.teal-text href="#"
+              i.left-icon.ion-cash
+              | Adquirir Créditos
 
-.row
-  .col.l12.s12
-    .center
+    .row
+      .col.l12.s12
+        .center
 
 
-/.row
-/  .col.l8.s12
-/    =render 'campaigns/partials/campaign_body'
-/  .col.l4
-/    .card-panel
-/      = render 'campaigns/partials/aside_card/supporter_tracking_view'
+    /.row
+    /  .col.l8.s12
+    /    =render 'campaigns/partials/campaign_body'
+    /  .col.l4
+    /    .card-panel
+    /      = render 'campaigns/partials/aside_card/supporter_tracking_view'

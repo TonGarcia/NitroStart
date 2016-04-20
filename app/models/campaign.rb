@@ -30,6 +30,7 @@ class Campaign < ActiveRecord::Base
 
   # Aux attributes
   attr_accessor :raised
+  attr_accessor :current_teammate
   attr_accessor :just_created
 
   # Locale Countries Array
@@ -54,7 +55,7 @@ class Campaign < ActiveRecord::Base
 
   def teammate?(user)
     return false if user.nil?
-    !self.active_team.where(user_id: user.id).take.nil?
+    current_teammate.nil? ? current_teammate = !self.active_team.where(user_id: user.id).take.nil? : current_teammate
   end
 
   # Return it creator user

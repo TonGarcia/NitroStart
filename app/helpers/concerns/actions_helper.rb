@@ -75,6 +75,7 @@ module Concerns::ActionsHelper
     {
         label: 'Propulsor de Ideias',
         actions: [
+            {name:t('actions.showroom.pitches'), icon:'mdi-action-dashboard', link: showroom_pitches_path, action_controller:'showroom.pitches'},
             {name:t('actions.pitches.supporting'), icon:'ion-thumbsup', link: showroom_pitches_path, action_controller:'showroom.pitches'},
             # {name:t('actions.showroom.index'), icon:'mdi-action-dashboard', link: showroom_index_path, action_controller:'showroom'},
             # {name:t('actions.start_ups.invested'), icon:'ion-flame', link: showroom_index_path, action_controller:'showroom'},

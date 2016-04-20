@@ -20,12 +20,13 @@ pt-BR:
       show: Detalhamento do Projeto
       index: Meus Projetos
       create: Novo Projeto
-      supporting: Apoiar Projetos
+      supporting: Projetos que Apoio
     start_ups:
       index: Startups (Empresas)
       invested: Nitradas (Investimentos)
     showroom:
       index: Vitrine de Startups
+      pitches: Vitrine de Projetos
     ideas:
       new: Explique sua Hipótese
       show: Detalhamento da Hipótese
