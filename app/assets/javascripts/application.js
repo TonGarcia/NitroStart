@@ -10,6 +10,7 @@
 //= require admin_materialize
 //= require materialize-sprockets
 //= require jquery.mask.min
+//= require jquery.sticky.js
 //= require redactor-rails
 //= require redactor-rails/plugins
 //= require lib/redactor/video

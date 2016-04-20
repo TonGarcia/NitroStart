@@ -82,8 +82,18 @@ section {
   font-size: 1rem !important;
 }
 
-.bold {
+#banner {
+  img {
+    max-height: 540px;
+  }
+}
 
+#sticker .nav-wrapper {
+  padding: 0 5%;
+
+  ul li {
+    margin: 0 5px;
+  }
 }
 
 .card {
@@ -494,11 +504,27 @@ img.pit_show {
   width: 100%;
   margin-top: -20px;
   padding-top: 35px;
+  padding-bottom: 50px;
+}
+
+nav#sticker {
+  margin-top: -20px;
 }
 
 // Mobile helpers
 @media only screen and (max-width : 992px) {
   .margin_top_on_small {
     margin-top: 25px;
+  }
+
+  .s12 {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .left_on_large {
+    float: left;
+    margin-right: 15px;
   }
 }

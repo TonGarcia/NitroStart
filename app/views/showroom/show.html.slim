@@ -16,9 +16,9 @@
 
     .row.medium_margin_top
       /! Resources
-      .col.l6.s12
+      .col.l7.s12
         =render 'campaigns/partials/resources'
-      .col.l6.s12
+      .col.l5.s12
         .card-panel
           h4.blue-grey-text.strong =format_currency(@campaign.supporter_funding_raised)
           h6
@@ -38,20 +38,36 @@
           .row.strong
             a.col.l6.s12.amber-text.text-darken-2 href="#"
               i.left-icon.ion-android-share-alt
-              | Entenda BuyByShare (CompreCompartilhando)
+              | Compre Compartilhando
 
             a.col.l6.s12.teal-text href="#"
               i.left-icon.ion-cash
               | Adquirir Créditos
 
-    .row
-      .col.l12.s12
-        .center
+#sticker
+  nav.white
+    .nav-wrapper
+      ul.right
+        li
+          a.amber-text href="#"
+            i.mdi-social-share.left_on_large
+            span.hide-on-small-only Comentários
+        li
+          a.grey-text href="#"
+            i.ion-chatboxes.left_on_large
+            span.hide-on-small-only Comentários
 
 
-    /.row
-    /  .col.l8.s12
-    /    =render 'campaigns/partials/campaign_body'
-    /  .col.l4
-    /    .card-panel
-    /      = render 'campaigns/partials/aside_card/supporter_tracking_view'
+      ul.left
+        li
+          a.blue-text href="#"
+            i.mdi-action-thumb-up.left_on_large
+            span.hide-on-small-only Curti
+        li
+          a.red-text href="#"
+            i.mdi-action-thumb-down.left_on_large
+            span.hide-on-small-only Reprovei
+        li
+          a.teal-text href="#"
+            i.ion-cash.left_on_large
+            span.hide-on-small-only Adquirir Créditos

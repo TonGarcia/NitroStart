@@ -7,6 +7,9 @@ function setup() {
   toast_flags();
   if($('.slider').length) $('.slider').slider();
   if($(".button-collapse").length) $(".button-collapse").sideNav();
+
+  // Set on scroll fix navbar
+  $("#sticker").sticky({topSpacing:0});
 }
 
 // show the Ad dynamic after it "upload_intent"
