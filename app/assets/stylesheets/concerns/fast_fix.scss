@@ -1,5 +1,5 @@
 p {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 #campaign_show {
@@ -22,7 +22,7 @@ p {
   }
 }
 
-nav ul a:hover {
+nav ul a:hover, nav ul li:hover {
   background-color: rgba(0, 0, 0, 0.02) !important;
 }
 

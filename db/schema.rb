@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402112009) do
+ActiveRecord::Schema.define(version: 20160425215531) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160402112009) do
     t.integer  "user_id",        limit: 4,     null: false
     t.integer  "pitch_id",       limit: 4,     null: false
     t.integer  "campaign_id",    limit: 4,     null: false
-    t.integer  "supporter_id",   limit: 4,     null: false
+    t.integer  "supporter_id",   limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end

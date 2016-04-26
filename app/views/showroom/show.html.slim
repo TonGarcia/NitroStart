@@ -36,7 +36,7 @@
           .divider
 
           .row.strong
-            a.col.l6.s12.amber-text.text-darken-2 href="#"
+            a.col.l6.s12.amber-text.text-darken-2.modal-trigger href="#buy_by_share"
               i.left-icon.ion-android-share-alt
               | Compre Compartilhando
 
@@ -44,14 +44,15 @@
               i.left-icon.ion-cash
               | Adquirir Créditos
 
+/! Fix on Scroll navbar
 #sticker
   nav.white
     .nav-wrapper
       ul.right
         li
-          a.amber-text href="#"
+          a.amber-text.modal-trigger href="#buy_by_share"
             i.mdi-social-share.left_on_large
-            span.hide-on-small-only Comentários
+            span.hide-on-small-only Compre Compartilhando
         li
           a.grey-text href="#"
             i.ion-chatboxes.left_on_large
@@ -60,14 +61,59 @@
 
       ul.left
         li
-          a.blue-text href="#"
+          a.blue-text href="#{new_pitch_campaign_supporter_path(@pitch, @campaign)}?feedback=positive"
             i.mdi-action-thumb-up.left_on_large
             span.hide-on-small-only Curti
         li
-          a.red-text href="#"
+          a.red-text href="#{new_pitch_campaign_supporter_path(@pitch, @campaign)}?feedback=negative"
             i.mdi-action-thumb-down.left_on_large
             span.hide-on-small-only Reprovei
         li
-          a.teal-text href="#"
+          a.teal-text href="#{@campaign.checkout_page_link}"
             i.ion-cash.left_on_large
             span.hide-on-small-only Adquirir Créditos
+
+/! Campaign Body
+.container.content-top-wrap.remove_padding
+  .row
+    .col.l8.s12
+      =raw @campaign.body
+    .col.l4.s12
+      .card-panel
+        =render 'campaigns/partials/aside_card/tracking_metrics'
+
+#buy_by_share.modal
+  .modal-content
+    h2.center BuyByShare
+    .divider
+    p O Compre Compartilhando (BuyByShare) é um modelo de incentivo ao compartilhamento das Campanhas que te dá créditos na campanha compartilhada.
+
+    .row
+      .col.s12.l4
+        .icon-block
+          h3.center.amber-text
+            i.ion-android-share-alt
+          h5.center Compartilhe
+          p.light.justify Compartilhe a Campanha nas redes sociais e marque seus amigos que se interessem
+      .col.s12.l4
+        .icon-block
+          h3.center.light-blue-text
+            i.ion-ios-people
+          h5.center Incentive seus Amigos
+          p.light.justify Peça a seus amigos que curtam a campanha e recebam as novidades
+      .col.s12.l4
+        .icon-block
+          h3.center.teal-text
+            i.ion-cash
+          h5.center BuyByShare
+          p.light.justify Quando seu amigo compra, o crédito que você adquirir vale mais (rende mais crédito)
+
+
+    .row
+      h5.center Compartilhe nas maiores Redes Sociais
+      -social_buttons.each do |social_button|
+        .col.l1.s4
+          h4.center: a href="#{social_button[:link]}" target="_blank": i class="#{social_button[:icon]}"
+
+  .modal-footer
+    a.modal-action.modal-close.btn-flat.red.btn.white-text href="#" Fechar

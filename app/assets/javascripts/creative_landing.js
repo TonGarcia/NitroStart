@@ -15,7 +15,9 @@
 
 $(window).load(function() {
     // Set on scroll fix navbar
-    $("#sticker").sticky({topSpacing:0});
+    if($("#sticker").length > 0) {
+        $("#sticker").sticky({topSpacing:0});        
+    }
 
     // ScrollTo
     $("a[href^='#']").click(function(e) {

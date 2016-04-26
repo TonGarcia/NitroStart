@@ -1,13 +1,14 @@
 h4.center.purple-text Detalhamento da Campanha
 
-.row
-  h5.center
-    -unless @campaign.pitch.technical_validation?
+-unless @campaign.pitch.technical_validation?
+  .row
+    h5.center
       a href="#"
         i.mdi-action-assignment-turned-in.left-icon
         | Requisitar Avaliação Técnica
       i.tooltipped.fa.fa-question-circle.small_margin_left data-position="top" data-delay="50" data-tooltip="Aumenta a confiança do Consumidor e Diminui a Quota Nitro"
 
+.row
   .col.l6.hide-on-med-and-down
     a.btn.col.l12 href="#{flat_url}"
       -# Define it icons based on action params

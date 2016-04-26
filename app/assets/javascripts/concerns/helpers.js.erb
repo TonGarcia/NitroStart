@@ -9,7 +9,9 @@ function setup() {
   if($(".button-collapse").length) $(".button-collapse").sideNav();
 
   // Set on scroll fix navbar
-  $("#sticker").sticky({topSpacing:0});
+  if($("#sticker").length > 0) {
+    $("#sticker").sticky({topSpacing: 0});
+  }
 }
 
 // show the Ad dynamic after it "upload_intent"

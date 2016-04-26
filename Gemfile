@@ -99,7 +99,7 @@ gem 'rest-client', '~> 1.8.0'
 gem 'cpf_cnpj', '~> 0.2.1'
 
 # NitroPay payment GEM
-gem 'nitro_pay', '~> 1.0', '>= 1.0.9'
+gem 'nitro_pay', '~> 1.0', '>= 1.0.10'
 
 # Get user BrowserInfo
 gem 'browser', '~> 2.0', '>= 2.0.2'
@@ -109,6 +109,12 @@ gem 'rufus-scheduler', '~> 3.1.10'
 
 # GeoKit to Local System check IP & GeoLoc actions
 gem 'geokit', '~> 1.10'
+
+# Custom & easy Flash setting
+gem 'responders', '~> 2.1', '>= 2.1.2'
+
+# ENUM gem
+gem 'enumerate_it', '~> 1.2', '>= 1.2.9'
 
 group :development, :test do
   # RSPec for BDD practices
@@ -142,7 +148,7 @@ gem 'web-console', '~> 2.0', group: :development
 =end
 
 # Gem to generate SocialShareURLs
-gem 'just_share', '~> 1.0.14'
+gem 'just_share', '~> 1.0.16'
 
 # OAuth TODO: additional social session improve the Cards segment, like GitHub OAuth send Developer Adversities, as example.
 gem 'koala', '~> 2.2.0'

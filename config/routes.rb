@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
     resources :campaigns do
       get 'full_report' => 'campaigns#full_report', as: :full_report
-      resources :supporters, except: [:update, :delete]
+      resources :supporters
     end
 
     get 'deck_pdf' => 'pitch#deck_pdf', as: :deck_pdf

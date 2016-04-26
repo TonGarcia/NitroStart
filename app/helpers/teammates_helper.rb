@@ -29,7 +29,7 @@ module TeammatesHelper
 
   # Check if it user is an admin
   def admin_teammate(teammate=nil)
-    teammate ? teammate.admin? : current_user_teammate.admin?
+    teammate ? teammate.admin? : false
   end
 
   # Actions to skip some component

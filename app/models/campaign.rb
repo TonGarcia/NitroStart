@@ -9,14 +9,16 @@ class Campaign < ActiveRecord::Base
   mount_uploader :banner, CoverUploader
 
   # Relations
-  belongs_to :pitch
   belongs_to :idea
-  has_many :supporters
-  has_many :page_views
+  belongs_to :pitch
   has_many :customer_fundings
+  has_many :supporters, dependent: :destroy
+  has_many :page_views, dependent: :destroy
 
   # Setup attributes, like CheckoutPage
+  before_validation :create_checkout_link
   before_validation :check_video_link
+  before_update :update_checkout_link
 
   # Rails validations
   validates :locale, length: { is: 2 }, presence: true
@@ -24,7 +26,6 @@ class Campaign < ActiveRecord::Base
   validates_uniqueness_of :permalink, on: [:create, :update]
 
   # Validate Association
-  validates_presence_of :body
   validates_presence_of :pitch_id
   validates_presence_of :idea_id
 
@@ -134,6 +135,8 @@ class Campaign < ActiveRecord::Base
     end
 
     def update_checkout_link
+      return self.create_checkout_link unless self.checkout_page_link
+
       # return if self.just_created
       # title = self.name
       # redirect = pitch_campaign_checkout_callback_url(self.pitch, self, host: Helpers::StaticConfigs.host)

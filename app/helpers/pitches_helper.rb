@@ -22,4 +22,16 @@ module PitchesHelper
   def formatted_requested_equity
     "#{number_with_precision(requested_equity, precision: 2, delimiter: ',')}%"
   end
+
+  def published_pitches
+    @pitches.joins(:campaigns).where(campaigns: {draft: false})
+  end
+
+  def draft_pitches
+    # Pitch that doesn't have any campaign
+    no_campaign_pitches = @pitches.find_by_sql("select * from pitches where id not in ( select pitch_id from campaigns ) and pitches.user_id = #{@current_user.id}")
+    # Draft Pitches
+    drafts = @pitches.joins(:campaigns).where(campaigns: {draft: true})
+    (drafts+no_campaign_pitches).uniq
+  end
 end

@@ -37,9 +37,9 @@ class User < ActiveRecord::Base
   attr_accessor :password_rechecked
   attr_accessor :teammate_ref
 
-  # Return the team which the user have accept invitation (association = :start_up or :pitch)
-  def confirmed_team(association)
-    self.send(association.to_s).where(teammates: {verified: true})
+  # Return it user active team pitch (had confirmed the invitation)
+  def active_team_pitches
+    self.pitches.joins(:teammates).where(teammates: {verified: true})
   end
 
   # return it teammate register for a pitch

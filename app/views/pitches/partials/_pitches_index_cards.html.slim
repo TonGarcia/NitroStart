@@ -1,0 +1,30 @@
+-@current_pitches.each do |pitch|
+  - @pitch = pitch
+
+  .col.l6.s12.margin_bottom
+    .card
+      .content
+        .right.grey-text
+          = pitch.updated_at.strftime('%d/%m/%Y - %H:%M:%S')
+        .row
+          .col.l12.s12
+            a href="#{pitch_path(pitch.id)}"
+              h5 = pitch.name
+
+        .row
+          .col.l3.s3
+            a.icon_btn.col.l12.s12.blue-grey-text.text-darken-2 href="#{pitch_dashboard_path(pitch)}"
+              i.mdi-action-dashboard
+          .col.l3.s3
+            a.icon_btn.col.l12.s12.purple-text href="#{pitch_path(pitch)}"
+              i.ion-eye
+
+          - if admin_teammate(@current_user.teammates(@pitch).take)
+            .col.l3.s3
+              a.icon_btn.col.l12.s12.amber-text.text-darken-2 href="#{edit_pitch_path(pitch)}"
+                i.mdi-editor-mode-edit
+
+            - if owner_teammate(@pitch)
+              .col.l3.s3
+                = link_to pitch, class: 'col l12 s12 icon_btn red-text', data: {confirm: 'Are you sure?'}, method: :delete do
+                  i.mdi-action-delete

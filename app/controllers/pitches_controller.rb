@@ -19,7 +19,7 @@ class PitchesController < ApplicationController
   # GET /pitches
   # GET /pitches.json
   def index
-    @pitches = @current_user.confirmed_team(:pitches)
+    @pitches = @current_user.active_team_pitches
   end
 
   # GET /pitches/1
