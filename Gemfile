@@ -228,6 +228,3 @@ gem 'mail', '~> 2.6.3'
 
 # Heroku pre compile
 gem 'rails_12factor', group: :production
-
-# Tracking production events
-gem 'newrelic_rpm', '~> 3.14.1.311'

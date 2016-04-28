@@ -1,4 +1,10 @@
 module Concerns::ActionsHelper
+  def supporter_action(type=nil)
+    face_oauth = user_omniauth_authorize_path('facebook')
+    like_campaign = "#{new_pitch_campaign_supporter_path(@pitch, @campaign)}?feedback=#{type}"
+    (params[:fad] || params[:face_ad]) && @current_user.nil? ? face_oauth : like_campaign
+  end
+
   # Create it  action url based on controller & action
   def flat_url
     current_obj_class = params[:controller].singularize

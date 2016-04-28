@@ -61,11 +61,11 @@
 
       ul.left
         li
-          a.blue-text href="#{new_pitch_campaign_supporter_path(@pitch, @campaign)}?feedback=positive"
+          a.blue-text href="#{supporter_action('positive')}"
             i.mdi-action-thumb-up.left_on_large
             span.hide-on-small-only Curti
         li
-          a.red-text href="#{new_pitch_campaign_supporter_path(@pitch, @campaign)}?feedback=negative"
+          a.red-text href="#{supporter_action('negative')}"
             i.mdi-action-thumb-down.left_on_large
             span.hide-on-small-only Reprovei
         li

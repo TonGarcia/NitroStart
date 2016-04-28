@@ -9,14 +9,18 @@ class CallbacksController < ApplicationController
     payment_customers = payment_info[:customers]
 
     # Update user based on it supporter infos
-    @supporter = Supporter.find(payment_info[:uid])
-    @supporter_user = @supporter.user
-    payment_customers.is_a?(Array) ? customer = payment_customers.first : customer = payment_customers
+    if payment_info[:uid] && @supporter = Supporter.where(id: payment_info[:uid]).take
+      @supporter_user = @supporter.user
+      payment_customers.is_a?(Array) ? customer = payment_customers.first : customer = payment_customers
 
-    # Update it supporter user attributes
-    @supporter_user.legal_id = customer[:legal_id]
-    @supporter_user.zip_code = customer[:zip_code]
-    @supporter_user.save
+      # Update it supporter user attributes
+      @supporter_user.legal_id = customer[:legal_id]
+      @supporter_user.zip_code = customer[:zip_code]
+      @supporter_user.save
+      supporter_id = @supporter.id
+    else
+      supporter_id = nil
+    end
 
     # Register it Customer Funding
     customer_funding_params = {
@@ -31,7 +35,7 @@ class CallbacksController < ApplicationController
       user_id: @current_user.id,
       pitch_id: @campaign.pitch_id,
       campaign_id: @campaign.id,
-      supporter_id: @supporter.id
+      supporter_id: supporter_id
     }
 
     # Persist it funding

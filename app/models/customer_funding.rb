@@ -15,5 +15,5 @@ class CustomerFunding < ActiveRecord::Base
   validates_presence_of :user
   validates_presence_of :pitch
   validates_presence_of :campaign
-  validates_presence_of :supporter
+  validates_uniqueness_of :tid
 end

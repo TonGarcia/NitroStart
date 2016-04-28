@@ -220,7 +220,6 @@ GEM
     mysql2 (0.4.4)
     naught (1.1.0)
     netrc (0.11.0)
-    newrelic_rpm (3.14.1.311)
     nitro_pay (1.0.10)
       bigdecimal (~> 1.2, >= 1.2.7)
       colorize (~> 0.7.7)
@@ -475,7 +474,6 @@ DEPENDENCIES
   meta-tags (~> 2.1)
   mini_magick
   mysql2 (~> 0.4.2)
-  newrelic_rpm (~> 3.14.1.311)
   nitro_pay (~> 1.0, >= 1.0.10)
   nprogress-rails (~> 0.1.6.7)
   omniauth (~> 1.2.2)
