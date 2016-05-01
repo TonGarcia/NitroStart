@@ -1,18 +1,7 @@
 doctype html
 html
   head
-    title Começar uma Starup e Validar a ideia sem time e faturando, somente na Nitro (Aceleradora Venture Builder)
-    meta name="description" content="Somente na Nitro Start você começa sua Startup validando sua ideia enquanto negócio (business). Levamos da pré-aceleração (apenas uma ideia) ao negócio final operando com MVP e investidores em semanas."
-    meta name="google-site-verification" content="#"
-    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
-
-    link rel="image_src" href="http://stackoverflow.com/images/logo.gif"
-    link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'
-    =stylesheet_link_tag 'creative_landing', media: 'all', 'data-turbolinks-track' => true
-    =render 'layouts/partials/components/static/google_analytics'
-
-    = favicon_link_tag 'brand/purple_small_flame_tmp.png'
-    = csrf_meta_tags
+    =render 'layouts/creative/creative_head'
   body.landing-page.landing-page2 cz-shortcut-listen="true"
     /! LandingBody
     =yield
