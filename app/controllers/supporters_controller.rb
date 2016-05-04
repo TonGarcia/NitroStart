@@ -12,6 +12,7 @@ class SupportersController < ApplicationController
   # GET /supporters/1
   # GET /supporters/1.json
   def show
+    render :layout => 'creative_landing'
   end
 
   # GET /supporters/new
@@ -72,6 +73,11 @@ class SupportersController < ApplicationController
     end
   end
 
+  def login_not_required
+    (params[:action] == 'edit' || params[:action] == 'update') ? false : true
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_supporter
@@ -93,6 +99,7 @@ class SupportersController < ApplicationController
       base_params[:how_much_pays] = BigDecimal.new(NitroPay::Currency.to_operator_str(base_params[:how_much_pays]))/100
 
       # Add it association keys
-      base_params.merge!(pitch_id: params[:pitch_id], user_id: @current_user.id, campaign_id: params[:campaign_id])
+      @current_user ? user_id = @current_user.id : user_id = nil
+      base_params.merge!(pitch_id: params[:pitch_id], user_id: user_id, campaign_id: params[:campaign_id])
     end
 end

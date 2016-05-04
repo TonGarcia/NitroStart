@@ -39,11 +39,15 @@ h5.purple-text.center Acrescente seu Feedback
       = f.label :negative_feedback
 
   .row
-    .col.l8.s12
-      button.btn-large.teal.col.l12.s12 type="submit" name="commit" value= "add_credit"
-        i.left-icon.ion-cash
-        | Adquira Créditos
+    -if @current_user
+      .col.l8.s12
+        button.btn-large.teal.col.l12.s12 type="submit" name="commit" value= "add_credit"
+          i.left-icon.ion-cash
+          | Adquira Créditos
 
-    .col.l4.s12
-      -@footer_link=true
-      =render 'layouts/partials/components/static/float_buttons/save'
+      .col.l4.s12
+        -@footer_link=true
+        =render 'layouts/partials/components/static/float_buttons/save'
+    -else
+      .col.l12.s12
+        button.col.l12.s12.btn.purple type="submit" name="commit" Enviar

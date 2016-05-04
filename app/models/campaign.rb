@@ -74,6 +74,18 @@ class Campaign < ActiveRecord::Base
     self.customer_fundings.group(:user_id).length
   end
 
+  # Amount of "how much do you pay"
+  def amount_how_much_wold_pay
+    self.supporters.sum(:how_much_pays)
+  end
+
+  # Average of "how much do you pay"
+  def average_how_much_wold_pay
+    amount_pay = amount_how_much_wold_pay
+    amount_supporters = self.supporters.length
+    amount_supporters > 0 && amount_pay > 0 ? amount_how_much_wold_pay/self.supporters.length : 0
+  end
+
   # Return it amount raised by supporter funding
   def supporter_funding_raised
     card_operator_formatter = 100

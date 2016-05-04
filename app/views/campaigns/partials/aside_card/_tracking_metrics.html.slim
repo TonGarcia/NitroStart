@@ -51,6 +51,20 @@
   .col.l12.s12
     h6.center
       i.left-icon.slim.ion-cash
+      | Interesse de Compra
+    h5.center.purple-text
+      = format_currency(@campaign.amount_how_much_wold_pay)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-cash
+      | Média em Interesse de Compra
+    h5.center.purple-text
+      = format_currency(@campaign.average_how_much_wold_pay)
+
+  .col.l12.s12
+    h6.center
+      i.left-icon.slim.ion-cash
       | Crédito Total Adquirido
     h5.center.purple-text
       =format_currency(@campaign.supporter_funding_raised)

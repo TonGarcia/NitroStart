@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425215535) do
+ActiveRecord::Schema.define(version: 20160504155310) do
 
   create_table "additional_infos", force: :cascade do |t|
     t.string   "key",               limit: 40,    null: false
@@ -286,7 +286,7 @@ ActiveRecord::Schema.define(version: 20160425215535) do
     t.decimal  "how_much_pays",                 precision: 15, scale: 2
     t.string   "positive_feedback", limit: 255
     t.string   "negative_feedback", limit: 255
-    t.integer  "user_id",           limit: 4,                                        null: false
+    t.integer  "user_id",           limit: 4
     t.integer  "pitch_id",          limit: 4,                                        null: false
     t.integer  "campaign_id",       limit: 4,                                        null: false
     t.datetime "created_at",                                                         null: false

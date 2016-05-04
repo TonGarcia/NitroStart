@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :categories
   mount RedactorRails::Engine => '/redactor_rails'
   get 'call_to_action' => 'call_to_action#index', as: :call_to_action
 
@@ -49,6 +48,7 @@ Rails.application.routes.draw do
   # Non-Nested objects
   resources :problems
   resources :start_ups
+  resources :categories
   resources :people, except: [:delete, :update]
 
   # HandShake controller
