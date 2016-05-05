@@ -76,7 +76,7 @@
 /! Campaign Body
 .container.content-top-wrap.remove_padding
   .row
-    .col.l8.s12
+    #campaign_body.col.l8.s12
       =raw @campaign.body
     .col.l4.s12
       .card-panel
@@ -117,3 +117,9 @@
 
   .modal-footer
     a.modal-action.modal-close.btn-flat.red.btn.white-text href="#" Fechar
+
+javascript:
+  var campaign_links = $('#campaign_body a');
+  if(campaign_links.length > 0) {
+    campaign_links.attr('target',  '_blank');
+  }

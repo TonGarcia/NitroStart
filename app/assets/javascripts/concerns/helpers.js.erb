@@ -10,7 +10,15 @@ function setup() {
 
   // Set on scroll fix navbar
   if($("#sticker").length > 0) {
-    $("#sticker").sticky({topSpacing: 0});
+    var stickerTop = $('#sticker').offset().top;
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > stickerTop) {
+        $('#sticker').css({position: 'fixed', top: '0px', width: '100%'});
+      } else {
+        $('#sticker').css({position: 'static', top: '0px', width: '100%'});
+      }
+    });
   }
 }
 
