@@ -5,15 +5,11 @@
 //= require turbolinks
 
 // PlugIns
-//= require nprogress
-//= require nprogress-turbolinks
 //= require materialize-sprockets
 
 // My JS
 //= require app/partners
 //= require concerns/fast_fix
-//= require concerns/helpers.js.erb
-//= require concerns/accounting
 
 $(document).ready(function(){
     $('.parallax').parallax();

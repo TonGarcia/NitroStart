@@ -12,7 +12,7 @@ class SupportersController < ApplicationController
   # GET /supporters/1
   # GET /supporters/1.json
   def show
-    render :layout => 'creative_landing'
+    render layout: 'card_without_aside'
   end
 
   # GET /supporters/new
@@ -72,11 +72,6 @@ class SupportersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def login_not_required
-    (params[:action] == 'edit' || params[:action] == 'update') ? false : true
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

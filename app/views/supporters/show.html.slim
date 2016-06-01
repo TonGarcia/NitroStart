@@ -1,0 +1,12 @@
+.row.alert.green.lighten-5.green-text.text-darken-2
+  | Nós, do Time
+  strong= " #{@supporter.campaign.name}, "
+  | agradecemos sua participação.
+
+.row
+  h5.center Para que este projeto saia do papel precisamos de você!
+  h5.center Compartilhe nas maiores Redes Sociais.
+  -@active_idea = @supporter.campaign.idea
+  -social_buttons.each do |social_button|
+    .col.l1.s4
+      h4.center: a href="#{social_button[:link]}" target="_blank": i class="#{social_button[:icon]}"

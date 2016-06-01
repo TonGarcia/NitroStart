@@ -115,6 +115,7 @@ pt-BR:
         video: Link do YouTube
         body: Escrita Livre
         idea: Hipótese a ser validada
+        idea_id: Hipótese a ser validada
         locale: Idioma
         permalink: Link do projeto www.nitrostart.me/
         locale_flags: Países do Idioma

@@ -5,6 +5,7 @@ class Supporter < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :pitch
+  belongs_to :campaign
 
   # Rails Validations
   validates :feedback_type, length: { minimum: 1, maximum: 20 }, presence: true
@@ -14,7 +15,7 @@ class Supporter < ActiveRecord::Base
 
 
   # Validate Associations
-  # validates_presence_of :user_id
+  validates_presence_of :user_id
   validates_presence_of :pitch_id
   validates_presence_of :campaign_id
 

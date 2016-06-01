@@ -9,6 +9,6 @@
 # ADMIN
 puts 'Inserting AdminUser...'.colorize(:green)
   Factory::Admins.create
-  Factory::Categories.create
+  # Factory::Categories.create
 puts '...AdminUser inserted.'.colorize(:light_blue)
 # /ADMIN

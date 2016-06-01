@@ -1,7 +1,6 @@
 class SocialSession < ActiveRecord::Base
   # Relations
   belongs_to :user
-  has_many :additional_infos
 
   # Custom validations
   validate :expires_at_date, on: [:create, :update], if: :expires_at

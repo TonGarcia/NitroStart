@@ -45,7 +45,7 @@
               | Adquirir Créditos
 
 /! Fix on Scroll navbar
-#sticker
+#sticker.hide-on-small-only
   nav.white
     .nav-wrapper
       ul.right
@@ -117,6 +117,13 @@
 
   .modal-footer
     a.modal-action.modal-close.btn-flat.red.btn.white-text href="#" Fechar
+
+.hide-on-large-only
+  .fixed-action-btn
+    a.btn-floating.btn-large.teal.margin_right href="#{supporter_action('positive')}"
+      i.mdi-action-thumb-up
+    a.btn-floating.btn-large.red href="#{supporter_action('positive')}"
+      i.mdi-action-thumb-down
 
 javascript:
   var campaign_links = $('#campaign_body a');

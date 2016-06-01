@@ -27,21 +27,21 @@ module Concerns
       not_validate ? social_session.save(validate:false) : social_session.save
 
       # Additional infos logic
-      auth_infos = AdditionalInfo.where(social_session_id: social_session.id)
-      extra_info.keys.each do |key|
-        value = extra_info[key]
-
-        current_info = nil
-        auth_infos.each do |info|
-          if info.key == key
-            current_info = info
-            break
-          end
-        end
-
-        value = value.to_json unless value.is_a?String
-        current_info.nil? ? social_session.additional_infos << AdditionalInfo.new(key: key, value: value) : current_info.update(value: value)
-      end
+      # auth_infos = AdditionalInfo.where(social_session_id: social_session.id)
+      # extra_info.keys.each do |key|
+      #   value = extra_info[key]
+      #
+      #   current_info = nil
+      #   auth_infos.each do |info|
+      #     if info.key == key
+      #       current_info = info
+      #       break
+      #     end
+      #   end
+      #
+      #   value = value.to_json unless value.is_a?String
+      #   current_info.nil? ? social_session.additional_infos << AdditionalInfo.new(key: key, value: value) : current_info.update(value: value)
+      # end
 
       not_validate ? social_session.save(validate:false) : social_session.save
       social_session
