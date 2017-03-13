@@ -1,12 +1,11 @@
-/! Regards message
-h4.sign-header.center.blue-grey-text Bem-Vindo ao Ecosistema NitroStart!
-
 /! Whole content
 .row
   /! LogIn Form
   .col.l6.offset-l3.s12
     .card
       .card-content
+        /! Regards message
+        h4.sign-header.center.blue-grey-text Bem-Vindo ao Ecosistema NitroStart!
         =render 'form'
       .card-action
         .row.top-fat
@@ -15,4 +14,5 @@ h4.sign-header.center.blue-grey-text Bem-Vindo ao Ecosistema NitroStart!
 
         .row.top-fat
           h6.center
-            = link_to 'Não recebi o E-mail de confirmação', new_confirmation_path(resource_name), class: 'txt_un_transform'
+            - if resource.class.devise_modules.include?(:confirmable)
+              = link_to 'Não recebi o E-mail de confirmação', new_confirmation_path(resource_name), class: 'txt_un_transform'

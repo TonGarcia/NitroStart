@@ -12,4 +12,5 @@
 
         .row.top-fat
           h6.center
-            = link_to 'Não recebi o E-mail de confirmação', new_confirmation_path(resource_name), class: 'txt_un_transform'
+            - if resource.class.devise_modules.include?(:confirmable)
+              = link_to 'Não recebi o E-mail de confirmação', new_confirmation_path(resource_name), class: 'txt_un_transform'
