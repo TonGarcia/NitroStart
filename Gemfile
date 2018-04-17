@@ -1,9 +1,9 @@
-ruby '2.3.1'
-#ruby=2.3.1@start
+ruby '2.4.1'
+#ruby=2.4.1@start
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.10'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.4.2'
 # Use SCSS for stylesheets
@@ -151,15 +151,15 @@ gem 'web-console', '~> 2.0', group: :development
 gem 'just_share', '~> 1.0.16'
 
 # OAuth TODO: additional social session improve the Cards segment, like GitHub OAuth send Developer Adversities, as example.
-gem 'koala', '~> 2.2.0'
-gem 'omniauth', '~> 1.2.2'
-gem 'omniauth-oauth2', '~> 1.3.1'
-gem 'omniauth-facebook', '~> 3.0.0'
-gem 'omniauth-github', '~> 1.1.2'
-gem 'omniauth-google-oauth2', '~> 0.2.10'
+gem 'koala', '~> 3.0.0'
+gem 'omniauth', '~> 1.8.1'
+gem 'omniauth-oauth2', '~> 1.5.0'
+gem 'omniauth-facebook', '~> 5.0.0'
+gem 'omniauth-github', '~> 1.3.0'
+gem 'omniauth-google-oauth2', '~> 0.5.3'
 gem 'omniauth-linkedin', '~> 0.2.0'
-gem 'omniauth-twitter', '~> 1.2.1'
-gem 'omniauth-instagram', '~> 1.0.2'
+gem 'omniauth-twitter', '~> 1.4.0'
+gem 'omniauth-instagram', '~> 1.3.0'
 
 # Social
 gem 'twitter', '~> 5.15.0'

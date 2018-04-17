@@ -27,15 +27,7 @@ db/*.sqlite3
 .rspec
 .redcar/
 .sass-cache
-/config/config.yml
-/config/social_keys.yml
-/config/database.yml
-/config/secrets.yml
 config/deploy/production.rb
-/config/aws.yml
-config/aws.yml
-/config/newrelic.yml
-config/newrelic.yml
 /coverage.data
 /coverage/
 coverage

@@ -1,0 +1,17 @@
+# config/aws.yml
+defaults: &defaults
+  access_key_id: AKIAIEOYDPUGPYD7K6QA
+  secret_access_key:  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
+  region: sa-east-1
+  bucket: nitro-start-tst
+
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  bucket: nitro-start-production

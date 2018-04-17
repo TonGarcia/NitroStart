@@ -1,0 +1,47 @@
+development:
+  facebook_key: "1691426611079180"
+  facebook_secret: "ec9b6541ff69db58e75b4c0f403449b2"
+
+  twitter_key: "sDbDsYPElou3a9mBkoXcrXMcl"
+  twitter_secret: "xxqbE1DDM5vzsWiIh4bR888dw8AIXKmcF60QRIx9OwtlQagTE6"
+
+  github_key: "YOUR_KEY"
+  github_secret: "YOUR_SECRET"
+
+  linkedin_key: "YOUR_KEY"
+  linkedin_secret: "YOUR_SECRET"
+
+  google_key: "YOUR_KEY"
+  google_secret: "YOUR_SECRET"
+
+test:
+  facebook_key: "1691426611079180"
+  facebook_secret: "ec9b6541ff69db58e75b4c0f403449b2"
+
+  twitter_key: "sDbDsYPElou3a9mBkoXcrXMcl"
+  twitter_secret: "xxqbE1DDM5vzsWiIh4bR888dw8AIXKmcF60QRIx9OwtlQagTE6"
+
+  github_key: "YOUR_KEY"
+  github_secret: "YOUR_SECRET"
+
+  linkedin_key: "YOUR_KEY"
+  linkedin_secret: "YOUR_SECRET"
+
+  google_key: "YOUR_KEY"
+  google_secret: "YOUR_SECRET"
+
+production:
+  facebook_key: "1691426611079180"
+  facebook_secret: "ec9b6541ff69db58e75b4c0f403449b2"
+
+  twitter_key: "sDbDsYPElou3a9mBkoXcrXMcl"
+  twitter_secret: "xxqbE1DDM5vzsWiIh4bR888dw8AIXKmcF60QRIx9OwtlQagTE6"
+
+  github_key: "YOUR_KEY"
+  github_secret: "YOUR_SECRET"
+
+  linkedin_key: "YOUR_KEY"
+  linkedin_secret: "YOUR_SECRET"
+
+  google_key: "YOUR_KEY"
+  google_secret: "YOUR_SECRET"

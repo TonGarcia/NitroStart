@@ -34,6 +34,9 @@ module NitroStart
       config.action_mailer.default_url_options = { host: 'nitro.dev:5000' }
     end
 
+    # Disable OAuth Logger
+    Hashie.logger = Logger.new(nil)
+
     # Amazon S3 With paper-clip
     aws_config = YAML::load_file(Rails.root.join('config', 'aws.yml'))
     aws_dev = aws_config['development']

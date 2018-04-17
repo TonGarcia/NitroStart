@@ -18,14 +18,14 @@ default: &default
 
 development:
   <<: *default
-  database: nitro_me_development
+  database: nitro_start_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: nitro_me_test
+  database: nitro_start_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -47,7 +47,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: nitro_me_production
-  username: nitro_me
-  password: <%= ENV['NITRO_START_DATABASE_PASSWORD'] %>
+  url: <%= ENV['CLEAR_DATABASE_URL'] %>
