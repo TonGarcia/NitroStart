@@ -184,7 +184,7 @@ gem 'jasny_bundle_fixed', '~> 1.0.1'
 gem 'font-awesome-rails', '~> 4.5'
 
 # Chart js gem
-gem 'chartkick', '~> 1.3', '>= 1.3.2'
+gem 'chartkick', '~> 3.4'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'
 
