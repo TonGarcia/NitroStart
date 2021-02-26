@@ -61,7 +61,7 @@ gem 'bcrypt', require: 'bcrypt'
 gem 'nprogress-rails', '~> 0.1.6.7'
 
 # Session manager
-gem 'devise', '~> 4.0.3'
+gem 'devise', '~> 4.7.3'
 
 # Devise Async  SideKiq Tasks
 # gem 'devise-async', '~> 0.10.1'
