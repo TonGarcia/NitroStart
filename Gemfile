@@ -1,5 +1,5 @@
 ruby '2.4.1'
-#ruby=2.4.1@start
+#ruby=2.4.1@nitrostart
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -61,11 +61,11 @@ gem 'bcrypt', require: 'bcrypt'
 gem 'nprogress-rails', '~> 0.1.6.7'
 
 # Session manager
-gem 'devise', '~> 3.5.3'
+gem 'devise', '~> 4.0.3'
 
 # Devise Async  SideKiq Tasks
-gem 'devise-async', '~> 0.10.1'
-gem 'sidekiq', '~> 4.0', '>= 4.0.1'
+# gem 'devise-async', '~> 0.10.1'
+# gem 'sidekiq', '~> 4.0', '>= 4.0.1'
 
 # Nice Photo & Video Light-box
 gem 'prettyphoto-rails', '~> 0.2.1'
@@ -87,7 +87,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: '1578777fe3f3
 gem 'slim-rails', '~> 3.0.1'
 
 # Gem to use cURL
-gem 'curb', '~> 0.9.0'
+# gem 'curb', '~> 0.9.0'
 
 # Breadcrumbs for Rails app
 gem 'breadcrumbs_on_rails', '~> 2.3.1'

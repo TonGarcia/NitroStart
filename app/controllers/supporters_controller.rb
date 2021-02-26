@@ -91,7 +91,7 @@ class SupportersController < ApplicationController
       base_params = params.require(:supporter).permit(:feedback_type, :how_much_pays, :positive_feedback, :negative_feedback)
 
       # Format it amount
-      base_params[:how_much_pays] = BigDecimal.new(NitroPay::Currency.to_operator_str(base_params[:how_much_pays]))/100
+      base_params[:how_much_pays] = BigDecimal(NitroPay::Currency.to_operator_str(base_params[:how_much_pays]))/100
 
       # Add it association keys
       @current_user ? user_id = @current_user.id : user_id = nil

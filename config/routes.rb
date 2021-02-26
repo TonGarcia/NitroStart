@@ -81,7 +81,7 @@ Rails.application.routes.draw do
   # Admin Routes
   namespace :admin do
     constraints subdomain: 'admin' do
-      get '/' => 'dashboard#admin', as: :admin_dashboard
+      get '/' => 'dashboard#admin', as: :dashboard
     end
   end
 
