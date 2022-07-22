@@ -1,5 +1,12 @@
 GIT
-  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  remote: https://github.com/TonGarcia/admin_theme.git
+  revision: 41ac9a246ff8a5b739df792723febcbc49da90e9
+  specs:
+    admin_materialize (0.1.3)
+      railties (> 3.1, < 5.0)
+
+GIT
+  remote: https://github.com/carrierwaveuploader/carrierwave.git
   revision: 1578777fe3f30140347ebf27d1943471bbe4d425
   ref: 1578777fe3f30140347ebf27d1943471bbe4d425
   specs:
@@ -8,13 +15,6 @@ GIT
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-
-GIT
-  remote: https://github.com/TonGarcia/admin_theme.git
-  revision: 41ac9a246ff8a5b739df792723febcbc49da90e9
-  specs:
-    admin_materialize (0.1.3)
-      railties (> 3.1, < 5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -411,7 +411,7 @@ GEM
       memoizable (~> 0.4.0)
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
