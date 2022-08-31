@@ -152,7 +152,7 @@ gem 'just_share', '~> 1.0.16'
 
 # OAuth TODO: additional social session improve the Cards segment, like GitHub OAuth send Developer Adversities, as example.
 gem 'koala', '~> 3.0.0'
-gem 'omniauth', '~> 1.8.1'
+gem 'omniauth', '~> 1.9.2'
 gem 'omniauth-oauth2', '~> 1.5.0'
 gem 'omniauth-facebook', '~> 5.0.0'
 gem 'omniauth-github', '~> 1.3.0'
